@@ -1,0 +1,1 @@
+pyinstaller --noconfirm --onefile --console --distpath "./compiled_exe" --icon "Icon.ico"  "ContentLogWatcher.py"

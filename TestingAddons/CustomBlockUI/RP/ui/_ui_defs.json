@@ -1,0 +1,6 @@
+{
+	"ui_defs": [
+		"ui/spmax/custom_block_screen.json",
+		"ui/spmax/world_info_screen.json"
+	]
+}

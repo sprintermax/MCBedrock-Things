@@ -1,0 +1,40 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Multiple Custom Block UIs Example Pack",
+		"name": "Example Pack",
+		"uuid": "812563d6-c562-47fd-8a07-8b71f59692dc",
+		"min_engine_version": [
+			1,
+			14,
+			0
+		],
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"description": "N/A",
+			"type": "resources",
+			"uuid": "323a2974-015e-4203-93d6-34d8d42a1252",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "2341062b-746b-4021-bd17-f2a3cec7f9f3",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

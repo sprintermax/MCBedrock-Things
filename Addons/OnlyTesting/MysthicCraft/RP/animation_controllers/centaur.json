@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.centaur.default": {
+      "states": {
+        "default": {
+          "parameters": [ "query.walk_speed" ],
+          "animations": [
+            { "setup": [] },
+            { "walk": [
+                {
+                  "0.0": 0.0,
+                  "1.0": 1.0
+                }
+              ]
+			},
+            { "look_at_target": [] }
+          ]
+        }
+      }
+    }
+  }
+}

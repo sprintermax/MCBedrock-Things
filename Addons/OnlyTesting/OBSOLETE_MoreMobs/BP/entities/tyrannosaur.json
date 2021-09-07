@@ -1,0 +1,754 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "gona:tyrannosaur",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": true
+      }
+    },
+
+    "component_groups": {
+	  "minecraft:trex_roar": {
+        "minecraft:on_target_acquired": {
+        },
+        "minecraft:behavior.summon_entity": {
+          "priority": 0,
+          "probability": 100000.0,
+          "summon_choices": [
+            {
+              "weight": 1,
+              "cooldown_time": 5.0,
+              "cast_duration": 5,
+              "particle_color": "#FFFFFFFF",
+              "start_sound_event": "plop",
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "delay_per_summon": 0.0,
+                  "num_entities_spawned": 0,
+                  "entity_type": "",
+                  "entity_lifespan": 10.0,
+                  "size": 10.0,
+                  "sound_event": ""
+                }
+              ]
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "time": 5,
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:trex_attack",
+            "target": "self"
+          }
+        }
+      },
+
+	  "minecraft:trex_attack": {
+        "minecraft:type_family": {
+          "family": [ "evil", "t_rex_adult" ]
+        },
+        "minecraft:navigation.generic": {
+          "can_path_over_water": false,
+          "avoid_damage_blocks": true
+        },
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 3,
+            "range_max": 9
+          }
+        },
+	    "minecraft:health": {
+          "value": 120,
+          "max": 140
+        },
+		"minecraft:behavior.random_stroll": {
+          "priority": 2,
+          "speed_multiplier": 0.8
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 2
+        },
+	    "minecraft:behavior.nearest_attackable_target": {
+          "priority": 0,
+          "within_radius": 28,
+          "entity_types": [
+            {
+              "filters": { "other_with_families": [ "pteranodon", "player", "herbivorous", "carnotaurus_adult", "baryonyx_adult", "baryonyx", "cow", "sheep", "carnotaurus" ] },
+              "max_dist": 32
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:timer": {
+          "time": [ 15, 20 ],
+          "looping": false,
+          "time_down_event": {
+            "event": "minecraft:trex_adult_wild",
+            "target": "self"
+          }
+        }
+      },
+
+      "minecraft:trex_adult": {
+        "minecraft:scale": {
+          "value": 2.0
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/big.json"
+        },
+        "minecraft:knockback_resistance": {
+          "value": 0.5
+        }
+      },
+
+      "minecraft:trex_adult_wild": {
+        "minecraft:type_family": {
+          "family": [ "evil", "t_rex_adult" ]
+        },
+        "minecraft:navigation.generic": {
+          "can_path_over_water": false,
+          "avoid_damage_blocks": true
+        },
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 3,
+            "range_max": 9
+          }
+        },
+	    "minecraft:health": {
+          "value": 120,
+          "max": 140
+        },
+        "minecraft:on_target_acquired": {
+          "event": "hunter_mode"
+        },
+        "minecraft:on_hurt_by_player": {
+        },
+		"minecraft:behavior.random_stroll": {
+          "priority": 2,
+          "speed_multiplier": 0.8
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 2
+        }
+      },
+      
+      "minecraft:trex_adult_tame": {
+      	"minecraft:type_family": {
+          "family": [ "t_rex_tamed", "t_rex_adult" ]
+        },
+      	 "minecraft:is_tamed": {
+        },
+        "minecraft:movement": {
+          "value": {
+            "range_min": 0.27,
+            "range_max": 0.38
+          }
+        },
+        "minecraft:input_ground_controlled": {
+        },
+        "minecraft:behavior.player_ride_tamed": {
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [ "player" ],
+          "interact_text": "action.interact.ride.horse",
+          "seats": {
+            "position": [ 0.0, 1.7, -0.1 ]
+          }        
+        },
+        "minecraft:behavior.beg": {
+        "priority": 6,
+        "look_distance": 8,
+        "look_time": [ 2, 4 ],
+        "items": [ "porkchop",
+            "cooked_porkchop",
+            "fish",
+            "salmon",
+            "clownfish",
+            "pufferfish",
+            "cooked_fish",
+            "cooked_salmon",
+            "beef",
+            "cooked_beef",
+            "chicken",
+            "cooked_chicken",
+            "muttonRaw",
+            "muttonCooked",
+            "rotten_flesh",
+            "rabbit",
+            "cooked_rabbit",
+            "rabbit_stew"
+          ]
+        },
+        "minecraft:health": {
+          "value": 180,
+          "max": 200
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 1,
+          "speed_multiplier": 1.0,
+          "start_distance": 12,
+          "stop_distance": 6
+        },
+        "minecraft:healable": {
+          "items": [
+            {
+              "item": "porkchop",
+              "heal_amount": 3
+            },
+            {
+              "item": "cooked_porkchop",
+              "heal_amount": 8
+            },
+            {
+              "item": "fish",
+              "heal_amount": 2
+            },
+            {
+              "item": "salmon",
+              "heal_amount": 2
+            },
+            {
+              "item": "clownfish",
+              "heal_amount": 1
+            },
+            {
+              "item": "pufferfish",
+              "heal_amount": 1
+            },
+            {
+              "item": "cooked_fish",
+              "heal_amount": 5
+            },
+            {
+              "item": "cooked_salmon",
+              "heal_amount": 6
+            },
+            {
+              "item": "beef",
+              "heal_amount": 3
+            },
+            {
+              "item": "cooked_beef",
+              "heal_amount": 8
+            },
+            {
+              "item": "chicken",
+              "heal_amount": 2
+            },
+            {
+              "item": "cooked_chicken",
+              "heal_amount": 6
+            },
+            {
+              "item": "muttonRaw",
+              "heal_amount": 2
+            },
+            {
+              "item": "muttonCooked",
+              "heal_amount": 6
+            },
+            {
+              "item": "rotten_flesh",
+              "heal_amount": 4
+            },
+            {
+              "item": "rabbit",
+              "heal_amount": 3
+            },
+            {
+              "item": "cooked_rabbit",
+              "heal_amount": 5
+            },
+            {
+              "item": "rabbit_stew",
+              "heal_amount": 10
+            }
+          ]
+        },
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 4,
+            "range_max": 11
+          }
+        },
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 3
+        },
+        "minecraft:breedable": {
+          "requireTame": true,
+          "breedsWith": {
+            "mateType": "gone:tyrannosaur",
+            "babyType": "gone:tyrannosaur",
+            "breed_event": {
+              "event": "minecraft:entity_born",
+              "target": "baby"
+            }
+          },
+          "breedItems": [ "porkchop",
+            "cooked_porkchop",
+            "fish",
+            "salmon",
+            "clownfish",
+            "pufferfish",
+            "cooked_fish",
+            "cooked_salmon",
+            "beef",
+            "cooked_beef",
+            "chicken",
+            "cooked_chicken",
+            "muttonRaw",
+            "muttonCooked",
+            "rotten_flesh",
+            "rabbit",
+            "cooked_rabbit",
+            "rabbit_stew"
+          ]
+        },
+        "minecraft:sittable": {
+        },
+        "minecraft:behavior.breed": {
+          "priority": 0,
+          "speed_multiplier": 0.7
+        }
+      },
+
+      "minecraft:trex_leashed": {
+        "minecraft:behavior.move_towards_restriction": {
+          "priority": 2,
+          "speed_multiplier": 0.8
+        }
+      },
+
+      "minecraft:trex_baby_tame": {
+        "minecraft:is_tamed": {
+        },
+        "minecraft:health": {
+          "value": 20,
+          "max": 30
+        },
+        "minecraft:sittable": {
+        },
+        "minecraft:behavior.panic": {
+          "priority": 3,
+          "speed_multiplier": 0.7
+        },
+        "minecraft:behavior.tempt": {
+          "priority": 3,
+          "speed_multiplier": 0.6,
+          "items": [ "porkchop",
+            "cooked_porkchop",
+            "fish",
+            "salmon",
+            "clownfish",
+            "pufferfish",
+            "cooked_fish",
+            "cooked_salmon",
+            "beef",
+            "cooked_beef",
+            "chicken",
+            "cooked_chicken",
+            "muttonRaw",
+            "muttonCooked",
+            "rotten_flesh",
+            "rabbit",
+            "cooked_rabbit",
+            "rabbit_stew" 
+          ]
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 1,
+          "speed_multiplier": 1.0,
+          "start_distance": 10,
+          "stop_distance": 4
+        },
+        
+        "minecraft:scale_by_age": {
+          "start_scale": 0.4,
+          "end_scale": 2.0
+        },
+        "minecraft:ageable": {
+          "duration": 1600,
+          "feedItems": [
+            {
+              "item": "rotten_flesh",
+              "growth": 0.03
+            },
+            {
+              "item": "beef",
+              "growth": 0.04
+            },
+            {
+              "item": "cooked_beef",
+              "growth": 0.07
+            },
+            {
+              "item": "chicken",
+              "growth": 0.04
+            },
+            {
+              "item": "cooked_chicken",
+              "growth": 0.06
+            },
+            {
+              "item": "muttonRaw",
+              "growth": 0.05
+            },
+            {
+              "item": "muttonCooked",
+              "growth": 0.07
+            },
+            {
+              "item": "rabbit",
+              "growth": 0.04
+            },
+            {
+              "item": "cooked_rabbit",
+              "growth": 0.06
+            },
+            {
+              "item": "porkchop",
+              "growth": 0.06
+            },
+            {
+              "item": "cooked_porkchop",
+              "growth": 0.08
+            },
+            {
+              "item": "fish",
+              "growth": 0.07
+            },
+            {
+              "item": "salmon",
+              "growth": 0.08
+            },
+            {
+              "item": "cooked_fish",
+              "growth": 0.09
+            },
+            {
+              "item": "cooked_salmon",
+              "growth": 0.1
+            },
+            {
+              "item": "clownfish",
+              "growth": 0.1
+            },
+            {
+              "item": "pufferfish",
+              "growth": 0.12
+            }
+          ],
+          "grow_up": {
+            "event": "minecraft:ageable_grow_up_tame",
+            "target": "self"
+          }
+        }
+      },
+      
+      "minecraft:trex_baby_wild": {
+        "minecraft:health": {
+          "value": 20,
+          "max": 25
+        },
+        "minecraft:scale_by_age": {
+          "start_scale": 0.4,
+          "end_scale": 2.0
+        },
+        "minecraft:ageable": {
+          "duration": 1600,
+          "grow_up": {
+            "event": "minecraft:ageable_grow_up_wild",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.tempt": {
+          "priority": 3,
+          "speed_multiplier": 0.6,
+          "items": [ "porkchop",
+            "cooked_porkchop",
+            "fish",
+            "salmon",
+            "clownfish",
+            "pufferfish",
+            "cooked_fish",
+            "cooked_salmon",
+            "beef",
+            "cooked_beef",
+            "chicken",
+            "cooked_chicken",
+            "muttonRaw",
+            "muttonCooked",
+            "rotten_flesh",
+            "rabbit",
+            "cooked_rabbit",
+            "rabbit_stew"
+          ]
+        },
+        "minecraft:tameable": {
+          "probability": 0.33,
+          "tameItems": [ "porkchop",
+            "cooked_porkchop",
+            "fish",
+            "salmon",
+            "clownfish",
+            "pufferfish",
+            "cooked_fish",
+            "cooked_salmon",
+            "beef",
+            "cooked_beef",
+            "chicken",
+            "cooked_chicken",
+            "muttonRaw",
+            "muttonCooked",
+            "rotten_flesh",
+            "rabbit",
+            "cooked_rabbit",
+            "rabbit_stew"
+          ],
+          "tame_event": {
+            "event": "minecraft:on_tame_baby",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.panic": {
+          "priority": 1,
+          "speed_multiplier": 0.7
+        }
+      }
+	},
+
+    "components": {
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "tyrannosaur" ]
+      },
+	  "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:movement.generic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:navigation.generic": {
+        "can_path_over_water": false,
+        "can_walk": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:physics": {
+        "has_gravity": true
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 1.7
+      },
+      "minecraft:fall_damage": {
+        "value": 0.3
+      },
+	  "minecraft:behavior.avoid_mob_type": {
+        "priority": 5,
+        "entity_types": [
+          {
+            "filters": {  
+              "any_of": [
+                { "test" :  "is_family", "subject" : "other", "value" :  "atv"}
+              ]
+ 			},
+            "max_dist": 10,
+            "walk_speed_multiplier": 0.7,
+            "sprint_speed_multiplier": 1.1
+          }
+        ]
+      },
+	  "minecraft:behavior.melee_attack": {
+        "priority": 1,
+        "target_dist": 1.1,
+        "track_target": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.stay_while_sitting": {
+        "priority": 0
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.7
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 12,
+        "look_distance": 6.0,
+        "probability": 0.01
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 4
+      },
+	  "minecraft:leashable": {
+        "soft_distance": 10.0,
+        "hard_distance": 14.0,
+        "max_distance": 18.0,
+        "on_leash": {
+          "event": "minecraft:on_leash",
+          "target": "self"
+        },
+        "on_unleash": {
+          "event": "minecraft:on_unleash",
+          "target": "self"
+        }
+      }
+    },
+
+    "events": {
+	  "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 8,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:trex_adult",
+				"minecraft:trex_attack",
+                "minecraft:trex_adult_wild",
+                "minecraft:trex_roar"
+              ]
+
+            }
+          },
+		  {
+            "weight": 2,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:trex_baby_wild"
+              ]
+            }
+          }
+        ]
+      },
+
+      "minecraft:entity_born": {
+        "add": {
+        "component_groups": [
+          "minecraft:trex_baby_wild"
+          ]
+        }
+      },
+
+      "minecraft:ageable_grow_up_tame": {
+        "remove": {
+          "component_groups": [ 
+            "minecraft:trex_baby_tame"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:trex_adult",
+            "minecraft:trex_adult_tame"
+          ]
+        }
+      },
+      "minecraft:hunter_mode": {
+        "remove": {
+          "component_groups": [
+            "minecraft:trex_adult_wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:trex_roar"
+          ]
+        }
+      },
+      "minecraft:ageable_grow_up_wild": {
+        "remove": {
+          "component_groups": [ 
+            "minecraft:trex_baby_wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:trex_adult",
+			"minecraft:trex_attack",
+            "minecraft:trex_adult_wild"
+          ]
+        }
+      },
+      "minecraft:on_tame_baby": {
+        "remove": {
+          "component_groups": [
+            "minecraft:trex_baby_wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:trex_baby_tame"
+          ]
+        }
+      },
+	  
+	  "minecraft:run": {
+        "remove": {
+          "component_groups": [
+            "minecraft:trex_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:trex_run"
+          ]
+        }
+      },
+      "minecraft:attack": {
+        "remove": {
+          "component_groups": [
+            "minecraft:trex_run"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:trex_attack"
+          ]
+        }
+      },
+	  
+	  "minecraft:on_leash": {
+        "add": {
+          "component_groups": [
+            "minecraft:trex_leashed"
+          ]
+        }
+      },
+      "minecraft:on_unleash": {
+        "remove": {
+          "component_groups": [
+            "minecraft:trex_leashed"
+          ]
+        }
+      }
+    }
+  }
+}

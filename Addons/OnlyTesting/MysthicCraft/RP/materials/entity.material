@@ -1,0 +1,26 @@
+{
+	"materials": {
+		"version": "1.0.0",
+		"crafting_table:entity": {},
+		"carrage:entity": {},
+		"invocation:entity": {},
+		"siren:entity_alphatest": {},
+		"gust:entity_alphatest": {},
+		"raven:entity": {},
+		"minotaur:entity": {},
+		"syclop:entity": {},
+		"forcefield:entity_alphatest": {
+			"+states": [
+				"Blending"
+			]
+		},
+		"centaur:entity_alphatest": {},
+		"werewolf:entity": {},
+		"axolotl:entity_alphatest": {},
+		"axolotl_water:entity": {
+			"+states": [
+				"Blending"
+			]
+		}
+	}
+}

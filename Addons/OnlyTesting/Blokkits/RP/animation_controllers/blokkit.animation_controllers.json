@@ -1,0 +1,67 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.blokkit.move": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"move": []
+						}
+					],
+					"transitions": [
+						{
+							"sitting": "query.is_sitting"
+						}
+					]
+				},
+				"sitting": {
+					"animations": [
+						{
+							"sitting": []
+						}
+					],
+					"transitions": [
+						{
+							"default": "!query.is_sitting"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.blokkit.attack": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"attacking": "variable.attack_time >= 0.0"
+						}
+					]
+				},
+				"attacking": {
+					"animations": [
+						{
+							"attack_rotations": []
+						}
+					],
+					"transitions": [
+						{
+							"default": "variable.attack_time < 0.0"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.blokkit.arms": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"arms": []
+						}
+					]
+				}
+			}
+		}
+	}
+}

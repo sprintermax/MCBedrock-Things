@@ -1,0 +1,31 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:car",
+      "materials": { "default": "car" },
+      "textures": {
+        "default": "textures/entity/car/car",
+        "powered": "textures/entity/car/car_powered"
+      },
+      "geometry": {
+        "default": "geometry.car"
+      },
+	  "particle_effects": {
+        "trail_effect": "car:turboboost"
+      },
+      "animations": {
+	    "car_rotate": "animation.car.rotate",
+		"car_default": "animation.car.default"
+      },
+      "animation_controllers": [
+	    { "move": "controller.animation.car.move" }
+      ],
+      "render_controllers": [ "controller.render.car" ],
+      "spawn_egg": {
+        "base_color": "#974FFF",
+        "overlay_color": "#CFF486"
+      }
+    }
+  }
+}

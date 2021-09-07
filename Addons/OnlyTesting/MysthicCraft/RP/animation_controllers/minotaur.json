@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.minotaur.default": {
+			"states": {
+				"default": {
+					"animations": [
+						{
+							"move": []
+						},
+						{
+							"look_at_target": []
+						}
+					]
+				}
+			}
+		}
+	}
+}

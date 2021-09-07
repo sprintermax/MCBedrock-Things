@@ -1,0 +1,224 @@
+{
+  "minecraft:entity": {
+    "version": 0.1,
+
+    "component_groups": {
+      "minecraft:exploding_small": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 0.5
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 1,
+          "causesFire": false
+        }
+      },
+	  "minecraft:exploding_small_medium": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 1.0
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 2,
+          "causesFire": false
+        }
+      },
+	  "minecraft:exploding_medium": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 1.5
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 4,
+          "causesFire": false
+        }
+      },
+	  "minecraft:exploding_medium_big": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 2.0
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 8,
+          "causesFire": false
+        }
+      },
+	  "minecraft:exploding_big": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 2.5
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 16,
+          "causesFire": true
+        }
+      },
+	  "minecraft:exploding_big_meteor": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 3.0
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 32,
+          "causesFire": true
+        }
+      },
+	  "minecraft:exploding_meteor": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 3.5
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 64,
+          "causesFire": true
+        }
+      },
+	  "minecraft:exploding_meteor_apocalipse": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 4.0
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 128,
+          "causesFire": true
+        }
+      },
+	  "minecraft:exploding_apocalipse": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 4.5
+        },
+		"minecraft:explode": {
+          "fuseLength": 3.0,
+          "fuseLit": true,
+          "power": 256,
+          "causesFire": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:tnt"
+      },
+      "minecraft:type_family": {
+        "family": [ "tnt" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.98
+      }
+     },
+      "events": {
+      "minecraft:entity_spawned": {
+      "randomize": [
+          {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_small"
+              ]
+            }
+          },
+          {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_small_medium"
+              ]
+            }
+          },
+		  {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_medium"
+              ]
+            }
+          },
+          {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_medium_big"
+              ]
+            }
+          },
+		  {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_big"
+              ]
+            }
+          },
+          {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_big_meteor"
+              ]
+            }
+          },
+		  {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_meteor"
+              ]
+            }
+          },
+          {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_meteor_apocalipse"
+              ]
+            }
+          },
+		  {
+            "weight": 1111,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:exploding_apocalipse"
+               ]
+             }
+           }
+         ]
+       }
+     }
+  }
+}

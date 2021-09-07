@@ -1,0 +1,76 @@
+{
+  "minecraft:entity": {
+    "version": 1,
+
+    "components": {
+    "minecraft:scale": {
+          "value": 0.49
+        },
+      "minecraft:identifier": {
+        "id": "minecraft:wither.boss"
+      },
+      "minecraft:health": {
+        "value": 600,
+        "max": 600
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 3
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/wither_boss.json"
+      },
+
+      "minecraft:movement": {
+        "value": 0.25,
+        "max": 0.25
+      },
+      "minecraft:behavior.float": {
+        "priority": 1
+      },
+      "minecraft:behavior.wither_random_attack_pos_goal": {
+        "priority": 3
+      },
+      "minecraft:wither_target_highest_damage": {
+        "priority": 1
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 2
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "entity_filter": [ "player" ],
+            "max_dist": 70,
+            "must_see": true
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_target": {
+        "priority": 5
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+
+      "minecraft:type_family": {
+        "family": [ "skeleton", "undead", "monster" ]
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+
+      }
+    }
+  }
+}

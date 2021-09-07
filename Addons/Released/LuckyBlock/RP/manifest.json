@@ -1,0 +1,25 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "Surprise!",
+        "name": "Lucky Block Texture",
+		"uuid": "20244f6c-86f8-11e8-adc0-fa7ae01bbebc",
+        "version": [3, 0, 0],
+        "min_engine_version": [1, 8, 0],
+		"pack_scope": "world"
+    },
+    "modules": [
+        {
+            "description": "Surprise!",
+            "type": "resources",
+			"uuid": "202451f6-86f8-11e8-adc0-fa7ae01bbebc",
+            "version": [3, 0, 0]
+        }
+    ],
+	"dependencies" : [
+      {
+         "uuid" : "2024532c-86f8-11e8-adc0-fa7ae01bbebc",
+         "version" : [ 3, 0, 0 ]
+      }
+   ]
+}

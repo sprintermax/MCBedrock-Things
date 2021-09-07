@@ -1,0 +1,102 @@
+{
+  "format_version":"1.8.0-beta.1",
+  "animation_controllers": {
+    "controller.animation.tyrannosaur.move": {
+      "states": {
+        "default": {
+          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "animations": {
+            "default_pose": [],
+            "look_at_target": [
+			]
+          },
+          "transitions": [
+            { "sitting" : "Entity.Flags.SITTING" }
+		  ]
+        },
+        "sitting": {
+          "animations": {
+            "sitting_pose": [],
+            "look_at_target": [
+			]
+          },
+          "transitions": [
+            { "default" : "!Entity.Flags.SITTING" }
+		  ]
+        }
+      }
+    },
+    "controller.animation.tyrannosaur.walking_animation": {
+      "states": {
+        "adult_walking": {
+          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "animations": {
+            "legs_animation": [
+              {
+                "0.0": 0.0,
+                "2.4": 1.0
+              }
+            ],
+            "walk": [
+              {
+                "0.0": 0.0,
+                "1.0": 1.0
+              }
+            ]
+          },
+          "transitions": [              
+            { "baby_walking" : "Entity.Flags.TREX_BABY_TAME" }
+		  ]
+        },
+        "baby_walking": {
+          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "animations": {
+            "legs_animation": [
+              {
+                "0.0": 0.0,
+                "0.5": 1.0
+              }
+            ],
+            "walk": [
+              {
+                "0.0": 0.0,
+                "0.5": 1.0
+              }
+            ]
+          },
+          "transitions": [              
+            { "adult_walking" : "!Entity.Flags.TREX_BABY_TAME" }
+		  ]
+        }
+      }
+    },
+    "controller.animation.tyrannosaur.roar": {
+      "states": {
+        "default": {
+          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "animations": {
+          },
+          "transitions": [
+            { "roar" : "Entity.Flags.CASTING" }
+		  ]
+        },
+        "roar": {
+          "animations": {
+            "roar": [
+			]
+          },
+          "transitions": [
+            { "default" : "!Entity.Flags.CASTING" }
+		  ]
+        }
+      }
+    },
+    "controller.animation.tyrannosaur_attack": {
+      "states": {
+        "attack": {
+          "animations": { "tyrannosaur_attack": { } }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.forcefield": {
+			"arrays": {
+				"textures": {
+					"Array.variants": [
+						"Texture.no_item",
+						"Texture.with_item"
+					]
+				}
+			},
+			"geometry": "Geometry.default",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.variants[query.variant]"
+			]
+		}
+	}
+}

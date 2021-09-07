@@ -1,0 +1,15 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "render_controllers": {
+    "controller.render.car": {
+      "arrays": {
+        "textures": {
+          "Array.skins": [ "Texture.default", "Texture.powered" ]
+        }
+      },
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Array.skins[Entity.Flags.SADDLED]" ]
+    }
+  }
+}

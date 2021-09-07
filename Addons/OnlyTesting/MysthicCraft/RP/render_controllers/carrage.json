@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"render_controllers": {
+		"controller.render.carrage": {
+			"arrays": {
+				"textures": {
+					"Array.variants": [
+						"Texture.undyed",
+						"Texture.black",
+						"Texture.red",
+						"Texture.green",
+						"Texture.brown",
+						"Texture.blue",
+						"Texture.purple",
+						"Texture.cyan",
+						"Texture.silver",
+						"Texture.gray",
+						"Texture.pink",
+						"Texture.lime",
+						"Texture.yellow",
+						"Texture.light_blue",
+						"Texture.magenta",
+						"Texture.orange",
+						"Texture.white"
+					]
+				},
+				"geometries": {
+					"Array.models": [
+						"Geometry.unchested",
+						"Geometry.chested"
+					]
+				}
+			},
+			"geometry": "Array.models[query.is_chested]",
+			"materials": [
+				{
+					"*": "Material.default"
+				}
+			],
+			"textures": [
+				"Array.variants[query.variant]"
+			]
+		}
+	}
+}

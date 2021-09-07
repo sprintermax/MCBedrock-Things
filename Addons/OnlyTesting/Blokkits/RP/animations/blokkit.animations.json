@@ -1,0 +1,97 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.blokkit.move": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"variable.tcos1",
+						0.0,
+						0.0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"variable.tcos0",
+						0.0,
+						0.0
+					]
+				},
+				"rightLeg": {
+					"rotation": [
+						"variable.tcos0 * 1.4",
+						0.0,
+						0.0
+					]
+				},
+				"leftLeg": {
+					"rotation": [
+						"variable.tcos1 * 1.4",
+						0.0,
+						0.0
+					]
+				}
+			}
+		},
+		"animation.blokkit.sitting": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"position": [
+						0.0,
+						-4.0,
+						0.0
+					]
+				},
+				"rightArm": {
+					"position": [
+						4.5,
+						-4.0,
+						0.0
+					]
+				},
+				"leftArm": {
+					"position": [
+						-4.5,
+						-4.0,
+						0.0
+					]
+				},
+				"rightLeg": {
+					"position": [
+						0.0,
+						0.5,
+						0.0
+					]
+				},
+				"leftLeg": {
+					"position": [
+						0.0,
+						0.5,
+						0.0
+					]
+				}
+			}
+		},
+		"animation.blokkit.arms": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						0.0,
+						0.0,
+						"(Math.cos(query.life_time * 103.2) * 2.865) + 2.865"
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						0.0,
+						0.0,
+						"-((Math.cos(query.life_time * 103.2) * 2.865) + 2.865)"
+					]
+				}
+			}
+		}
+	}
+}

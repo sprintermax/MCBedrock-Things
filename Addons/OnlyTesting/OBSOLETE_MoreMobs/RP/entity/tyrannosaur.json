@@ -1,0 +1,44 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "gona:tyrannosaur",
+      "materials": { "default": "tyrannosaur" },
+      "textures": {
+        "default": "textures/entity/tyrannosaur/default"
+      },
+      "geometry": {
+        "default": "geometry.tyrannosaur"
+      },
+      "scripts": {
+        "pre_animation": [
+          "Entity.attack = Math.sin(1.0 - (1.0 - Entity.AttackTime * 2) * (1.0 - Entity.AttackTime * 2)) * 45.0;",
+          "Entity.attack2 = Math.sin(Entity.AttackTime * 45.0);"
+        ]
+      },
+      "animations": {
+        "default_pose": "animation.tyrannosaur.default_pose",
+        "sitting_pose": "animation.tyrannosaur.sitting_pose",
+        "walk": "animation.tyrannosaur.walk",
+        "legs_animation": "animation.tyrannosaur.legs_animation",
+        "look_at_target": "animation.tyrannosaur.look_at_target",
+        "roar": "animation.tyrannosaur.roar",
+        "tyrannosaur_attack": "animation.tyrannosaur_attack"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.tyrannosaur.move" },
+        { "roar": "controller.animation.tyrannosaur.roar" },
+        { "walking_animation": "controller.animation.tyrannosaur.walking_animation" },
+        { "tyrannosaur_attack": "controller.animation.tyrannosaur_attack" }
+      ],
+      "render_controllers": [ "controller.render.tyrannosaur" ],
+      "locators": {
+        "lead": { "head": [ 0.0, 20.0, -8.0 ] }
+      },
+      "spawn_egg": {
+        "base_color": "#8B4513",
+        "overlay_color": "#F4A460"
+      }
+    }
+  }
+}

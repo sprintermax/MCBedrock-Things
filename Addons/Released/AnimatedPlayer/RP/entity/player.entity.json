@@ -1,0 +1,119 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:player",
+      "materials": {
+        "default": "entity_alphatest",
+        "cape": "entity",
+        "animated": "player_animated"
+      },
+      "textures": {
+        "default": "textures/entity/steve",
+        "cape": "textures/entity/cape_invisible"
+      },
+      "geometry": {
+        "custom_default": "geometry.custom_player",
+        "cape": "geometry.cape"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos1 = -variable.tcos0;",
+          "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 11.5;",
+          "variable.one_minus_attack_time = 1 - variable.attack_time;",
+          "variable.attack_internal = 1 - Math.pow(variable.one_minus_attack_time, 4);",
+          "variable.attack = Math.sin(variable.attack_internal * 180);",
+          "variable.attack2 = Math.sin(variable.attack_time * 180);",
+          "variable.helmet_layer_visible = 1.0;",
+          "variable.leg_layer_visible = 1.0;",
+          "variable.boot_layer_visible = 1.0;",
+          "variable.chest_layer_visible = 1.0;",
+          "variable.is_third_person = !variable.is_first_person || variable.is_paperdoll;",
+          "variable.first_person_rotation_factor = Math.sin(variable.one_minus_attack_time * 180.0);",
+          "variable.delta_hand_bob = query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0;",
+          "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + (variable.delta_hand_bob - variable.hand_bob) * 0.02;",
+
+          "variable.hand_attack_x_position = Math.sin(variable.first_person_rotation_factor * variable.attack_time * 112.0);",
+          "variable.hand_attack_y_position = Math.sin(variable.first_person_rotation_factor * variable.one_minus_attack_time * variable.one_minus_attack_time * 200.0);",
+          "variable.hand_attack_z_position = Math.sin(variable.first_person_rotation_factor * variable.attack_time * 120.0);",
+
+          "variable.map_angle = Math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
+          "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
+
+          "variable.sleep_x = 24.0 * math.cos(query.body_y_rotation);",
+          "variable.sleep_y = 24.0 * math.sin(query.body_y_rotation);"
+        ],
+        "animate": [
+          "particle_controller",
+		  { "humanoid_base_pose": "variable.is_third_person" },
+          { "base_controller": "variable.is_third_person" },
+		  { "attack_controller": "variable.is_third_person && variable.attack_time > 0 && !query.is_swimming && !query.is_gliding && (query.is_on_ground || query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword')" },
+          { "first_person_attack_controller": "!variable.is_third_person && variable.attack_time > 0.0f && query.get_equipped_item_name != 'map'" },
+          { "first_person_base_pose": "!variable.is_third_person && query.get_equipped_item_name != 'map'" },
+          { "first_person_walk": "!variable.is_third_person && variable.bob_animation" },
+          { "first_person_map_controller": "!variable.is_third_person && (query.get_equipped_item_name == 'map' || query.get_equipped_item_name('off_hand') == 'map')" },
+          { "first_person_crossbow_equipped": "!variable.is_third_person && query.get_equipped_item_name == 'crossbow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0)" }
+        ]
+      },
+	  "particle_effects": {
+        "sword_swipe": "animatedplayer:sword_swipe"
+      },
+      "animations": {
+        "base_controller": "controller.animation.player.base",
+		"attack_controller": "controller.animation.player.custom_attack",
+		"particle_controller": "controller.animation.player.attack_swipe",
+        "humanoid_base_pose": "animation.player.base_pose",
+        "look_at_target": "controller.animation.player.look_at_target",
+        "look_at_target_ui": "animation.player.look_at_target.ui",
+        "look_at_target_default": "animation.player.look_at_target.default",
+        "look_at_target_gliding": "animation.player.look_at_target.gliding",
+        "look_at_target_swimming": "animation.player.look_at_target.swimming",
+        "paperdoll_walk": "animation.player.paperdoll.walk",
+		"cape": "animation.player.cape",
+		"move.customwalk": "animation.player.customwalk_forward",
+		"move.customfly": "animation.player.customfly",
+		"move.customglide": "animation.player.customglide",
+        "swimming": "animation.player.swim",
+        "swimming.legs": "animation.player.swim.legs",
+		"smallblock_crouch": "animation.player.smallblock_crouch",
+        "riding.arms": "animation.player.riding.arms",
+        "riding.legs": "animation.player.riding.legs",
+        "holding": "animation.player.holding",
+        "brandish_spear": "animation.player.brandish_spear",
+        "charging": "animation.player.charging",
+        "hand_attack": "animation.player.attack_hand",
+		"sword_attack": "animation.player.attack_sword",
+		"other_attack": "animation.player.other_attack",
+		"tool_attack": "animation.player.attack_tool",
+        "sneaking": "animation.player.sneaking",
+        "bob": "animation.player.bob",
+        "damage_nearby_mobs": "animation.player.damage_nearby_mobs",
+        "bow_and_arrow": "animation.player.bow_and_arrow",
+        "use_item_progress": "animation.player.use_item_progress",
+        "skeleton_attack": "animation.skeleton.attack",
+        "sleeping": "animation.player.sleeping",
+        "first_person_base_pose": "animation.player.first_person.base_pose",
+        "first_person_attack_controller": "controller.animation.player.first_person_attack",
+        "first_person_attack_rotation": "animation.player.first_person.attack_rotation",
+        "first_person_vr_attack_rotation": "animation.player.first_person.vr_attack_rotation",
+        "first_person_walk": "animation.player.first_person.walk",
+		"first_person_hands": "animation.player.first_person.hands",
+        "first_person_map_controller": "controller.animation.player.first_person_map",
+        "first_person_map_hold": "animation.player.first_person.map_hold",
+        "first_person_map_hold_attack": "animation.player.first_person.map_hold_attack",
+        "first_person_map_hold_off_hand": "animation.player.first_person.map_hold_off_hand",
+        "first_person_map_hold_main_hand": "animation.player.first_person.map_hold_main_hand",
+        "first_person_crossbow_equipped": "animation.player.first_person.crossbow_equipped",
+        "third_person_crossbow_equipped": "animation.player.crossbow_equipped",
+        "third_person_bow_equipped": "animation.player.bow_equipped",
+        "crossbow_hold": "animation.player.crossbow_hold",
+        "crossbow_controller": "controller.animation.player.crossbow",
+        "shield_block_main_hand": "animation.player.shield_block_main_hand",
+        "shield_block_off_hand": "animation.player.shield_block_off_hand"
+      },
+      "render_controllers": [ "controller.render.player" ],
+      "enable_attachables": false
+    }
+  }
+}

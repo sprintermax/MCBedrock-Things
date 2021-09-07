@@ -1,0 +1,1023 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "luckyblock:lucky_block",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": false
+      }
+    },
+    "component_groups": {
+      "action0": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot0.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action1": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot1.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action2": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot2.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action3": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot3.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action4": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot4.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action5": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot5.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action6": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot6.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action7": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot7.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+      "action8": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action8.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action9": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action9.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action10": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action10.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action11": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action11.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action12": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action12.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action13": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action13.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action14": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action14.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action15": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action15.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action16": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action16.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action17": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action17.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action18": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action18.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action19": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action19.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action20": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action20.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+      "action21": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot8.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action22": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot9.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action23": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot10.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action24": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot11.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action25": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot12.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action26": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot13.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action27": {
+        "minecraft:loot": {
+          "table": "loot_tables/entities/loot14.json"
+        },
+		"minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action28": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action28.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+	  "action29": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action29.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+	  "action30": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action30.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 3,
+          "max": 3
+        }
+      },
+	  "action31": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action31.1"
+            }
+          }
+        ],
+        "minecraft:health": {
+          "value": 1,
+          "max": 1
+        }
+      },
+	  "action32": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "event": "action32.1"
+            }
+          }
+        ],
+		"minecraft:behavior.nearest_attackable_target": {
+        "entity_types": [
+          {
+            "filters": { }
+          }
+        ]
+      },
+        "minecraft:health": {
+          "value": 100,
+          "max": 100
+        }
+      },
+      "action8.1": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "power": 3,
+          "causesFire": false
+        }
+      },
+      "action9.1": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "power": 6,
+          "causesFire": true
+        }
+      },
+      "action10.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:cow"
+        }
+      },
+      "action11.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:sheep"
+        }
+      },
+      "action12.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:villager"
+        }
+      },
+      "action13.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:tnt"
+        }
+      },
+      "action14.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:creeper"
+        }
+      },
+      "action15.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:wither.boss"
+        }
+      },
+      "action16.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:snowgolem"
+        }
+      },
+      "action17.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:witch"
+        }
+      },
+      "action18.1": {
+        "minecraft:projectile": {
+          "onHit": {
+            "spawn_aoe_cloud": {
+              "radius": 5.0,
+              "radius_on_use": 0,
+              "potion": 23,
+              "particle": "portal",
+              "duration": 25,
+              "color": [ 0, 0, 0 ],
+              "affect_owner": false
+            },
+            "remove_on_hit": { }
+          },
+          "power": 0.0,
+          "gravity": 0.05,
+          "inertia": 1,
+          "anchor": 2,
+          "offset": [ 0, 0, 0 ],
+          "semirandomdiffdamage": true,
+          "uncertaintyBase": 5.0,
+          "reflectOnHurt": false
+        }
+      },
+      "action19.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:endercrystal"
+        }
+      },
+      "action20.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:guardian.elder"
+        }
+      },
+	  "action28.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:shulker"
+        }
+      },
+	  "action29.1": {
+        "minecraft:transformation": {
+          "into": "minecraft:husk"
+        }
+      },
+	  "action30.1": {
+	    "minecraft:projectile": {
+          "onHit": {
+            "spawn_aoe_cloud": {
+              "radius": 5.0,
+              "radius_on_use": 0,
+              "potion": 30,
+              "particle": "portal",
+              "duration": 25,
+              "color": [ 0, 0, 0 ],
+              "affect_owner": false
+            },
+            "remove_on_hit": { }
+          },
+          "power": 0.0,
+          "gravity": 0.05,
+          "inertia": 1,
+          "anchor": 2,
+          "offset": [ 0, 0, 0 ],
+          "semirandomdiffdamage": true,
+          "uncertaintyBase": 5.0,
+          "reflectOnHurt": false
+        }
+      },
+	  "action31.1": {
+	    "minecraft:spawn_entity": {
+          "min_wait_time": 0,
+          "max_wait_time": 0,
+          "spawn_entity": "vex"
+        }
+      },
+	  "action32.1": {
+	    "minecraft:behavior.summon_entity": {
+
+        "summon_choices": [
+          {
+            "min_activation_range": 0.0,
+            "max_activation_range": 16.0,
+            "cooldown_time": 0.0,
+            "weight": 3,
+            "cast_duration": 0.0,
+            "particle_color": "#FF664D59",
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0,
+                "delay_per_summon": 0.0,
+                "num_entities_spawned": 2,
+                "entity_type": "minecraft:evocation_fang",
+                "size": 0.0,
+                "entity_lifespan": 0.2
+              },
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0.2,
+                "delay_per_summon": 0.0,
+                "num_entities_spawned": 4,
+                "entity_type": "minecraft:evocation_fang",
+                "size": 1.0,
+                "entity_lifespan": 1.1
+              },
+			  {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0.2,
+                "delay_per_summon": 0.0,
+                "num_entities_spawned": 8,
+                "entity_type": "minecraft:evocation_fang",
+                "size": 2.0,
+                "entity_lifespan": 1.1
+              },
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0.2,
+                "delay_per_summon": 0.0,
+                "num_entities_spawned": 16,
+                "entity_type": "minecraft:evocation_fang",
+                "size": 3.0,
+                "entity_lifespan": 1.1
+              },
+			  {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 0.2,
+                "delay_per_summon": 0.0,
+                "num_entities_spawned": 32,
+                "entity_type": "minecraft:evocation_fang",
+                "size": 4.0,
+                "entity_lifespan": 1.1
+              }
+            ]
+          }
+        ]
+      },
+	  "minecraft:behavior.swell": {
+        "start_distance": 128.0,
+        "stop_distance": 128.0
+      },
+	  "minecraft:transformation": {
+          "into": "minecraft:splash_potion",
+          "delay": {
+            "value": 1
+          }
+        }
+      }
+    },
+    "components": {
+	  "minecraft:type_family": {
+        "family": [ "luckyblock" ]
+      },
+	  "minecraft:navigation.walk": {
+      },
+      "minecraft:movement.basic": {
+      },
+	  "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:movement": {
+        "value": 0,
+        "max": 0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100,
+        "max": 100
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 75,
+            "add": {
+              "component_groups": [
+                "action0"
+              ]
+            }
+          },
+          {
+            "weight": 75,
+            "add": {
+              "component_groups": [
+                "action1"
+              ]
+            }
+          },
+          {
+            "weight": 50,
+            "add": {
+              "component_groups": [
+                "action2"
+              ]
+            }
+          },
+          {
+            "weight": 60,
+            "add": {
+              "component_groups": [
+                "action3"
+              ]
+            }
+          },
+          {
+            "weight": 41,
+            "add": {
+              "component_groups": [
+                "action4"
+              ]
+            }
+          },
+          {
+            "weight": 65,
+            "add": {
+              "component_groups": [
+                "action5"
+              ]
+            }
+          },
+          {
+            "weight": 55,
+            "add": {
+              "component_groups": [
+                "action6"
+              ]
+            }
+          },
+          {
+            "weight": 70,
+            "add": {
+              "component_groups": [
+                "action7"
+              ]
+            }
+          },
+          {
+            "weight": 45,
+            "add": {
+              "component_groups": [
+                "action8"
+              ]
+            }
+          },
+          {
+            "weight": 40,
+            "add": {
+              "component_groups": [
+                "action9"
+              ]
+            }
+          },
+          {
+            "weight": 65,
+            "add": {
+              "component_groups": [
+                "action10"
+              ]
+            }
+          },
+          {
+            "weight": 65,
+            "add": {
+              "component_groups": [
+                "action11"
+              ]
+            }
+          },
+          {
+            "weight": 65,
+            "add": {
+              "component_groups": [
+                "action12"
+              ]
+            }
+          },
+          {
+            "weight": 38,
+            "add": {
+              "component_groups": [
+                "action13"
+              ]
+            }
+          },
+          {
+            "weight": 56,
+            "add": {
+              "component_groups": [
+                "action14"
+              ]
+            }
+          },
+          {
+            "weight": 3,
+            "add": {
+              "component_groups": [
+                "action15"
+              ]
+            }
+          },
+          {
+            "weight": 60,
+            "add": {
+              "component_groups": [
+                "action16"
+              ]
+            }
+          },
+          {
+            "weight": 55,
+            "add": {
+              "component_groups": [
+                "action17"
+              ]
+            }
+          },
+          {
+            "weight": 50,
+            "add": {
+              "component_groups": [
+                "action18"
+              ]
+            }
+          },
+          {
+            "weight": 51,
+            "add": {
+              "component_groups": [
+                "action19"
+              ]
+            }
+          },
+          {
+            "weight": 48,
+            "add": {
+              "component_groups": [
+                "action20"
+              ]
+            }
+          },
+          {
+            "weight": 60,
+            "add": {
+              "component_groups": [
+                "action21"
+              ]
+            }
+          },
+		  {
+            "weight": 63,
+            "add": {
+              "component_groups": [
+                "action22"
+              ]
+            }
+          },
+		  {
+            "weight": 41,
+            "add": {
+              "component_groups": [
+                "action23"
+              ]
+            }
+          },
+		  {
+            "weight": 68,
+            "add": {
+              "component_groups": [
+                "action24"
+              ]
+            }
+          },
+		  {
+            "weight": 45,
+            "add": {
+              "component_groups": [
+                "action25"
+              ]
+            }
+          },
+		  {
+            "weight": 58,
+            "add": {
+              "component_groups": [
+                "action26"
+              ]
+            }
+          },
+		  {
+            "weight": 63,
+            "add": {
+              "component_groups": [
+                "action27"
+              ]
+            }
+          },
+		  {
+            "weight": 57,
+            "add": {
+              "component_groups": [
+                "action28"
+              ]
+            }
+          },
+		  {
+            "weight": 58,
+            "add": {
+              "component_groups": [
+                "action29"
+              ]
+            }
+          },
+		  {
+            "weight": 55,
+            "add": {
+              "component_groups": [
+                "action30"
+              ]
+            }
+          },
+		  {
+            "weight": 36,
+            "add": {
+              "component_groups": [
+                "action31"
+              ]
+            }
+          },
+		  {
+            "weight": 43,
+            "add": {
+              "component_groups": [
+                "action32"
+              ]
+            }
+          }
+        ]
+      },
+      "action8.1": {
+        "add": {
+          "component_groups": [
+            "action8.1"
+          ]
+        }
+      },
+      "action9.1": {
+        "add": {
+          "component_groups": [
+            "action9.1"
+          ]
+        }
+      },
+      "action10.1": {
+        "add": {
+          "component_groups": [
+            "action10.1"
+          ]
+        }
+      },
+      "action11.1": {
+        "add": {
+          "component_groups": [
+            "action11.1"
+          ]
+        }
+      },
+      "action12.1": {
+        "add": {
+          "component_groups": [
+            "action12.1"
+          ]
+        }
+      },
+      "action13.1": {
+        "add": {
+          "component_groups": [
+            "action13.1"
+          ]
+        }
+      },
+      "action14.1": {
+        "add": {
+          "component_groups": [
+            "action14.1"
+          ]
+        }
+      },
+      "action15.1": {
+        "add": {
+          "component_groups": [
+            "action15.1"
+          ]
+        }
+      },
+      "action16.1": {
+        "add": {
+          "component_groups": [
+            "action16.1"
+          ]
+        }
+      },
+      "action17.1": {
+        "add": {
+          "component_groups": [
+            "action17.1"
+          ]
+        }
+      },
+      "action18.1": {
+        "add": {
+          "component_groups": [
+            "action18.1"
+          ]
+        }
+      },
+      "action19.1": {
+        "add": {
+          "component_groups": [
+            "action19.1"
+          ]
+        }
+      },
+      "action20.1": {
+        "add": {
+          "component_groups": [
+            "action20.1"
+          ]
+        }
+      },
+	  "action28.1": {
+        "add": {
+          "component_groups": [
+            "action28.1"
+          ]
+        }
+      },
+	  "action29.1": {
+        "add": {
+          "component_groups": [
+            "action29.1"
+          ]
+        }
+      },
+	  "action30.1": {
+        "add": {
+          "component_groups": [
+            "action30.1"
+          ]
+        }
+      },
+	  "action31.1": {
+        "add": {
+          "component_groups": [
+            "action31.1"
+          ]
+        }
+      },
+	  "action32.1": {
+        "add": {
+          "component_groups": [
+            "action32.1"
+          ]
+        }
+      }
+    }
+  }
+}

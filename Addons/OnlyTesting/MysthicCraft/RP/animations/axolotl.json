@@ -1,0 +1,73 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.axolotl.ground_move": {
+			"anim_time_update": "query.walk_position",
+			"loop": true,
+			"bones": {
+				"leg_d": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * 57.3 + 90) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				},
+				"leg_b": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * 57.3) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				},
+				"leg_c": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * 57.3) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				},
+				"leg_a": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * 57.3 + 90) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				}
+			}
+		},
+		"animation.axolotl.move": {
+			"anim_time_update": "query.walk_position",
+			"loop": true,
+			"bones": {
+				"leg_d": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * 57.3 + 90) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				},
+				"leg_b": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * -57.3 + 90) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				},
+				"leg_c": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * -57.3 + 60) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				},
+				"leg_a": {
+					"rotation": [
+						"-this",
+						"Math.clamp(Math.cos(global.anim_time * 57.3 + 60) * global.anim_speed * 57.3, -90.0, 90.0) - this",
+						"-this"
+					]
+				}
+			}
+		}
+	}
+}

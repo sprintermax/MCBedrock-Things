@@ -1,0 +1,77 @@
+{
+  "minecraft:entity": {
+    "version": 1,
+
+    "components": {
+    "minecraft:scale": {
+          "value": 0.70
+        },
+      "minecraft:identifier": {
+        "id": "minecraft:skeleton.wither"
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:collision_box": {
+        "width": 0.72,
+        "height": 2.535
+      },
+      "minecraft:attack": {
+				"damage": 4
+			},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/wither_skeleton.json"
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/wither_skeleton_gear.json"
+      },
+      "minecraft:movement": {
+        "value": 0.25,
+        "max": 0.25
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "entity_filter": [ "player" ],
+            "max_dist": 16,
+            "must_see": true
+          }
+        ]
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "target_dist": 1.2,
+        "speed_multiplier": 1.25,
+        "track_target": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:type_family": {
+        "family": [ "wither", "monster" ]
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+
+      }
+    }
+  }
+}

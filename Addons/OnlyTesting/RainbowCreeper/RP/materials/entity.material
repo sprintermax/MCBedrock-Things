@@ -1,0 +1,15 @@
+{
+  "materials": {
+	"version": "1.0.0",
+	"uvanim_entity:entity_alphatest": {
+      "+defines": [ "USE_UV_ANIM" ],
+      "+samplerStates": [
+        {
+          "samplerIndex": 0,
+          "textureWrap": "Repeat"
+        }
+      ]
+	},
+	"creeper_alphatest:entity_alphatest": {}
+  }
+}

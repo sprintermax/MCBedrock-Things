@@ -1,0 +1,28 @@
+{
+  "format_version":"1.8.0-beta.1",
+  "animations": {
+    "animation.ant.default_pose": {
+      "loop": true,
+      "bones": {
+        "rightLegLower0": { "rotation": [ 0.0, 0.0, -30.0 ] },
+        "rightLegLower1": { "rotation": [ 0.0, 0.0, -30.0 ] },
+        "rightLegLower2": { "rotation": [ 0.0, 0.0, -30.0 ] },
+        "leftLegLower0": { "rotation": [ 0.0, 0.0, 30.0 ] },
+        "leftLegLower1": { "rotation": [ 0.0, 0.0, 30.0 ] },
+        "leftLegLower3": { "rotation": [ 0.0, 0.0, 30.0 ] }
+      }
+    },
+	"animation.ant.walk": {
+      "anim_time_update": "Entity.Member.WalkPosition",
+      "loop": true,
+      "bones": {
+        "rightLegLower0": { "rotation": [ 0.0, "-Math.abs(Math.cos(Params.AnimTime * 100.34 + 90 * 0) * 22.92)", "Math.abs(Math.sin(Params.AnimTime * 38.17 + 90 * 0) * 22.92)" ] },
+        "rightLegLower1": { "rotation": [ 0.0, "Math.abs(Math.cos(Params.AnimTime * 100.34 + 90 * 0) * 22.92)", "-Math.abs(Math.sin(Params.AnimTime * 38.17 + 90 * 0) * 22.92)" ] },
+        "rightLegLower2": { "rotation": [ 0.0, "-Math.abs(Math.cos(Params.AnimTime * 100.34 + 90 * 1) * 22.92)", "Math.abs(Math.sin(Params.AnimTime * 38.17 + 90 * 1) * 22.92)" ] },
+        "leftLegLower0": { "rotation": [ 0.0, "-Math.abs(Math.cos(Params.AnimTime * 100.34 + 90 * 2) * 22.92)", "Math.abs(Math.sin(Params.AnimTime * 38.17 + 90 * 2) * 22.92)" ] },
+        "leftLegLower2": { "rotation": [ 0.0, "-Math.abs(Math.cos(Params.AnimTime * 100.34 + 90 * 3) * 22.92)", "Math.abs(Math.sin(Params.AnimTime * 38.17 + 90 * 3) * 22.92)" ] },
+        "leftLegLower3": { "rotation": [ 0.0, "Math.abs(Math.cos(Params.AnimTime * 100.34 + 90 * 3) * 22.92)", "-Math.abs(Math.sin(Params.AnimTime * 38.17 + 90 * 3) * 22.92)" ] }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "More Mobs Addon",
+        "name": "MoreMobs",
+		"uuid": "ee532be8-ce05-11e8-a8d5-f2801f1b9fd1",
+        "version": [1, 8, 0]
+    },
+    "modules": [
+        {
+            "description": "MoreMobs",
+            "type": "data",
+			"uuid": "ee532e7c-ce05-11e8-a8d5-f2801f1b9fd1",
+            "version": [1, 8, 0]
+        }
+    ],
+    "dependencies": [
+        {
+			"uuid": "ee533160-ce05-11e8-a8d5-f2801f1b9fd1",
+            "version": [1, 8, 0]
+        }
+    ]
+}

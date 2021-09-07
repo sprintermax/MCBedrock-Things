@@ -1,0 +1,146 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "mystic:syclop",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": true
+    },
+
+    "component_groups": {
+		"mystic:ranged_mode": {
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval_min": 1,
+          "attack_interval_max": 3,
+          "attack_radius": 12
+        },
+        "minecraft:shooter": {
+          "def": "mystic:gust"
+        },
+        "minecraft:environment_sensor": {
+          "on_environment": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": false
+            },
+            "event": "mystic:turn_melee"
+          }
+        }
+      },
+	  "mystic:melee_mode": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1.15,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 4,
+		  "effect_name": "nausea",
+        "effect_duration": 10
+        },
+        "minecraft:environment_sensor": {
+          "on_environment": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "mystic:turn_ranged"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "syclop" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:navigation.walk": {},
+	  "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:health": {
+        "value": 25,
+        "max": 25
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:attack": {
+        "damage": 3
+      },
+	  "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 16
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/mystic/loot/syclop.json"
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:physics": {
+      }
+    },
+	"events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "mystic:melee_mode"
+          ]
+        }
+      },
+      "mystic:turn_melee": {
+        "remove": { "component_groups": [ "mystic:ranged_mode" ] },
+        "add": { "component_groups": [ "mystic:melee_mode" ] }
+      },
+      "mystic:turn_ranged": {
+        "remove": { "component_groups": [ "mystic:melee_mode" ] },
+        "add": { "component_groups": [ "mystic:ranged_mode" ] }
+      }
+    }
+  }
+}

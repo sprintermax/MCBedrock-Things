@@ -1,0 +1,37 @@
+﻿## Comments can be added anywhere on a valid line by starting with '##'
+##
+## Note, trailing spaces will NOT be trimmed. If you want room between the end of the string and the start of a
+## comment on the same line, use TABs.
+
+## Spawn Eggs
+item.spawn_egg.entity.mystic:crafting_table.name=Custom Crafting Table
+item.spawn_egg.entity.mystic:carrage.name=Carrage
+item.spawn_egg.entity.mystic:raven.name=Spawn Raven
+item.spawn_egg.entity.mystic:axolotl.name=Spawn Axolotl
+item.spawn_egg.entity.mystic:minotaur.name=Spawn Minotaur
+item.spawn_egg.entity.mystic:centaur.name=Spawn Centaur
+item.spawn_egg.entity.mystic:siren.name=Siren
+item.spawn_egg.entity.mystic:invocation.name=Invocation Table
+item.spawn_egg.entity.mystic:forcefield.name=Force Field Block
+item.spawn_egg.entity.mystic:werewolf.name=Werewolf
+
+## Entities
+entity.mystic:crafting_table.name=Custom Crafting Table
+entity.mystic:carrage.name=Carrage
+entity.mystic:raven.name=Raven
+entity.mystic:axolotl.name=Axolotl
+entity.mystic:minotaur.name=Minotaur
+entity.mystic:centaur.name=Centaur
+entity.mystic:siren.name=Siren
+entity.mystic:raven.invocation=Invocation Table
+entity.mystic:raven.forcefield=Force Field
+
+## Interface and UI
+mystic.interact.deactivate=Deactivate
+mystic.interact.activate=Activate
+mystic.interact.equipchest=Equip Chest
+mystic.interact.ride.carrage=Board Carrage
+
+## Blocks
+
+## Items

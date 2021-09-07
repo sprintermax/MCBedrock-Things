@@ -1,0 +1,46 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "mystic:syclop",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "syclop"
+      },
+      "textures": {
+        "default": "textures/entity/syclop/syclop"
+      },
+      "geometry": {
+        "default": "geometry.syclop"
+      },
+      // "scripts": {
+      //   "pre_animation": [
+      //     "variable.tcos0 = (Math.cos(global.anim_pos * 38.17) * global.anim_speed / variable.gliding_speed_value) * 57.3;",
+      //     "variable.tcos1 = -variable.tcos0;"
+      //   ]
+      // },
+      "animations": {
+        "look_at_target": "animation.syclop.look_at_target",
+        "move": "animation.syclop.move",
+        "bob": "animation.syclop.bob"
+      },
+      "animation_controllers": [
+        {
+          "look_at_target": "controller.animation.syclop.look_at_target"
+        },
+        {
+          "move": "controller.animation.syclop.move"
+        },
+        {
+          "bob": "controller.animation.syclop.bob"
+        }
+      ],
+      "render_controllers": ["controller.render.syclop"],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#CBCAB2",
+        "overlay_color": "#A79C8B"
+      }
+    }
+  }
+}

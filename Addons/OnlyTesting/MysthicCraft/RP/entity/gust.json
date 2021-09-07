@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "mystic:gust",
+      "materials": { "default": "gust" },
+      "textures": {
+        "default": "textures/entity/syclop/gust"
+      },
+      "geometry": {
+        "default": "geometry.gust"
+      },
+      "animations": {
+        "spin": "animation.gust.spin"
+      },
+      "particle_effects": {
+        "dust_smoke": "mystic:dust_smoke"
+      },
+      "animation_controllers": [
+        { "spin": "controller.animation.gust.spin" }
+      ],
+      "render_controllers": [ "controller.render.gust" ]
+    }
+  }
+}

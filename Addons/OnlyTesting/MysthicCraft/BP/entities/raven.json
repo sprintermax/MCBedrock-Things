@@ -1,0 +1,123 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mystic:raven",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": true
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"raven"
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/mystic/loot/raven.json"
+			},
+			"minecraft:nameable": {},
+			"minecraft:health": {
+				"value": 6,
+				"max": 6
+			},
+			"minecraft:attack": {
+				"damage": 2
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": 0,
+				"breathesAir": true,
+				"breathesWater": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.5,
+				"height": 0.5
+			},
+			"minecraft:movement": {
+				"value": 1.2
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 0,
+				"max_dist": 16.0,
+				"ignore_visibility": true,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "ocelot"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "cat"
+								}
+							]
+						},
+						"max_dist": 16,
+						"walk_speed_multiplier": 1,
+						"sprint_speed_multiplier": 1
+					}
+				]
+			},
+			"minecraft:jump.static": {},
+			"minecraft:can_fly": {
+				"value": true
+			},
+			"minecraft:fall_damage": {
+				"value": 0.0
+			},
+			"minecraft:behavior.swoop_attack": {
+				"priority": 0,
+				"delay_range": [
+					2.5,
+					7.5
+				]
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 1,
+				"speed_multiplier": 1.0
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 6
+			},
+			"minecraft:navigation.fly": {
+				"can_path_over_water": false,
+				"avoid_water": true,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.fly": {},
+			"minecraft:physics": {},
+			"minecraft:behavior.float": {
+				"priority": 0
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 1,
+				"look_distance": 8.0
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 1,
+				"within_radius": 16,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						"max_dist": 32
+					}
+				],
+				"must_see": false,
+				"must_see_forget_duration": 0.5,
+				"scan_interval": 20,
+				"target_search_height": 80.0
+			}
+		}
+	}
+}

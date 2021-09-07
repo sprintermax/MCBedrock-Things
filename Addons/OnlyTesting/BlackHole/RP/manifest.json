@@ -1,0 +1,41 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Black Hole Test",
+		"name": "Black Hole Test",
+		"uuid": "d6679769-88a2-4306-beef-f98ed0db433a",
+		"version": [
+			0,
+			0,
+			1
+		],
+		"pack_scope": "world",
+		"min_engine_version": [
+			1,
+			13,
+			0
+		]
+	},
+	"modules": [
+		{
+			"description": "Example vanilla resource pack",
+			"type": "resources",
+			"uuid": "131f93ff-7345-4d71-9b51-9b8dd2030616",
+			"version": [
+				0,
+				0,
+				1
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "1b6f5f57-cf01-4c56-9238-e8b7cda4d527",
+			"version": [
+				0,
+				0,
+				1
+			]
+		}
+	]
+}

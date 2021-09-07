@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "luckyblock:lucky_block",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_underwater": {},
+        "minecraft:weight": {
+          "default": 20
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1,
+          "event":"entity_born",
+          "event_skip_count": 2
+        }
+      }
+    ]
+  }
+}

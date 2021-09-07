@@ -1,0 +1,25 @@
+﻿## Spawn Eggs
+
+item.spawn_egg.entity.blokkit:diamond_blokkit.name=Diamond Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:gold_blokkit.name=Gold Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:iron_blokkit.name=Iron Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:grass_blokkit.name=Grass Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:stone_blokkit.name=Stone Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:wood_blokkit.name=Wood Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:tnt_blokkit.name=TNT Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:super_blokkit.name=Super Blokkit Spawn Egg
+item.spawn_egg.entity.blokkit:magma_blokkit.name=Magma Blokkit Spawn Egg
+
+## Entities
+
+entity.blokkit:diamond_blokkit.name=Diamond Blokkit
+entity.blokkit:gold_blokkit.name=Gold Blokkit
+entity.blokkit:iron_blokkit.name=Iron Blokkit
+entity.blokkit:grass_blokkit.name=Grass Blokkit
+entity.blokkit:stone_blokkit.name=Stone Blokkit
+entity.blokkit:wood_blokkit.name=Wood Blokkit
+entity.blokkit:tnt_blokkit.name=TNT Blokkit
+entity.blokkit:super_blokkit.name=Super Blokkit
+entity.blokkit:magma_blokkit.name=Magma Blokkit
+
+## Interface and UI

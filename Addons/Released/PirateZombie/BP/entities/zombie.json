@@ -1,0 +1,152 @@
+{
+  "minecraft:entity": {
+    "format_version": 0.1,
+
+    "component_groups": {
+      "minecraft:zombie_baby": {
+        "minecraft:is_baby": { },
+        "minecraft:scale": {
+          "value": 0.5
+        },
+        "minecraft:movement": {
+          "value": 0.35,
+          "max": 0.35
+        }
+      },
+
+      "minecraft:zombie_adult": {
+        "minecraft:movement": {
+          "value": 0.23,
+          "max": 0.23
+        },
+        "minecraft:burns_in_daylight": {
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/zombie.json"
+        },
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "zombie"
+          ],
+          "seats": {
+            "position": [ 0.0, 0.9, -0.25 ],
+            "lock_rider_rotation": 0
+          }
+        }
+      },
+
+      "minecraft:zombie_jockey": {
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:identifier": {
+        "id": "minecraft:zombie"
+      },
+      "minecraft:nameable": {
+      },
+
+      // Zombie Components
+      "minecraft:type_family": {
+        "family": [ "zombie", "undead", "monster" ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:health": {
+        "value": 25,
+        "max": 25
+      },
+      "minecraft:attack": {
+        "damage": 5
+      },
+
+      // Zombie Behaviors
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.break_door": {
+        "priority": 1
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 3
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 4,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 5,
+        "within_radius": 25,
+        "entity_types": [
+          {
+            "filters": { "other_with_families": [ "player", "irongolem", "snowgolem", "villager" ] },
+            "max_dist": 35
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 380,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:zombie_adult"
+              ]
+            }
+          },
+          {
+            "weight": 17,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:zombie_baby"
+              ]
+
+            }
+          },
+          {
+            "weight": 3,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:zombie_baby",
+                "minecraft:zombie_jockey"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

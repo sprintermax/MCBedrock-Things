@@ -1,0 +1,74 @@
+{
+	"geometry.mob_werewolf": {
+		"texturewidth": 80,
+		"textureheight": 80,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 2,
+		"visible_bounds_offset": [0, 1, 0],
+		"bones": [
+			{
+				"name": "head",
+				"pivot": [0, 20, 1.375],
+				"cubes": [
+					{"origin": [-4, 18, -8], "size": [8, 4, 3], "uv": [20, 44]},
+					{"origin": [3, 26, -3], "size": [1, 2, 3], "uv": [10, 65]},
+					{"origin": [-4, 18, -5], "size": [8, 8, 8], "uv": [38, 0]},
+					{"origin": [-4, 26, -3], "size": [1, 2, 3], "uv": [18, 65]}
+				]
+			},
+			{
+				"name": "body",
+				"pivot": [0, 10.5, 2.5],
+				"rotation": [35, 0, 0],
+				"cubes": [
+					{"origin": [-3, 9, 3], "size": [6, 7, 7], "uv": [30, 18]},
+					{"origin": [-3, 16, 2], "size": [6, 4, 9], "uv": [0, 18]}
+				]
+			},
+			{
+				"name": "leg2",
+				"pivot": [4, 19, 5],
+				"cubes": [
+					{"origin": [3, 10, -5], "size": [2, 2, 8], "uv": [44, 32]},
+					{"origin": [3, 11, 2], "size": [2, 10, 2], "uv": [42, 44]},
+					{"origin": [2, 7, -6], "size": [4, 4, 2], "uv": [12, 56]}
+				]
+			},
+			{
+				"name": "leg3",
+				"pivot": [-4, 20, 5],
+				"cubes": [
+					{"origin": [-5, 10, -5], "size": [2, 2, 8], "uv": [0, 44]},
+					{"origin": [-5, 11, 2], "size": [2, 10, 2], "uv": [50, 44]},
+					{"origin": [-6, 7, -6], "size": [4, 4, 2], "uv": [0, 56]}
+				]
+			},
+			{
+				"name": "leg0",
+				"pivot": [0, 0, 0],
+				"cubes": [
+					{"origin": [-4, 9, 4], "size": [4, 5, 7], "uv": [22, 32]},
+					{"origin": [-3, 2, 8], "size": [2, 7, 2], "uv": [24, 56]},
+					{"origin": [-3, 0, 6], "size": [2, 2, 3], "uv": [40, 56]}
+				]
+			},
+			{
+				"name": "leg1",
+				"pivot": [0, 0, 0],
+				"cubes": [
+					{"origin": [0, 9, 4], "size": [4, 5, 7], "uv": [0, 32]},
+					{"origin": [1, 2, 8], "size": [2, 7, 2], "uv": [32, 56]},
+					{"origin": [1, 0, 6], "size": [2, 2, 3], "uv": [0, 65]}
+				]
+			},
+			{
+				"name": "tail",
+				"pivot": [0, 12.5, 12.5],
+				"rotation": [-45, 0, 0],
+				"cubes": [
+					{"origin": [-1, 10, 8], "size": [2, 1, 17], "uv": [0, 0]}
+				]
+			}
+		]
+	}
+}

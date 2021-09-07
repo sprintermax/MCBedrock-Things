@@ -1,0 +1,7 @@
+{
+	"materials": {
+		"version": "1.0.0",
+		"blokkit:entity": {},
+		"grass_blokkit:entity_alphatest": {}
+	}
+}

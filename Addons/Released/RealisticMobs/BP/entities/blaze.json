@@ -1,0 +1,85 @@
+{
+  "minecraft:entity": {
+    "version": 0.1,
+
+    "components": {
+    "minecraft:scale": {
+          "value": 0.69
+        },
+      "minecraft:identifier": {
+        "id": "minecraft:blaze"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/blaze.json"
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1.8
+      },
+      "minecraft:attack": {
+        "damage": 6
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
+      },
+      "minecraft:movement": {
+        "value": 0.23,
+        "max": 0.23
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:follow_range": {
+        "value": 48
+      },
+      "minecraft:hurt_when_wet": {
+        "value": true
+      },
+      "minecraft:nameable": {
+
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "entity_types": [
+          {
+            "entity_filter": [ "player" ],
+            "max_dist": 48,
+            "must_see": false
+          }
+        ]
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 2,
+        "max_dist": 3,
+        "speed_multiplier": 1,
+        "random_stop_interval": 2.0,
+        "track_target": true
+      },
+      "minecraft:shooter": {
+        "type": "smallfireball",
+        "def": "minecraft:fireball.small"
+      },
+      "minecraft:behavior.ranged_attack": {
+        "attack_interval_min": 3,
+        "attack_interval_max": 5,
+        "charge_charged_trigger": 0.0,
+        "charge_shoot_trigger": 5.0,
+        "attack_radius": 16,
+        "burst_shots": 3,
+        "burst_interval": 0.3
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 3,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:type_family": {
+        "family": [ "blaze", "monster" ]
+      }
+    },
+
+    "events": {
+
+    }
+  }
+}

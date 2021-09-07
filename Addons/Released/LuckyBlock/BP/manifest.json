@@ -1,0 +1,23 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "Surprise!",
+        "name": "Lucky Block Behavior",
+		"uuid": "2024532c-86f8-11e8-adc0-fa7ae01bbebc",
+        "version": [3, 0, 0]
+    },
+    "modules": [
+        {
+            "description": "resourcePack.minecon_server.description",
+            "type": "data",
+			"uuid": "60e2e158-86f8-11e8-adc0-fa7ae01bbebc",
+            "version": [3, 0, 0]
+        }
+    ],
+    "dependencies": [
+        {
+			"uuid": "20244f6c-86f8-11e8-adc0-fa7ae01bbebc",
+            "version": [3, 0, 0]
+        }
+    ]
+}

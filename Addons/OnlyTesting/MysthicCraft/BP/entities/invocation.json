@@ -1,0 +1,123 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mystic:invocation",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": true,
+			"runtime_identifier": "minecraft:shulker"
+		},
+		"component_groups": {
+			"mystic:die": {
+				"minecraft:explode": {
+					"fuseLength": 0,
+					"fuseLit": true,
+					"power": 0
+				}
+			},
+			"mystic:shake": {
+				"minecraft:is_shaking": {},
+				"minecraft:timer": {
+					"looping": false,
+					"randomInterval": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "mystic:stop_shake"
+					}
+				},
+				"minecraft:damage_sensor": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								]
+							},
+							"event": "mystic:on_die"
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"mystic:usable": {
+				"minecraft:damage_sensor": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "is_family",
+										"subject": "other",
+										"value": "player"
+									}
+								]
+							},
+							"event": "mystic:start_shake"
+						},
+						"deals_damage": false
+					}
+				]
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"invocation"
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 1,
+				"width": 1
+			},
+			"minecraft:physics": {},
+			"minecraft:push_through": {
+				"value": 1
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"mystic:usable"
+					]
+				}
+			},
+			"mystic:on_die": {
+				"add": {
+					"component_groups": [
+						"mystic:die"
+					]
+				}
+			},
+			"mystic:stop_shake": {
+				"add": {
+					"component_groups": [
+						"mystic:usable"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"mystic:shake"
+					]
+				}
+			},
+			"mystic:start_shake": {
+				"add": {
+					"component_groups": [
+						"mystic:shake"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"mystic:usable"
+					]
+				}
+			}
+		}
+	}
+}

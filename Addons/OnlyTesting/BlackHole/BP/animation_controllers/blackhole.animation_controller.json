@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.blackhole": {
+      "initial_state" : "default",
+	  "states": {
+		"default" : {
+		  "on_entry": [
+            "/execute @e[type=!Player] ~ ~ ~ tp @s[type=!sprintermax:blackhole] ^0.5 ^ ^0.1 facing @e[type=sprintermax:blackhole,c=1]",
+            "/execute @a[m=!1] ~ ~ ~ tp @s[type=!sprintermax:blackhole] ^0.5 ^ ^0.1 facing @e[type=sprintermax:blackhole,c=1]",
+			"/kill @e[type=!sprintermax:blackhole,r=1.75]"
+          ],
+		  "transitions" : [
+		    { "action1" : "1" }
+		  ]
+		},
+		"action1" : {
+		  "on_entry": [
+            "/execute @e[type=!Player] ~ ~ ~ tp @s[type=!sprintermax:blackhole] ^0.5 ^ ^0.1 facing @e[type=sprintermax:blackhole,c=1]",
+            "/execute @a[m=!1] ~ ~ ~ tp @s[type=!sprintermax:blackhole] ^0.5 ^ ^0.1 facing @e[type=sprintermax:blackhole,c=1]",
+			"/kill @e[type=!sprintermax:blackhole,r=1.75]"
+          ],
+		  "transitions" : [
+		    { "default" : "1" }
+		  ]
+		}
+      }
+    }
+  }
+}

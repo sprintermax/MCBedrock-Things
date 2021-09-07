@@ -1,0 +1,75 @@
+{
+  "minecraft:entity": {
+    "version": 1,
+    "components": {
+    "minecraft:scale": {
+          "value": 0.60
+        },
+      "minecraft:monster": {
+      },
+      "minecraft:identifier": {
+        "id": "minecraft:guardian"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+        "width": 0.85,
+        "height": 0.85
+      },
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:attack": {
+        "damage": 6
+      },
+      "minecraft:follow_range": {
+        "value": 16,
+        "max": 16
+      },
+      "breathable": {
+        "breathesWater": true
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/guardian.json"
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "entity_types": [
+          {
+            "entity_filter": [ "player", "squid" ],
+            "max_dist": 16,
+            "must_see": true
+          }
+        ],
+        "attack_interval_min": 1.0
+      },
+      "minecraft:behavior.guardian_attack": {
+        "priority": 4
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 5,
+        "speed_multiplier": 1.0,
+        "control_flags": [ "move", "look" ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 7,
+        "speed_multiplier": 1.0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 12.0,
+        "probability": 0.01
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 9
+      },
+      "minecraft:type_family": {
+        "family": [ "guardian", "monster" ]
+      }
+    }
+  }
+}

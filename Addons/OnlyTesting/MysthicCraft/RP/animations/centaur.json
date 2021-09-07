@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.centaur.setup": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [ "-this", 0.0, 0.0 ]
+        }
+      }
+    },
+    "animation.centaur.walk": {
+      "anim_time_update": "query.walk_position",
+      "loop": true,
+      "bones": {
+        "leg0": { "rotation": [ "Math.cos(global.anim_time * 38.17) *  80.0", 0.0, 0.0 ] },
+        "leg2": { "rotation": [ "Math.cos(global.anim_time * 38.17) * -80.0", 0.0, 0.0 ] },
+        "leg1": { "rotation": [ "Math.cos(global.anim_time * 38.17) * -80.0", 0.0, 0.0 ] },
+        "leg3": { "rotation": [ "Math.cos(global.anim_time * 38.17) *  80.0", 0.0, 0.0 ] },
+        "leftArm": { "rotation": [ "Math.cos(global.anim_time * 38.17) * -40.0", 0.0, 0.0 ] },
+        "rightArm": { "rotation": [ "Math.cos(global.anim_time * 38.17) *  10.0", 0.0, 0.0 ] }
+      }
+    }
+  }
+}

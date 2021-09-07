@@ -1,0 +1,44 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "blokkit:super_blokkit",
+			"materials": {
+				"default": "blokkit"
+			},
+			"textures": {
+				"default": "textures/entity/blokkit/super/super",
+				"tamed": "textures/entity/blokkit/super/super_tamed"
+			},
+			"geometry": {
+				"default": "geometry.blokkit"
+			},
+			"scripts": {
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+					"variable.tcos1 = -variable.tcos0;"
+				]
+			},
+			"animation_controllers": [
+				{
+					"arms": "controller.animation.blokkit.arms"
+				},
+				{
+					"move": "controller.animation.blokkit.move"
+				}
+			],
+			"animations": {
+				"arms": "animation.blokkit.arms",
+				"move": "animation.super_blokkit.move",
+				"sitting": "animation.blokkit.sitting"
+			},
+			"render_controllers": [
+				"controller.render.super_blokkit"
+			],
+			"spawn_egg": {
+				"base_color": "#263A94",
+				"overlay_color": "#FF3030"
+			}
+		}
+	}
+}

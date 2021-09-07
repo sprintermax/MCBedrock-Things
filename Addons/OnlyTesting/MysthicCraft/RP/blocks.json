@@ -1,0 +1,13 @@
+{
+  "format_version": [
+    1,
+    1,
+    0
+  ],
+  "element_20": {
+    "blockshape": "cross_texture",
+    "textures": "rotten_bandage",
+    "carried_textures": "rotten_bandage",
+    "sound": "wood"
+  }
+}

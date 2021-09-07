@@ -1,0 +1,126 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mystic:crafting_table_internal",
+			"runtime_identifier": "minecraft:villager",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": true
+		},
+		"component_groups": {
+			"mystic:die": {
+				"minecraft:explode": {
+					"fuseLength": 0,
+					"fuseLit": true,
+					"power": 0
+				}
+			},
+			"mystic:disabled": {
+				"minecraft:scale": {
+					"value": 0
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"randomInterval": false,
+					"time": 2,
+					"time_down_event": {
+						"event": "mystic:on_remove_disabled"
+					}
+				}
+			},
+			"mystic:enabled": {
+				"minecraft:scale": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"crafting_table_internal"
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 1.0,
+				"width": 1.0
+			},
+			"//minecraft:trade_table": {
+				"display_name": "entity.villager.crafting_table",
+				"table": "trading/crafting_table_trades.json"
+			},
+			"minecraft:behavior.trade_with_player": {
+				"priority": 1
+			},
+			"minecraft:environment_sensor": {
+				"on_environment": {
+					"filters": {
+						"test": "is_riding",
+						"operator": "not"
+					},
+					"event": "mystic:on_die"
+				}
+			},
+			"minecraft:damage_sensor": [
+				{
+					"on_damage": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "has_component",
+									"operator": "not",
+									"value": "minecraft:timer"
+								}
+							]
+						},
+						"event": "mystic:on_disable"
+					},
+					"deals_damage": false
+				},
+				{
+					"cause": "any",
+					"deals_damage": false
+				}
+			],
+			"minecraft:physics": {}
+		},
+		"events": {
+			"mystic:on_disable": {
+				"add": {
+					"component_groups": [
+						"mystic:disabled"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"mystic:enabled"
+					]
+				}
+			},
+			"mystic:on_remove_disabled": {
+				"add": {
+					"component_groups": [
+						"mystic:enabled"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"mystic:disabled"
+					]
+				}
+			},
+			"mystic:on_die": {
+				"add": {
+					"component_groups": [
+						"mystic:die"
+					]
+				}
+			}
+		}
+	}
+}

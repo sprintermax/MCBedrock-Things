@@ -1,0 +1,132 @@
+{
+  "format_version":"1.8.0-beta.1",
+  "animations": {
+    "animation.tyrannosaur.default_pose": {
+      "loop": true,
+      "bones": {
+        "lower_jaw": {
+          "rotation": {
+            "0.0": [ 0, 0, 0 ],
+            "2.0": [ 2.5, 0, 0 ],
+            "3.0": [ 0, 0, 0 ]
+          }
+        },
+
+        "neck0": { "position": [ 0, 0.5, 2 ], "rotation": [ 27.5, 2, -1 ] },
+        "neck1": { "position": [ 0, 2, 2 ], "rotation": [ -25, 0, 0 ] },
+        "shoulder": { "rotation": [ -10, 0, 0 ] },
+
+        "arm0": { "position": [ -1, 2, 2 ], "rotation": [ -90, 0, 0 ] },
+        "arm1": { "position": [ 1, 2, 2 ], "rotation": [ -90, 0, 0 ] },
+
+        "knee0": { "rotation": [ -10, 0, 0 ] },
+        "knee1": { "rotation": [ -10, 0, 0 ] },
+        "feet0": { "rotation": [ 10, 0, 0 ] },
+        "feet1": { "rotation": [ 10, 0, 0 ] },
+
+        "tail0": { "rotation": [ -5, 0, 0 ] },
+        "tail1": { "rotation": [ -6, 0, 0 ] },
+        "tail2": { "rotation": [ -5, 0, 0 ] },
+        "tail3": { "rotation": [ -4, 0, 0 ] }
+      }
+    },
+    "animation.tyrannosaur.sitting_pose": {
+      "loop": true,
+      "bones": {
+        "lower_jaw": {
+          "rotation": {
+            "0.0": [ 0, 0, 0 ],
+            "2.0": [ 2.5, 0, 0 ],
+            "3.0": [ 0, 0, 0 ]
+          }
+        },
+
+        "neck0": { "position": [ 0, 0.5, 2 ], "rotation": [ 27.5, 2, -1 ] },
+        "neck1": { "position": [ 0, 2, 2 ], "rotation": [ -25, 0, 0 ] },
+        "shoulder": { "rotation": [ -10, 0, 0 ] },
+        "body": { "position": [ 0, -7.5, 0 ] },
+
+        "arm0": { "position": [ -1, 2, 2 ], "rotation": [ -90, 0, 0 ] },
+        "arm1": { "position": [ 1, 2, 2 ], "rotation": [ -90, 0, 0 ] },
+
+        "thigh0": { "position": [ 0, -7.5, 0 ], "rotation": [ -30, 0, 0 ] },
+        "thigh1": { "position": [ 0, -7.5, 0 ], "rotation": [ -30, 0, 0 ] },
+        "knee0": { "position": [ 0, 2.1, 0 ] },
+        "knee1": { "position": [ 0, 2.1, 0 ] },
+        "shin0": { "position": [ 0, 1, 0 ], "rotation": [ -45, 0, 0 ] },
+        "shin1": { "position": [ 0, 1, 0 ], "rotation": [ -45, 0, 0 ] },
+        "feet0": { "rotation": [ 75, 0, 0 ] },
+        "feet1": { "rotation": [ 75, 0, 0 ] },
+
+        "tail0": { "rotation": [ -4, 0, 0 ] },
+        "tail1": { "rotation": [ -3, 0, 0 ] },
+        "tail2": { "rotation": [ -4, 0, 0 ] },
+        "tail3": { "rotation": [ -5, 0, 0 ] }
+      }
+    },
+    "animation.tyrannosaur.look_at_target": {
+      "loop": true,
+      "bones": {
+        "head": {
+          "relative_to": { "rotation": "entity" },
+          "rotation": [ "Math.clamp(Entity.Member.targetXRot, -45, 30)", "Math.clamp(Entity.Member.targetYRot, -15, 15)", 0 ]
+        },
+        "neck1": {
+          "relative_to": { "rotation": "entity" },
+          "rotation": [ "Math.clamp(Entity.Member.targetXRot, -30, 30)", "Math.clamp(Entity.Member.targetYRot, -5, 5)", 0 ]
+        }
+      }
+    },
+    "animation.tyrannosaur.roar": {
+      "bones": {
+        "head": {
+          "rotation": [ 0, 0, 180 ]
+        }
+      }
+    },
+    "animation.tyrannosaur_attack": {
+      "loop": true,
+      "bones": {
+        "upper_jaw0": {
+          "rotation": [ "Entity.attack2 - 45 * Entity.attack", "-this", "-this" ]
+        },
+        "lower_jaw": {
+          "rotation": [ "Entity.attack2 + 15 * Entity.attack", "-this", "-this" ]
+        },
+        "head": {
+          "rotation": [ 0, 0, "Entity.attack2 - 60 * Entity.attack" ]
+        },
+        "neck0": {
+          "rotation": [ 0, 0, "Entity.attack2 - 45 * Entity.attack" ]
+        },
+        "neck1": {
+          "rotation": [ 0, 0, "Entity.attack2 - 30 * Entity.attack" ]
+        },
+        "shoulder": {
+          "rotation": [ 0, 0, "Entity.attack2 - 15 * Entity.attack" ]
+        }
+      }
+    },
+    "animation.tyrannosaur.legs_animation": {
+      "anim_time_update": "Entity.Member.WalkPosition",
+      "loop": true,
+      "bones": {
+        "thigh0": { "rotation": [ "Math.cos(Params.AnimTime * 10) * -30", 0, 0 ] },
+        "thigh1": { "rotation": [ "Math.cos(Params.AnimTime * 10) * 30", 0, 0 ] }
+      }
+    },
+    "animation.tyrannosaur.walk": {
+      "anim_time_update": "Entity.Member.WalkPosition",
+      "loop": true,
+      "bones": {
+        "body": { "rotation": [ 0, "Math.cos(Params.LifeTime * 300) * 5", "Math.cos(Params.LifeTime * -300) * 5" ],
+          "position": [ "Math.sin(Params.LifeTime * 300) * 1.26", 0, 0 ] },
+
+        "tail0": { "rotation": [ 0, "-5 * Math.cos(Params.AnimTime * 10)", 0 ] },
+        "tail1": { "rotation": [ 0, "-5 * Math.cos(Params.AnimTime * 10)", 0 ] },
+        "tail2": { "rotation": [ 0, "-5 * Math.cos(Params.AnimTime * 10)", 0 ] },
+        "tail3": { "rotation": [ 0, "-5 * Math.cos(Params.AnimTime * 10)", 0 ] }
+      }
+    }
+  }
+}

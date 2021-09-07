@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.syclop.look_at_target": {
+      "states": {
+        "default": {
+          "animations": [ { "look_at_target": [] } ]
+        }
+      }
+    },
+    "controller.animation.syclop.move": {
+      "states": {
+        "default": {
+          "animations": [ { "move": [] } ]
+        }
+      }
+    },
+    "controller.animation.syclop.bob": {
+      "states": {
+        "default": {
+          "animations": [ { "bob": [] } ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mystic:crafting_table",
+			"materials": {
+				"default": "crafting_table"
+			},
+			"textures": {
+				"default": "textures/entity/crafting_table"
+			},
+			"geometry": {
+				"default": "geometry.crafting_table"
+			},
+			"render_controllers": [
+				"controller.render.crafting_table"
+			],
+			"spawn_egg": {
+				"texture": "mysticcraft_egg",
+				"texture_index": 0
+			}
+		}
+	}
+}

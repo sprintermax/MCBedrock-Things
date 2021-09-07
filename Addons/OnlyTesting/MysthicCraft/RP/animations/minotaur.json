@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.minotaur.move": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [
+						"variable.tcos1",
+						0.0,
+						0.0
+					]
+				},
+				"leftArm": {
+					"rotation": [
+						"variable.tcos0",
+						0.0,
+						0.0
+					]
+				},
+				"rightLeg": {
+					"rotation": [
+						"variable.tcos0 * 1.4",
+						0.0,
+						0.0
+					]
+				},
+				"leftLeg": {
+					"rotation": [
+						"variable.tcos1 * 1.4",
+						0.0,
+						0.0
+					]
+				}
+			}
+		}
+	}
+}

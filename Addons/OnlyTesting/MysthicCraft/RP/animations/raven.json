@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.raven.wings": {
+			"anim_time_update": "query.walk_position",
+			"loop": true,
+			"bones": {
+				"wing_a": {
+					"rotation": [
+						"global.anim_speed * 45",
+						0,
+						"global.anim_speed * (110 + Math.cos(global.anim_time * 360.0) *  30.0)"
+					]
+				},
+				"wing_b": {
+					"rotation": [
+						"global.anim_speed * 45",
+						0,
+						"global.anim_speed * (-110 + -Math.cos(global.anim_time * 360.0) *  30.0)"
+					]
+				}
+			}
+		},
+		"animation.raven.move": {
+			"anim_time_update": "query.walk_position",
+			"loop": true,
+			"bones": {
+				"leg_a": {
+					"rotation": [
+						"global.anim_speed * (Math.cos(global.anim_time * 38.17) *  80.0)",
+						0,
+						0
+					]
+				},
+				"leg_b": {
+					"rotation": [
+						"global.anim_speed * (Math.cos(global.anim_time * 38.17) * -80.0)",
+						0,
+						0
+					]
+				}
+			}
+		}
+	}
+}

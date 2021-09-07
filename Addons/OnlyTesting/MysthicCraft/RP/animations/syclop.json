@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.syclop.look_at_target": {
+      "loop": true,
+      "bones": {
+        "head": { "rotation": [ "query.target_x_rotation", "query.target_y_rotation", 0.0 ] }
+      }
+    },
+	"animation.syclop.move": {
+      "loop": true,
+      "bones": {
+        "arm2": { "rotation": [ "variable.tcos1", 0.0, 0.0 ] },
+        "arm1": { "rotation": [ "variable.tcos0", 0.0, 0.0 ] },
+        "leg1": { "rotation": [ "variable.tcos0 * 1.4", 0.0, 0.0 ] },
+        "leg2": { "rotation": [ "variable.tcos1 * 1.4", 0.0, 0.0 ] }
+      }
+    },
+	"animation.syclop.bob": {
+      "loop": true,
+      "bones": {
+        "arm2": { "rotation": [ 0.0, 0.0, "(Math.cos(global.life_time * 103.2) * 2.865) + 2.865" ] },
+        "arm1": { "rotation": [ 0.0, 0.0, "(-Math.cos(global.life_time * 103.2) * 2.865) - 2.865" ] }
+      }
+    }
+  }
+}

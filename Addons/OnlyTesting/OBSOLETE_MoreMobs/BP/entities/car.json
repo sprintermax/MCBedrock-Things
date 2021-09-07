@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:car",
+      "minecraft:spawn_egg": {
+        "value": true
+      },
+      "minecraft:is_summonable": {
+        "value": true
+      },
+      "minecraft:is_experimental": {
+        "value": true
+      }
+    },
+    "component_groups": {
+    },
+
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "car" ]
+      },
+	  "minecraft:navigation.walk": {
+      },
+      "minecraft:movement.basic": {
+      },
+	  "minecraft:push_through": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:movement": {
+        "value": 0.3,
+        "max": 0.3
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100,
+        "max": 100
+      }
+    },
+
+
+    "events": {
+    }
+  }
+}

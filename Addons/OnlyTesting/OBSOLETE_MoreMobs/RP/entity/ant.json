@@ -1,0 +1,31 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "moremobs:ant",
+      "materials": { "default": "ant" },
+      "textures": {
+        "brown": "textures/entity/ant/brown",
+		"black": "textures/entity/ant/black"
+      },
+      "geometry": {
+        "default": "geometry.ant"
+      },
+      "animations": {
+        "default_pose": "animation.ant.default_pose",
+		"walk": "animation.ant.walk"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.ant.move" }
+      ],
+      "render_controllers": [ "controller.render.ant" ],
+      "locators": {
+        "lead": { "head": [ 0.0, 20.0, -8.0 ] }
+      },
+      "spawn_egg": {
+        "base_color": "#974100",
+        "overlay_color": "#C3B486"
+      }
+    }
+  }
+}

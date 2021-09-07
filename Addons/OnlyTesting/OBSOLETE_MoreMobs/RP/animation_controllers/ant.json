@@ -1,0 +1,21 @@
+{
+  "format_version":"1.8.0-beta.1",
+  "animation_controllers": {
+    "controller.animation.ant.move": {
+      "states": {
+        "default": {
+          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "animations": {
+            "default_pose": [],
+			"walk": [
+              {
+                "0.0": 0.0,
+                "1.0": 1.0
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

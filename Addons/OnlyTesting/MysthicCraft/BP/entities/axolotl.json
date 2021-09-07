@@ -1,0 +1,141 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mystic:axolotl",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": true
+		},
+		"component_groups": {
+			"mystic:default_texture": {
+				"minecraft:variant": {
+					"value": 0
+				}
+			},
+			"mystic:water_texture": {
+				"minecraft:variant": {
+					"value": 1
+				}
+			}
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"axolotl"
+				]
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/mystic/loot/axolotl.json"
+			},
+			"minecraft:behavior.move_to_land": {
+				"priority": 4,
+				"search_range": 16,
+				"search_height": 5,
+				"goal_radius": 0.5
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 2,
+				"interval": 100
+			},
+			"minecraft:breathable": {
+				"totalSupply": 15,
+				"suffocateTime": 0,
+				"breathesWater": true,
+				"breathesAir": true,
+				"generatesBubbles": false
+			},
+			"minecraft:nameable": {},
+			"minecraft:health": {
+				"value": 10
+			},
+			"minecraft:movement": {
+				"value": 0.18
+			},
+			"minecraft:underwater_movement": {
+				"value": 0.2
+			},
+			"minecraft:navigation.generic": {
+				"is_amphibious": true,
+				"can_path_over_water": true,
+				"can_swim": true,
+				"can_walk": true,
+				"can_sink": false,
+				"avoid_damage_blocks": true
+			},
+			"minecraft:movement.amphibious": {
+				"max_turn": 5.0
+			},
+			"minecraft:jump.static": {},
+			"minecraft:physics": {},
+			"minecraft:behavior.panic": {
+				"priority": 0,
+				"speed_multiplier": 1.2
+			},
+			"minecraft:behavior.move_to_water": {
+				"priority": 4,
+				"search_range": 16,
+				"search_height": 5,
+				"search_count": 1,
+				"goal_radius": 0.1
+			},
+			"minecraft:behavior.random_swim": {
+				"priority": 2,
+				"interval": 0,
+				"xz_dist": 30,
+				"y_dist": 15
+			},
+			"minecraft:environment_sensor": [
+				{
+					"filters": {
+						"test": "in_water_or_rain",
+						"subject": "self",
+						"operator": "==",
+						"value": false
+					},
+					"event": "mystic:default_texture"
+				},
+				{
+					"filters": {
+						"test": "in_water_or_rain",
+						"subject": "self",
+						"operator": "==",
+						"value": true
+					},
+					"event": "mystic:water_texture"
+				}
+			],
+			"minecraft:behavior.look_at_player": {
+				"priority": 8,
+				"target_distance": 6.0,
+				"probability": 0.02
+			}
+		},
+		"events": {
+			"mystic:water_texture": {
+				"remove": {
+					"component_groups": [
+						"mystic:default_texture"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mystic:water_texture"
+					]
+				}
+			},
+			"mystic:default_texture": {
+				"remove": {
+					"component_groups": [
+						"mystic:water_texture"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"mystic:default_texture"
+					]
+				}
+			}
+		}
+	}
+}

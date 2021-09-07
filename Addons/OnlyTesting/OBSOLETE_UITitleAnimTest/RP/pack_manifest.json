@@ -1,0 +1,16 @@
+{
+  "header": {
+    "pack_id": "TesteAnimaçao2",
+    "name": "Teste Animaçao 2",
+    "packs_version": "1.0.0",
+    "description": "Isso é um teste 2",
+    "modules": [
+      {
+        "description": "Isso e um teste 2",
+        "version": "1.0.0",
+        "uuid": "TesteAnimaçao2",
+        "type": "resources"
+      }
+    ]
+  }
+}

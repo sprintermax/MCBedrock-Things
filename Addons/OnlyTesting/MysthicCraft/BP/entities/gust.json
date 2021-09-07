@@ -1,0 +1,45 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "mystic:gust",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": true
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.65,
+				"height": 0.65
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": [
+							3,
+							6
+						],
+						"knockback": false
+					},
+					"mob_effect": {
+						"effect": "blindness",
+						"durationeasy": 40,
+						"durationnormal": 60,
+						"durationhard": 60,
+						"amplifier": 0
+					},
+					"remove_on_hit": {}
+				},
+				"destroyOnHurt": true,
+				"power": 0.6,
+				"gravity": 0.005,
+				"anchor": 1,
+				"offset": [
+					0,
+					0.5,
+					0
+				]
+			}
+		}
+	}
+}

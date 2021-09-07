@@ -1,0 +1,24 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "mystic:invocation",
+			"materials": {
+				"default": "invocation"
+			},
+			"textures": {
+				"default": "textures/entity/invocation"
+			},
+			"geometry": {
+				"default": "geometry.invocation"
+			},
+			"render_controllers": [
+				"controller.render.invocation"
+			],
+			"spawn_egg": {
+				"texture": "mysticcraft_egg",
+				"texture_index": 2
+			}
+		}
+	}
+}

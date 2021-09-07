@@ -1,0 +1,54 @@
+{
+  "entity_sounds": {
+    "entities": {
+      "minecon:scorpion": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "hurt": {
+            "sound": "mob.spider.say",
+            "volume": 0.25,
+            "pitch": 0.7
+          },
+          "death": {
+            "sound": "mob.spider.death",
+            "volume": 0.25,
+            "pitch": 0.7
+          },
+          "step": {
+            "sound": "mob.spider.step",
+            "volume": 0.25,
+            "pitch": 0.7
+          }
+        }
+      },
+      "animalia:alligator": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "hurt": "mob.alligator.hurt",
+          "death": "mob.alligator.death",
+          "attack": {
+            "sound": "mob.alligator.attack",
+            "pitch": [ 0.8, 1.2 ]
+          },
+          "attack.strong": "mob.alligator.attack"
+        }
+      },
+      "gona:tyrannosaur": {
+        "volume": 1.0,
+        "pitch": [ 0.8, 1.2 ],
+        "events": {
+          "hurt": "mob.tyrannosaur.hurt",
+		  "plop": "mob.enderdragon.death",
+          "death": "mob.tyrannosaur.death",
+          "attack": {
+            "sound": "mob.alligator.attack",
+            "pitch": [ 0.8, 1.2 ]
+          },
+          "cast.spell": "mob.alligator.death"
+        }
+      }
+    }
+  }
+}

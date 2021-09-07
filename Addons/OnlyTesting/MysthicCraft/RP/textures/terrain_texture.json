@@ -1,0 +1,10 @@
+{
+  "resource_pack_name": "mystic_rp",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "mystic_container": { "textures": "textures/blocks/mystic/container" },
+    "rotten_bandage": { "textures": "textures/items/spawn_egg_table" }
+  }
+}

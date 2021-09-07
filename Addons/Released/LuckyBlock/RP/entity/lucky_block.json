@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0-beta.1",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "luckyblock:lucky_block",
+      "materials": { "default": "lucky_block" },
+      "textures": {
+        "default": "textures/entity/lucky_block"
+      },
+      "geometry": {
+        "default": "geometry.lucky_block"
+      },
+      "render_controllers": [ "controller.render.lucky_block" ],
+      "spawn_egg": {
+        "base_color": "#F6DB43",
+        "overlay_color": "#E0970B"
+      }
+    }
+  }
+}

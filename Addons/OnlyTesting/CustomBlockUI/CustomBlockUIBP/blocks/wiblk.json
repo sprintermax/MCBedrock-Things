@@ -1,0 +1,25 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spmax:worldinfo_block"
+		},
+		"components": {
+			"minecraft:creative_category": {
+				"category": "construction"
+			},
+			"minecraft:unit_cube": {},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "command_block_chain_back",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:crafting_table": {
+				"custom_description": "spmax.world_infoblock",
+				"grid_size": 3,
+				"crafting_tags": []
+			}
+		}
+	}
+}

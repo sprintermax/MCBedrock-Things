@@ -1,0 +1,8 @@
+{
+	"ui_defs": [
+		"ui/spmax/block_screens/custom_crafting_screen.json",
+		"ui/spmax/block_screens/player_status_screen.json",
+		"ui/spmax/block_screens/world_info_screen.json",
+		"ui/spmax/custom_blocks_main.json"
+	]
+}

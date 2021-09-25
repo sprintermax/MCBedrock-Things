@@ -1,0 +1,401 @@
+// On lines 92, 112 and 132, the fluid material is supposed to be "blend", but due to a minecraft bug it makes the texture unstable in some chunks, making the liquid invisible even it still working.
+// Because of that, you can ignore the content erros about mixing material instances, since the "opaque" value is a temporary fix just to see the liquid inside while testing
+
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "sprintermax:pipes.glass_pipe",
+			"properties": {
+				"sprintermax:pipe.fluid_type": [
+					"none", "water", "lava", "exp"
+				],
+				
+				"sprintermax:pipe.upper_pipe": [ false, true ],
+				"sprintermax:pipe.bottom_pipe": [ false, true ],
+				"sprintermax:pipe.west_pipe": [ false, true ],
+				"sprintermax:pipe.east_pipe": [ false, true ],
+				"sprintermax:pipe.north_pipe": [ false, true ],
+				"sprintermax:pipe.south_pipe": [ false, true ],
+				
+				"sprintermax:pipe.upper_source": [ false, true ],
+				"sprintermax:pipe.bottom_source": [ false, true ],
+				"sprintermax:pipe.west_source": [ false, true ],
+				"sprintermax:pipe.east_source": [ false, true ],
+				"sprintermax:pipe.north_source": [ false, true ],
+				"sprintermax:pipe.south_source": [ false, true ]
+			}
+		},
+		"components": {
+			"minecraft:creative_category": {
+				"category": "construction"
+			},
+			"tag:sprintermax.pipes.glass_pipe": {},
+			"minecraft:block_light_absorption": 0,
+			"minecraft:geometry": "geometry.sprintermax.pipes.generic_pipe",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "sprintermax:pipes.pipe_glass",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:ticking": {
+				"on_tick": {
+					"event": "tick"
+				},
+				"looping": true,
+				"range": [ 0, 0 ]
+			},
+            "minecraft:entity_collision": {
+                "origin": [ -4, 4, -4 ],
+                "size": [ 8, 8, 8 ]
+            },
+			"minecraft:pick_collision": {
+				"origin": [ -7, 1, -7 ],
+				"size": [ 14, 14, 14 ]
+			},
+			"minecraft:part_visibility": {
+                "rules": {
+                    "arm_up": "query.block_property('sprintermax:pipe.upper_pipe')",
+                    "arm_down": "query.block_property('sprintermax:pipe.bottom_pipe')",
+                    "arm_south": "query.block_property('sprintermax:pipe.south_pipe')",
+                    "arm_north": "query.block_property('sprintermax:pipe.north_pipe')",
+                    "arm_east": "query.block_property('sprintermax:pipe.east_pipe')",
+                    "arm_west": "query.block_property('sprintermax:pipe.west_pipe')",
+					
+					"base_up": "query.block_property('sprintermax:pipe.upper_source')",
+					"base_down": "query.block_property('sprintermax:pipe.bottom_source')",
+					"base_south": "query.block_property('sprintermax:pipe.south_source')",
+					"base_north": "query.block_property('sprintermax:pipe.north_source')",
+					"base_east": "query.block_property('sprintermax:pipe.east_source')",
+					"base_west": "query.block_property('sprintermax:pipe.west_source')",
+					
+					"fluid_center": "query.block_property('sprintermax:pipe.fluid_type') != 'none'",
+					"fluid_up": "query.block_property('sprintermax:pipe.fluid_type') != 'none' && query.block_property('sprintermax:pipe.upper_pipe')",
+					"fluid_down": "query.block_property('sprintermax:pipe.fluid_type') != 'none' && query.block_property('sprintermax:pipe.bottom_pipe')",
+					"fluid_north": "query.block_property('sprintermax:pipe.fluid_type') != 'none' && query.block_property('sprintermax:pipe.north_pipe')",
+					"fluid_south": "query.block_property('sprintermax:pipe.fluid_type') != 'none' && query.block_property('sprintermax:pipe.south_pipe')",
+					"fluid_east": "query.block_property('sprintermax:pipe.fluid_type') != 'none' && query.block_property('sprintermax:pipe.east_pipe')",
+					"fluid_west": "query.block_property('sprintermax:pipe.fluid_type') != 'none' && query.block_property('sprintermax:pipe.west_pipe')"
+                }
+            }
+		},
+		"permutations": [
+			{
+                "condition": "query.block_property('sprintermax:pipe.fluid_type') == 'water'",
+                "components": {
+                    "tag:sprintermax.pipes.has_water": {},
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "sprintermax:pipes.pipe_glass",
+							"render_method": "alpha_test"
+						},
+						"fluid": {
+							"texture": "sprintermax:pipes.pipe_fluid_water",
+							"render_method": "opaque"
+						},
+						"base": {
+							"texture": "sprintermax:pipes.pipe_base_black",
+							"render_method": "alpha_test"
+						}
+					}
+                }
+            },
+			{
+                "condition": "query.block_property('sprintermax:pipe.fluid_type') == 'lava'",
+                "components": {
+                    "tag:sprintermax.pipes.has_lava": {},
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "sprintermax:pipes.pipe_glass",
+							"render_method": "alpha_test"
+						},
+						"fluid": {
+							"texture": "sprintermax:pipes.pipe_fluid_lava",
+							"render_method": "opaque"
+						},
+						"base": {
+							"texture": "sprintermax:pipes.pipe_base_black",
+							"render_method": "alpha_test"
+						}
+					}
+                }
+            },
+			{
+                "condition": "query.block_property('sprintermax:pipe.fluid_type') == 'exp'",
+                "components": {
+                    "tag:sprintermax.pipes.has_exp": {},
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "sprintermax:pipes.pipe_glass",
+							"render_method": "alpha_test"
+						},
+						"fluid": {
+							"texture": "sprintermax:pipes.pipe_fluid_exp",
+							"render_method": "opaque"
+						},
+						"base": {
+							"texture": "sprintermax:pipes.pipe_base_black",
+							"render_method": "alpha_test"
+						}
+					}
+                }
+            },
+			
+			
+			
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 6, 6, 6 ]
+					}
+                }
+            },
+			
+			{
+                "condition": "query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 6, 11, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 0, -3 ],
+						"size": [ 6, 11, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "query.block_property('sprintermax:pipe.upper_pipe') && query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 0, -3 ],
+						"size": [ 6, 16, 6 ]
+					}
+                }
+            },
+			
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -8 ],
+						"size": [ 6, 6, 11 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 6, 6, 11 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && query.block_property('sprintermax:pipe.north_pipe') && query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -8 ],
+						"size": [ 6, 6, 16 ]
+					}
+                }
+            },
+			
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -8, 5, -3 ],
+						"size": [ 11, 6, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 11, 6, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && query.block_property('sprintermax:pipe.west_pipe') && query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -8, 5, -3 ],
+						"size": [ 16, 6, 6 ]
+					}
+                }
+            }
+		],
+		"events": {
+			"tick": {
+				"sequence": [
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,1,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.upper_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,1,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.upper_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'sprintermax.pipes.glass_pipe','water','wood','stone')",
+						"set_block_property": {
+							"sprintermax:pipe.bottom_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,-1,0,'sprintermax.pipes.glass_pipe','water','wood','stone')",
+						"set_block_property": {
+							"sprintermax:pipe.bottom_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.east_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.east_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(-1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.west_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(-1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.west_pipe": false
+						}
+					},
+					
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,0,1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.south_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,0,1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.south_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,0,-1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.north_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,0,-1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.north_pipe": false,
+							"sprintermax:pipe.fluid_type": "'none'"
+						}
+					},
+					
+					
+					
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'water','wood','stone')",
+						"set_block_property": {
+							"sprintermax:pipe.bottom_source": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,-1,0,'water','wood','stone')",
+						"set_block_property": {
+							"sprintermax:pipe.bottom_source": false
+						}
+					},
+					
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'water')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'water'"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'wood')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'lava'"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'stone')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'exp'"
+						}
+					},
+					
+					
+					
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'sprintermax.pipes.has_water') && !q.block_property('sprintermax:pipe.bottom_source')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'water'"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,1,0,'sprintermax.pipes.has_water') && !q.block_property('sprintermax:pipe.bottom_source')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'water'"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(1,0,0,'sprintermax.pipes.has_water') && !q.block_property('sprintermax:pipe.bottom_source')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'water'"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(-1,0,0,'sprintermax.pipes.has_water') && !q.block_property('sprintermax:pipe.bottom_source')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'water'"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,0,1,'sprintermax.pipes.has_water') && !q.block_property('sprintermax:pipe.bottom_source')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'water'"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,0,-1,'sprintermax.pipes.has_water') && !q.block_property('sprintermax:pipe.bottom_source')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'water'"
+						}
+					},
+					{
+						"condition": "!q.block_property('sprintermax:pipe.bottom_source') && !q.block_neighbor_has_any_tag(0,1,0,'sprintermax.pipes.has_water') && !q.block_neighbor_has_any_tag(0,-1,0,'sprintermax.pipes.has_water') && !q.block_neighbor_has_any_tag(1,0,0,'sprintermax.pipes.has_water') && !q.block_neighbor_has_any_tag(-1,0,0,'sprintermax.pipes.has_water') && !q.block_neighbor_has_any_tag(0,0,1,'sprintermax.pipes.has_water') && !q.block_neighbor_has_any_tag(0,0,-1,'sprintermax.pipes.has_water')",
+						"set_block_property": {
+							"sprintermax:pipe.fluid_type": "'none'"
+						}
+					}
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,287 @@
+// Old and first test of the concept idea of pipes, currently is used just to store codes for testing
+// The current and most recent pipe file os the GenericPipe.json
+
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "sprintermax:pipes.oldglass_pipe",
+			"register_to_creative_menu": true,
+			"properties": {
+				"sprintermax:pipe.liquid_inside": [ 
+					"none", "water", "lava"
+				],
+				"sprintermax:pipe.upper_pipe": [ false, true ],
+				"sprintermax:pipe.bottom_pipe": [ false, true ],
+				"sprintermax:pipe.west_pipe": [ false, true ],
+				"sprintermax:pipe.east_pipe": [ false, true ],
+				"sprintermax:pipe.north_pipe": [ false, true ],
+				"sprintermax:pipe.south_pipe": [ false, true ]
+			}
+		},
+		"components": {
+			"tag:sprintermax.pipes.glass_pipe": {},
+			"minecraft:block_light_absorption": 0,
+			"minecraft:geometry": "geometry.sprintermax.pipes.glass_pipe",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "glass",
+					"render_method": "blend",
+					"ambient_occlusion": true,
+					"face_dimming": true
+				}
+			},
+			"minecraft:ticking": {
+				"on_tick": {
+					"event": "tick"
+				},
+				"looping": true,
+				"range": [ 0, 0 ]
+			},
+            "minecraft:entity_collision": {
+                "origin": [ -4, 4, -4 ],
+                "size": [ 8, 8, 8 ]
+            },
+			"minecraft:pick_collision": {
+				"origin": [ -7, 1, -7 ],
+				"size": [ 14, 14, 14 ]
+			},
+			"minecraft:part_visibility": {
+                "rules": {
+                    "up": "query.block_property('sprintermax:pipe.upper_pipe')",
+                    "down": "query.block_property('sprintermax:pipe.bottom_pipe')",
+                    "south": "query.block_property('sprintermax:pipe.south_pipe')",
+                    "north": "query.block_property('sprintermax:pipe.north_pipe')",
+                    "east": "query.block_property('sprintermax:pipe.east_pipe')",
+                    "west": "query.block_property('sprintermax:pipe.west_pipe')"
+                }
+            }
+		},
+		"permutations": [
+            {
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 6, 6, 6 ]
+					}
+                }
+            },
+			
+			{
+                "condition": "query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 6, 11, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 0, -3 ],
+						"size": [ 6, 11, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "query.block_property('sprintermax:pipe.upper_pipe') && query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 0, -3 ],
+						"size": [ 6, 16, 6 ]
+					}
+                }
+            },
+			
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -8 ],
+						"size": [ 6, 6, 11 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 6, 6, 11 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && query.block_property('sprintermax:pipe.north_pipe') && query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -8 ],
+						"size": [ 6, 6, 16 ]
+					}
+                }
+            },
+			
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && !query.block_property('sprintermax:pipe.west_pipe') && query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -8, 5, -3 ],
+						"size": [ 11, 6, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && query.block_property('sprintermax:pipe.west_pipe') && !query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -3, 5, -3 ],
+						"size": [ 11, 6, 6 ]
+					}
+                }
+            },
+			{
+                "condition": "!query.block_property('sprintermax:pipe.upper_pipe') && !query.block_property('sprintermax:pipe.bottom_pipe') && query.block_property('sprintermax:pipe.west_pipe') && query.block_property('sprintermax:pipe.east_pipe') && !query.block_property('sprintermax:pipe.north_pipe') && !query.block_property('sprintermax:pipe.south_pipe')",
+                "components": {
+                    "minecraft:pick_collision": {
+						"origin": [ -8, 5, -3 ],
+						"size": [ 16, 6, 6 ]
+					}
+                }
+            },
+			
+			
+			{
+                "condition": "query.block_property('sprintermax:pipe.liquid_inside') == 'water'",
+                "components": {
+					"tag:water": {},
+                    "minecraft:material_instances": {
+						"*": {
+							"texture": "flowing_water",
+							"render_method": "blend",
+							"ambient_occlusion": true,
+							"face_dimming": true
+						}
+					}
+                }
+            },
+			{
+                "condition": "query.block_property('sprintermax:pipe.liquid_inside') == 'lava'",
+                "components": {
+                    "tag:wood": {},
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cobblestone",
+							"render_method": "blend",
+							"ambient_occlusion": true,
+							"face_dimming": true
+						}
+					}
+                }
+            }
+		],
+		"events": {
+			"tick": {
+				"sequence": [
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,1,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.upper_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,1,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.upper_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.bottom_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,-1,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.bottom_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.east_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.east_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(-1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.west_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(-1,0,0,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.west_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,0,1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.south_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,0,1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.south_pipe": false
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,0,-1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.north_pipe": true
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,0,-1,'sprintermax.pipes.glass_pipe')",
+						"set_block_property": {
+							"sprintermax:pipe.north_pipe": false
+						}
+					},
+					
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'water')",
+						"set_block_property": {
+							"sprintermax:pipe.liquid_inside": "'water'"
+						},
+						"play_sound": {
+							"sound": "mob.enderman.death",
+							"target": "self"
+						}
+					},
+					{
+						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'wood')",
+						"set_block_property": {
+							"sprintermax:pipe.liquid_inside": "'lava'"
+						}
+					},
+					{
+						"condition": "!q.block_neighbor_has_any_tag(0,-1,0,'water') && !q.block_neighbor_has_any_tag(0,-1,0,'wood')",
+						"set_block_property": {
+							"sprintermax:pipe.liquid_inside": "'none'"
+						}
+					}
+				]
+			}
+		}
+	}
+}

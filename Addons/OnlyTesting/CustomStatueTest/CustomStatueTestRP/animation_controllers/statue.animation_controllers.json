@@ -1,0 +1,81 @@
+{
+	"format_version" : "1.16.0",
+	"animation_controllers" : {
+		"controller.animation.statue.pose" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"pose_one" : "query.variant == 1"
+						},
+						{
+							"pose_two" : "query.variant == 2"
+						},
+						{
+							"pose_three" : "query.variant == 3"
+						},
+						{
+							"anim_one" : "query.variant == 4"
+						},
+						{
+							"anim_two" : "query.variant == 5"
+						}
+					]
+				},
+				"pose_one" : {
+					"animations" : [ "pose_one" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"default" : "query.variant != 1"
+						}
+					]
+				},
+				"pose_two" : {
+					"animations" : [ "pose_two" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"default" : "query.variant != 2"
+						}
+					]
+				},
+				"pose_three" : {
+					"animations" : [ "pose_three" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"default" : "query.variant != 3"
+						}
+					]
+				},
+				"anim_one" : {
+					"animations" : [ "anim_one" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"default" : "query.variant != 4"
+						}
+					]
+				},
+				"anim_two" : {
+					"animations" : [ "anim_two" ],
+					"blend_transition" : 0.1,
+					"blend_via_shortest_path" : true,
+					"transitions" : [
+						{
+							"default" : "query.variant != 5"
+						}
+					]
+				}
+			}
+		}
+	}
+}

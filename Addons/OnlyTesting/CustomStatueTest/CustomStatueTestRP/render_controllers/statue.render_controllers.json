@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.TestStatue": {
+      "geometry": "geometry.default",
+	  /*"part_visibility": [
+        { "Head_Layer": "variable.statue.head_layer == 1" },
+		{ "Body_Layer": "variable.statue.body_layer == 1" },
+		{ "RightArm_Layer": "variable.statue.leftarm_layer == 1" },
+		{ "LeftArm_Layer": "variable.statue.rightarm_layer == 1" },
+		{ "RightLeg_Layer": "variable.statue.leftleg_layer == 1" },
+		{ "LeftLeg_Layer": "variable.statue.rightleg_layer == 1" }
+
+      ],*/
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "texture.default" ]
+    }
+  }
+}

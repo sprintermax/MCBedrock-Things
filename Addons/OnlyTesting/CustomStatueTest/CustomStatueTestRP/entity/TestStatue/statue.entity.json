@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "spmax:test_statue",
+      "materials": {
+        "default": "entity_alphablend"
+      },
+      "textures": {
+		"default": "textures/TestStatue/statue"
+      },
+      "animations": {
+		"controller.pose": "controller.animation.statue.pose",
+
+		"pose_one": "animation.statue.zombie",
+		"pose_two": "animation.statue.hero",
+		"pose_three": "animation.statue.entertain",
+		"anim_one": "animation.statue.anim_one",
+		"anim_two": "animation.statue.anim_two"
+      },
+      "scripts": {
+        "animate": [
+          "controller.pose"
+        ]
+      },
+      "geometry": {
+        "default": "geometry.test_statue"
+      },
+      "render_controllers": [ "controller.render.TestStatue" ]
+    }
+  }
+}

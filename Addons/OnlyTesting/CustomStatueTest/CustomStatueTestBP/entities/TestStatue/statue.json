@@ -1,0 +1,220 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "spmax:test_statue",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+	},
+
+	"component_groups": {
+      "spmax:destroy": {
+        "minecraft:instant_despawn": {}
+      },
+	  "spmax:pose_zero": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "spmax:pose_one": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+	  "spmax:pose_two": {
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+	  "spmax:pose_three": {
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+	  "spmax:pose_four": {
+        "minecraft:variant": {
+          "value": 4
+        }
+      },
+	  "spmax:pose_five": {
+        "minecraft:variant": {
+          "value": 5
+        }
+      }
+    },
+
+    "components": {
+		"minecraft:damage_sensor": {
+			"triggers": {
+				"cause": "all",
+				"deals_damage": false
+			}
+		},
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 2
+      },
+      "minecraft:nameable": {
+      },
+	  "minecraft:persistent": {},
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false
+      },
+
+	  "minecraft:interact": {
+    "interactions": [
+        {
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                                "test": "is_sneaking",
+                                "subject": "other",
+                                "operator": "!=",
+                                "value": true
+                        }
+                    ]
+                },
+				"event": "spmax:change_pose",
+				"target": "self"
+            },
+            "play_sounds": "block.click",
+            "interact_text": "Change Pose/Animation"
+        },
+		{
+            "on_interact": {
+                "filters": {
+                    "all_of": [
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        },
+                        {
+                                "test": "is_sneaking",
+                                "subject": "other",
+                                "operator": "==",
+                                "value": true
+                        }
+                    ]
+                },
+				"event": "spmax:destroy",
+				"target": "self"
+            },
+            "play_sounds": "block.click.fail",
+            "interact_text": "Destroy"
+        }
+    ]
+}
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "spmax:pose_zero"
+          ]
+        }
+      },
+
+	  "spmax:destroy": {
+        "add": {
+          "component_groups": [
+            "spmax:destroy"
+          ]
+        }
+      },
+
+	  "spmax:change_pose": {
+		"sequence": [
+          {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 0
+            },
+			"remove": {
+              "component_groups": [ "spmax:pose_zero" ]
+            },
+            "add": {
+              "component_groups": [ "spmax:pose_one" ]
+            }
+          },
+		  {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 1
+            },
+			"remove": {
+              "component_groups": [ "spmax:pose_one" ]
+            },
+            "add": {
+              "component_groups": [ "spmax:pose_two" ]
+            }
+          },
+		  {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 2
+            },
+			"remove": {
+              "component_groups": [ "spmax:pose_two" ]
+            },
+            "add": {
+              "component_groups": [ "spmax:pose_three" ]
+            }
+          },
+		  {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 3
+            },
+			"remove": {
+              "component_groups": [ "spmax:pose_three" ]
+            },
+            "add": {
+              "component_groups": [ "spmax:pose_four" ]
+            }
+          },
+		  {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 4
+            },
+			"remove": {
+              "component_groups": [ "spmax:pose_four" ]
+            },
+            "add": {
+              "component_groups": [ "spmax:pose_five" ]
+            }
+          },
+		  {
+            "filters": {
+              "test": "is_variant",
+              "operator": "==",
+              "value": 5
+            },
+			"remove": {
+              "component_groups": [ "spmax:pose_five" ]
+            },
+            "add": {
+              "component_groups": [ "spmax:pose_zero" ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    // Structure Blocks
+	"spmax:cell.blocker_plain": {"textures": "textures/spmax/blocks/cells/blocker_plain.png"},
+	"spmax:cell.blocker_grid": {"textures": "textures/spmax/blocks/cells/blocker_grid.png"},
+	"spmax:cell.blocker_dot": {"textures": "textures/spmax/blocks/cells/blocker_dot.png"},
+	"spmax:cell.blocker_undot": {"textures": "textures/spmax/blocks/cells/blocker_dot.png"},
+	"spmax:cell.blocker_square": {"textures": "textures/spmax/blocks/cells/blocker_square.png"},
+	"spmax:cell.blocker_unsquare": {"textures": "textures/spmax/blocks/cells/blocker_dot.png"},
+
+	// Action Blocks
+	"spmax:cell.cloner_back": {"textures": "textures/spmax/blocks/cells/cloner_back.png"},
+	"spmax:cell.cloner_side": {"textures": "textures/spmax/blocks/cells/cloner_side.png"},
+	"spmax:cell.teleporter_back": {"textures": "textures/spmax/blocks/cells/teleporter_back.png"},
+	"spmax:cell.teleporter_side": {"textures": "textures/spmax/blocks/cells/teleporter_side.png"},
+	"spmax:cell.rotator_left_back": {"textures": "textures/spmax/blocks/cells/rotator_left_back.png"},
+	"spmax:cell.rotator_left_side": {"textures": "textures/spmax/blocks/cells/rotator_left_side.png"},
+	"spmax:cell.rotator_right_back": {"textures": "textures/spmax/blocks/cells/rotator_right_back.png"},
+	"spmax:cell.rotator_right_side": {"textures": "textures/spmax/blocks/cells/rotator_right_side.png"},
+
+	// Logic Blocks
+	"spmax:cell.mover_back": {"textures": "textures/spmax/blocks/cells/mover_back.png"},
+	"spmax:cell.mover_side": {"textures": "textures/spmax/blocks/cells/mover_side.png"},
+	"spmax:cell.enemy_back": {"textures": "textures/spmax/blocks/cells/enemy_back.png"},
+	"spmax:cell.enemy_side": {"textures": "textures/spmax/blocks/cells/enemy_side.png"},
+	"spmax:cell.trasher_back": {"textures": "textures/spmax/blocks/cells/trasher_back.png"},
+	"spmax:cell.trasher_side": {"textures": "textures/spmax/blocks/cells/trasher_side.png"},
+	"spmax:cell.shield_back": {"textures": "textures/spmax/blocks/cells/shield_back.png"},
+	"spmax:cell.shield_side": {"textures": "textures/spmax/blocks/cells/shield_side.png"},
+	"spmax:cell.walker_back": {"textures": "textures/spmax/blocks/cells/walker_back.png"},
+	"spmax:cell.walker_one": {"textures": "textures/spmax/blocks/cells/walker_one.png"},
+	"spmax:cell.walker_two": {"textures": "textures/spmax/blocks/cells/walker_two.png"}
+  }
+}

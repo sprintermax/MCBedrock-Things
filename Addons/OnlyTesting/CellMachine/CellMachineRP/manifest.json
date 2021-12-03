@@ -1,0 +1,23 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Cell Machine Resource Pack",
+		"name": "Cell Machine",
+		"uuid": "d6bdf212-5384-11ec-bf63-0242ac130002",
+		"version": [ 1, 0, 0 ],
+		"min_engine_version": [ 1, 18, 0 ]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "d6bdeb14-5384-11ec-bf63-0242ac130002",
+			"version": [ 1, 0, 0 ]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "d6bde72c-5384-11ec-bf63-0242ac130002",
+			"version": [ 1, 0, 0 ]
+		}
+	]
+}

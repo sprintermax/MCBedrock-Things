@@ -1,0 +1,35 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "spmax:cells.trasher"
+		},
+		"components": {
+			"tag:spmax:cell": {},
+			"tag:spmax:cell.trasher": {},
+			"tag:spmax:cell.can_clone": {},
+			
+			"minecraft:unit_cube": {},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "spmax:cell.trasher_back",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "spmax:cell.trasher_side",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:pick_collision": {
+				"origin": [-8, 0, -8],
+				"size": [16, 16, 16]
+			},
+			"minecraft:entity_collision": {
+				"origin": [-8, 0, -8],
+				"size": [16, 16, 16]
+			},
+			"minecraft:block_light_absorption": 0,
+			"minecraft:destroy_time": 3
+		}
+	}
+}

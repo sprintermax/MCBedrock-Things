@@ -1,0 +1,10 @@
+{
+	"ui_defs": [
+		"ui/spmax/npc_screens/bottom_action_screen.json",
+		"ui/spmax/npc_screens/custom_crafting_screen.json",
+		"ui/spmax/npc_screens/player_status_screen.json",
+		"ui/spmax/npc_screens/scroll_box_screen.json",
+		"ui/spmax/npc_screens/world_info_screen.json",
+		"ui/spmax/custom_npcs_main.json"
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"format_version": 1,
+	"header": {
+		"description": "Multiple Custom NPC UIs Example Pack",
+		"name": "Example Pack",
+		"uuid": "2cb80071-4197-4f20-907b-27b081303eb4",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"description": "N/A",
+			"uuid": "f72456fd-cce7-434e-9c70-914cf40ce1b1",
+			"type": "data",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

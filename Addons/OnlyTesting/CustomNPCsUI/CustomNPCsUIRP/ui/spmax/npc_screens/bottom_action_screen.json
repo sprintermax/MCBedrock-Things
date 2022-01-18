@@ -1,0 +1,153 @@
+{
+    "namespace": "npc_bottom_action",
+    "dialog_stack_panel": {
+        "type": "stack_panel",
+        "orientation": "vertical",
+        "size": [
+            "100%",
+            "100%c"
+        ],
+        "controls": [
+            {
+                "top_padding": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        6
+                    ]
+                }
+            },
+            {
+                "text_panel": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        "100%c"
+                    ],
+                    "controls": [
+                        {
+                            "message_label": {
+                                "type": "label",
+                                "text_alignment": "center",
+                                "size": [
+                                    "100%-8px",
+                                    "default"
+                                ],
+                                "text": "#dialogtext",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#dialogtext"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "middle_padding": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        6
+                    ]
+                }
+            },
+            {
+                "buttons": {
+                    "type": "stack_panel",
+                    "orientation": "horizontal",
+                    "size": [
+                        "100%",
+                        "100%cm"
+                    ],
+                    "controls": [
+                        {
+                            "actions": {
+                                "type": "grid",
+                                "size": [
+                                    "fill",
+                                    "default"
+                                ],
+                                "grid_item_template": "npc_interact.student_button",
+                                "grid_dimension_binding": "#student_button_grid_dimensions",
+                                "collection_name": "student_buttons_collection",
+                                "bindings": [
+                                    {
+                                        "binding_name": "#student_button_grid_dimensions"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "main_screen@common.root_panel": {
+        "$dialog_background": "common.dialog_background_hollow_3",
+        "$show_close_button": false,
+        "size": [
+            420,
+            75
+        ],
+        "offset": [
+            0,
+            "100px"
+        ],
+        "controls": [
+            {
+                "common_panel@common.common_panel": {}
+            },
+            {
+                "close@npc_interact.close_button_holder": {
+                    "offset": [
+                        2,
+                        20
+                    ]
+                }
+            },
+            {
+                "title_text@common_dialogs.standard_title_label": {
+                    "$text_name": "spmax.screen.npc.action",
+                    "$title_text_binding_type": "global",
+                    "$title_binding_condition": "",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "offset": [
+                        0,
+                        9
+                    ]
+                }
+            },
+            {
+                "action_panel@npc_bottom_action.dialog_stack_panel": {
+                    "size": [
+                        400,
+                        170
+                    ],
+                    "offset": [
+                        8,
+                        23
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#student_view_visible",
+                "binding_name_override": "#visible",
+                "binding_type": "global"
+            }
+        ],
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            }
+        ]
+    }
+}

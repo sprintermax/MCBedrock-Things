@@ -1,0 +1,28 @@
+{
+        "format_version": "1.17",
+        "minecraft:npc_dialogue": {
+            "scenes": [
+                {
+                    "scene_tag": "test_2",
+                    "npc_name": "PlayerInfo_TwoButtons_Name",
+                    "text": { "rawtext": [ { "translate": "spmax.npc_test2" } ] },
+                    "on_open_commands": ["/say opened2"],
+                    "on_close_commands": ["/say leaved2"],
+                    "buttons": [
+                        {
+                            "name": { "rawtext": [ { "translate": "spmax.npc_btn3" } ] },
+                            "commands": [
+                                "/give @initiator diamond"
+                            ]
+                        },
+						{
+                            "name": { "rawtext": [ { "translate": "spmax.npc_btn4" } ] },
+                            "commands": [
+                                "/give @initiator emerald"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }

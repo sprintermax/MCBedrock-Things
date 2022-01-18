@@ -1,0 +1,35 @@
+{
+	"npc_screen": {
+		"modifications": [
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"creative_edit_screen@npc_interact.npc_screen_contents": {
+						"bindings": [
+							{
+								"binding_name": "#teacher_view_visible",
+								"binding_name_override": "#visible",
+								"binding_type": "global"
+							}
+						]
+					}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"custom_screens@spmax_customnpcs.npc_screens": {}
+				}
+			},
+			{
+				"array_name": "controls",
+				"operation": "insert_front",
+				"value": {
+					"close@npc_interact.close_button_holder": {}
+				}
+			}
+		]
+	}
+}

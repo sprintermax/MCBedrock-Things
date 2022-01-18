@@ -1,0 +1,207 @@
+{
+    "namespace": "player_status",
+    "student_button": {
+        "size": [
+            "100%",
+            "30px"
+        ],
+        "type": "panel",
+        "controls": [
+            {
+                "button@common_buttons.light_text_button": {
+                    "$button_type_panel": "npc_interact.student_button_label_panel",
+                    "$pressed_button_name": "button.student_button",
+                    "layer": 4,
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection_details",
+                            "binding_collection_name": "student_buttons_collection",
+                            "binding_collection_prefix": "student_buttons"
+                        }
+                    ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#student_button_visible",
+                "binding_type": "collection",
+                "binding_name_override": "#visible",
+                "binding_collection_name": "student_buttons_collection"
+            }
+        ]
+    },
+    "main_screen@common.root_panel": {
+        "size": [
+            "80%",
+            "90%"
+        ],
+        "$show_close_button": false,
+        "controls": [
+            {
+                "screen_title_panel": {
+                    "type": "panel",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "offset": [
+                        0,
+                        "50% - 42px"
+                    ],
+                    "size": [
+                        130,
+                        25
+                    ],
+                    "controls": [
+                        {
+                            "common_panel@common.common_panel": {
+                                "layer": 1
+                            }
+                        },
+                        {
+                            "close@npc_interact.close_button_holder": {
+                                "offset": [
+                                    1,
+                                    21
+                                ]
+                            }
+                        },
+                        {
+                            "title_label": {
+                                "type": "label",
+                                "anchor_from": "left_middle",
+                                "anchor_to": "left_middle",
+                                "text": "spmax.player_statusnpc",
+                                "color": "$title_text_color",
+                                "text_alignment": "center",
+                                "offset": [
+                                    8,
+                                    0
+                                ],
+                                "layer": 2
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "player_menu_view@common.common_panel": {
+                    "$dialog_background": "common.dialog_background_hollow_4",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        "50% - 162px",
+                        "50% - 15px"
+                    ],
+                    "$fill_alpha": 0.85,
+                    "size": [
+                        160,
+                        80
+                    ],
+                    "controls": [
+                        {
+                            "bg_image@$dialog_background": {
+                                "layer": 1
+                            }
+                        },
+                        {
+                            "player_renderer": {
+                                "type": "custom",
+                                "renderer": "live_player_renderer",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "layer": 2,
+                                "size": [
+                                    30,
+                                    30
+                                ],
+                                "offset": [
+                                    16,
+                                    10
+                                ],
+                                "property_bag": {
+                                    "#look_at_cursor": true
+                                }
+                            }
+                        },
+                        {
+                            "hearts_label": {
+                                "type": "label",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "text": "spmax.life_status",
+                                "text_alignment": "center",
+                                "layer": 2,
+                                "offset": [
+                                    60,
+                                    "50% - 12px"
+                                ]
+                            }
+                        },
+                        {
+                            "heart_renderer": {
+                                "renderer": "heart_renderer",
+                                "type": "custom",
+                                "anchor_to": "top_left",
+                                "anchor_from": "top_left",
+                                "layer": 2,
+                                "offset": [
+                                    60,
+                                    "50% + 4px"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "player_menu_actions@common.common_panel": {
+                    "$dialog_background": "common.dialog_background_hollow_4",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "offset": [
+                        "50% + 2px",
+                        "50% - 15px"
+                    ],
+                    "$fill_alpha": 0.85,
+                    "size": [
+                        120,
+                        80
+                    ],
+                    "controls": [
+                        {
+                            "bg_image@$dialog_background": {
+                                "layer": 1
+                            }
+                        },
+                        {
+                            "student_buttons": {
+                                "type": "grid",
+                                "size": [
+                                    "100% - 20px",
+                                    "default"
+                                ],
+                                "grid_item_template": "player_status.student_button",
+                                "grid_dimensions": [
+                                    1,
+                                    2
+                                ],
+                                "collection_name": "student_buttons_collection"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "button_mappings": [
+            {
+                "from_button_id": "button.menu_cancel",
+                "to_button_id": "button.menu_exit",
+                "mapping_type": "global"
+            }
+        ]
+    }
+}

@@ -1,0 +1,28 @@
+{
+        "format_version": "1.17",
+        "minecraft:npc_dialogue": {
+            "scenes": [
+                {
+                    "scene_tag": "test_3",
+                    "npc_name": "NPC_BottomAction",
+                    "text": { "rawtext": [ { "text": "spmax.npc_test3" } ] },
+                    "on_open_commands": ["/say opened3"],
+                    "on_close_commands": ["/say leaved3"],
+                    "buttons": [
+                        {
+                            "name": { "rawtext": [ { "translate": "spmax.npc_btn5" } ] },
+                            "commands": [
+                                "/give @initiator copper_ingot"
+                            ]
+                        },
+						{
+                            "name": { "rawtext": [ { "translate": "spmax.npc_btn6" } ] },
+                            "commands": [
+                                "/give @initiator grass"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }

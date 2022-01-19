@@ -1,9 +1,9 @@
 {
 	"format_version": 1,
 	"header": {
-		"description": "Multiple Custom NPC UIs Example Pack",
+		"description": "Multiple Custom Block UIs Example Pack",
 		"name": "Example Pack",
-		"uuid": "2cb80071-4197-4f20-907b-27b081303eb4",
+		"uuid": "2341062b-746b-4021-bd17-f2a3cec7f9f3",
 		"version": [
 			1,
 			0,
@@ -13,7 +13,7 @@
 	"modules": [
 		{
 			"description": "N/A",
-			"uuid": "f72456fd-cce7-434e-9c70-914cf40ce1b1",
+			"uuid": "2e0d2b3b-010b-4af6-a886-1fd72e207f67",
 			"type": "data",
 			"version": [
 				1,

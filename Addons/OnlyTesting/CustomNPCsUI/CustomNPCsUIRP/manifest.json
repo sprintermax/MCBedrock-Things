@@ -4,6 +4,11 @@
 		"description": "Multiple Custom NPC UIs Example Pack",
 		"name": "Example Pack",
 		"uuid": "3e1a7583-1234-4246-a5ec-657ff2cf4d86",
+		"min_engine_version": [
+			1,
+			18,
+			0
+		],
 		"version": [
 			1,
 			0,

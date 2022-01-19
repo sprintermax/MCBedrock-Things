@@ -1,47 +1,36 @@
 {
     "namespace": "npc_scroll_box",
-    "student_button": {
-        "size": [
-            "100%",
-            "30px"
-        ],
-        "type": "panel",
-        "controls": [
-            {
-                "button@common_buttons.light_text_button": {
-                    "$button_type_panel": "npc_interact.student_button_label_panel",
-                    "$pressed_button_name": "button.student_button",
-                    "layer": 4,
-                    "size": [
-                        "100%",
-                        "100%"
-                    ],
-                    "bindings": [
-                        {
-                            "binding_type": "collection_details",
-                            "binding_collection_name": "student_buttons_collection",
-                            "binding_collection_prefix": "student_buttons"
-                        }
-                    ]
-                }
-            }
-        ],
-        "bindings": [
-            {
-                "binding_name": "#student_button_visible",
-                "binding_type": "collection",
-                "binding_name_override": "#visible",
-                "binding_collection_name": "student_buttons_collection"
-            }
-        ]
-    },
+    "student_button@common.empty_panel": {
+		"size": [ "100%", "30px" ],
+		"controls": [
+			{
+				"button@common_buttons.light_text_button": {
+					"$button_type_panel": "npc_interact.student_button_label_panel",
+					"$pressed_button_name": "button.student_button",
+					"layer": 4,
+					"size": [ "100% - 2px", "100% - 2px" ],
+					"bindings": [
+						{
+							"binding_type": "collection_details",
+							"binding_collection_name": "student_buttons_collection",
+							"binding_collection_prefix": "student_buttons"
+						}
+					]
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_name": "#student_button_visible",
+				"binding_type": "collection",
+				"binding_name_override": "#visible",
+				"binding_collection_name": "student_buttons_collection"
+			}
+		]
+	},
     "dialog_stack_panel": {
         "type": "stack_panel",
-        "orientation": "vertical",
-        "size": [
-            "100%",
-            "100%c"
-        ],
+        "size": [ "100%", "100%c" ],
         "controls": [
             {
                 "top_padding": {
@@ -55,19 +44,13 @@
             {
                 "text_panel": {
                     "type": "panel",
-                    "size": [
-                        "100%",
-                        "100%c"
-                    ],
+                    "size": [ "100%", "100%c" ],
                     "controls": [
                         {
                             "message_label": {
                                 "type": "label",
                                 "text_alignment": "center",
-                                "size": [
-                                    "100%-8px",
-                                    "default"
-                                ],
+                                "size": [ "100%-8px", "default" ],
                                 "text": "#dialogtext",
                                 "bindings": [
                                     {
@@ -82,27 +65,50 @@
             {
                 "middle_padding": {
                     "type": "panel",
-                    "size": [
-                        "100%",
-                        2
-                    ]
+                    "size": [ "100%", 2 ]
                 }
             },
             {
-                "student_buttons": { // need to fix grid size
-                    "type": "grid",
-                    "size": [
-                        "100%",
-                        "default"
-                    ],
-                    "grid_item_template": "npc_scroll_box.student_button",
-                    "grid_dimensions": [
-                        1,
-                        6
-                    ],
-                    "collection_name": "student_buttons_collection"
-                }
-            },
+				"action_buttons": {
+					"type": "stack_panel",
+					"anchor_from": "top_middle",
+					"anchor_to": "top_middle",
+					"size": [ "100%", "100%c" ],
+					"collection_name": "student_buttons_collection",
+					"controls": [
+						{
+							"0@npc_scroll_box.student_button": {
+								"collection_index": 0
+							}
+						},
+						{
+							"1@npc_scroll_box.student_button": {
+								"collection_index": 1
+							}
+						},
+						{
+							"2@npc_scroll_box.student_button": {
+								"collection_index": 2
+							}
+						},
+						{
+							"3@npc_scroll_box.student_button": {
+								"collection_index": 3
+							}
+						},
+						{
+							"4@npc_scroll_box.student_button": {
+								"collection_index": 4
+							}
+						},
+						{
+							"5@npc_scroll_box.student_button": {
+								"collection_index": 5
+							}
+						}
+					]
+				}
+			},
             {
                 "bottom_padding": {
                     "type": "panel",
@@ -117,20 +123,14 @@
     "main_screen@common.root_panel": {
         "$dialog_background": "common.dialog_background_hollow_3",
         "$show_close_button": false,
-        "size": [
-            "40%",
-            "70%"
-        ],
+        "size": [ "40%", "70%" ],
         "controls": [
             {
                 "common_panel@common.common_panel": {}
             },
             {
                 "close@npc_interact.close_button_holder": {
-                    "offset": [
-                        2,
-                        20
-                    ]
+                    "offset": [ 2, 20 ]
                 }
             },
             {
@@ -140,34 +140,19 @@
                     "$title_binding_condition": "",
                     "anchor_from": "top_middle",
                     "anchor_to": "top_middle",
-                    "offset": [
-                        0,
-                        9
-                    ]
+                    "offset": [ 0, 8 ]
                 }
             },
             {
                 "scrolling_panel@common.scrolling_panel": {
-                    "size": [
-                        "100% - 16px",
-                        "100% - 30px"
-                    ],
-                    "offset": [
-                        8,
-                        22
-                    ],
+                    "size": [ "100% - 16px", "100% - 30px" ],
+                    "offset": [ 8, 22 ],
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
                     "$scrolling_content": "npc_scroll_box.dialog_stack_panel",
                     "$show_background": false,
-                    "$scroll_size": [
-                        "5px",
-                        "100% - 4px"
-                    ],
-                    "$scroll_bar_left_padding_size": [
-                        1,
-                        0
-                    ]
+                    "$scroll_size": [ "5px", "100% - 4px" ],
+                    "$scroll_bar_left_padding_size": [ 1, 0 ]
                 }
             }
         ],

@@ -1,0 +1,44 @@
+{
+        "format_version": "1.17",
+        "minecraft:npc_dialogue": {
+            "scenes": [
+                {
+                    "scene_tag": "change_2",
+                    "npc_name": "NPC_ScrollBox",
+                    "text": "\nAvaliable Items\n",
+                    "buttons": [
+                        {
+                            "name": "Apple",
+                            "commands": [
+                                "/give @initiator apple 8"
+                            ]
+                        },
+						{
+                            "name": "Diamond",
+                            "commands": [
+                                "/give @initiator diamond 1"
+                            ]
+                        },
+						{
+                            "name": "Grass Block",
+                            "commands": [
+                                "/give @initiator grass 16"
+                            ]
+                        },
+						{
+                            "name": "Gold Ingot",
+                            "commands": [
+                                "/give @initiator gold_ingot 4"
+                            ]
+                        },
+						{
+                            "name": "Return to Menu",
+                            "commands": [
+                                "/dialogue open @s @initiator change_1"
+                            ]
+                        }
+					]
+                }
+            ]
+        }
+    }

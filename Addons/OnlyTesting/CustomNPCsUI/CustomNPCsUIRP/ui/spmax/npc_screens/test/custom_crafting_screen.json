@@ -201,8 +201,8 @@
             {
                 "close@npc_interact.close_button_holder": {
                     "offset": [
-                        2,
-                        20
+                        0,
+                        21
                     ]
                 }
             },

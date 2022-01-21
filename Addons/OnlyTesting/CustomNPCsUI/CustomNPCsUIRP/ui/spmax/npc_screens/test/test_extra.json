@@ -1,0 +1,159 @@
+{
+    "namespace": "npc_test_extra",
+    "student_button@common.empty_panel": {
+		"controls": [
+			{
+				"button@common_buttons.light_text_button": {
+					"$button_type_panel": "npc_interact.student_button_label_panel",
+					"$pressed_button_name": "button.student_button",
+					"layer": 4,
+					"size": [ "100% - 2px", "100% - 2px" ],
+					"bindings": [
+						{
+							"binding_type": "collection_details",
+							"binding_collection_name": "student_buttons_collection",
+							"binding_collection_prefix": "student_buttons"
+						}
+					]
+				}
+			}
+		],
+		"bindings": [
+			{
+				"binding_name": "#student_button_visible",
+				"binding_type": "collection",
+				"binding_name_override": "#visible",
+				"binding_collection_name": "student_buttons_collection"
+			}
+		]
+	},
+	"action_buttons": {
+		"type": "panel",
+		"anchor_from": "top_middle",
+		"anchor_to": "top_middle",
+		"size": [ "100%", "100%" ],
+		"controls": [			
+			{
+				"action_buttons1": {
+					"type": "stack_panel",
+					"orientation": "horizontal",
+					"anchor_from": "top_middle",
+					"anchor_to": "top_middle",
+					"size": [ "100% - 20px", "60px" ],
+					"offset": [ 0, "50% - 45px" ],
+					"collection_name": "student_buttons_collection",
+					"controls": [
+						{
+							"0@npc_test_extra.student_button": {
+								"collection_index": 0,
+								"size": [ "30px", "30px" ]
+							}
+						},
+						{
+							"panel0": {
+								"type": "panel",
+								"size": [ "2px", "100%" ]
+							}
+						},
+						{
+							"1@npc_test_extra.student_button": {
+								"collection_index": 1,
+								"size": [ "fill", "50px" ]
+							}
+						},
+						{
+							"panel1": {
+								"type": "panel",
+								"size": [ "2px", "100%" ]
+							}
+						},
+						{
+							"2@npc_test_extra.student_button": {
+								"collection_index": 2,
+								"size": [ "fill", "50px" ]
+							}
+						},
+						{
+							"panel2": {
+								"type": "panel",
+								"size": [ "2px", "100%" ]
+							}
+						},
+						{
+							"3@npc_test_extra.student_button": {
+								"collection_index": 3,
+								"size": [ "fill", "50px" ]
+							}
+						},
+						{
+							"panel3": {
+								"type": "panel",
+								"size": [ "2px", "100%" ]
+							}
+						},
+						{
+							"4@npc_test_extra.student_button": {
+								"collection_index": 4,
+								"size": [ "30px", "30px" ]
+							}
+						}
+					]
+				}
+			},
+			{
+				"action_buttons2": {
+					"type": "stack_panel",
+					"anchor_from": "top_middle",
+					"anchor_to": "top_middle",
+					"size": [ "100%", "30px" ],
+					"offset": [ 16, "50% + 15px" ],
+					"collection_name": "student_buttons_collection",
+					"controls": [
+						{
+							"5@npc_test_extra.student_button": {
+								"collection_index": 5,
+								"size": [ "100% - 32px", "100%" ]
+							}
+						}
+					]
+				}
+			}	
+		]
+	},
+    
+    "main_screen@common.root_panel": {
+        "$dialog_background": "common.dialog_background_hollow_3",
+        "$show_close_button": false,
+        "size": [ "40%", "60%" ],
+        "controls": [
+            {
+                "common_panel@common.common_panel": {}
+            },
+            {
+                "close@npc_interact.close_button_holder": {
+                    "offset": [ 2, 20 ]
+                }
+            },
+            {
+                "title_text@common_dialogs.standard_title_label": {
+                    "$text_name": "spmax.screen.npc.menu",
+                    "$title_text_binding_type": "global",
+                    "$title_binding_condition": "",
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "offset": [ 0, 8 ]
+                }
+            },
+            {
+                "scrolling_panel@npc_test_extra.action_buttons": { }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#student_view_visible",
+                "binding_name_override": "#visible",
+                "binding_type": "global"
+            }
+        ]
+    }
+}

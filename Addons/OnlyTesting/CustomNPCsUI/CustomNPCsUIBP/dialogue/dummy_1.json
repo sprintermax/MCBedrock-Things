@@ -1,0 +1,12 @@
+{
+        "format_version": "1.17",
+        "minecraft:npc_dialogue": {
+            "scenes": [
+                {
+                    "scene_tag": "dummy_1",
+                    "npc_name": "NPC_DummyScreen_1",
+                    "text": ""
+                }
+            ]
+        }
+    }

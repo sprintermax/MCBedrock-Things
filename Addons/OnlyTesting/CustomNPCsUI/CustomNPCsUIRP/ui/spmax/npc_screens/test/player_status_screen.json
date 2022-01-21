@@ -64,7 +64,7 @@
                         {
                             "close@npc_interact.close_button_holder": {
                                 "offset": [
-                                    1,
+                                    0,
                                     21
                                 ]
                             }
@@ -194,13 +194,6 @@
                         }
                     ]
                 }
-            }
-        ],
-        "button_mappings": [
-            {
-                "from_button_id": "button.menu_cancel",
-                "to_button_id": "button.menu_exit",
-                "mapping_type": "global"
             }
         ]
     }

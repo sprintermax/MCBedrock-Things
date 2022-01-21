@@ -1,9 +1,9 @@
 {
 	"namespace": "spmax_customnpcs",
-	"npc_screens": {
+	"screen_contents": {
 		"type": "panel",
 		"controls": [
-			//example changing the screen by checking the npc name
+			//testing and dummy screens
 			{
 				"screen_test1@player_status.main_screen": {
 					"bindings": [
@@ -17,18 +17,47 @@
 						},
 						{
 							"binding_type": "view",
-							"source_property_name": "(#title_text = 'PlayerInfo_TwoButtons_Name' and (not #teacher_view_visible))",
+							"source_property_name": "(#title_text = 'Dummy_PlayerInfo_Name' and (not #teacher_view_visible))",
 							"target_property_name": "#visible"
 						}
 					]
 				}
 			},
-			//example changing the screen by checking the dialog text
 			{
-				"screen_test2@player_status.main_screen": {
+				"screen_test2@world_info.main_screen": {
 					"bindings": [
 						{
-							"binding_name": "#dialogtext",
+							"binding_name": "#title_text",
+							"binding_type": "global"
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(#title_text = 'Dummy_WorldInfo')",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"screen_test3@custom_crafting.main_screen": {
+					"bindings": [
+						{
+							"binding_name": "#title_text",
+							"binding_type": "global"
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(#title_text = 'Dummy_CustomInventory')",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"screen_test4@npc_test_extra.main_screen": {
+					"bindings": [
+						{
+							"binding_name": "#title_text",
 							"binding_type": "global"
 						},
 						{
@@ -37,15 +66,16 @@
 						},
 						{
 							"binding_type": "view",
-							"source_property_name": "(#dialogtext = 'PlayerInfo_TwoButtons_Text' and (not #teacher_view_visible))",
+							"source_property_name": "(#title_text = 'Dummy_ButtomBox' and (not #teacher_view_visible))",
 							"target_property_name": "#visible"
 						}
 					]
 				}
 			},
-			//example bottom action screen
+			//Bottom Action
 			{
-				"screen_test3@npc_bottom_action.main_screen": {
+				"bottom_action@spmax_npc_bottom_action.main_screen": {
+					"$menu_title_visible": true,
 					"bindings": [
 						{
 							"binding_name": "#title_text",
@@ -63,9 +93,10 @@
 					]
 				}
 			},
-			//example scroll box screen
+			//Scrollable Menu
 			{
-				"screen_test4@npc_scroll_box.main_screen": {
+				"scroll_box@spmax_npc_scroll_box.main_screen": {
+					"$menu_title_visible": true,
 					"bindings": [
 						{
 							"binding_name": "#title_text",
@@ -83,40 +114,9 @@
 					]
 				}
 			},
-			// other examples with dummy screens
+			//FullScreen Page
 			{
-				"screen_test5@world_info.main_screen": {
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'WorldInfo_Dummy')",
-							"target_property_name": "#visible"
-						}
-					]
-				}
-			},
-			{
-				"screen_test6@custom_crafting.main_screen": {
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'CustomInventory_Dummy')",
-							"target_property_name": "#visible"
-						}
-					]
-				}
-			},
-			//test extra screen
-			{
-				"screen_testextra@npc_test_extra.main_screen": {
+				"fullscreen@spmax_npc_fullscreen.main_screen": {
 					"bindings": [
 						{
 							"binding_name": "#title_text",
@@ -128,7 +128,7 @@
 						},
 						{
 							"binding_type": "view",
-							"source_property_name": "(#title_text = 'test_extra' and (not #teacher_view_visible))",
+							"source_property_name": "(#title_text = 'NPC_FullScreen' and (not #teacher_view_visible))",
 							"target_property_name": "#visible"
 						}
 					]

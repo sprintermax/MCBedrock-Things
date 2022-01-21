@@ -1,34 +1,6 @@
 {
-    "namespace": "npc_scroll_box",
-    "interaction_button@common.empty_panel": {
-		"size": [ "100%", "30px" ],
-		"controls": [
-			{
-				"button@common_buttons.light_text_button": {
-					"$button_type_panel": "npc_interact.student_button_label_panel",
-					"$pressed_button_name": "button.student_button",
-					"layer": 4,
-					"size": [ "100% - 2px", "100% - 2px" ],
-					"bindings": [
-						{
-							"binding_type": "collection_details",
-							"binding_collection_name": "student_buttons_collection",
-							"binding_collection_prefix": "student_buttons"
-						}
-					]
-				}
-			}
-		],
-		"bindings": [
-			{
-				"binding_name": "#student_button_visible",
-				"binding_type": "collection",
-				"binding_name_override": "#visible",
-				"binding_collection_name": "student_buttons_collection"
-			}
-		]
-	},
-    "dialog_stack_panel": {
+    "namespace": "spmax_npc_scroll_box",
+    "scrolling_content": {
         "type": "stack_panel",
         "size": [ "100%", "100%c" ],
         "controls": [
@@ -42,7 +14,7 @@
                 }
             },
             {
-				"message_label": {
+				"dialog_message": {
 					"type": "label",
 					"text_alignment": "center",
 					"size": [ "100%", "default" ],
@@ -57,71 +29,91 @@
             {
                 "middle_padding": {
                     "type": "panel",
-                    "size": [ "100%", 2 ]
+                    "size": [ "100%", 2 ],
+					"bindings": [
+						{
+							"binding_name": "#dialogtext"
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(#dialogtext > '')",
+							"target_property_name": "#visible"
+						}
+					]
                 }
             },
             {
-				"action_buttons": {
+				"student_buttons": {
 					"type": "stack_panel",
-					"anchor_from": "top_middle",
-					"anchor_to": "top_middle",
 					"size": [ "100%", "100%c" ],
 					"collection_name": "student_buttons_collection",
 					"controls": [
 						{
-							"0@npc_scroll_box.interaction_button": {
+							"0@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 0
 							}
 						},
 						{
-							"1@npc_scroll_box.interaction_button": {
+							"1@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 1
 							}
 						},
 						{
-							"2@npc_scroll_box.interaction_button": {
+							"2@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 2
 							}
 						},
 						{
-							"3@npc_scroll_box.interaction_button": {
+							"3@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 3
 							}
 						},
 						{
-							"4@npc_scroll_box.interaction_button": {
+							"4@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 4
 							}
 						},
 						{
-							"5@npc_scroll_box.interaction_button": {
+							"5@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 5
 							}
 						},
 						{
-							"6@npc_scroll_box.interaction_button": {
+							"6@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 6
 							}
 						},
 						{
-							"7@npc_scroll_box.interaction_button": {
+							"7@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 7
 							}
 						},
 						{
-							"8@npc_scroll_box.interaction_button": {
+							"8@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 8
 							}
 						},
 						{
-							"9@npc_scroll_box.interaction_button": {
+							"9@spmax_customnpcs_common.student_button": {
+								"size": [ "100%", "30px" ],
 								"collection_index": 9
 							}
 						}
-					]/*
-					"factory": {
+					]
+					//The factory is unused because it use have conflicts with hardcoded collection sizes
+					//Action count doesn't work properly when using /dialogue with custom scene files
+					/*"factory": {
 						"name": "action_item_factory",
-						"control_name": "npc_scroll_box.interaction_button"
+						"control_name": "spmax_customnpcs_common.student_button"
 					},
 					"bindings": [
 						{
@@ -143,35 +135,34 @@
         ]
     },
     "main_screen@common.root_panel": {
-        "$dialog_background": "common.dialog_background_hollow_3",
-        "$show_close_button": false,
+		"$menu_title_visible|default": true,
+		"$show_close_button": false,
         "size": [ "40%", "70%" ],
         "controls": [
             {
-                "common_panel@common.common_panel": {}
+                "common_panel@common.common_panel": {
+					"$dialog_background": "common.dialog_background_hollow_3"
+				}
             },
-            {
-                "close@npc_interact.close_button_holder": {
-                    "offset": [ 2, 20 ]
+			{
+                "close_button@npc_interact.close_button_holder": {
+                    "offset": [ 0, 21 ]
                 }
             },
             {
-                "title@common_dialogs.standard_title_label": {
+                "menu_title@common_dialogs.title_label": {
                     "$text_name": "spmax.screen.npc.menu",
-                    "$title_text_binding_type": "global",
-                    "$title_binding_condition": "",
-                    "anchor_from": "top_middle",
-                    "anchor_to": "top_middle",
+					"ignored": "(not $menu_title_visible)",
                     "offset": [ 0, 8 ]
                 }
             },
             {
-                "scrolling_panel@common.scrolling_panel": {
-                    "size": [ "100% - 16px", "100% - 30px" ],
-                    "offset": [ 8, 22 ],
-                    "anchor_from": "top_left",
-                    "anchor_to": "top_left",
-                    "$scrolling_content": "npc_scroll_box.dialog_stack_panel",
+                "scroll_panel@common.scrolling_panel": {
+                    "$scrolling_content": "spmax_npc_scroll_box.scrolling_content",
+					"size": [ "100% - 16px", "100% - 30px" ],
+                    "offset": [ 0, 22 ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
                     "$show_background": false,
                     "$scroll_size": [ "5px", "100% - 4px" ],
                     "$scroll_bar_left_padding_size": [ 1, 0 ]
@@ -183,13 +174,6 @@
                 "binding_name": "#student_view_visible",
                 "binding_name_override": "#visible",
                 "binding_type": "global"
-            }
-        ],
-        "button_mappings": [
-            {
-                "from_button_id": "button.menu_cancel",
-                "to_button_id": "button.menu_exit",
-                "mapping_type": "global"
             }
         ]
     }

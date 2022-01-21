@@ -1,5 +1,5 @@
 {
-    "namespace": "npc_test_extra",
+    "namespace": "spmax_npc_fullscreen",
     "student_button@common.empty_panel": {
 		"controls": [
 			{
@@ -120,47 +120,26 @@
 			}	
 		]
 	},
+
+	"screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "panel@common.fullscreen_header": {}
+      },
+      {
+        "title@settings_common.selector_group_label": {
+          "text": "toolboxMode.text",
+          "text_alignment": "center",
+          "anchor_from": "center",
+          "anchor_to": "center"
+        }
+      }
+    ]
+  },
     
-    "main_screen@common.root_panel": {
-        "$dialog_background": "common.dialog_background_hollow_3",
-        "$show_close_button": false,
-        "size": [ "40%", "60%" ],
-        "controls": [
-            {
-                "common_panel@common.common_panel": {}
-            },
-            {
-                "close@npc_interact.close_button_holder": {
-                    "offset": [ 2, 20 ]
-                }
-            },
-            {
-                "title_text@common_dialogs.standard_title_label": {
-                    "$text_name": "spmax.screen.npc.menu",
-                    "$title_text_binding_type": "global",
-                    "$title_binding_condition": "",
-                    "anchor_from": "top_middle",
-                    "anchor_to": "top_middle",
-                    "offset": [ 0, 8 ]
-                }
-            },
-            {
-                "scrolling_panel@npc_test_extra.action_buttons": { }
-            }
-        ],
-        "bindings": [
-            {
-                "binding_name": "#student_view_visible",
-                "binding_name_override": "#visible",
-                "binding_type": "global"
-            }
-        ],
-        "button_mappings": [
-            {
-                "from_button_id": "button.menu_cancel",
-                "to_button_id": "button.menu_exit",
-                "mapping_type": "global"
-            }
-        ]
+    "main_screen@common.base_screen": {
+        "$screen_content": "spmax_npc_fullscreen.screen_content",
+    	"$screen_bg_content": "common.screen_background"
     }
 }

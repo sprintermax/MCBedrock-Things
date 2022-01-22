@@ -58,17 +58,6 @@
 					"bindings": [
 						{
 							"binding_name": "#dialogtext"
-						}
-					]
-				}
-			},
-            {
-                "middle_padding": {
-                    "type": "panel",
-                    "size": [ "100%", 2 ],
-					"bindings": [
-						{
-							"binding_name": "#dialogtext"
 						},
 						{
 							"binding_type": "view",
@@ -76,13 +65,13 @@
 							"target_property_name": "#visible"
 						}
 					]
-                }
-            },
+				}
+			},
             {
 				"student_buttons": {
 					"type": "stack_panel",
-					"size": [ "100%", "100%c" ],
 					"collection_name": "student_buttons_collection",
+					"size": [ "100%", "100%c" ],
 					"controls": [
 						{
 							"0@spmax_customnpcs_common.student_button": {

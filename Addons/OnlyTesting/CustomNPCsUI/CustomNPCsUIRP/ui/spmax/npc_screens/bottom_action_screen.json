@@ -43,7 +43,7 @@
 					"anchor_from": "bottom_middle",
 					"anchor_to": "bottom_middle",
 					"orientation":"horizontal",
-					"size": [ "100%-16px", "20px" ],
+					"size": [ "100% - 16px", "20px" ],
 					"offset": [ 0, -8 ],
 					"collection_name": "student_buttons_collection",
 					"controls": [

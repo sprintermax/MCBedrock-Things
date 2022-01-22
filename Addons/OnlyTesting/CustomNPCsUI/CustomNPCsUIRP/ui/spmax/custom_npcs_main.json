@@ -1,6 +1,52 @@
 {
 	"namespace": "spmax_customnpcs",
-	"screen_contents": {
+	"npc_screen_contents": {
+    "type": "panel",
+    "controls": [
+      {
+        // Teacher window containing basic and advanced editing screens
+        "teacher@npc_interact.root_panel": {
+          "$child_control": "npc_interact.main_content",
+          "bindings": [
+            {
+              "binding_name": "#teacher_view_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      },
+      {
+        // Student view is form fitting because there could be any amount of student buttons and we don't want dead space
+        "student@common_dialogs.form_fitting_main_panel_no_buttons": {
+          "$panel_size": [ 320, "100%cm" ],
+          "size": "$panel_size",
+          "$child_control": "npc_interact.student_view_content",
+          "$title_panel": "common_dialogs.standard_title_label",
+          "$text_name": "#title_text",
+          "$title_text_binding_type": "global",
+          // Don't show default close button, we want our own
+          "$show_close_button": false,
+          "$custom_background": "common_dialogs.dialog_background_opaque_with_child",
+          "bindings": [
+            {
+              "binding_name": "#student_view_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      },
+      {
+        "npc_screen_close@npc_interact.close_text": {
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_left",
+          "offset": [ 20, 0 ]
+        }
+      }
+    ]
+  },
+  "screen_contents": {
 		"type": "panel",
 		"controls": [
 			//testing and dummy screens
@@ -72,10 +118,33 @@
 					]
 				}
 			},
+			//Vanilla NPC Screen
+			{
+				"vanilla_dialog@spmax_npc_vanilla_screen.main_screen": {
+					"$screen_title_text": "spmax.screen.npc.vanilla_npc",
+					"$screen_title_visible": true,
+					"bindings": [
+						{
+							"binding_name": "#title_text",
+							"binding_type": "global"
+						},
+						{
+								"binding_name": "#teacher_view_visible",
+								"binding_type": "global"
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(#title_text = 'NPC' and (not #teacher_view_visible))",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
 			//Bottom Action
 			{
 				"bottom_action@spmax_npc_bottom_action.main_screen": {
-					"$menu_title_visible": true,
+					"$screen_title_text": "spmax.screen.npc.action",
+					"$screen_title_visible": true,
 					"bindings": [
 						{
 							"binding_name": "#title_text",
@@ -96,7 +165,8 @@
 			//Scrollable Menu
 			{
 				"scroll_box@spmax_npc_scroll_box.main_screen": {
-					"$menu_title_visible": true,
+					"$screen_title_text": "spmax.screen.npc.menu",
+					"$screen_title_visible": true,
 					"bindings": [
 						{
 							"binding_name": "#title_text",
@@ -117,6 +187,8 @@
 			//FullScreen Page
 			{
 				"fullscreen@spmax_npc_fullscreen.main_screen": {
+					"$back_button_has_title": true,
+					"$back_button_text": "spmax.screen.npc.back",
 					"bindings": [
 						{
 							"binding_name": "#title_text",

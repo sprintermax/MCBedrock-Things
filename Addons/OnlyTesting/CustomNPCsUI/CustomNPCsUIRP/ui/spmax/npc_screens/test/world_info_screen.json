@@ -27,7 +27,7 @@
                                 "type": "label",
                                 "anchor_from": "top_middle",
                                 "anchor_to": "top_middle",
-                                "text": "spmax.world_infoblock",
+                                "text": "spmax.world_info",
                                 "color": "$title_text_color"
                             }
                         },

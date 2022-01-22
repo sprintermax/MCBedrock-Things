@@ -5,7 +5,7 @@
 				"array_name": "controls",
 				"operation": "insert_front",
 				"value": {
-					"edit_screen@npc_interact.npc_screen_contents": {
+					"teacher_screen@npc_interact.npc_screen_contents": {
 						"bindings": [
 							{
 								"binding_name": "#teacher_view_visible",
@@ -27,7 +27,9 @@
 				"array_name": "controls",
 				"operation": "insert_front",
 				"value": {
-					"close@npc_interact.close_button_holder": {}
+					"close@npc_interact.close_button_holder": {
+						"$close_button_to_button_id": "button.exit_student"
+					}
 				}
 			}
 		]

@@ -9,6 +9,7 @@
 		"ui/spmax/npc_screens/test/custom_crafting_screen.json", // Test
 		"ui/spmax/npc_screens/test/player_status_screen.json", // Test
 		"ui/spmax/npc_screens/test/test_extra.json", // Test
-		"ui/spmax/npc_screens/test/world_info_screen.json" // Test
+		"ui/spmax/npc_screens/test/world_info_screen.json", // Test
+		"ui/spmax/npc_screens/vanilla_screen.json"
 	]
 }

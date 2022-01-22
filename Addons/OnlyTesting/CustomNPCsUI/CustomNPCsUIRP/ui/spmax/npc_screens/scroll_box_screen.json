@@ -1,5 +1,40 @@
 {
     "namespace": "spmax_npc_scroll_box",
+	"screen_content": {
+        "type": "panel",
+        "controls": [
+            {
+                "common_panel@common.common_panel": {
+					"$dialog_background": "common.dialog_background_hollow_3"
+				}
+            },
+			{
+                "close_button@npc_interact.close_button_holder": {
+                    "offset": [ 0, 21 ]
+                }
+            },
+            {
+                "menu_title@common_dialogs.title_label": {
+                    "$text_name": "$screen_title_text",
+					"ignored": "(not $screen_title_visible)",
+                    "offset": [ 0, 8 ]
+                }
+            },
+            {
+                "scroll_panel@common.scrolling_panel": {
+                    "$scrolling_content": "spmax_npc_scroll_box.scrolling_content",
+					"size": [ "100% - 16px", "100% - 30px" ],
+                    "offset": [ 0, 22 ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "$show_background": false,
+                    "$scroll_size": [ "5px", "100% - 4px" ],
+                    "$scroll_bar_left_padding_size": [ 1, 0 ]
+                }
+            }
+        ]
+    },
+
     "scrolling_content": {
         "type": "stack_panel",
         "size": [ "100%", "100%c" ],
@@ -117,7 +152,7 @@
 					},
 					"bindings": [
 						{
-							"binding_name": "#action_count",
+							"binding_name": "#action_count", //#button_count
 							"binding_name_override": "#collection_length"
 						}
 					]*/
@@ -134,41 +169,12 @@
             }
         ]
     },
-    "main_screen@common.root_panel": {
-		"$menu_title_visible|default": true,
+    "main_screen@common.base_screen": {
+		"$screen_content": "spmax_npc_scroll_box.screen_content",
+		"$screen_title_text|default": "spmax.screen.npc.scroll_box",
+		"$screen_title_visible|default": false,
 		"$show_close_button": false,
         "size": [ "40%", "70%" ],
-        "controls": [
-            {
-                "common_panel@common.common_panel": {
-					"$dialog_background": "common.dialog_background_hollow_3"
-				}
-            },
-			{
-                "close_button@npc_interact.close_button_holder": {
-                    "offset": [ 0, 21 ]
-                }
-            },
-            {
-                "menu_title@common_dialogs.title_label": {
-                    "$text_name": "spmax.screen.npc.menu",
-					"ignored": "(not $menu_title_visible)",
-                    "offset": [ 0, 8 ]
-                }
-            },
-            {
-                "scroll_panel@common.scrolling_panel": {
-                    "$scrolling_content": "spmax_npc_scroll_box.scrolling_content",
-					"size": [ "100% - 16px", "100% - 30px" ],
-                    "offset": [ 0, 22 ],
-                    "anchor_from": "top_middle",
-                    "anchor_to": "top_middle",
-                    "$show_background": false,
-                    "$scroll_size": [ "5px", "100% - 4px" ],
-                    "$scroll_bar_left_padding_size": [ 1, 0 ]
-                }
-            }
-        ],
         "bindings": [
             {
                 "binding_name": "#student_view_visible",

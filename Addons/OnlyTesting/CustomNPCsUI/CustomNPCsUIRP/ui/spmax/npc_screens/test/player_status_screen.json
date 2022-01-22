@@ -74,7 +74,7 @@
                                 "type": "label",
                                 "anchor_from": "left_middle",
                                 "anchor_to": "left_middle",
-                                "text": "spmax.player_statusnpc",
+                                "text": "spmax.player_status",
                                 "color": "$title_text_color",
                                 "text_alignment": "center",
                                 "offset": [

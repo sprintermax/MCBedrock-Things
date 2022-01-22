@@ -1,5 +1,6 @@
 {
 	"namespace": "spmax_customnpcs_common",
+	
 	"student_button@common.empty_panel": {
 		"controls": [
 			{

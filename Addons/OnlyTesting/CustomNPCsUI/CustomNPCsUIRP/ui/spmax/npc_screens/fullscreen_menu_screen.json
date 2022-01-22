@@ -2,24 +2,24 @@
     "namespace": "spmax_npc_fullscreen",
 
 	"screen_content": {
-    "type": "panel",
-    "controls": [
-      {
-        "panel@common.fullscreen_header": {
-			"$back_button_pressed_button_name": "button.exit_student",
-			"$button_text": "$back_button_text"
-		}
-      },
-      {
-        "title@settings_common.selector_group_label": {
-          "text": "spmax.screen.npc.wip",
-          "text_alignment": "center",
-          "anchor_from": "center",
-          "anchor_to": "center"
-        }
-      }
-    ]
-  },
+		"type": "panel",
+	    "controls": [
+			{
+				"panel@common.fullscreen_header": {
+					"$back_button_pressed_button_name": "button.exit_student",
+					"$button_text": "$back_button_text"
+				}	
+			},
+			{
+				"message@settings_common.selector_group_label": {
+					"text": "spmax.screen.npc.wip",
+					"text_alignment": "center",
+					"anchor_from": "center",
+					"anchor_to": "center"
+				}
+			}
+		]
+	},
     
     "main_screen@common.base_screen": {
         "$screen_content": "spmax_npc_fullscreen.screen_content",

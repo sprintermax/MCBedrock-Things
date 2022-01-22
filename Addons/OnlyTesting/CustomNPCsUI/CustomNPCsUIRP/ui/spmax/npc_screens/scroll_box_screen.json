@@ -1,5 +1,6 @@
 {
     "namespace": "spmax_npc_scroll_box",
+
 	"screen_content": {
         "type": "panel",
         "controls": [
@@ -169,6 +170,7 @@
             }
         ]
     },
+	
     "main_screen@common.base_screen": {
 		"$screen_content": "spmax_npc_scroll_box.screen_content",
 		"$screen_title_text|default": "spmax.screen.npc.scroll_box",

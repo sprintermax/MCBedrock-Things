@@ -1,5 +1,12 @@
 {
     "namespace": "spmax_npc_vanilla_screen",
+	
+	"screen_content@common_dialogs.form_fitting_main_panel_no_buttons": {
+		"$custom_background": "common_dialogs.dialog_background_opaque_with_child",
+		"$child_control": "spmax_npc_vanilla_screen.student_menu",
+        "size": [ 320, "100%" ]
+    },
+
 	"student_menu": {
     	"type": "panel",
 		"size": [ "100%", "100%cm" ],
@@ -18,11 +25,7 @@
 	        }
 	    ]
 	},
-	"screen_content@common_dialogs.form_fitting_main_panel_no_buttons": {
-		"$custom_background": "common_dialogs.dialog_background_opaque_with_child",
-		"$child_control": "spmax_npc_vanilla_screen.student_menu",
-        "size": [ 320, "100%" ]
-    },
+
     "main_screen@common.base_screen": {
 		"$screen_content": "spmax_npc_vanilla_screen.screen_content",
 		"$screen_title_text|default": "spmax.screen.npc.vanilla_screen",

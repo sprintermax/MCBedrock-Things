@@ -5,109 +5,127 @@
         "type": "panel",
         "controls": [
             {
-                "common_panel@common.common_panel": {
-					"$dialog_background": "common.dialog_background_hollow_3"
-				}
-            },
-            {
-                "close_button@npc_interact.close_button_holder": {
-                    "offset": [ 0, 21 ]
-                }
-            },
-            {
-                "menu_title@common_dialogs.title_label": {
-                    "$text_name": "$screen_title_text",
-					"ignored": "(not $screen_title_visible)",
-                    "offset": [ 0, 8 ]
-                }
-            },
-			{
-				"dialog_message": {
-					"type": "label",
-					"text_alignment": "center",
-					"size": [ "100%-16px", "default" ],
-					"anchor_from": "center",
-					"anchor_to": "center",
-					"offset": [ 0, -2 ],
-                    "text": "#dialogtext",
-                    "bindings": [
-                    	{
-                    		"binding_name": "#dialogtext"
-                    	}
-                    ]
-				}
-			},
-			{
-				"student_buttons": {
-					"type": "stack_panel",
+				"menu_screen": {
+					"type": "panel",
+					"size": [ "60%", "75px" ],
 					"anchor_from": "bottom_middle",
 					"anchor_to": "bottom_middle",
-					"orientation":"horizontal",
-					"size": [ "100% - 16px", "20px" ],
-					"offset": [ 0, -8 ],
-					"collection_name": "student_buttons_collection",
+					"offset": [ 0, "-25px" ],
 					"controls": [
 						{
-							"0@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 0
+            			    "common_panel@common.common_panel": {
+								"$dialog_background": "common.dialog_background_hollow_3"
+							}
+            			},
+            			{
+            			    "close_button@npc_interact.close_button_holder": {
+           			         "offset": [ 0, 21 ]
+            			    }
+            			},
+            			{
+            			    "menu_title@common_dialogs.title_label": {
+            			        "$text_name": "$screen_title_text",
+								"ignored": "(not $screen_title_visible)",
+            			        "offset": [ 0, 8 ]
+            			    }
+            			},
+						{
+							"dialog_message": {
+								"type": "label",
+								"text_alignment": "center",
+								"size": [ "100%-16px", "default" ],
+								"anchor_from": "center",
+								"anchor_to": "center",
+								"offset": [ 0, -2 ],
+            			        "text": "#dialogtext",
+            			        "bindings": [
+            			        	{
+            			        		"binding_name": "#dialogtext"
+            			        	}
+            			        ]
 							}
 						},
 						{
-							"1@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 1
-							}
-						},
-						{
-							"2@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 2
-							}
-						},
-						{
-							"3@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 3
-							}
-						},
-						{
-							"4@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 4
-							}
-						},
-						{
-							"5@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 5
-							}
-						},
-						{
-							"6@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 6
-							}
-						},
-						{
-							"7@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 7
-							}
-						},
-						{
-							"8@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 8
-							}
-						},
-						{
-							"9@spmax_customnpcs_common.student_button": {
-								"size": [ "fill", "100%" ],
-								"collection_index": 9
+							"student_buttons": {
+								"type": "stack_panel",
+								"anchor_from": "bottom_middle",
+								"anchor_to": "bottom_middle",
+								"orientation":"horizontal",
+								"size": [ "100% - 16px", "20px" ],
+								"offset": [ 0, -8 ],
+								"collection_name": "student_buttons_collection",
+								"controls": [
+									{
+										"0@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 0
+										}
+									},
+									{
+										"1@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 1
+										}
+									},
+									{
+										"2@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 2
+										}
+									},
+									{
+										"3@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 3
+										}
+									},
+									{
+										"4@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 4
+										}
+									},
+									{
+										"5@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 5
+										}
+									},
+									{
+										"6@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 6
+										}
+									},
+									{
+										"7@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 7
+										}
+									},
+									{
+										"8@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 8
+										}
+									},
+									{
+										"9@spmax_customnpcs_common.student_button": {
+											"size": [ "fill", "100%" ],
+											"collection_index": 9
+										}
+									}
+								]
 							}
 						}
 					]
+				}
+			},
+			{
+				"close_helper@npc_interact.close_text": {
+					"anchor_to": "bottom_left",
+					"anchor_from": "bottom_left",
+					"offset": [ 20, 0 ]
 				}
 			}
         ]
@@ -118,8 +136,6 @@
 		"$screen_title_text|default": "spmax.screen.npc.bottom_action",
 		"$screen_title_visible|default": false,
 		"$show_close_button": false,
-        "size": [ 420, 75 ],
-        "offset": [ 0, "100px" ],
         "bindings": [
             {
                 "binding_name": "#student_view_visible",

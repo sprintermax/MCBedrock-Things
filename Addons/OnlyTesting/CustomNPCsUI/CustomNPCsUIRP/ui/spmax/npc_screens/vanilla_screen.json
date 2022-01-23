@@ -1,28 +1,42 @@
 {
     "namespace": "spmax_npc_vanilla_screen",
 	
-	"screen_content@common_dialogs.form_fitting_main_panel_no_buttons": {
-		"$custom_background": "common_dialogs.dialog_background_opaque_with_child",
-		"$child_control": "spmax_npc_vanilla_screen.student_menu",
-        "size": [ 320, "100%" ]
-    },
+	"screen_content": {
+    	"type": "panel",
+		"controls": [
+			{
+				"menu_screen@common_dialogs.form_fitting_main_panel_no_buttons": {
+					"$custom_background": "common_dialogs.dialog_background_opaque_with_child",
+					"$child_control": "spmax_npc_vanilla_screen.student_menu",
+        			"size": [ 320, "100%" ]
+    			}
+			},
+			{
+				"close_helper@npc_interact.close_text": {
+					"anchor_to": "bottom_left",
+					"anchor_from": "bottom_left",
+					"offset": [ 20, 0 ]
+				}
+			}
+		]
+	},
 
 	"student_menu": {
     	"type": "panel",
 		"size": [ "100%", "100%cm" ],
 		"controls": [
 			{
-            	"menu_title@common_dialogs.title_label": {
+        	   	"menu_title@common_dialogs.title_label": {
 					"$text_name": "$screen_title_text",
 					"ignored": "(not $screen_title_visible)",
-    	            "anchor_from": "top_middle",
-	                "anchor_to": "top_middle",
-                	"offset": [ 0, -17 ]
-            	}
+    		        "anchor_from": "top_middle",
+	    	        "anchor_to": "top_middle",
+        	       	"offset": [ 0, -17 ]
+        	   	}
         	},
 			{
-	            "student_view@npc_interact.student_view_content": {}
-	        }
+	    	    "student_view@npc_interact.student_view_content": {}
+	    	}
 	    ]
 	},
 

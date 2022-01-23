@@ -1,28 +1,60 @@
 {
     "namespace": "spmax_npc_fullscreen",
 
-	"screen_content": {
-		"type": "panel",
+	"selector_area_content": {
+		"type": "stack_panel",
+		"collection_name": "student_buttons_collection",
 	    "controls": [
 			{
-				"panel@common.fullscreen_header": {
-					"$back_button_pressed_button_name": "button.exit_student",
-					"$button_text": "$back_button_text"
-				}	
-			},
+                "top_padding": {
+                    "type": "panel",
+                    "size": [ "100%", 2 ]
+                }
+            },
 			{
 				"message@settings_common.selector_group_label": {
 					"text": "spmax.screen.npc.wip",
-					"text_alignment": "center",
-					"anchor_from": "center",
-					"anchor_to": "center"
+					"text_alignment": "center"
 				}
-			}
+			},
+			{
+                "bottom_padding": {
+                    "type": "panel",
+                    "size": [ "100%", 2 ]
+                }
+            }
+		]
+	},
+
+	"section_area_content": {
+		"type": "stack_panel",
+	    "controls": [
+			{
+                "top_padding": {
+                    "type": "panel",
+                    "size": [ "100%", 2 ]
+                }
+            },
+			{
+				"message@settings_common.selector_group_label": {
+					"text": "spmax.screen.npc.wip",
+					"text_alignment": "center"
+				}
+			},
+			{
+                "bottom_padding": {
+                    "type": "panel",
+                    "size": [ "100%", 2 ]
+                }
+            }
 		]
 	},
     
     "main_screen@common.base_screen": {
-        "$screen_content": "spmax_npc_fullscreen.screen_content",
-    	"$screen_bg_content": "common.screen_background"
+        "$screen_content": "spmax_customnpcs_common.fullscreen_divider_screen",
+		"$selector_area_content": "spmax_npc_fullscreen.selector_area_content",
+		"$section_area_content": "spmax_npc_fullscreen.section_area_content",
+    	"$screen_bg_content": "common.screen_background",
+		"$screen_background_alpha": 0.9
     }
 }

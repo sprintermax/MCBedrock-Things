@@ -17,5 +17,67 @@
 				"binding_collection_name": "student_buttons_collection"
 			}
 		]
+	},
+
+	"fullscreen_divider_screen": {
+		"type": "panel",
+	    "controls": [
+			{
+				"top_header@common.fullscreen_header": {
+					"$back_button_pressed_button_name": "button.exit_student",
+					"$button_text": "$back_button_text",
+					"layer": 9
+				}	
+			},
+      		{
+				"selector_area": {
+					"type": "panel",
+    				"offset": [ "2px", "23px" ],
+    				"size": [ "40% - 4px", "100% - 24px" ],
+					"anchor_from": "top_left",
+    				"anchor_to": "top_left",
+					"controls": [
+						{
+							"scrolling_panel@common.scrolling_panel": {
+								"$scrolling_content": "$selector_area_content",
+								"$show_background": false,
+								"$scroll_size": [ "5px", "100% - 4px" ],
+								"$scroll_bar_left_padding_size": [ 2, 0 ]
+							}
+						}
+					]
+				}
+			},
+			{
+				"section_divider": {
+					"type": "image",
+					"offset": [ "40%", "22px" ],
+					"size": [ "4px", "100% - 22px" ],
+					"layer": 10,
+					"anchor_from": "top_left",
+					"anchor_to": "top_left",
+					"texture": "textures/ui/HowToPlayDivider"
+				}
+			},
+      		{
+				"content_area": {
+					"type": "panel",
+					"offset": [ "-2px", "23px" ],
+					"size": [ "60% - 8px", "100% - 24px" ],
+					"anchor_from": "top_right",
+					"anchor_to": "top_right",
+					"controls": [
+						{
+							"scrolling_panel@common.scrolling_panel": {
+								"$scrolling_content": "$section_area_content",
+								"$show_background": false,
+								"$scroll_size": [ "5px", "100% - 4px" ],
+								"$scroll_bar_left_padding_size": [ 2, 0 ]
+							}
+						}
+					]
+				}
+			}
+		]
 	}
 }

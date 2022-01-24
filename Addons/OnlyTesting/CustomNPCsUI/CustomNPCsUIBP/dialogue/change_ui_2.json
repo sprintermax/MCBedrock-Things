@@ -4,8 +4,8 @@
             "scenes": [
                 {
                     "scene_tag": "change_2",
-                    "npc_name": "NPC_ScrollBox",
-                    "text": "\nAvaliable Items\n",
+                    "npc_name": "Give Items",
+                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "\nAvaliable Items\n" } ] },
                     "buttons": [
                         {
                             "name": "Apple",

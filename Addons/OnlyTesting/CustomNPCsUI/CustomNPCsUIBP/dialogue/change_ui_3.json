@@ -4,8 +4,8 @@
             "scenes": [
                 {
                     "scene_tag": "change_3",
-                    "npc_name": "NPC_ScrollBox",
-                    "text": "\nGamemode Switcher\n",
+                    "npc_name": "Gamemode Switcher",
+                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "\nSelect a Gamemode\n" } ] },
                     "buttons": [
 						{
                             "name": "Creative",

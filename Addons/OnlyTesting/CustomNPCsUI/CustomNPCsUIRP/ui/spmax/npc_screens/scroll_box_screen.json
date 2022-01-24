@@ -20,10 +20,21 @@
                 			}
             			},
             			{
-                			"menu_title@common_dialogs.title_label": {
-                    			"$text_name": "$screen_title_text",
-								"ignored": "(not $screen_title_text > '')",
-                    			"offset": [ 0, 8 ]
+                			"menu_title@common_dialogs.standard_title_label": {
+                    			"$text_name": "#title_text",
+								"anchor_from": "top_middle",
+    							"anchor_to": "top_middle",
+                    			"offset": [ 0, 8 ],
+								"bindings": [
+									{
+										"binding_name": "#title_text"
+									},
+									{
+										"binding_type": "view",
+										"source_property_name": "(#title_text > '')",
+										"target_property_name": "#visible"
+									}
+								]
                 			}
     			        },
     			        {
@@ -69,19 +80,40 @@
 					"type": "label",
 					"text_alignment": "center",
 					"size": [ "100%", "default" ],
-					"text": "#dialogtext",
+					"text": "#newdialogtext",
 					"bindings": [
 						{
 							"binding_name": "#dialogtext"
 						},
 						{
 							"binding_type": "view",
-							"source_property_name": "(#dialogtext > '')",
+							"source_property_name": "(#dialogtext - $dialog_prefix > '')",
 							"target_property_name": "#visible"
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(#dialogtext - $dialog_prefix)",
+							"target_property_name": "#newdialogtext"
 						}
 					]
 				}
 			},
+			{
+                "middle_padding": {
+                    "type": "panel",
+                    "size": [ "100%" , 2 ],
+					"bindings": [
+						{
+							"binding_name": "#dialogtext"
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(#dialogtext - $dialog_prefix > '')",
+							"target_property_name": "#visible"
+						}
+					]
+                }
+            },
             {
 				"student_buttons": {
 					"type": "stack_panel",
@@ -177,7 +209,6 @@
 	
     "main_screen@common.base_screen": {
 		"$screen_content": "spmax_npc_scroll_box.screen_content",
-		"$screen_title_text|default": "",
 		"$show_close_button": false
     }
 }

@@ -4,8 +4,12 @@
             "scenes": [
                 {
                     "scene_tag": "change_1",
-                    "npc_name": "NPC_ScrollBox",
-                    "text": "\nSelect Your Action\n",
+                    "npc_name": "Menu",
+                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "\nSelect Your Action\n" } ] },
+					"on_close_commands": [
+						"/dialogue open @s @initiator[tag=change4] change_4",
+						"/tag @initiator remove change4"
+					],
                     "buttons": [
                         {
                             "name": "Give Items",
@@ -22,7 +26,7 @@
 						{
                             "name": "Answer a Quiz",
                             "commands": [
-                                "/dialogue open @s @initiator change_4"
+                                "/tag @initiator add change4"
                             ]
                         },
 						{

@@ -4,8 +4,8 @@
             "scenes": [
                 {
                     "scene_tag": "change_4",
-                    "npc_name": "NPC_BottomAction",
-                    "text": "How many Buttons a NPC can officialy have?",
+                    "npc_name": "Answer the Question",
+                    "text": { "rawtext": [ { "text": "NPC_BottomAction" }, { "text": "How many Buttons a NPC can officialy have?" } ] },
                     "buttons": [
                         {
                             "name": "1",
@@ -26,6 +26,12 @@
                             ]
                         },
 						{
+                            "name": "Infinite",
+                            "commands": [
+                                "/tellraw @initiator {\"rawtext\":[{\"text\":\"§6<Secret Guy> §rSorry, but that answer is §cINCORRECT§r :(\"}]}"
+                            ]
+                        },
+						{
                             "name": "10",
                             "commands": [
                                 "/tellraw @initiator {\"rawtext\":[{\"text\":\"§6<Secret Guy> §rSorry, but that answer is §cINCORRECT§r :(\"}]}"
@@ -33,12 +39,6 @@
                         },
 						{
                             "name": "3",
-                            "commands": [
-                                "/tellraw @initiator {\"rawtext\":[{\"text\":\"§6<Secret Guy> §rSorry, but that answer is §cINCORRECT§r :(\"}]}"
-                            ]
-                        },
-						{
-                            "name": "Infinite",
                             "commands": [
                                 "/tellraw @initiator {\"rawtext\":[{\"text\":\"§6<Secret Guy> §rSorry, but that answer is §cINCORRECT§r :(\"}]}"
                             ]

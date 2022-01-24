@@ -23,12 +23,23 @@
             			    }
             			},
             			{
-            			    "menu_title@common_dialogs.title_label": {
-            			        "$text_name": "$screen_title_text",
-								"ignored": "(not $screen_title_text > '')",
-            			        "offset": [ 0, 8 ]
-            			    }
-            			},
+                			"menu_title@common_dialogs.standard_title_label": {
+                    			"$text_name": "#title_text",
+								"anchor_from": "top_middle",
+    							"anchor_to": "top_middle",
+                    			"offset": [ 0, 8 ],
+								"bindings": [
+									{
+										"binding_name": "#title_text"
+									},
+									{
+										"binding_type": "view",
+										"source_property_name": "(#title_text > '')",
+										"target_property_name": "#visible"
+									}
+								]
+                			}
+    			        },
 						{
 							"dialog_message": {
 								"type": "label",
@@ -37,10 +48,20 @@
 								"anchor_from": "center",
 								"anchor_to": "center",
 								"offset": [ 0, -2 ],
-            			        "text": "#dialogtext",
+            			        "text": "#newdialogtext",
             			        "bindings": [
             			        	{
             			        		"binding_name": "#dialogtext"
+            			        	},
+            			        	{
+            			        		"binding_type": "view",
+            			        		"source_property_name": "(#dialogtext - $dialog_prefix > '')",
+            			        		"target_property_name": "#visible"
+            			        	},
+            			        	{
+            			        		"binding_type": "view",
+            				        	"source_property_name": "(#dialogtext - $dialog_prefix)",
+            			        		"target_property_name": "#newdialogtext"
             			        	}
             			        ]
 							}
@@ -133,7 +154,16 @@
 
 	"main_screen@common.base_screen": {
         "$screen_content": "spmax_npc_bottom_action.screen_content",
-		"$screen_title_text|default": "",
-		"$show_close_button": false
+		"$show_close_button": false,
+		"$screen_animations": [
+            "@common.container_screen_exit_animation_push",
+            "@common.container_screen_exit_animation_pop",
+            "@common.container_screen_entrance_animation_push",
+            "@common.container_screen_entrance_animation_pop",
+            "@common.screen_exit_animation_push_fade",
+            "@common.screen_exit_animation_pop_fade",
+            "@common.screen_entrance_animation_push_fade",
+            "@common.screen_entrance_animation_pop_fade"
+        ]
     }
 }

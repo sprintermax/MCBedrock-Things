@@ -3,38 +3,36 @@
         "minecraft:npc_dialogue": {
             "scenes": [
                 {
-                    "scene_tag": "test_4",
-                    "npc_name": "NPC_ScrollBox",
-                    "text": { "rawtext": [ { "text": "spmax.npc_test2\nline2\nline3\nline4\nline5\nline6\nline7\nline8\nline9\nline10\n\n\n\n\nline15\n\n\n\n\nline20\n\n\n\n\n\n\n\n\n\nline30\nline31\nline21\nline33\nline34\nline35" } ] },
-                    "on_open_commands": ["/say opened4"],
-                    "on_close_commands": ["/say leaved4"],
+                    "scene_tag": "test_scrollbox_1",
+                    "npc_name": "Scroll Box Test 1",
+                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "line1\nline2\nline3\nline4\nline5\nline6\nline7\nline8\nline9\nline10\n\n\n\n\nline15\n\n\n\n\nline20\n\n\n\n\n\n\n\n\n\nline30\nline31\nline21\nline33\nline34\nline35" } ] },
                     "buttons": [
                         {
-                            "name": { "rawtext": [ { "translate": "spmax.npc_btn7" } ] },
+                            "name": { "rawtext": [ { "text": "Button 1" } ] },
                             "commands": [
                                 "/give @initiator beacon"
                             ]
                         },
 						{
-                            "name": { "rawtext": [ { "translate": "spmax.npc_btn8" } ] },
+                            "name": { "rawtext": [ { "text": "Button 2" } ] },
                             "commands": [
                                 "/give @initiator iron_ore"
                             ]
                         },
 						{
-                            "name": { "rawtext": [ { "translate": "spmax.npc_btn7" } ] },
+                            "name": { "rawtext": [ { "text": "Button 3" } ] },
                             "commands": [
                                 "/give @initiator beacon"
                             ]
                         },
 						{
-                            "name": { "rawtext": [ { "translate": "spmax.npc_btn8" } ] },
+                            "name": { "rawtext": [ { "text": "Button 4" } ] },
                             "commands": [
                                 "/give @initiator iron_ore"
                             ]
                         },
 						{
-                            "name": { "rawtext": [ { "translate": "spmax.npc_btn7" } ] },
+                            "name": { "rawtext": [ { "text": "Button 5" } ] },
                             "commands": [
                                 "/give @initiator beacon"
                             ]

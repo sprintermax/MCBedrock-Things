@@ -130,60 +130,60 @@
 	//Screen type templates
 
 	"vanilla_dialog@spmax_npc_vanilla_screen.main_screen": {
-		"$trigger_npc_name|default": "NPC",
+		"$dialog_prefix|default": "NPC_Vanilla",
 		"bindings": [
 			{
-				"binding_name": "#title_text",
+				"binding_name": "#dialogtext",
 				"binding_type": "global"
 			},
 			{
 				"binding_type": "view",
-				"source_property_name": "(#title_text = $trigger_npc_name)",
+				"source_property_name": "(#dialogtext - (#dialogtext - $dialog_prefix) > '')",
 				"target_property_name": "#visible"
 			}
 		]
 	},
 
 	"bottom_action@spmax_npc_bottom_action.main_screen": {
-		"$trigger_npc_name|default": "NPC_BottomAction",
+		"$dialog_prefix|default": "NPC_BottomAction",
 		"bindings": [
 			{
-				"binding_name": "#title_text",
+				"binding_name": "#dialogtext",
 				"binding_type": "global"
 			},
 			{
 				"binding_type": "view",
-				"source_property_name": "(#title_text = $trigger_npc_name)",
+				"source_property_name": "(#dialogtext - (#dialogtext - $dialog_prefix) > '')",
 				"target_property_name": "#visible"
 			}
 		]
 	},
 
 	"scroll_box@spmax_npc_scroll_box.main_screen": {
-		"$trigger_npc_name|default": "NPC_ScrollBox",
+		"$dialog_prefix|default": "NPC_ScrollBox",
 		"bindings": [
 			{
-				"binding_name": "#title_text",
+				"binding_name": "#dialogtext",
 				"binding_type": "global"
 			},
 			{
 				"binding_type": "view",
-				"source_property_name": "(#title_text = $trigger_npc_name)",
+				"source_property_name": "(#dialogtext - (#dialogtext - $dialog_prefix) > '')",
 				"target_property_name": "#visible"
 			}
 		]
 	},
 
 	"fullscreen_page@spmax_npc_fullscreen.main_screen": {
-		"$trigger_npc_name|default": "NPC_FullScreen",
+		"$dialog_prefix|default": "NPC_FullScreen",
 		"bindings": [
 			{
-				"binding_name": "#title_text",
+				"binding_name": "#dialogtext",
 				"binding_type": "global"
 			},
 			{
 				"binding_type": "view",
-				"source_property_name": "(#title_text = $trigger_npc_name)",
+				"source_property_name": "(#dialogtext - (#dialogtext - $dialog_prefix) > '')",
 				"target_property_name": "#visible"
 			}
 		]

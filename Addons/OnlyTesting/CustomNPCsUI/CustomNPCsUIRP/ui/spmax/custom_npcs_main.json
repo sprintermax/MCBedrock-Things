@@ -1,28 +1,28 @@
 // Screen Variables:
-// - ("$screen_title_text": "Screen Title") -> Sets a screen title. If not set, the screen tittle will be hidden.
 // - ("$back_button_text": "Button Text") -> Sets a back button text. If not set, the button text will be hidden.
-// - ("$trigger_npc_name": "NPC Name") -> Change the NPC name that will show the screen layout. If not set, the default will be used.
+// - ("$dialog_prefix": "Dialog Prefix") -> NPC Dialog Prefix that will show the screen layout. If not set, the default will be used.
 //
 // Programmer Notes:
-// - "$screen_title_text" and "$back_button_text" can use localization keys on RP/texts/xx_XX.lang.
-// - "$trigger_npc_name" will check the rawtext output if it was used on a NPC name.
+// - "$dialog_prefix" will check the rawtext output if you use rawtext on the NPC dialog.
+// - If you use rawtext on the NPC dialog, you can't preview the screen since the game doesn't format the rawtext while in creative.
+// ---Example with rawtext: {"rawtext":[{"text":"NPC_BottomAction"},{"text":"Hello World"}]}
 // - If you have knowledge about Custom UIs, you can use this to help you to create your own custom screens for the NPCs.
 
 // Vanilla NPC Dialog ("my_screen@spmax_customnpcs_common.vanilla_dialog": {})
-// - Variables: "$trigger_npc_name", "$screen_title_text"
-// - Default "$trigger_npc_name" value: "NPC"
+// - Variables: "$dialog_prefix"
+// - Default "$dialog_prefix": "NPC_Vanilla"
 //
 // Bottom Action Dialog ("my_screen@spmax_customnpcs_common.bottom_action": {})
-// - Variables: "$trigger_npc_name", "$screen_title_text"
-// - Default "$trigger_npc_name" value: "NPC_BottomAction"
+// - Variables: "$dialog_prefix"
+// - Default "$dialog_prefix": "NPC_BottomAction"
 //
 // Scrollable Menu Dialog ("my_screen@spmax_customnpcs_common.scroll_box": {})
-// - Variables: "$trigger_npc_name", "$screen_title_text"
-// - Default "$trigger_npc_name" value: "NPC_ScrollBox"
+// - Variables: "$dialog_prefix"
+// - Default "$dialog_prefix": "NPC_ScrollBox"
 //
 // FullScreen Dialog ("my_screen@spmax_customnpcs_common.fullscreen_page": {})
-// - Variables: "$trigger_npc_name", "$back_button_text"
-// - Default "$trigger_npc_name" value: "NPC_FullScreen"
+// - Variables: "$dialog_prefix", "$back_button_text"
+// - Default "$dialog_prefix": "NPC_FullScreen"
 
 {
 	"namespace": "spmax_customnpcs",
@@ -30,23 +30,10 @@
 	"screen_contents": {
 		"type": "panel",
 		"controls": [
-			{
-				"vanilla_dialog@spmax_customnpcs_common.vanilla_dialog": {
-					"$screen_title_text": "npcscreen.npc"
-				}
-			},
-			{
-				"bottom_action@spmax_customnpcs_common.bottom_action": {
-					"$screen_title_text": "spmax.customnpcs.action"
-				}
-			},
-			{
-				"scroll_box@spmax_customnpcs_common.scroll_box": {
-					"$screen_title_text": "spmax.customnpcs.menu"
-				}
-			},
-			{
-				"fullscreen_page@spmax_customnpcs_common.fullscreen_page": {
+			{ "vanilla_dialog@spmax_customnpcs_common.vanilla_dialog": {} },
+			{ "bottom_action@spmax_customnpcs_common.bottom_action": {} },
+			{ "scroll_box@spmax_customnpcs_common.scroll_box": {} },
+			{ "fullscreen_page@spmax_customnpcs_common.fullscreen_page": {
 					"$back_button_text": "gui.back"
 				}
 			}

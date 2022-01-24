@@ -137,10 +137,6 @@
 				"binding_type": "global"
 			},
 			{
-					"binding_name": "#teacher_view_visible",
-					"binding_type": "global"
-			},
-			{
 				"binding_type": "view",
 				"source_property_name": "(#title_text = $trigger_npc_name)",
 				"target_property_name": "#visible"
@@ -154,10 +150,6 @@
 			{
 				"binding_name": "#title_text",
 				"binding_type": "global"
-			},
-			{
-					"binding_name": "#teacher_view_visible",
-					"binding_type": "global"
 			},
 			{
 				"binding_type": "view",
@@ -175,10 +167,6 @@
 				"binding_type": "global"
 			},
 			{
-					"binding_name": "#teacher_view_visible",
-					"binding_type": "global"
-			},
-			{
 				"binding_type": "view",
 				"source_property_name": "(#title_text = $trigger_npc_name)",
 				"target_property_name": "#visible"
@@ -192,10 +180,6 @@
 			{
 				"binding_name": "#title_text",
 				"binding_type": "global"
-			},
-			{
-					"binding_name": "#teacher_view_visible",
-					"binding_type": "global"
 			},
 			{
 				"binding_type": "view",

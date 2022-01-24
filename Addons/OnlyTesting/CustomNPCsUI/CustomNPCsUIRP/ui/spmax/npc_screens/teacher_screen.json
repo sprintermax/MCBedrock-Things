@@ -1,0 +1,229 @@
+{
+    "namespace": "spmax_npc_teacher_screen",
+	
+	"screen_content": {
+    	"type": "panel",
+		"size": [ "100% - 10px", "100% - 10px" ],
+		"controls": [
+			{
+            	"close_button@npc_interact.close_button_holder": {
+					   "offset": [ 0, 21 ]
+            	}
+            },
+			{
+				"general_options_content": {
+					"type": "panel",
+					"controls": [
+						{
+							"basic_section": {
+								"type": "panel",
+								"size": [ "50%", "100%" ],
+								"anchor_from": "top_left",
+    							"anchor_to": "top_left",
+								"controls": [
+									{
+										"common_panel@common.common_panel": {
+											"$dialog_background": "common.dialog_background_opaque"
+										}
+            						},
+									{
+            			    			"menu_title@common_dialogs.title_label": {
+            			        			"$text_name": "npcscreen.basictitle",
+            			        			"offset": [ 0, 8 ]
+            			    			}
+            						},
+									{
+										"main_stack_panel": {
+											"type": "stack_panel",
+											"size": [ "100% - 16px", "100% - 32px" ],
+											"offset": [ "0px", "23px" ],
+											"anchor_from": "top_middle",
+    										"anchor_to": "top_middle",
+											"controls": [
+												{
+            			    						"name_label@common_dialogs.title_label": {
+														"$text_name": "npcscreen.name"
+            			    						}
+            									},
+												{
+                									"padding_1": {
+                										"type": "panel",
+                										"size": [ "100%", 2 ]
+                									}
+                								},
+												{
+													"name_edit@npc_interact.name_edit": {
+														"layer": 2
+													}
+												},
+												{
+                									"padding_2": {
+                										"type": "panel",
+                										"size": [ "100%", 10 ]
+                									}
+                								},
+												{
+            			    						"dialog_label@common_dialogs.title_label": {
+            			        						"$text_name": "npcscreen.dialog"
+            			    						}
+            									},
+												{
+                									"padding_3": {
+                										"type": "panel",
+                										"size": [ "100%", 2 ]
+                									}
+                								},
+												{
+            			    						"dialog_text_box@npc_interact.multiline_text_edit_control": {
+            			    							"max_length": 1000,
+														"layer": 2,
+            			    							"size": [ "100%", "fill" ],
+            			    							"$text_edit_box_content_binding_name": "#dialogtext",
+            			    							"$text_box_name": "student_message_bubble"
+            			    						}
+            									},
+												{
+                									"padding_4": {
+                										"type": "panel",
+                										"size": [ "100%", 10 ]
+                									}
+                								},
+												{
+            			    						"appearance_label@common_dialogs.title_label": {
+            			        						"$text_name": "npcscreen.appearance"
+            			    						}
+            									},
+												{
+                									"padding_5": {
+                										"type": "panel",
+                										"size": [ "100%", 2 ]
+                									}
+                								},
+      											{ "skins@npc_interact.skin_picker": {} },
+												{
+                									"padding_6": {
+                										"type": "panel",
+                										"size": [ "100%", 10 ]
+                									}
+                								},
+												{
+													"dialog_button@common_buttons.light_text_button": {
+														"$pressed_button_name": "button.dialog_button",
+    													"$button_text": "spmax.customnpcs.preview",
+														"size": [ "100%", "30px" ]
+													}
+												},
+												{
+                									"padding_7": {
+                										"type": "panel",
+                										"size": [ "100%", 2 ]
+                									}
+                								}
+											]
+										}
+            						}
+								]
+							}
+						},
+						{
+            			    "center_spacing": {
+            			        "type": "panel",
+            			        "size": [ "5px", "100%" ]
+            			    }
+            			},
+						{
+							"advanced_section": {
+								"type": "panel",
+								"size": [ "50% - 5px", "100%" ],
+								"anchor_from": "top_right",
+    							"anchor_to": "top_right",
+								"controls": [
+            						{
+            			    			"menu_title@common_dialogs.title_label": {
+            			        			"$text_name": "npcscreen.advancedtitle",
+            			        			"offset": [ 0, 8 ]
+            			    			}
+            						},
+									{
+										"common_panel@common.common_panel": {
+											"$dialog_background": "common.dialog_background_hollow_3"
+										}
+            						},
+									{
+										"advanced_scrolling_panel@common.scrolling_panel": {
+											"$show_background": false,
+											"size": [ "100% - 16px", "100% - 32px" ],
+											"offset": [ 0, 23 ],
+											"anchor_from": "top_middle",
+    										"anchor_to": "top_middle",
+											"$scroll_size": [ 5, "100% - 8px" ],
+											"$scroll_bar_left_padding_size": [ 0, 0 ],
+											"$scroll_bar_right_padding_size": [ 4, 0 ],
+											"$scrolling_content": "spmax_npc_teacher_screen.advanced_scrolling_content"
+										}
+									}
+								]
+							}
+						}
+					],
+					"bindings": [
+						{
+							"binding_name": "#maximized_edit_visible",
+							"binding_type": "global"
+						},
+						{
+							"binding_type": "view",
+							"source_property_name": "(not #maximized_edit_visible)",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"maximized_action_edit_content": {
+					"type": "panel",
+					"controls": [
+						{
+							"common_panel@common.common_panel": {
+								"$dialog_background": "common.dialog_background_opaque"
+							}
+            			},
+						{
+            				"menu_title@common_dialogs.title_label": {
+            					"$text_name": "npcscreen.advancedtitle",
+            			  		"offset": [ 0, 8 ]
+            				}
+            			},
+						{
+							"maximized_action_edit@npc_interact.maximized_action_edit": {
+								"size": [ "100% - 16px", "100% - 32px" ],
+								"offset": [ "0px", "23px" ],
+								"anchor_from": "top_middle",
+    							"anchor_to": "top_middle"
+							}
+						}
+					],
+					"bindings": [
+						{
+							"binding_name": "#maximized_edit_visible",
+							"binding_name_override": "#visible"
+						}
+					]
+				}
+			}
+		]
+	},
+
+	"advanced_scrolling_content": {
+		"type": "panel",
+		"size": [ "100%", "100%c" ],
+		"controls": [
+			{ "advanced@npc_interact.advanced_stack_panel": {} }
+		]
+	},
+
+    "main_screen@common.base_screen": {
+		"$screen_content": "spmax_npc_teacher_screen.screen_content",
+		"$show_close_button": false
+    }
+}

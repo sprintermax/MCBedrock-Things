@@ -1,15 +1,12 @@
 {
 	"ui_defs": [
 		"ui/npc_interact_screen.json",
-		"ui/spmax/custom_npcs_common.json",
 		"ui/spmax/custom_npcs_main.json",
 		"ui/spmax/npc_screens/bottom_action_screen.json",
+		"ui/spmax/npc_screens/custom_npcs_common.json",
 		"ui/spmax/npc_screens/fullscreen_menu_screen.json", // WIP
 		"ui/spmax/npc_screens/scroll_box_screen.json",
-		"ui/spmax/npc_screens/test/custom_crafting_screen.json", // Test
-		"ui/spmax/npc_screens/test/player_status_screen.json", // Test
-		"ui/spmax/npc_screens/test/test_extra.json", // Test
-		"ui/spmax/npc_screens/test/world_info_screen.json", // Test
+		"ui/spmax/npc_screens/teacher_screen.json",
 		"ui/spmax/npc_screens/vanilla_screen.json"
 	]
 }

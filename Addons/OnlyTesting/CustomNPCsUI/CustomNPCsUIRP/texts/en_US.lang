@@ -1,21 +1,9 @@
-﻿spmax.custom_craftingblock=Custom Crafting Table
-spmax.world_info=World Info
-spmax.player_status=Player Status
-spmax.life_status=Your Life Status:
+﻿## Screen Titles
 
-## Default Screen Types
+spmax.customnpcs.action=Action
+spmax.customnpcs.menu=Menu
 
-spmax.screen.npc.scroll_box=Scroll Box
-spmax.screen.npc.bottom_action=Bottom Action
-spmax.screen.npc.vanilla_screen=Vanilla NPC Screen
+## Misc Texts
 
-## Screen Titles
-
-spmax.screen.npc.action=Action
-spmax.screen.npc.vanilla_npc=NPC
-spmax.screen.npc.menu=Menu
-
-## Screen Texts
-
-spmax.screen.npc.back=Back
-spmax.screen.npc.wip=Work In Progress
+spmax.customnpcs.preview=Preview NPC Screen
+spmax.customnpcs.wip=Work In Progress

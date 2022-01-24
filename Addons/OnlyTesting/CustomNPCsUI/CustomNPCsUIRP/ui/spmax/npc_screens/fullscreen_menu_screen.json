@@ -13,7 +13,7 @@
             },
 			{
 				"message@settings_common.selector_group_label": {
-					"text": "spmax.screen.npc.wip",
+					"text": "spmax.customnpcs.wip",
 					"text_alignment": "center"
 				}
 			},
@@ -37,7 +37,7 @@
             },
 			{
 				"message@settings_common.selector_group_label": {
-					"text": "spmax.screen.npc.wip",
+					"text": "spmax.customnpcs.wip",
 					"text_alignment": "center"
 				}
 			},
@@ -51,7 +51,8 @@
 	},
     
     "main_screen@common.base_screen": {
-        "$screen_content": "spmax_customnpcs_common.fullscreen_divider_screen",
+		"$back_button_text|default": "",
+		"$screen_content": "spmax_customnpcs_common.fullscreen_divider_screen",
 		"$selector_area_content": "spmax_npc_fullscreen.selector_area_content",
 		"$section_area_content": "spmax_npc_fullscreen.section_area_content",
     	"$screen_bg_content": "common.screen_background",

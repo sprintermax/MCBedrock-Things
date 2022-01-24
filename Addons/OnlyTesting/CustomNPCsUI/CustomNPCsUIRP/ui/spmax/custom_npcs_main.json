@@ -1,164 +1,53 @@
+// Screen Variables:
+// - ("$screen_title_text": "Screen Title") -> Sets a screen title. If not set, the screen tittle will be hidden.
+// - ("$back_button_text": "Button Text") -> Sets a back button text. If not set, the button text will be hidden.
+// - ("$trigger_npc_name": "NPC Name") -> Change the NPC name that will show the screen layout. If not set, the default will be used.
+//
+// Programmer Notes:
+// - "$screen_title_text" and "$back_button_text" can use localization keys on RP/texts/xx_XX.lang.
+// - "$trigger_npc_name" will check the rawtext output if it was used on a NPC name.
+// - If you have knowledge about Custom UIs, you can use this to help you to create your own custom screens for the NPCs.
+
+// Vanilla NPC Dialog ("my_screen@spmax_customnpcs_common.vanilla_dialog": {})
+// - Variables: "$trigger_npc_name", "$screen_title_text"
+// - Default "$trigger_npc_name" value: "NPC"
+//
+// Bottom Action Dialog ("my_screen@spmax_customnpcs_common.bottom_action": {})
+// - Variables: "$trigger_npc_name", "$screen_title_text"
+// - Default "$trigger_npc_name" value: "NPC_BottomAction"
+//
+// Scrollable Menu Dialog ("my_screen@spmax_customnpcs_common.scroll_box": {})
+// - Variables: "$trigger_npc_name", "$screen_title_text"
+// - Default "$trigger_npc_name" value: "NPC_ScrollBox"
+//
+// FullScreen Dialog ("my_screen@spmax_customnpcs_common.fullscreen_page": {})
+// - Variables: "$trigger_npc_name", "$back_button_text"
+// - Default "$trigger_npc_name" value: "NPC_FullScreen"
+
 {
 	"namespace": "spmax_customnpcs",
 	
 	"screen_contents": {
 		"type": "panel",
 		"controls": [
-			//testing and dummy screens
 			{
-				"screen_test1@player_status.main_screen": {
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-								"binding_name": "#teacher_view_visible",
-								"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'Dummy_PlayerInfo_Name' and (not #teacher_view_visible))",
-							"target_property_name": "#visible"
-						}
-					]
+				"vanilla_dialog@spmax_customnpcs_common.vanilla_dialog": {
+					"$screen_title_text": "npcscreen.npc"
 				}
 			},
 			{
-				"screen_test2@world_info.main_screen": {
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'Dummy_WorldInfo')",
-							"target_property_name": "#visible"
-						}
-					]
+				"bottom_action@spmax_customnpcs_common.bottom_action": {
+					"$screen_title_text": "spmax.customnpcs.action"
 				}
 			},
 			{
-				"screen_test3@custom_crafting.main_screen": {
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'Dummy_CustomInventory')",
-							"target_property_name": "#visible"
-						}
-					]
+				"scroll_box@spmax_customnpcs_common.scroll_box": {
+					"$screen_title_text": "spmax.customnpcs.menu"
 				}
 			},
 			{
-				"screen_test4@npc_test_extra.main_screen": {
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-								"binding_name": "#teacher_view_visible",
-								"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'Dummy_ButtomBox' and (not #teacher_view_visible))",
-							"target_property_name": "#visible"
-						}
-					]
-				}
-			},
-			//Vanilla NPC Screen
-			{
-				"vanilla_dialog@spmax_npc_vanilla_screen.main_screen": {
-					"$screen_title_text": "spmax.screen.npc.vanilla_npc",
-					"$screen_title_visible": true,
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-								"binding_name": "#teacher_view_visible",
-								"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'NPC' and (not #teacher_view_visible))",
-							"target_property_name": "#visible"
-						}
-					]
-				}
-			},
-			//Bottom Action
-			{
-				"bottom_action@spmax_npc_bottom_action.main_screen": {
-					"$screen_title_text": "spmax.screen.npc.action",
-					"$screen_title_visible": true,
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-								"binding_name": "#teacher_view_visible",
-								"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'NPC_BottomAction' and (not #teacher_view_visible))",
-							"target_property_name": "#visible"
-						}
-					]
-				}
-			},
-			//Scrollable Menu
-			{
-				"scroll_box@spmax_npc_scroll_box.main_screen": {
-					"$screen_title_text": "spmax.screen.npc.menu",
-					"$screen_title_visible": true,
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-								"binding_name": "#teacher_view_visible",
-								"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'NPC_ScrollBox' and (not #teacher_view_visible))",
-							"target_property_name": "#visible"
-						}
-					]
-				}
-			},
-			//FullScreen Page
-			{
-				"fullscreen@spmax_npc_fullscreen.main_screen": {
-					"$back_button_has_title": true,
-					"$back_button_text": "spmax.screen.npc.back",
-					"bindings": [
-						{
-							"binding_name": "#title_text",
-							"binding_type": "global"
-						},
-						{
-								"binding_name": "#teacher_view_visible",
-								"binding_type": "global"
-						},
-						{
-							"binding_type": "view",
-							"source_property_name": "(#title_text = 'NPC_FullScreen' and (not #teacher_view_visible))",
-							"target_property_name": "#visible"
-						}
-					]
+				"fullscreen_page@spmax_customnpcs_common.fullscreen_page": {
+					"$back_button_text": "gui.back"
 				}
 			}
 		]

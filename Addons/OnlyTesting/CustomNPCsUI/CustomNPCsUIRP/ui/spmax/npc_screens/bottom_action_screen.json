@@ -25,7 +25,7 @@
             			{
             			    "menu_title@common_dialogs.title_label": {
             			        "$text_name": "$screen_title_text",
-								"ignored": "(not $screen_title_visible)",
+								"ignored": "(not $screen_title_text > '')",
             			        "offset": [ 0, 8 ]
             			    }
             			},
@@ -133,15 +133,7 @@
 
 	"main_screen@common.base_screen": {
         "$screen_content": "spmax_npc_bottom_action.screen_content",
-		"$screen_title_text|default": "spmax.screen.npc.bottom_action",
-		"$screen_title_visible|default": false,
-		"$show_close_button": false,
-        "bindings": [
-            {
-                "binding_name": "#student_view_visible",
-                "binding_name_override": "#visible",
-                "binding_type": "global"
-            }
-        ]
+		"$screen_title_text|default": "",
+		"$show_close_button": false
     }
 }

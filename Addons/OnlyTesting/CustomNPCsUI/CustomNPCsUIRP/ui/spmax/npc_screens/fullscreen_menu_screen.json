@@ -3,7 +3,6 @@
 
 	"selector_area_content": {
 		"type": "stack_panel",
-		"collection_name": "student_buttons_collection",
 	    "controls": [
 			{
                 "top_padding": {
@@ -15,6 +14,40 @@
 				"message@settings_common.selector_group_label": {
 					"text": "spmax.customnpcs.wip",
 					"text_alignment": "center"
+				}
+			},
+			{
+                "middle_padding": {
+                    "type": "panel",
+                    "size": [ "100%", 2 ]
+                }
+            },
+			{
+				"section_toggle_0@spmax_customnpcs_common.text_section_toggle_button_base": {
+					"$toggle_group_forced_index": 0,
+					"$toggle_view_binding_name": "npc_section_toggle0",
+					"$button_text": "Section 1"
+				}
+			},
+			{
+				"section_toggle_1@spmax_customnpcs_common.text_section_toggle_button_base": {
+					"$toggle_group_forced_index": 1,
+					"$toggle_view_binding_name": "npc_section_toggle1",
+					"$button_text": "Section 2"
+				}
+			},
+			{
+				"section_toggle_2@spmax_customnpcs_common.text_section_toggle_button_base": {
+					"$toggle_group_forced_index": 2,
+					"$toggle_view_binding_name": "npc_section_toggle2",
+					"$button_text": "Section 3"
+				}
+			},
+			{
+				"section_toggle_3@spmax_customnpcs_common.text_section_toggle_button_base": {
+					"$toggle_group_forced_index": 3,
+					"$toggle_view_binding_name": "npc_section_toggle3",
+					"$button_text": "Section 4"
 				}
 			},
 			{
@@ -36,9 +69,59 @@
                 }
             },
 			{
-				"message@settings_common.selector_group_label": {
-					"text": "spmax.customnpcs.wip",
-					"text_alignment": "center"
+				"message_0@settings_common.selector_group_label": {
+					"text": "Section 1",
+					"text_alignment": "center",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "npc_section_toggle0",
+							"source_property_name": "#toggle_state",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"message_1@settings_common.selector_group_label": {
+					"text": "Section 2",
+					"text_alignment": "center",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "npc_section_toggle1",
+							"source_property_name": "#toggle_state",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"message_2@settings_common.selector_group_label": {
+					"text": "Section 3",
+					"text_alignment": "center",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "npc_section_toggle2",
+							"source_property_name": "#toggle_state",
+							"target_property_name": "#visible"
+						}
+					]
+				}
+			},
+			{
+				"message_3@settings_common.selector_group_label": {
+					"text": "Section 4",
+					"text_alignment": "center",
+					"bindings": [
+						{
+							"binding_type": "view",
+							"source_control_name": "npc_section_toggle3",
+							"source_property_name": "#toggle_state",
+							"target_property_name": "#visible"
+						}
+					]
 				}
 			},
 			{

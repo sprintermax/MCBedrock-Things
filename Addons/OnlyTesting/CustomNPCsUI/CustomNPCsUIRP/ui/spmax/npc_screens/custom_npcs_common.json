@@ -19,6 +19,21 @@
 		]
 	},
 
+	"text_section_toggle_button_base@common_toggles.light_text_toggle": {
+		"size": [ "100%", "30px" ],
+		"$radio_toggle_group": true,
+		"$toggle_name|default": "navigation_tab",
+		"$default_selector_toggle_index|default": 0,
+		"$toggle_group_default_selected": "$default_selector_toggle_index",
+		"$toggle_tab_focus_binding_type": "global",
+		"$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
+		"$toggle_on_hover_binding_type": "global",
+		"$toggle_on_hover_binding_name": "#toggle_on_hover",
+		"$toggle_tts_toggle_on_text": "accessibility.state.selected",
+		"$toggle_tts_toggle_off_text": "accessibility.state.unselected",
+		"$toggle_tts_name": "accessibility.tab.tts.title"
+	},
+
 	"close_button_holder": {
 		"type": "panel",
 		"size": [ "100%c", "100%c" ],
@@ -69,10 +84,19 @@
 	    "controls": [
 			{
 				"top_header@common.fullscreen_header": {
-					"$back_button_pressed_button_name": "button.exit_student",
 					"$back_button_has_title": "($back_button_text > '')",
 					"$button_text": "$back_button_text",
-					"layer": 9
+					"layer": 9,
+					"variables": [
+						{
+							"requires": "$is_worldbuilder",
+							"$back_button_pressed_button_name": "button.exit_student_edit"
+						},
+						{
+							"requires": "(not $is_worldbuilder)",
+							"$back_button_pressed_button_name": "button.exit_student"
+						}
+					]
 				}	
 			},
       		{

@@ -1,28 +1,36 @@
-// Screen Variables:
-// - ("$back_button_text": "Button Text") -> Sets a back button text. If not set, the button text will be hidden.
-// - ("$dialog_prefix": "Dialog Prefix") -> NPC Dialog Prefix that will show the screen layout. If not set, the default will be used.
-//
+// Global Screen Variables:
+// - ("$dialog_prefix": "Dialog Prefix") -> NPC Dialog Prefix that will show the screen layout.
+// - ("$background_opacity": 0.0~1.0) -> Sets the opacity value of the background. 0 means fully transparent and 1 means fully black.
+// - Default "$background_opacity": 0.5
+
 // Programmer Notes:
 // - "$dialog_prefix" will check the rawtext output if you use rawtext on the NPC dialog.
-// - If you use rawtext on the NPC dialog, you can't preview the screen since the game doesn't format the rawtext while in creative.
-// ---Example with rawtext: {"rawtext":[{"text":"NPC_BottomAction"},{"text":"Hello World"}]}
+// - If you use rawtext on the NPC dialog, you can't see the correct text in preview mode because the game doesn't format the rawtext while in creative.
+// -- Example with rawtext: {"rawtext":[{"text":"NPC_BottomAction"},{"text":"Hello World"}]}
 // - If you have knowledge about Custom UIs, you can use this to help you to create your own custom screens for the NPCs.
 
+
+
 // Vanilla NPC Dialog ("my_screen@spmax_customnpcs_common.vanilla_dialog": {})
-// - Variables: "$dialog_prefix"
 // - Default "$dialog_prefix": "NPC_Vanilla"
-//
+
 // Bottom Action Dialog ("my_screen@spmax_customnpcs_common.bottom_action": {})
-// - Variables: "$dialog_prefix"
 // - Default "$dialog_prefix": "NPC_BottomAction"
-//
+// - Default "$background_opacity": 0.25
+
 // Scrollable Menu Dialog ("my_screen@spmax_customnpcs_common.scroll_box": {})
-// - Variables: "$dialog_prefix"
 // - Default "$dialog_prefix": "NPC_ScrollBox"
-//
+
 // FullScreen Dialog ("my_screen@spmax_customnpcs_common.fullscreen_page": {})
-// - Variables: "$dialog_prefix", "$back_button_text"
 // - Default "$dialog_prefix": "NPC_FullScreen"
+// - Default "$background_opacity": 0.9
+// - Screen Variables:
+// -- ("$back_button_text": "Button Text") -> Sets a back button text. If not set, the button text will be hidden.
+// ---- Default "$back_button_text": "gui.back"
+// -- ("$transparent_background": true/false) -> Sets if the screen content background will have a solid color like on the settings screen or a transparent background. (Doesn't replace the "$background_opacity" variable)
+// --- Default "$transparent_background": false
+// -- ("$show_divider": true/false) -> Sets if the section dialog divider is visible or not.
+// - Default "$show_divider": true
 
 {
 	"namespace": "spmax_customnpcs",
@@ -33,10 +41,7 @@
 			{ "vanilla_dialog@spmax_customnpcs_common.vanilla_dialog": {} },
 			{ "bottom_action@spmax_customnpcs_common.bottom_action": {} },
 			{ "scroll_box@spmax_customnpcs_common.scroll_box": {} },
-			{ "fullscreen_page@spmax_customnpcs_common.fullscreen_page": {
-					"$back_button_text": "gui.back"
-				}
-			}
+			{ "fullscreen_page@spmax_customnpcs_common.fullscreen_page": {} }
 		]
 	}
 }

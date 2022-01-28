@@ -154,6 +154,8 @@
 
 	"main_screen@common.base_screen": {
         "$screen_content": "spmax_npc_bottom_action.screen_content",
+		"$screen_bg_content": "common.screen_background",
+		"$screen_background_alpha": "$background_opacity",
 		"$show_close_button": false,
 		"$screen_animations": [
             "@common.container_screen_exit_animation_push",

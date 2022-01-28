@@ -159,7 +159,7 @@
 											"$scroll_size": [ 5, "100% - 8px" ],
 											"$scroll_bar_left_padding_size": [ 0, 0 ],
 											"$scroll_bar_right_padding_size": [ 4, 0 ],
-											"$scrolling_content": "spmax_npc_teacher_screen.advanced_scrolling_content"
+											"$scrolling_content": "npc_interact.advanced_scrolling_content"
 										}
 									}
 								]
@@ -214,15 +214,8 @@
 		]
 	},
 
-	"advanced_scrolling_content": {
-		"type": "panel",
-		"size": [ "100%", "100%c" ],
-		"controls": [
-			{ "advanced@npc_interact.advanced_stack_panel": {} }
-		]
-	},
-
     "main_screen@common.base_screen": {
+		"$is_full_screen_layout": true,
 		"$screen_content": "spmax_npc_teacher_screen.screen_content",
 		"$show_close_button": false
     }

@@ -79,25 +79,38 @@
 		]
 	},
 
+	"fullscreen_top_header@common.fullscreen_header": {
+		"$back_button_has_title": "($back_button_text > '')",
+		"$button_text": "$back_button_text",
+		"layer": 9,
+		"variables": [
+			{
+				"requires": "$is_worldbuilder",
+				"$back_button_pressed_button_name": "button.exit_student_edit"
+			},
+			{
+				"requires": "(not $is_worldbuilder)",
+				"$back_button_pressed_button_name": "button.exit_student"
+			}
+		]
+	},
+
 	"fullscreen_divider_screen": {
 		"type": "panel",
+		"$back_button_text|default": "gui.back",
+		"$transparent_background|default": false,
+		"$show_divider|default": true,
 	    "controls": [
+			{ "top_header@spmax_customnpcs_common.fullscreen_top_header": {} },
 			{
-				"top_header@common.fullscreen_header": {
-					"$back_button_has_title": "($back_button_text > '')",
-					"$button_text": "$back_button_text",
-					"layer": 9,
-					"variables": [
-						{
-							"requires": "$is_worldbuilder",
-							"$back_button_pressed_button_name": "button.exit_student_edit"
-						},
-						{
-							"requires": "(not $is_worldbuilder)",
-							"$back_button_pressed_button_name": "button.exit_student"
-						}
-					]
-				}	
+				"background_fill_image": {
+					"type": "image",
+					"ignored": "$transparent_background",
+					"texture": "textures/ui/White",
+					"color": "$sidebar_bg_color",
+					"keep_ratio": false,
+					"layer": -1
+				}
 			},
       		{
 				"selector_area": {
@@ -119,14 +132,13 @@
 				}
 			},
 			{
-				"section_divider": {
-					"type": "image",
-					"offset": [ "40%", "22px" ],
-					"size": [ "4px", "100% - 22px" ],
-					"layer": 10,
+				"dialog_divider@common.dialog_divider": {
+					"size": [ "4px", "100% - 20px" ],
+					"offset": [ "40%", "20px" ],
+					"visible": "$show_divider",
 					"anchor_from": "top_left",
-					"anchor_to": "top_left",
-					"texture": "textures/ui/HowToPlayDivider"
+          			"anchor_to": "top_left",
+					"layer": 10
 				}
 			},
       		{
@@ -155,6 +167,7 @@
 
 	"vanilla_dialog@spmax_npc_vanilla_screen.main_screen": {
 		"$dialog_prefix|default": "NPC_Vanilla",
+		"$background_opacity|default": 0.5,
 		"bindings": [
 			{
 				"binding_name": "#dialogtext",
@@ -170,6 +183,7 @@
 
 	"bottom_action@spmax_npc_bottom_action.main_screen": {
 		"$dialog_prefix|default": "NPC_BottomAction",
+		"$background_opacity|default": 0.25,
 		"bindings": [
 			{
 				"binding_name": "#dialogtext",
@@ -185,6 +199,7 @@
 
 	"scroll_box@spmax_npc_scroll_box.main_screen": {
 		"$dialog_prefix|default": "NPC_ScrollBox",
+		"$background_opacity|default": 0.5,
 		"bindings": [
 			{
 				"binding_name": "#dialogtext",
@@ -200,6 +215,7 @@
 
 	"fullscreen_page@spmax_npc_fullscreen.main_screen": {
 		"$dialog_prefix|default": "NPC_FullScreen",
+		"$background_opacity|default": 0.9,
 		"bindings": [
 			{
 				"binding_name": "#dialogtext",

@@ -1,0 +1,7 @@
+﻿## Manifest
+pack.name=NPCPlus Core
+pack.description=Necessary resources for Multiple NPC Screens
+
+## Core Screen Texts
+spmax.npcplus.preview=Preview NPC Screen
+spmax.npcplus.wip=Work In Progress

@@ -1,0 +1,9 @@
+{
+  "ui_defs": [
+    "ui/npc_interact_screen.json",
+    "ui/spmax/npc_screens/teacher_view_screen.json", // WIP
+    "ui/spmax/npc_screens/vanilla_screen.json",
+    "ui/spmax/npcplus_common.json",
+    "ui/spmax/npcplus_screen_definitions.json"
+  ]
+}

@@ -1,0 +1,10 @@
+﻿## Manifest
+pack.name=Example Pack for NPCPlus
+pack.description=Examples for the NPCPlus Core pack.
+
+## Screen Titles
+spmax.npcplus.action=Action
+spmax.npcplus.menu=Menu
+
+## Screen Texts
+spmax.npcplus.example=Example Screen

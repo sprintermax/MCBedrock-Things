@@ -1,0 +1,8 @@
+{
+  "ui_defs": [
+    "ui/spmax/npc_screens/bottom_action_screen.json", // WIP
+    "ui/spmax/npc_screens/fullscreen_menu_screen.json", // WIP
+    "ui/spmax/npc_screens/scrollbox_screen.json",
+    "ui/spmax/npcplus_screen_definitions.json"
+  ]
+}

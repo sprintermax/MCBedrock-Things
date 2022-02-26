@@ -1,0 +1,99 @@
+{
+  "npc_screen@npcplus_common.npcplus_screen_base": {
+    "$no_safezone_screen_content": "npc_interact.npc_screen_contents"
+  },
+
+  "npc_screen_contents": {
+    "controls": [
+      {
+        "teacher_view@npcplus_teacher_view.teacher_view_screen": {
+          "bindings": [
+            {
+              "binding_name": "#teacher_view_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "custom_screens@npcplus_screen_defs.custom_screens": {
+          "bindings": [
+            {
+              "binding_name": "#student_view_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "close_holder@npc_interact.close_button_holder": {
+          "$close_button_to_button_id": "button.exit_student",
+          "clips_children": true,
+          "size": [0, 0]
+        }
+      }
+    ]
+  },
+
+  "close_button_holder": {
+    "anchor_to": "top_right",
+    "offset": [0, 0],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "replace",
+        "where": {
+          "close_advanced@npc_interact.close_button_base": {
+            "$close_button_to_button_id": "button.exit_advanced",
+            "$default_texture": "textures/ui/back_button_default",
+            "$hover_texture": "textures/ui/back_button_hover",
+            "$pressed_texture": "textures/ui/back_button_pressed",
+            "$visibility_binding_name": "#advanced_visible"
+          }
+        },
+        "value": {
+          "close_advanced@npc_interact.x_close_button": {
+            "$close_button_to_button_id": "button.exit_basic",
+            "$visibility_binding_name": "#advanced_visible"
+          }
+        }
+      }
+    ]
+  },
+
+  "advanced_stack_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": {
+          "content_focus@npcplus_common.content_focus": {}
+        }
+      }
+    ]
+  },
+
+  "student_message_section@npcplus_vanilla_screen.student_message_section": {},
+  "action_edit/expand": { "size": [30, 50] },
+  "action_text_edit": { "size": ["fill", 50] },
+  "action_template/mode_pad": {
+    "bindings": [
+      {
+        "binding_type": "collection",
+        "binding_name": "#button_name_edit_visible",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "actions_collection"
+      }
+    ]
+  },
+  "button_name_label": {
+    "bindings": [
+      {
+        "binding_type": "collection",
+        "binding_name": "#button_name_edit_visible",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "actions_collection"
+      }
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "namespace": "npcplus_vanilla_screen",
+
+  "screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "student_dialog@common_dialogs.form_fitting_main_panel_no_buttons": {
+          "$custom_background": "common_dialogs.dialog_background_opaque_with_child",
+          "$child_control": "npc_interact.student_stack_panel",
+          "$title_panel": "common_dialogs.standard_title_label",
+          "$text_name": "npcscreen.basictitle",
+          "size": [320, "100%"]
+        }
+      },
+      {
+        "close_helper@npc_interact.close_text": {
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_left",
+          "offset": [20, 0]
+        }
+      }
+    ]
+  },
+
+  "student_message_section": {
+    "type": "panel",
+    "size": ["100%", 97],
+    "controls": [
+      { "model@npc_interact.message_model_window": {} },
+      { "point@npc_interact.bubble_point": {} },
+      {
+        "student_message_bubble": {
+          "type": "image",
+          "texture": "textures/ui/dialog_bubble",
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "size": [222, "100%"],
+          "$virtual_keyboard_buffer_control": "text_scroll",
+          "controls": [
+            {
+              "text_scroll@common.scrolling_panel": {
+                "size": ["100% - 10px", "100% - 11px"],
+                "$scrolling_content": "npcplus_vanilla_screen.vanilla_dialog_text",
+                "$scroll_box_visible_touch": false,
+                "$show_background": false,
+                "$scroll_bar_left_padding_size": [0, 0],
+                "$scroll_bar_right_padding_size": [0, 0],
+                "$scroll_size": [5, "100%"],
+                "$scroll_size_touch": "$scroll_size",
+                "offset": [0, -1]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "vanilla_dialog_text": {
+    "type": "label",
+    "size": ["100%", "default"],
+    "color": "$npc_dialog_text_color",
+    "text": "#newdialogtext",
+    "bindings": [
+      {
+        "binding_name": "#dialogtext"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#dialogtext - $dialog_prefix > '')",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#dialogtext - $dialog_prefix)",
+        "target_property_name": "#newdialogtext"
+      }
+    ]
+  },
+
+  "vanilla_screen@npcplus_common.npcplus_screen_base": {
+    "$safezone_screen_content": "npcplus_vanilla_screen.screen_content"
+  }
+}

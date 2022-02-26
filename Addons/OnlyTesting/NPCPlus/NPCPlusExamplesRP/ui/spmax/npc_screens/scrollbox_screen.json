@@ -1,0 +1,192 @@
+{
+  "namespace": "npcplus_scrollbox",
+
+  "screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "menu_screen": {
+          "type": "panel",
+          "size": [225, 200],
+          "controls": [
+            { "close_button@npc_interact.close_button_holder": {} },
+            {
+              "screen_content@common_dialogs.main_panel_no_buttons": {
+                "$show_close_button": false,
+                "$title_panel": "common_dialogs.standard_title_label",
+                "$title_size": ["100% - 14px", 10],
+                "$text_name": "#title_text",
+                "$title_text_binding_type": "global",
+                "$child_control": "npcplus_scrollbox.dialog_content",
+                "layer": 2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "close_helper@npc_interact.close_text": {
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_left",
+          "offset": [20, 0]
+        }
+      }
+    ]
+  },
+
+  "dialog_content": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "layer": 1,
+    "controls": [
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "$show_background": false,
+          "size": ["100%", "100%"],
+          "$scrolling_content": "npcplus_scrollbox.scrolling_content",
+          "$scroll_size": [5, "100% - 4px"],
+          "$scrolling_pane_size": ["100% - 4px", "100%"],
+          "$scrolling_pane_offset": [2, 0],
+          "$scroll_bar_right_padding_size": [0, 0]
+        }
+      }
+    ]
+  },
+
+  "scrolling_content": {
+    "type": "stack_panel",
+    "size": ["100%", "100%c"],
+    "orientation": "vertical",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      { "content_focus@npcplus_common.content_focus": {} },
+      {
+        "top_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      },
+      {
+        "dialog_message": {
+          "type": "label",
+          "text_alignment": "center",
+          "size": ["100%", "default"],
+          "text": "#newdialogtext",
+          "bindings": [
+            {
+              "binding_name": "#dialogtext"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not (#dialogtext = 'NPC_ScrollBox'))",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#dialogtext - $dialog_prefix)",
+              "target_property_name": "#newdialogtext"
+            }
+          ]
+        }
+      },
+      {
+        "middle_padding": {
+          "type": "panel",
+          "size": ["100%", 2],
+          "bindings": [
+            {
+              "binding_name": "#dialogtext"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#dialogtext - $dialog_prefix > '')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "student_buttons": {
+          "type": "stack_panel",
+          "collection_name": "student_buttons_collection",
+          "size": ["100%", "100%c"],
+          "controls": [
+            {
+              "0@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 0
+              }
+            },
+            {
+              "1@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 1
+              }
+            },
+            {
+              "2@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 2
+              }
+            },
+            {
+              "3@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 3
+              }
+            },
+            {
+              "4@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 4
+              }
+            },
+            {
+              "5@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 5
+              }
+            },
+            {
+              "6@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 6
+              }
+            },
+            {
+              "7@npcplus_common.student_button": {
+                "size": ["100%", "30px"],
+                "collection_index": 7
+              }
+            }
+          ]
+          //The factory is unused because it use have conflicts with hardcoded collection sizes
+          //Action count doesn't work properly when using /dialogue with custom scene files
+          /*"factory": {
+						"name": "action_item_factory",
+						"control_name": "npcplus_common.student_button"
+					},
+					"bindings": [
+						{
+							"binding_name": "#action_count", //#button_count
+							"binding_name_override": "#collection_length"
+						}
+					]*/
+        }
+      },
+      {
+        "bottom_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      }
+    ]
+  },
+
+  "scrollbox_screen@npcplus_common.npcplus_screen_base": {
+    "$no_safezone_screen_content": "common.screen_background",
+    "$safezone_screen_content": "npcplus_scrollbox.screen_content",
+    "$screen_background_alpha": 0.5
+  }
+}

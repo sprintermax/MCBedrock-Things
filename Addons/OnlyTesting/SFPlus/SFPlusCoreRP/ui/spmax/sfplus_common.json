@@ -22,16 +22,6 @@
     "$toggle_tts_name": "accessibility.tab.tts.title"
   },
 
-  "standard_title_label_no_prefix@common_dialogs.standard_title_label": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_property_name": "($text_name - $title_prefix)",
-        "target_property_name": "$text_name"
-      }
-    ]
-  },
-
   "fullscreen_top_header@common.fullscreen_header": {
     "$back_button_has_title": "($back_button_text > '')",
     "$button_text": "$back_button_text",
@@ -104,6 +94,16 @@
       }
     ]
   },*/
+  
+  "standard_title_label_no_prefix@common_dialogs.standard_title_label": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_property_name": "($text_name - $title_prefix)",
+        "target_property_name": "$text_name"
+      }
+    ]
+  },
 
   "sfplus_screen_base": {
     "type": "screen",

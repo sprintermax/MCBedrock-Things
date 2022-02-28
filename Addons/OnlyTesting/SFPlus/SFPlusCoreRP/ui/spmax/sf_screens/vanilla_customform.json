@@ -1,0 +1,7 @@
+{
+  "namespace": "sfplus_vanilla_customform",
+
+  "vanilla_customform_screen@sfplus_common.sfplus_screen_base": {
+    "$safezone_screen_content": "server_form.custom_form"
+  }
+}

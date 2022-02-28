@@ -1,0 +1,10 @@
+{
+  "ui_defs": [
+    "ui/server_form.json", //WIP
+    "ui/spmax/sf_screens/vanilla_customform.json", //WIP
+    "ui/spmax/sf_screens/vanilla_longform.json", //WIP
+    "ui/spmax/sf_screens/vanilla_modalform.json", //WIP
+    "ui/spmax/sfplus_common.json", //WIP
+    "ui/spmax/sfplus_screen_definitions.json"
+  ]
+}

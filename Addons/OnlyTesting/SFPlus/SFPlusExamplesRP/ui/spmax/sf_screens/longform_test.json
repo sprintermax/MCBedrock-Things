@@ -1,0 +1,23 @@
+{
+  "namespace": "longform_test",
+
+  "longform_test_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "test@common_dialogs.main_panel_no_buttons": {
+          "$title_panel": "common_dialogs.standard_title_label",
+          "$title_size": ["100% - 14px", 10],
+          "size": ["80%", "80%"],
+          "$text_name": "spmax.sfplus.wip",
+          "$child_control": "common.empty_panel",
+          "layer": 2
+        }
+      }
+    ]
+  },
+
+  "longform_screen@sfplus_common.sfplus_screen_base": {
+    "$safezone_screen_content": "longform_test.longform_test_screen_content"
+  }
+}

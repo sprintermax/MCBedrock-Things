@@ -1,0 +1,27 @@
+{
+  "namespace": "sfplus_screen_defs",
+
+  "long_form_screens": {
+    "type": "panel",
+    "controls": [
+      {
+        "vanilla_long_form@sfplus_common.custom_screen_definition": {
+          "$sfplus_custom_screen": "sfplus_vanilla_longform.vanilla_longform_screen",
+          "$title_prefix": "SF_Vanilla"
+        }
+      }
+    ]
+  },
+
+  "custom_form_screens": {
+    "type": "panel",
+    "controls": [
+      {
+        "vanilla_custom_form@sfplus_common.custom_screen_definition": {
+          "$sfplus_custom_screen": "sfplus_vanilla_customform.vanilla_customform_screen",
+          "$title_prefix": "SF_Vanilla"
+        }
+      }
+    ]
+  }
+}

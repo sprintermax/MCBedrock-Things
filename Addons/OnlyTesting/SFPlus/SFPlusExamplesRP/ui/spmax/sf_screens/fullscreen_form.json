@@ -1,0 +1,18 @@
+{
+  "namespace": "fullscreen_form",
+
+  "screen_content@common_dialogs.main_panel_no_buttons": {
+    "$custom_title_label": "sfplus_common.standard_title_label_no_prefix",
+    "$use_custom_title_control": true,
+    "$title_size": ["100% - 14px", 10],
+    "$text_name": "#title_text",
+    "$child_control": "server_form.long_form_panel",
+    "layer": 2
+  },
+
+  "fullscreen_form_screen@sfplus_common.sfplus_screen_base": {
+    "$no_safezone_screen_content": "common.screen_background",
+    "$safezone_screen_content": "fullscreen_form.screen_content",
+    "$screen_background_alpha": 0.5
+  }
+}

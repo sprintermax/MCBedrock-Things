@@ -1,27 +1,27 @@
 {
   "namespace": "sfplus_screen_defs",
 
-  "long_form_screens": {
+  "custom_screens": {
     "type": "panel",
     "controls": [
       {
-        "vanilla_long_form@sfplus_common.custom_screen_definition": {
-          "$sfplus_custom_screen": "sfplus_vanilla_longform.vanilla_longform_screen",
-          "$title_prefix": "SF_Vanilla"
+        "vanilla_forms@sfplus_common.form_factory_base": {
+          "$form_screens": {
+            "long_form": "sfplus_screen_defs.vanilla_longform_screen",
+            "custom_form": "sfplus_screen_defs.vanilla_customform_screen"
+          }
         }
       }
     ]
   },
 
-  "custom_form_screens": {
-    "type": "panel",
-    "controls": [
-      {
-        "vanilla_custom_form@sfplus_common.custom_screen_definition": {
-          "$sfplus_custom_screen": "sfplus_vanilla_customform.vanilla_customform_screen",
-          "$title_prefix": "SF_Vanilla"
-        }
-      }
-    ]
+  "vanilla_longform_screen@sfplus_common.custom_screen_definition": {
+    "$sfplus_custom_screen": "server_form.long_form",
+    "$title_prefix": "SF_Vanilla"
+  },
+
+  "vanilla_customform_screen@sfplus_common.custom_screen_definition": {
+    "$sfplus_custom_screen": "server_form.custom_form",
+    "$title_prefix": "SF_Vanilla"
   }
 }

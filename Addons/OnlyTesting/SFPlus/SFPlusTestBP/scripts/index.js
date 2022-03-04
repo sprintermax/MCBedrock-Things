@@ -3,7 +3,7 @@ import { ActionFormData, MessageFormData, ModalFormData } from "mojang-minecraft
 
 const ExampleForms = {
     TestActF_1: new ActionFormData()
-        .title("SF_LongFormTestActF1 Title Text") //Original: .title("SF_VanillaActF1 Title Text")
+        .title("SF_FullScreenTestActF1 Title Text") //Original: .title("SF_VanillaActF1 Title Text")
         .body("ActF1 Body Description")
         .button("ActF1 Button1")
         .button("ActF1 Button2", "textures/items/apple"),
@@ -69,7 +69,11 @@ world.events.beforeItemUse.subscribe(async EventData => {
                 FormToShow = "TestMdlF_1";
                 break;
             case 3:
-                FormToShow = "TestMsgF_1";
+                //FormToShow = "TestMsgF_1";
+                ExampleForms["TestActF_1"].show(Player);
+                ExampleForms["TestActF_1"].title("SF_VanillaActF1 Title Text").show(Player);
+                ExampleForms["TestMdlF_1"].show(Player);
+                ExampleForms["TestActF_1"].title("SF_FullScreenTestActF1 Title Text")
                 break;
         }
 

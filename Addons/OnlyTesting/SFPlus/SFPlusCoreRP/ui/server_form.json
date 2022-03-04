@@ -1,8 +1,7 @@
 {
   "third_party_server_screen@sfplus_common.sfplus_screen_base": {
-    "$no_safezone_screen_content": "server_form.main_screen_content",
-    "$safezone_screen_animations": [],
-    "$no_safezone_screen_animations": [],
+    "$no_safezone_screen_content": "sfplus_screen_defs.custom_screens",
+    "$is_root_screen": true,
     "button_mappings": [
       {
         "from_button_id": "button.menu_cancel",
@@ -10,17 +9,6 @@
         "mapping_type": "global"
       }
     ]
-  },
-
-  "main_screen_content": {
-    "size": ["100%", "100%"]
-  },
-
-  "main_screen_content/server_form_factory": {
-    "control_ids": {
-      "long_form": "sfplus_screen_defs.long_form_screens",
-      "custom_form": "sfplus_screen_defs.custom_form_screens"
-    }
   },
 
   "long_form": {

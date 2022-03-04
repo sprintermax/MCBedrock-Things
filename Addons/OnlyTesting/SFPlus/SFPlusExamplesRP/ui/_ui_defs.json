@@ -1,6 +1,6 @@
 {
   "ui_defs": [
-    "ui/spmax/sf_screens/longform_test.json", //WIP - Test
+    "ui/spmax/sf_screens/fullscreen_form.json", //WIP - Test
     "ui/spmax/sfplus_screen_definitions.json"
   ]
 }

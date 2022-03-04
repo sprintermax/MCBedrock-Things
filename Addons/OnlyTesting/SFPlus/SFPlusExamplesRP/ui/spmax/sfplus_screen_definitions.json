@@ -1,20 +1,15 @@
 {
-  "long_form_screens": {
+  "custom_screens": {
     "modifications": [
       {
         "array_name": "controls",
         "operation": "insert_front",
         "value": [
-          // {
-          //   "longform_example@sfplus_common.custom_screen_definition": {
-          //     "$sfplus_custom_screen": "my_longform.longform_screen",
-          //     "$title_prefix": "SF_MyLongForm"
-          //   }
-          // },
           {
-            "longform_test@sfplus_common.custom_screen_definition": {
-              "$sfplus_custom_screen": "longform_test.longform_screen",
-              "$title_prefix": "SF_LongFormTest"
+            "fullscreen_form@sfplus_common.form_factory_base": {
+              "$form_screens": {
+                "long_form": "sfplus_screen_defs.fullscreen_form_screen"
+              }
             }
           }
         ]
@@ -22,20 +17,8 @@
     ]
   },
 
-  "custom_form_screens": {
-    "modifications": [
-      {
-        "array_name": "controls",
-        "operation": "insert_front",
-        "value": [
-          // {
-          //   "customform_example@sfplus_common.custom_screen_definition": {
-          //     "$sfplus_custom_screen": "my_customform.customform_screen",
-          //     "$title_prefix": "SF_MyCustomForm"
-          //   }
-          // }
-        ]
-      }
-    ]
+  "fullscreen_form_screen@sfplus_common.custom_screen_definition": {
+    "$sfplus_custom_screen": "fullscreen_form.fullscreen_form_screen",
+    "$title_prefix": "SF_FullScreen"
   }
 }

@@ -44,6 +44,7 @@
                 "size": ["100% - 10px", "100% - 11px"],
                 "$scrolling_content": "npcplus_vanilla_screen.vanilla_dialog_text",
                 "$scroll_box_visible_touch": false,
+                "$always_handle_scrolling": true,
                 "$show_background": false,
                 "$scroll_bar_left_padding_size": [0, 0],
                 "$scroll_bar_right_padding_size": [0, 0],

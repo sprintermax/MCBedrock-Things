@@ -9,7 +9,8 @@
           "$custom_background": "common_dialogs.dialog_background_opaque_with_child",
           "$child_control": "npc_interact.student_stack_panel",
           "$title_panel": "common_dialogs.standard_title_label",
-          "$text_name": "npcscreen.basictitle",
+          "$title_text_binding_type": "global",
+          "$text_name": "#title_text",
           "size": [320, "100%"]
         }
       },

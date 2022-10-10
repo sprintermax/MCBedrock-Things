@@ -4,9 +4,9 @@
     "name": "pack.name",
     "description": "pack.description",
     "uuid": "50c1a6ca-6dc2-43be-aa8c-7950b1320d21",
-    "min_engine_version": [1, 18, 0],
+    "min_engine_version": [1, 19, 0],
     "pack_scope": "world",
-    "version": [1, 0, 0]
+    "version": [1, 0, 1]
   },
   "modules": [
     {
@@ -20,7 +20,7 @@
     {
       // ServerFormPlus Core
       "uuid": "f31c9b7b-0f94-4fa4-8081-364e9b53a421",
-      "version": [1, 0, 0]
+      "version": [1, 0, 1]
     }
   ]
 }

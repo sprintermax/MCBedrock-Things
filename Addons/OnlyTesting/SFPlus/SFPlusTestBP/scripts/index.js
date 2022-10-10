@@ -1,15 +1,21 @@
-import { world } from "mojang-minecraft";
-import { ActionFormData, MessageFormData, ModalFormData } from "mojang-minecraft-ui";
+import { world } from "@minecraft/server";
+import { ModalFormData, ActionFormData, MessageFormData } from "@minecraft/server-ui";
 
 const ExampleForms = {
     TestActF_1: new ActionFormData()
-        .title("SF_FullScreenTestActF1 Title Text") //Original: .title("SF_VanillaActF1 Title Text")
+        .title("SF_VanillaLong Title Text") //Original: .title("SF_VanillaActF1 Title Text")
         .body("ActF1 Body Description")
         .button("ActF1 Button1")
-        .button("ActF1 Button2", "textures/items/apple"),
+        .button("ActF1 Button2", "textures/items/apple")
+        .button("ActF1 Button3", "textures/items/diamond"),
+    TestActF_2: new ActionFormData()
+        .title("SF_FullScreen Title Text")
+        .body("ActF2 Body Description")
+        .button("ActF2 Button1")
+        .button("ActF2 Button2", "textures/blocks_coal_ore")
+        .button("ActF2 Button3", "textures/blocks/nether_gold_ore"),
     TestMdlF_1: new ModalFormData()
-        .title("SF_VanillaMdlF1 Title Text")
-        .icon("textures/items/apple") // ???
+        .title("SF_VanillaCustom Title Text")
         .slider("MdlF1 Slider1", -10, 10, 2, 0)
         .dropdown("MdlF1 Dropdown1", [
             "MdlF1 Dropdown1 Option1",
@@ -27,6 +33,42 @@ const ExampleForms = {
         .button2("MsgF1 Button2")
 }
 
+world.events.itemUse.subscribe(e => {
+    if (e.item.typeId === "minecraft:diamond") {
+        CustomFormModal.show(e.source).then(FormRes => {
+            CustomFormBuilder(e.source, FormRes); // wip - test
+        });
+    } else if (e.item.typeId === "minecraft:stick") {
+        let FormToShow;
+        switch (e.item.amount) {
+            case 1:
+                FormToShow = "TestActF_1";
+                break;
+            case 2:
+                FormToShow = "TestMdlF_1";
+                break;
+            case 3:
+                FormToShow = "TestActF_2";
+                break;
+            case 4:
+                FormToShow = "TestMsgF_1";
+                break;
+            case 5:
+                ExampleForms["TestActF_1"].show(e.source);
+                ExampleForms["TestActF_1"].title("SF_VanillaActF1 Title Text").show(e.source);
+                ExampleForms["TestMdlF_1"].show(e.source);
+                ExampleForms["TestActF_1"].title("SF_FullScreenTestActF1 Title Text")
+                break;
+        }
+        if (FormToShow) {
+            //console.warn("Showing Form" + FormToShow);
+            ExampleForms[FormToShow].show(e.source).then(FormRes => {
+
+            });
+        }
+    }
+});
+
 const CustomFormModal = new ModalFormData()
     .title("SF_VanillaCustom Form Builder")
     .dropdown("Form Type", [
@@ -43,52 +85,7 @@ const CustomFormModal = new ModalFormData()
     .textField("Custom Screen Prefix", "SF_MyPrefix")
     .textField("Aditional Data", "btnx10,btn1,btn2,bdy,txtx8,tglx5,sldx4,drpx3,ico")
 
-let UsedItem = false;
-
-world.events.beforeItemUse.subscribe(async EventData => {
-    const Item = EventData.item;
-    const Player = EventData.source;
-
-    if (UsedItem) return;
-
-    if (Item.id == "minecraft:diamond") {
-        UsedItem = true;
-        CustomFormModal.show(Player).then(FormRes => {
-            UsedItem = false;
-            CustomFormBuilder(Player, FormRes);
-        });
-    } else if (Item.id == "minecraft:stick") {
-        UsedItem = true;
-        let FormToShow;
-
-        switch (Item.amount) {
-            case 1:
-                FormToShow = "TestActF_1";
-                break;
-            case 2:
-                FormToShow = "TestMdlF_1";
-                break;
-            case 3:
-                //FormToShow = "TestMsgF_1";
-                ExampleForms["TestActF_1"].show(Player);
-                ExampleForms["TestActF_1"].title("SF_VanillaActF1 Title Text").show(Player);
-                ExampleForms["TestMdlF_1"].show(Player);
-                ExampleForms["TestActF_1"].title("SF_FullScreenTestActF1 Title Text")
-                break;
-        }
-
-        if (!FormToShow) {
-            UsedItem = false;
-        } else {
-            //console.warn("Showing Form" + FormToShow);
-            ExampleForms[FormToShow].show(Player).then(FormRes => {
-                UsedItem = false;
-            });
-        }
-    }
-});
-
-function CustomFormBuilder(Player, FormRes) {
+function CustomFormBuilder(Player, FormRes) { // wip - test
     if (FormRes.isCanceled) return;
     let FormToShow;
     const FormData = {

@@ -4,9 +4,9 @@
     "name": "pack.name",
     "description": "pack.description",
     "uuid": "2df72885-b0fc-4bc8-a003-d2f5f5117371",
-    "min_engine_version": [1, 18, 0],
+    "min_engine_version": [1, 19, 0],
     "pack_scope": "world",
-    "version": [1, 0, 0]
+    "version": [1, 0, 1]
   },
   "modules": [
     {

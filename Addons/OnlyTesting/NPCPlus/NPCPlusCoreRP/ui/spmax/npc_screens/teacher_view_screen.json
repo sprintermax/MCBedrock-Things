@@ -113,21 +113,13 @@
         "dialog_text_edit_box@npc_interact.multiline_text_edit_control": {
           "$text_edit_box_content_binding_name": "#dialogtext",
           "$text_box_name": "student_message_bubble",
+          "$always_handle_scrolling": true,
+          "$scroll_track_offset": [ 2, 0],
           "size": ["100%", "fill"],
           "max_length": 1000,
           "layer": 3
         }
-      }, // WIP - Change to add a button to open scrollable dialog edit pop-up
-      /*{ // Rework/Test - Overlaping Layers and Background + change Text Edit Box size to fix selection
-        "dialog_text_edit_scrolling_panel@common.scrolling_panel": {
-          "$scrolling_content": "npcplus_teacher_view.dialog_message_white",
-          "$virtual_keyboard_buffer_control": "text_scroll",
-          "$scroll_bar_contained_touch": true,
-          "$scroll_bar_contained": true,
-          "size": ["100%", "fill"],
-          "layer": 3
-        }
-      },*/
+      },
       {
         "padding_4": {
           "type": "panel",
@@ -135,21 +127,28 @@
         }
       },
       {
-        "appearance_label@common_dialogs.title_label": {
-          "$text_name": "npcscreen.appearance"
-        }
-      },
-      {
-        "padding_5": {
-          "type": "panel",
-          "size": ["100%", 2]
-        }
-      },
-      { "skins@npc_interact.skin_picker": {} },
-      {
-        "padding_6": {
-          "type": "panel",
-          "size": ["100%", 10]
+        "skin_picker_stack_panel": {
+          "type": "stack_panel",
+          "controls": [
+            {
+              "appearance_label@common_dialogs.title_label": {
+              "$text_name": "npcscreen.appearance"
+              }
+            },
+            {
+              "padding_5": {
+                "type": "panel",
+                "size": ["100%", 2]
+              }
+            },
+            { "skins@npc_interact.skin_picker": {} },
+            {
+              "padding_6": {
+                "type": "panel",
+                "size": ["100%", 10]
+              }
+            }
+          ]
         }
       },
       {
@@ -167,13 +166,20 @@
       }
     ]
   },
+  
+  "right_panel_input_holder@npcplus_common.base_input_panel": {
+    "size": [ "100%", "100%c" ],
+    "controls": [
+      { "right_section_stack_panel@npc_interact.advanced_stack_panel": {} }
+    ]
+  },
 
   "right_panel_content": {
     "type": "panel",
     "controls": [
       {
         "advanced_scrolling_panel@common.scrolling_panel": {
-          "$scrolling_content": "npc_interact.advanced_stack_panel",
+          "$scrolling_content": "npcplus_teacher_view.right_panel_input_holder",
           "$scrolling_pane_size": ["100% - 6px", "100%"],
           "size": ["100%", "100%"],
           "offset": [6, 0],
@@ -184,11 +190,6 @@
         }
       }
     ]
-  },
-
-  "dialog_message_white@npc_interact.npc_message": {
-    "$text_box_text_color": "$text_box_text_color",
-    "$color": "$text_box_text_color"
   },
 
   "teacher_view_screen@npcplus_common.npcplus_screen_base": {

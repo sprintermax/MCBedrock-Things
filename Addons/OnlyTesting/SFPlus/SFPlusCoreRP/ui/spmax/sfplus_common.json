@@ -2,10 +2,14 @@
   "namespace": "sfplus_common",
 
   "standard_title_label_no_prefix@common_dialogs.standard_title_label": {
+    "text": "#title_text",
     "bindings": [
       {
+        "binding_name": "#title_text"
+      },
+      {
         "binding_type": "view",
-        "source_property_name": "($text_name - $title_prefix)",
+        "source_property_name": "(#title_text - $title_prefix)",
         "target_property_name": "$text_name"
       },
       {
@@ -14,6 +18,16 @@
         "binding_name": "#tts_dialog_title"
       }
     ]
+  },
+
+  "base_input_panel": {
+    "type": "input_panel"
+  },
+
+  "content_focus@base_input_panel": {
+    "focus_identifier": "default_custom_focus",
+    "focus_enabled": true,
+    "size": [ 0, 0 ]
   },
 
   "sfplus_screen_base": {

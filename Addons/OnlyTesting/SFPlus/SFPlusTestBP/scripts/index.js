@@ -3,19 +3,19 @@ import { ModalFormData, ActionFormData, MessageFormData } from "@minecraft/serve
 
 const ExampleForms = {
     TestActF_1: new ActionFormData()
-        .title("SF_VanillaLong Title Text") //Original: .title("SF_VanillaActF1 Title Text")
+        .title("SF_VanillaLong Title Text 0") //Original: .title("SF_VanillaActF1 Title Text")
         .body("ActF1 Body Description")
         .button("ActF1 Button1")
         .button("ActF1 Button2", "textures/items/apple")
         .button("ActF1 Button3", "textures/items/diamond"),
     TestActF_2: new ActionFormData()
-        .title("SF_FullScreen Title Text")
+        .title("SF_FullScreen Title Text 1")
         .body("ActF2 Body Description")
         .button("ActF2 Button1")
         .button("ActF2 Button2", "textures/blocks_coal_ore")
         .button("ActF2 Button3", "textures/blocks/nether_gold_ore"),
     TestMdlF_1: new ModalFormData()
-        .title("SF_VanillaCustom Title Text")
+        .title("SF_VanillaCustom Title Text 2")
         .slider("MdlF1 Slider1", -10, 10, 2, 0)
         .dropdown("MdlF1 Dropdown1", [
             "MdlF1 Dropdown1 Option1",

@@ -1,0 +1,95 @@
+{
+  "namespace": "sfplus_fullscreen_common",
+
+  "text_section_toggle_button_base@common_toggles.light_text_toggle": {
+    "size": ["100%", "30px"],
+    "$radio_toggle_group": true,
+    "$toggle_name|default": "navigation_tab",
+    "$default_selector_toggle_index|default": 0,
+    "$toggle_group_default_selected": "$default_selector_toggle_index",
+    "$toggle_tab_focus_binding_type": "global",
+    "$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
+    "$toggle_on_hover_binding_type": "global",
+    "$toggle_on_hover_binding_name": "#toggle_on_hover",
+    "$toggle_tts_toggle_on_text": "accessibility.state.selected",
+    "$toggle_tts_toggle_off_text": "accessibility.state.unselected",
+    "$toggle_tts_name": "accessibility.tab.tts.title"
+  },
+
+  "fullscreen_top_header@common.fullscreen_header": {
+    "$back_button_text|default": "gui.back",
+    "$back_button_has_title": "($back_button_text > '')",
+    "$button_text": "$back_button_text",
+    "layer": 9
+  },
+
+  "dialog_with_divider": {
+    "type": "panel",
+    "$divider_offset|default": ["40%", -3],
+    "$divider_size|default": ["4px", "100% + 3px"],
+    "$selector_area_size|default": ["40% - 2px", "100%"],
+    "$content_area_size|default": ["60% - 2px", "100%"],
+    "$show_divider|default": true,
+    "controls": [
+      {
+        "selector_area": {
+          "type": "panel",
+          "size": "$selector_area_size",
+          "$selector_area_content|default": "common.empty_panel",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            { "selector_content@$selector_area_content": {} }
+          ]
+        }
+      },
+      {
+        "dialog_divider@common.dialog_divider": {
+          "size": "$divider_size",
+          "offset": "$divider_offset",
+          "visible": "$show_divider",
+          "anchor_from": "top_left",
+          "anchor_to": "top_middle",
+          "layer": 10
+        }
+      },
+      {
+        "content_area": {
+          "type": "panel",
+          "size": "$content_area_size",
+          "$section_area_content|default": "common.empty_panel",
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "controls": [
+            { "section_content@$section_area_content": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "fullscreen_dialog": {
+    "type": "panel",
+    "$transparent_background|default": false,
+    "controls": [
+      { "top_header@fullscreen_top_header": {} },
+      {
+        "close_helper@common.gamepad_helper_b": {
+          "$hide_description": true,
+          "offset": [ -2, -3 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "background_fill_image": {
+          "type": "image",
+          "ignored": "$transparent_background",
+          "texture": "textures/ui/White",
+          "color": "$sidebar_bg_color",
+          "keep_ratio": false
+        }
+      }
+    ]
+  }
+}

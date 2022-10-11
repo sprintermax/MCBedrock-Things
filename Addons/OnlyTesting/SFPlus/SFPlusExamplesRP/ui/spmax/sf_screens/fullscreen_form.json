@@ -1,27 +1,16 @@
 {
   "namespace": "fullscreen_form",
 
-  "screen_content@fullscreen_form.dialog_with_divider": {
-    "$custom_title_label": "sfplus_common.standard_title_label_no_prefix",
+  "screen_content@sfplus_fullscreen_common.dialog_with_divider": {
     "$selector_area_content": "fullscreen_form.selector_area_content",
     "$section_area_content": "fullscreen_form.section_area_content"
-  },
-
-  "base_input_panel": {
-    "type": "input_panel"
-  },
-
-  "content_focus@base_input_panel": {
-    "focus_identifier": "default_custom_focus",
-    "focus_enabled": true,
-    "size": [ 0, 0 ]
   },
 
   "selector_area_content": {
     "type": "stack_panel",
     "size": ["100%", "100%"],
     "controls": [
-      { "content_focus@fullscreen_form.content_focus": {} },
+      { "content_focus@sfplus_common.content_focus": {} },
       {
         "top_padding": {
           "type": "panel",
@@ -41,28 +30,28 @@
         }
       },
       {
-        "section_toggle_0@fullscreen_form.text_section_toggle_button_base": {
+        "section_toggle_0@sfplus_fullscreen_common.text_section_toggle_button_base": {
           "$toggle_group_forced_index": 0,
           "$toggle_view_binding_name": "npc_section_toggle0",
           "$button_text": "Section 1"
         }
       },
       {
-        "section_toggle_1@fullscreen_form.text_section_toggle_button_base": {
+        "section_toggle_1@sfplus_fullscreen_common.text_section_toggle_button_base": {
           "$toggle_group_forced_index": 1,
           "$toggle_view_binding_name": "npc_section_toggle1",
           "$button_text": "Section 2"
         }
       },
       {
-        "section_toggle_2@fullscreen_form.text_section_toggle_button_base": {
+        "section_toggle_2@sfplus_fullscreen_common.text_section_toggle_button_base": {
           "$toggle_group_forced_index": 2,
           "$toggle_view_binding_name": "npc_section_toggle2",
           "$button_text": "Section 3"
         }
       },
       {
-        "section_toggle_3@fullscreen_form.text_section_toggle_button_base": {
+        "section_toggle_3@sfplus_fullscreen_common.text_section_toggle_button_base": {
           "$toggle_group_forced_index": 3,
           "$toggle_view_binding_name": "npc_section_toggle3",
           "$button_text": "Section 4"
@@ -75,27 +64,6 @@
         }
       }
     ]
-  },
-
-  "text_section_toggle_button_base@common_toggles.light_text_toggle": {
-    "size": ["100%", "30px"],
-    "$radio_toggle_group": true,
-    "$toggle_name|default": "navigation_tab",
-    "$default_selector_toggle_index|default": 0,
-    "$toggle_group_default_selected": "$default_selector_toggle_index",
-    "$toggle_tab_focus_binding_type": "global",
-    "$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
-    "$toggle_on_hover_binding_type": "global",
-    "$toggle_on_hover_binding_name": "#toggle_on_hover",
-    "$toggle_tts_toggle_on_text": "accessibility.state.selected",
-    "$toggle_tts_toggle_off_text": "accessibility.state.unselected",
-    "$toggle_tts_name": "accessibility.tab.tts.title"
-  },
-
-  "fullscreen_top_header@common.fullscreen_header": {
-    "$back_button_has_title": "($back_button_text > '')",
-    "$button_text": "$back_button_text",
-    "layer": 9
   },
 
   "dialog_with_divider": {
@@ -173,7 +141,7 @@
     "type": "stack_panel",
     "size": ["100%", "100%"],
     "controls": [
-      { "content_focus@fullscreen_form.content_focus": {} },
+      { "content_focus@sfplus_common.content_focus": {} },
       {
         "top_padding": {
           "type": "panel",
@@ -250,7 +218,7 @@
     "$header_bar_control": "common_store.store_top_bar",
     "$header_safezone_control": "common_store.store_top_bar_filler",
     "$no_safezone_screen_content": "common.screen_background",
-    "$safezone_screen_content": "fullscreen_form.fullscreen_dialog",
+    "$safezone_screen_content": "sfplus_fullscreen_common.fullscreen_dialog",
     "$child_control": "fullscreen_form.screen_content",
     "$screen_background_alpha": 0.9
   }

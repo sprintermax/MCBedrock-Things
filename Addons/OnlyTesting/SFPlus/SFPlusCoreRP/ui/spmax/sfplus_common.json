@@ -2,7 +2,8 @@
   "namespace": "sfplus_common",
 
   "standard_title_label_no_prefix@common_dialogs.standard_title_label": {
-    "text": "#title_text",
+    "$text_name|default": "#title_text",
+    "text": "#new_title_text",
     "bindings": [
       {
         "binding_name": "#title_text"
@@ -10,7 +11,7 @@
       {
         "binding_type": "view",
         "source_property_name": "(#title_text - $title_prefix)",
-        "target_property_name": "$text_name"
+        "target_property_name": "#new_title_text"
       },
       {
         "binding_type": "global",

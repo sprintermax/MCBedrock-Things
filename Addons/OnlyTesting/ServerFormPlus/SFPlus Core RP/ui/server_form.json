@@ -2,14 +2,7 @@
   "third_party_server_screen@common.base_screen": {
     "$screen_content": "common.base_screen_empty_panel",
     "$screen_bg_content": "server_form.main_screen_content",
-    "$background_animations": [],
-    "button_mappings": [
-      {
-        "from_button_id": "button.menu_cancel",
-        "to_button_id": "button.menu_exit",
-        "mapping_type": "global"
-      }
-    ]
+    "$background_animations": []
   },
 
   "main_screen_content": {

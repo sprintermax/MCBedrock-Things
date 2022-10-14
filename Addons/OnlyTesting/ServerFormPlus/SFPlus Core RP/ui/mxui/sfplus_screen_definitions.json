@@ -1,0 +1,13 @@
+{
+  "namespace": "sfplus_screen_defs",
+
+  "custom_action_screens": {
+    "type": "panel",
+    "controls": []
+  },
+
+  "custom_modal_screens": {
+    "type": "panel",
+    "controls": []
+  }
+}

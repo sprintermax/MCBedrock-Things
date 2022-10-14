@@ -1,0 +1,18 @@
+{
+  "custom_action_screens": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "fullscreen_form@sfplus_common.custom_screen_def": {
+              "$sfplus_screen_content": "fullscreen_form.fullscreen_form_screen",
+              "$sfplus_screen_prefix": "FullScreen"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

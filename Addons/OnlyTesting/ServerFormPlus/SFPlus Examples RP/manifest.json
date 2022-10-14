@@ -1,0 +1,26 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "26d05106-af59-4235-ab8d-36b6ee9643c1",
+    "min_engine_version": [1, 19, 40],
+    "pack_scope": "world",
+    "version": [1, 0, 0]
+  },
+  "modules": [
+    {
+      "description": "N/A",
+      "type": "resources",
+      "uuid": "68c45043-a86a-453c-a5fe-090c97b40cc8",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      // ServerForm+ Core Resource Pack
+      "uuid": "a1058e0e-53af-4e91-af43-00b6fd9ceefb",
+      "version": [1, 0, 0]
+    }
+  ]
+}

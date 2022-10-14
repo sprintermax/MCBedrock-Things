@@ -1,0 +1,36 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "4a5ed5a1-cc76-4906-9c77-fb5ef68e85e0",
+    "min_engine_version": [1, 19, 40],
+    "version": [1, 0, 0]
+  },
+
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "8281f19a-48d8-4fb8-b126-981e2d1579de",
+      "entry": "scripts/index.js",
+      "version": [1, 0, 0]
+    }
+  ],
+
+  "dependencies": [
+    {
+      // ServerForm+ Core Resource Pack
+      "uuid": "a1058e0e-53af-4e91-af43-00b6fd9ceefb",
+      "version": [1, 0, 0]
+    },
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.0.0-beta"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "1.0.0-beta"
+    }
+  ]
+}

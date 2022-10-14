@@ -1,7 +1,0 @@
-{
-    "namespace": "sfplus_longform_screen",
-
-    "long_form_screen@sfplus_common.sfplus_screen_base": {
-        "$safezone_screen_content": "server_form.long_form"
-    }
-}

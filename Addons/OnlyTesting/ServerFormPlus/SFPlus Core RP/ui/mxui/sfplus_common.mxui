@@ -1,0 +1,215 @@
+{
+  "namespace": "sfplus_common",
+
+  "sfp_anim_open_push_offset": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": ["25%", 0],
+    "to": [0, 0],
+    "end_event": "screen.entrance_end"
+  },
+
+  "sfp_anim_close_pop_offset": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": [0, 0],
+    "to": ["25%", 0],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "sfp_anim_open_push_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": 0.0,
+    "to": 1.0,
+    "end_event": "screen.entrance_end"
+  },
+
+  "sfp_anim_close_pop_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "sfp_anim_open_push_alpha": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "linear",
+    "duration": "$transition_time_push",
+    "from": 0.0,
+    "to": 1.0,
+    "end_event": "screen.entrance_end"
+  },
+
+  "sfp_anim_close_pop_alpha": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "linear",
+    "duration": "$transition_time_pop",
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "sfp_anim_close_push_offset@sfplus_common.sfp_anim_close_pop_offset": {
+    "play_event": "screen.exit_push"
+  },
+
+  "sfp_anim_close_push_fade@sfplus_common.sfp_anim_close_pop_fade": {
+    "play_event": "screen.exit_push"
+  },
+
+  "sfp_anim_close_push_alpha@sfplus_common.sfp_anim_close_pop_alpha": {
+    "play_event": "screen.exit_push"
+  },
+
+  "sfp_title_label": {
+    "type": "label",
+    "size": ["default", 10],
+    "color": "$title_text_color",
+    "text": "#sfp_title_text",
+    "shadow": false,
+    "layer": 4,
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#title_text - $sfplus_global_prefix - $sfplus_screen_prefix)",
+        "target_property_name": "#sfp_title_text"
+      }
+    ]
+  },
+
+  "custom_screen_def": {
+    "type": "panel",
+    "$sfplus_screen_prefix|default": "",
+    "$sfplus_screen_content|default": "common.empty_panel",
+    "controls": [{ "sfplus_screen@$sfplus_screen_content": {} }],
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#title_text - (#title_text - $sfplus_global_prefix - $sfplus_screen_prefix)) = $sfplus_global_prefix + $sfplus_screen_prefix)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "vanilla_screen_def@sfplus_common.sfplus_screen_base": {
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#title_text = #title_text - $sfplus_global_prefix)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "action_forms": {
+    "type": "panel",
+    "controls": [
+      {
+        "vanilla_action_form@sfplus_common.vanilla_screen_def": {
+          "$safezone_screen_content": "server_form.long_form"
+        }
+      },
+      { "custom_action_forms@sfplus_screen_defs.custom_action_screens": {} }
+    ]
+  },
+
+  "modal_forms": {
+    "type": "panel",
+    "controls": [
+      {
+        "vanilla_modal_form@sfplus_common.vanilla_screen_def": {
+          "$safezone_screen_content": "server_form.custom_form"
+        }
+      },
+      { "custom_modal_forms@sfplus_screen_defs.custom_modal_screens": {} }
+    ]
+  },
+
+  "sfplus_screen_base": {
+    "type": "panel",
+    "$show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
+    "$safezone_screen_content": "common.base_screen_empty_panel",
+    "$no_safezone_screen_content": "common.base_screen_empty_panel",
+    "$safezone_screen_animations|default": [
+      "@sfplus_common.sfp_anim_open_push_offset",
+      "@sfplus_common.sfp_anim_close_pop_offset",
+      "@sfplus_common.sfp_anim_close_push_offset",
+      "@sfplus_common.sfp_anim_open_push_fade",
+      "@sfplus_common.sfp_anim_close_pop_fade",
+      "@sfplus_common.sfp_anim_close_push_fade"
+    ],
+    "$no_safezone_screen_animations|default": [
+      "@sfplus_common.sfp_anim_open_push_alpha",
+      "@sfplus_common.sfp_anim_close_pop_alpha",
+      "@sfplus_common.sfp_anim_close_push_alpha"
+    ],
+    "controls": [
+      {
+        "screen_safezone_border@common.safezone_outer_matrix": {
+          "$screen_content": "common.focus_border_white",
+          "ignored": "(not $show_safezone_border)",
+          "size": ["100% + 2px", "100% + 2px"],
+          "layer": 1
+        }
+      },
+      {
+        "no_safezone_panel@$no_safezone_screen_content": {
+          "anims": "$no_safezone_screen_animations",
+          "propagate_alpha": true,
+          "layer": 2
+        }
+      },
+      {
+        "safezone_screen@common.safezone_outer_matrix": {
+          "$screen_content": "$safezone_screen_content",
+          "anims": "$safezone_screen_animations",
+          "propagate_alpha": true,
+          "layer": 2
+        }
+      },
+      {
+        "loading_bars_background": {
+          "type": "image",
+          "texture": "textures/ui/effect_background",
+          "size": ["33%", "100%c + 16px"],
+          "alpha": 0.0,
+          "propagate_alpha": true,
+          "animation_reset_name": "screen_animation_reset",
+          "disable_anim_fast_forward": true,
+          "anims": [
+            "@common.loading_bar_init_animation_push",
+            "@common.loading_bar_init_animation_pop"
+          ],
+          "controls": [
+            {
+              "loading_bars@common_store.progress_loading_bars": {
+                "size": ["100%", "8%x"],
+                "max_size": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

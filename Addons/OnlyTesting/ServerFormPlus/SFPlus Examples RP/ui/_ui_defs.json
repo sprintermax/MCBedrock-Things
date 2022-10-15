@@ -1,6 +1,5 @@
 {
   "ui_defs": [
-    "ui/mxui/sfplus_screen_definitions.json",
     "ui/spmax/sfplus_fullscreen_form.json" //WIP - Only for Test
   ]
 }

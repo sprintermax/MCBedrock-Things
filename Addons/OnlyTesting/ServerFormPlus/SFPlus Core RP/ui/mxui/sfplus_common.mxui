@@ -150,6 +150,7 @@
     "$show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
     "$safezone_screen_content": "common.base_screen_empty_panel",
     "$no_safezone_screen_content": "common.base_screen_empty_panel",
+    "$additional_screen_content": "common.base_screen_empty_panel",
     "$safezone_screen_animations|default": [
       "@sfplus_common.sfp_anim_open_push_offset",
       "@sfplus_common.sfp_anim_close_pop_offset",

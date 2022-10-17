@@ -1,0 +1,131 @@
+{
+  "npc_screen": {
+    "$screen_content": "common.base_screen_empty_panel",
+    "$screen_bg_content": "npc_interact.npc_screen_contents",
+    "$background_animations": []
+  },
+
+  "npc_screen_contents": {
+    "controls": [
+      {
+        "teacher_view@npcplus_teacher_view.teacher_view_screen": {
+          "bindings": [
+            {
+              "binding_name": "#teacher_view_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "dialog_screens@npcplus_screen_defs.custom_dialog_screens": {
+          "bindings": [
+            {
+              "binding_name": "#student_view_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        // WIP
+        "close_holder@npc_interact.close_button_holder": {
+          "$close_button_to_button_id": "button.exit_student",
+          "clips_children": true,
+          "size": [0, 0]
+        }
+      }
+    ]
+  },
+
+  "close_button_holder": {
+    "anchor_to": "top_right",
+    "offset": [0, 0],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "replace",
+        "where": {
+          "close_advanced@npc_interact.close_button_base": {
+            "$close_button_to_button_id": "button.exit_advanced",
+            "$default_texture": "textures/ui/back_button_default",
+            "$hover_texture": "textures/ui/back_button_hover",
+            "$pressed_texture": "textures/ui/back_button_pressed",
+            "$visibility_binding_name": "#advanced_visible"
+          }
+        },
+        "value": {
+          "close_advanced@npc_interact.x_close_button": {
+            "$close_button_to_button_id": "button.exit_basic",
+            "$visibility_binding_name": "#advanced_visible"
+          }
+        }
+      }
+    ]
+  },
+
+  // WIP
+  // "advanced_stack_panel": {
+  //   "modifications": [
+  //     {
+  //       "array_name": "controls",
+  //       "operation": "insert_front",
+  //       "value": {
+  //         "content_focus@npcplus_common.content_focus": {}
+  //       }
+  //     }
+  //   ]
+  // },
+
+  "command_toggle": {
+    "size": ["100% - 2px", "100%"],
+    "$radio_toggle_group": true,
+    "$button_text_color": "$title_text_color",
+    "$unchecked_control": "npcplus_common.option_toggle_button_off",
+    "$checked_control": "npcplus_common.option_toggle_button_on",
+    "$unchecked_hover_control": "npcplus_common.option_toggle_button_off_hover",
+    "$checked_hover_control": "npcplus_common.option_toggle_button_on_hover",
+    "$unchecked_locked_control": "npcplus_common.option_toggle_button_off_locked",
+    "$unchecked_locked_hover_control": "npcplus_common.option_toggle_button_off_locked",
+    "$checked_locked_control": "npcplus_common.option_toggle_button_on_locked",
+    "$checked_locked_hover_control": "npcplus_common.option_toggle_button_on_locked"
+  },
+
+  "command_toggle_panel": {
+    "size": ["fill", "100%"],
+    "controls": [
+      {
+        "command_toggle@command_toggle": {
+          "$toggle_name": "$toggle_name",
+          "$toggle_state_binding_name": "$toggle_state_binding_name"
+        }
+      }
+    ]
+  },
+
+  "student_message_section@npcplus_vanilla_screen.student_message_section": {},
+  "action_edit": { "size": ["100%", 34] },
+  "action_mode": { "size": ["100%", 25] },
+  "action_edit/expand": { "size": [34, "100%"] },
+  "action_text_edit": { "size": ["fill", "100%"] },
+  "action_template/mode_pad": {
+    "bindings": [
+      {
+        "binding_type": "collection",
+        "binding_name": "#button_name_edit_visible",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "actions_collection"
+      }
+    ]
+  },
+  "button_name_label": {
+    "bindings": [
+      {
+        "binding_type": "collection",
+        "binding_name": "#button_name_edit_visible",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "actions_collection"
+      }
+    ]
+  }
+}

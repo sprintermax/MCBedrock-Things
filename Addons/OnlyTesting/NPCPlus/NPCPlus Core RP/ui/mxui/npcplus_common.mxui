@@ -1,0 +1,269 @@
+{
+  "namespace": "npcplus_common",
+
+  "npcp_anim_open_push_offset": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": ["25%", 0],
+    "to": [0, 0],
+    "end_event": "screen.entrance_end"
+  },
+
+  "npcp_anim_close_pop_offset": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": [0, 0],
+    "to": ["25%", 0],
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "npcp_anim_open_push_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_push",
+    "from": 0.0,
+    "to": 1.0,
+    "end_event": "screen.entrance_end"
+  },
+
+  "npcp_anim_close_pop_fade": {
+    "anim_type": "alpha",
+    "easing": "out_cubic",
+    "duration": "$transition_time_pop",
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "npcp_anim_open_push_alpha": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "linear",
+    "duration": "$transition_time_push",
+    "from": 0.0,
+    "to": 1.0,
+    "end_event": "screen.entrance_end"
+  },
+
+  "npcp_anim_close_pop_alpha": {
+    "anim_type": "alpha",
+    "scale_from_starting_alpha": true,
+    "easing": "linear",
+    "duration": "$transition_time_pop",
+    "from": 1.0,
+    "to": 0.0,
+    "play_event": "screen.exit_pop",
+    "end_event": "screen.exit_end"
+  },
+
+  "npcp_anim_close_push_offset@npcplus_common.npcp_anim_close_pop_offset": {
+    "play_event": "screen.exit_push"
+  },
+
+  "npcp_anim_close_push_fade@npcplus_common.npcp_anim_close_pop_fade": {
+    "play_event": "screen.exit_push"
+  },
+
+  "npcp_anim_close_push_alpha@npcplus_common.npcp_anim_close_pop_alpha": {
+    "play_event": "screen.exit_push"
+  },
+
+  "option_toggle_button_template": {
+    "$button_text_color|default": "$light_button_default_text_color",
+    "$toggle_bg_texture|default": "textures/ui/button_borderless_light",
+    "$border_color|default": "$dark_border_default_color",
+    "size": ["100% - 2px", "100% - 2px"],
+    "type": "image",
+    "controls": [
+      {
+        "toggle_bg": {
+          "type": "image",
+          "texture": "$toggle_bg_texture",
+          "layer": 4
+        }
+      },
+      {
+        "toggle_border": {
+          "type": "image",
+          "size": ["100% + 2px", "100% + 2px"],
+          "texture": "textures/ui/focus_border_white",
+          "color": "$border_color",
+          "layer": 5
+        }
+      },
+      {
+        "toggle_label": {
+          "type": "label",
+          "max_size": ["100% - 10px", "100%"],
+          "text": "$toggle_label_text",
+          "color": "$button_text_color",
+          "layer": 5
+        }
+      }
+    ]
+  },
+
+  "option_toggle_button_on@npcplus_common.option_toggle_button_template": {
+    "$button_text_color": "$light_toggle_checked_default_text_color",
+    "$toggle_bg_texture": "textures/ui/button_borderless_lightpressednohover"
+  },
+
+  "option_toggle_button_off@npcplus_common.option_toggle_button_template": {
+    "$button_text_color": "$light_toggle_default_text_color"
+  },
+
+  "option_toggle_button_on_hover@npcplus_common.option_toggle_button_template": {
+    "$button_text_color": "$light_toggle_checked_hover_text_color",
+    "$border_color": "$dark_border_hover_color",
+    "$toggle_bg_texture": "textures/ui/button_borderless_lightpressed"
+  },
+
+  "option_toggle_button_off_hover@npcplus_common.option_toggle_button_template": {
+    "$button_text_color": "$light_toggle_hover_text_color",
+    "$border_color": "$dark_border_hover_color",
+    "$toggle_bg_texture": "textures/ui/button_borderless_lighthover"
+  },
+
+  "option_toggle_button_on_locked@npcplus_common.option_toggle_button_on": {
+    "$button_text_color": "$light_button_locked_text_color",
+    "$border_color": "$dark_border_locked_color",
+    "alpha": 0.5
+  },
+
+  "option_toggle_button_off_locked@npcplus_common.option_toggle_button_off": {
+    "$button_text_color": "$light_button_locked_text_color",
+    "$border_color": "$dark_border_locked_color",
+    "alpha": 0.5
+  },
+
+  "npcp_title_label": {
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [0, 8],
+    "type": "label",
+    "size": ["default", 10],
+    "color": "$title_text_color",
+    "$title_text|default": "",
+    "text": "$title_text",
+    "shadow": false,
+    "layer": 4
+  },
+
+  "npcp_prefixed_title_label@npcplus_common.npcp_title_label": {
+    "$title_text": "#sfp_title_text",
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#title_text - $npcplus_global_prefix - $npcplus_screen_prefix)",
+        "target_property_name": "#sfp_title_text"
+      }
+    ]
+  },
+
+  "custom_screen_def": {
+    "type": "panel",
+    "$npcplus_screen_prefix|default": "",
+    "$npcplus_screen_content|default": "common.empty_panel",
+    "controls": [{ "npcplus_screen@$npcplus_screen_content": {} }],
+    "bindings": [
+      {
+        "binding_name": "#dialogtext"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#dialogtext - (#dialogtext - $npcplus_global_prefix - $npcplus_screen_prefix)) = $npcplus_global_prefix + $npcplus_screen_prefix)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "vanilla_screen_def@npcplus_common.npcplus_screen_base": {
+    "$safezone_screen_content": "npcplus_vanilla_screen.vanilla_screen",
+    "bindings": [
+      {
+        "binding_name": "#dialogtext"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#dialogtext = #dialogtext - $npcplus_global_prefix)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "npcplus_screen_base": {
+    "type": "panel",
+    "$show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
+    "$safezone_screen_content": "common.base_screen_empty_panel",
+    "$no_safezone_screen_content": "common.base_screen_empty_panel",
+    "$additional_screen_content": "common.base_screen_empty_panel",
+    "$safezone_screen_animations|default": [
+      "@npcplus_common.npcp_anim_open_push_offset",
+      "@npcplus_common.npcp_anim_close_pop_offset",
+      "@npcplus_common.npcp_anim_close_push_offset",
+      "@npcplus_common.npcp_anim_open_push_fade",
+      "@npcplus_common.npcp_anim_close_pop_fade",
+      "@npcplus_common.npcp_anim_close_push_fade"
+    ],
+    "$no_safezone_screen_animations|default": [
+      "@npcplus_common.npcp_anim_open_push_alpha",
+      "@npcplus_common.npcp_anim_close_pop_alpha",
+      "@npcplus_common.npcp_anim_close_push_alpha"
+    ],
+    "controls": [
+      {
+        "screen_safezone_border@common.safezone_outer_matrix": {
+          "$screen_content": "common.focus_border_white",
+          "ignored": "(not $show_safezone_border)",
+          "size": ["100% + 2px", "100% + 2px"],
+          "layer": 1
+        }
+      },
+      {
+        "no_safezone_panel@$no_safezone_screen_content": {
+          "anims": "$no_safezone_screen_animations",
+          "propagate_alpha": true,
+          "layer": 2
+        }
+      },
+      {
+        "safezone_screen@common.safezone_outer_matrix": {
+          "$screen_content": "$safezone_screen_content",
+          "anims": "$safezone_screen_animations",
+          "propagate_alpha": true,
+          "layer": 2
+        }
+      },
+      {
+        "loading_bars_background": {
+          "type": "image",
+          "texture": "textures/ui/effect_background",
+          "size": ["33%", "100%c + 16px"],
+          "alpha": 0.0,
+          "propagate_alpha": true,
+          "animation_reset_name": "screen_animation_reset",
+          "disable_anim_fast_forward": true,
+          "anims": [
+            "@common.loading_bar_init_animation_push",
+            "@common.loading_bar_init_animation_pop"
+          ],
+          "controls": [
+            {
+              "loading_bars@common_store.progress_loading_bars": {
+                "size": ["100%", "8%x"],
+                "max_size": []
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "pack.name",
+    "description": "pack.description",
+    "uuid": "aff151bd-cdf3-4f77-beab-4e57f732d9d2",
+    "min_engine_version": [1, 19, 40],
+    "version": [1, 0, 0]
+  },
+  "modules": [
+    {
+      "description": "N/A",
+      "type": "data",
+      "uuid": "51f33de4-6012-467d-aec7-cdad0a92c351",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      // NPC+ Core Resource Pack
+      "uuid": "9326fe0c-05f6-4a7e-93c6-8b4063f50d20",
+      "version": [1, 0, 0]
+    },
+    {
+      // NPC+ Examples Resource Pack
+      "uuid": "38c816cd-f7d1-4d83-8541-0e12d2c6ac56",
+      "version": [1, 0, 0]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+        "format_version": "1.17",
+        "minecraft:npc_dialogue": {
+            "scenes": [
+                {
+                    "scene_tag": "change_1",
+                    "npc_name": "Menu",
+                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "\nSelect Your Action\n" } ] },
+					"on_close_commands": [
+						"/dialogue open @s @initiator[tag=change4] change_4",
+						"/tag @initiator remove change4"
+					],
+                    "buttons": [
+                        {
+                            "name": "Give Items",
+                            "commands": [
+                                "/dialogue open @s @initiator change_2"
+                            ]
+                        },
+						{
+                            "name": "Change Gamemode",
+                            "commands": [
+                                "/dialogue open @s @initiator change_3"
+                            ]
+                        },
+						{
+                            "name": "Answer a Quiz",
+                            "commands": [
+                                "/tag @initiator add change4"
+                            ]
+                        },
+						{
+                            "name": "Receive a Hug",
+                            "commands": [
+                                "/tellraw @initiator {\"rawtext\":[{\"text\":\"§6<Secret Guy> §rHello §3\"},{\"selector\":\"@p\"},{\"text\":\"§r, take this hug <3\"}]}"
+                            ]
+                        }
+					]
+                }
+            ]
+        }
+    }

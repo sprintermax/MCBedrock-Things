@@ -1,0 +1,10 @@
+{
+  "namespace": "npcplus_screen_defs",
+
+  "custom_dialog_screens": {
+    "type": "panel",
+    "controls": [
+      { "vanilla_dialog_screen@npcplus_common.vanilla_screen_def": {} }
+    ]
+  }
+}

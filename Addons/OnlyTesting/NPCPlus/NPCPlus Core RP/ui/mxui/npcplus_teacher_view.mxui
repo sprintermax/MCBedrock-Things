@@ -72,17 +72,17 @@
                   },
                   {
                     "right_panel_content@common.scrolling_panel": {
-                      // Fix scrolling
                       "$scrolling_content": "npc_interact.advanced_stack_panel",
                       "$scrolling_pane_size": ["100% - 22px", "100% - 31px"],
                       "$scrolling_pane_offset": [12, 23],
                       "anchor_from": "top_middle",
                       "anchor_to": "top_middle",
+                      "offset": [3, 0],
                       "$show_background": false,
                       "$scroll_bar_contained": false,
                       "$scroll_size": [5, "100% - 8px"],
                       "$scroll_bar_left_padding_size": [0, 0],
-                      "$scroll_bar_right_padding_size": [2, 0]
+                      "$scroll_bar_right_padding_size": [6, 0]
                     }
                   }
                 ]

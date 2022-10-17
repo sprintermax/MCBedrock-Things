@@ -63,7 +63,12 @@
     "type": "label",
     "size": ["100%", "default"],
     "color": "$npc_dialog_text_color",
-    "text": "#dialogtext"
+    "text": "#dialogtext",
+    "bindings": [
+      {
+        "binding_name": "#dialogtext"
+      }
+    ]
   },
 
   "vanilla_screen@npcplus_common.npcplus_screen_base": {

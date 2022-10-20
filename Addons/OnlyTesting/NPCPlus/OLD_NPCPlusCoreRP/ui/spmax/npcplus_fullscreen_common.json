@@ -48,9 +48,7 @@
           "$selector_area_content|default": "common.empty_panel",
           "anchor_from": "top_left",
           "anchor_to": "top_left",
-          "controls": [
-            { "selector_content@$selector_area_content": {} }
-          ]
+          "controls": [{ "selector_content@$selector_area_content": {} }]
         }
       },
       {
@@ -70,9 +68,7 @@
           "$section_area_content|default": "common.empty_panel",
           "anchor_from": "top_right",
           "anchor_to": "top_right",
-          "controls": [
-            { "section_content@$section_area_content": {} }
-          ]
+          "controls": [{ "section_content@$section_area_content": {} }]
         }
       }
     ]
@@ -86,7 +82,7 @@
       {
         "close_helper@common.gamepad_helper_b": {
           "$hide_description": true,
-          "offset": [ -2, -3 ],
+          "offset": [-2, -3],
           "anchor_from": "top_left",
           "anchor_to": "top_left"
         }

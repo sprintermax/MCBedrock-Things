@@ -59,11 +59,11 @@
     "anchor_to": "top_left",
     "controls": [
       { "content_focus@npcplus_common.content_focus": {} },
-      { 
+      {
         "scrolling_content": {
           "type": "stack_panel",
           "controls": [
-            { 
+            {
               "top_padding": {
                 "type": "panel",
                 "size": ["100%", 2]

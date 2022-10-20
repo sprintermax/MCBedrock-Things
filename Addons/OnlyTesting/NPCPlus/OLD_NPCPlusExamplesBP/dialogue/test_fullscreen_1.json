@@ -1,32 +1,31 @@
 {
-        "format_version": "1.17",
-        "minecraft:npc_dialogue": {
-            "scenes": [
-                {
-                    "scene_tag": "test_fullscreen_1",
-                    "npc_name": "FullScreen Test 1",
-                    "text": { "rawtext": [ { "text": "NPC_FullScreen" }, { "text": "line1\nline2\nline3" } ] },
-                    "buttons": [
-                        {
-                            "name": { "rawtext": [ { "text": "Button 1" } ] },
-                            "commands": [
-                                "/say Pressed Button 1"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Button 2" } ] },
-                            "commands": [
-                                "/say Pressed Button 2"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Button 3" } ] },
-                            "commands": [
-                                "/say Pressed Button 3"
-                            ]
-                        }
-					]
-                }
-            ]
-        }
-    }
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "test_fullscreen_1",
+        "npc_name": "FullScreen Test 1",
+        "text": {
+          "rawtext": [
+            { "text": "NPC_FullScreen" },
+            { "text": "line1\nline2\nline3" }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Button 1" }] },
+            "commands": ["/say Pressed Button 1"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Button 2" }] },
+            "commands": ["/say Pressed Button 2"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Button 3" }] },
+            "commands": ["/say Pressed Button 3"]
+          }
+        ]
+      }
+    ]
+  }
+}

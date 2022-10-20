@@ -1,26 +1,27 @@
 {
-        "format_version": "1.17",
-        "minecraft:npc_dialogue": {
-            "scenes": [
-                {
-                    "scene_tag": "test_scrollbox_2",
-                    "npc_name": "Scroll Box Test 2",
-                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "line1\nline2\nline3" } ] },
-                    "buttons": [
-                        {
-                            "name": { "rawtext": [ { "text": "Button 1" } ] },
-                            "commands": [
-                                "/say Pressed Button 1"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Button 2" } ] },
-                            "commands": [
-                                "/say Pressed Button 2"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    }
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "test_scrollbox_2",
+        "npc_name": "Scroll Box Test 2",
+        "text": {
+          "rawtext": [
+            { "text": "NPC_ScrollBox" },
+            { "text": "line1\nline2\nline3" }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Button 1" }] },
+            "commands": ["/say Pressed Button 1"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Button 2" }] },
+            "commands": ["/say Pressed Button 2"]
+          }
+        ]
+      }
+    ]
+  }
+}

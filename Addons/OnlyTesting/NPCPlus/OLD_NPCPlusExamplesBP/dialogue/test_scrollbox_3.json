@@ -1,44 +1,39 @@
 {
-        "format_version": "1.17",
-        "minecraft:npc_dialogue": {
-            "scenes": [
-                {
-                    "scene_tag": "test_scrollbox_3",
-                    "npc_name": "Scroll Box Test 3",
-                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "line\nline2\nline3\nline4\nline5" } ] },
-                    "buttons": [
-                        {
-                            "name": { "rawtext": [ { "text": "Button 1" } ] },
-                            "commands": [
-                                "/say Pressed Button 1"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Button 2" } ] },
-                            "commands": [
-                                "/say Pressed Button 2"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Button 3" } ] },
-                            "commands": [
-                                "/say Pressed Button 3"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Button 4" } ] },
-                            "commands": [
-                                "/say Pressed Button 4"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Button 5" } ] },
-                            "commands": [
-                                "/say Pressed Button 5"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    }
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "test_scrollbox_3",
+        "npc_name": "Scroll Box Test 3",
+        "text": {
+          "rawtext": [
+            { "text": "NPC_ScrollBox" },
+            { "text": "line\nline2\nline3\nline4\nline5" }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "Button 1" }] },
+            "commands": ["/say Pressed Button 1"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Button 2" }] },
+            "commands": ["/say Pressed Button 2"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Button 3" }] },
+            "commands": ["/say Pressed Button 3"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Button 4" }] },
+            "commands": ["/say Pressed Button 4"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Button 5" }] },
+            "commands": ["/say Pressed Button 5"]
+          }
+        ]
+      }
+    ]
+  }
+}

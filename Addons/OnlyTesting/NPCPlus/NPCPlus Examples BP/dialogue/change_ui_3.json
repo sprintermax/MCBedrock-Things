@@ -1,38 +1,35 @@
 {
-        "format_version": "1.17",
-        "minecraft:npc_dialogue": {
-            "scenes": [
-                {
-                    "scene_tag": "change_3",
-                    "npc_name": "Gamemode Switcher",
-                    "text": { "rawtext": [ { "text": "NPC_ScrollBox" }, { "text": "\nSelect a Gamemode\n" } ] },
-                    "buttons": [
-						{
-                            "name": "Creative",
-                            "commands": [
-                                "/gamemode creative @initiator"
-                            ]
-                        },
-						{
-                            "name": "Survival",
-                            "commands": [
-                                "/gamemode survival @initiator"
-                            ]
-                        },
-						{
-                            "name": "Adventure",
-                            "commands": [
-                                "/gamemode adventure @initiator"
-                            ]
-                        },
-						{
-                            "name": "Return to Menu",
-                            "commands": [
-                                "/dialogue open @s @initiator change_1"
-                            ]
-                        }
-					]
-                }
-            ]
-        }
-    }
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "change_3",
+        "npc_name": "Gamemode Switcher",
+        "text": {
+          "rawtext": [
+            { "text": "NPC_ScrollBox" },
+            { "text": "\nSelect a Gamemode\n" }
+          ]
+        },
+        "buttons": [
+          {
+            "name": "Creative",
+            "commands": ["/gamemode creative @initiator"]
+          },
+          {
+            "name": "Survival",
+            "commands": ["/gamemode survival @initiator"]
+          },
+          {
+            "name": "Adventure",
+            "commands": ["/gamemode adventure @initiator"]
+          },
+          {
+            "name": "Return to Menu",
+            "commands": ["/dialogue open @s @initiator change_1"]
+          }
+        ]
+      }
+    ]
+  }
+}

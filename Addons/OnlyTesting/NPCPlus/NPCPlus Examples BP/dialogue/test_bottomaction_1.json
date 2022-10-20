@@ -1,26 +1,27 @@
 {
-        "format_version": "1.17",
-        "minecraft:npc_dialogue": {
-            "scenes": [
-                {
-                    "scene_tag": "test_bottomaction_1",
-                    "npc_name": "Bottom Action Test 1",
-                    "text": { "rawtext": [ { "text": "NPC_BottomAction" }, { "text": "Some Random Text" } ] },
-                    "buttons": [
-                        {
-                            "name": { "rawtext": [ { "text": "First Button" } ] },
-                            "commands": [
-                                "/say Pressed Button 1"
-                            ]
-                        },
-						{
-                            "name": { "rawtext": [ { "text": "Second Button" } ] },
-                            "commands": [
-                                "/say Pressed Button 2"
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    }
+  "format_version": "1.17",
+  "minecraft:npc_dialogue": {
+    "scenes": [
+      {
+        "scene_tag": "test_bottomaction_1",
+        "npc_name": "Bottom Action Test 1",
+        "text": {
+          "rawtext": [
+            { "text": "NPC_BottomAction" },
+            { "text": "Some Random Text" }
+          ]
+        },
+        "buttons": [
+          {
+            "name": { "rawtext": [{ "text": "First Button" }] },
+            "commands": ["/say Pressed Button 1"]
+          },
+          {
+            "name": { "rawtext": [{ "text": "Second Button" }] },
+            "commands": ["/say Pressed Button 2"]
+          }
+        ]
+      }
+    ]
+  }
+}

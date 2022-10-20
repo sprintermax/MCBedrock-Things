@@ -23,10 +23,10 @@
 
   "close_button_dark_bg": {
     "type": "panel",
-    "size": [ 25, 25 ],
+    "size": [25, 25],
     "controls": [
-      { "close_button@npc_interact.close_button_holder": { } },
-      { 
+      { "close_button@npc_interact.close_button_holder": {} },
+      {
         "bg@common.screen_background": {
           "$screen_background_alpha": 0.9
         }
@@ -41,19 +41,19 @@
   "content_focus@base_input_panel": {
     "focus_identifier": "default_custom_focus",
     "focus_enabled": true,
-    "size": [ 0, 0 ]
+    "size": [0, 0]
   },
 
   "option_toggle_button_template": {
     "$button_text_color|default": "$light_button_default_text_color",
     "$border_color|default": "$dark_border_default_color",
-    "size": [ "100% - 2px", "100% - 2px" ],
+    "size": ["100% - 2px", "100% - 2px"],
     "type": "image",
     "controls": [
       {
         "toggle_border": {
           "type": "image",
-          "size": [ "100% + 2px", "100% + 2px" ],
+          "size": ["100% + 2px", "100% + 2px"],
           "texture": "textures/ui/focus_border_white",
           "color": "$border_color",
           "layer": 5
@@ -62,7 +62,7 @@
       {
         "toggle_label": {
           "type": "label",
-          "max_size": [ "100% - 10px", "100%" ],
+          "max_size": ["100% - 10px", "100%"],
           "text": "$toggle_label_text",
           "color": "$button_text_color",
           "layer": 5
@@ -164,7 +164,7 @@
               "screen_safezone_border@common.safezone_outer_matrix": {
                 "$screen_content": "common.focus_border_white",
                 "ignored": "(not $show_safezone_border)",
-                "size": [ "100% + 2px", "100% + 2px" ],
+                "size": ["100% + 2px", "100% + 2px"],
                 "layer": 1
               }
             },

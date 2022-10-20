@@ -29,7 +29,7 @@
         "close_holder@npc_interact.close_button_holder": {
           "$close_button_to_button_id": "button.exit_student",
           "clips_children": true,
-          "size": [ 0, 0 ]
+          "size": [0, 0]
         }
       }
     ]
@@ -37,7 +37,7 @@
 
   "close_button_holder": {
     "anchor_to": "top_right",
-    "offset": [ 0, 0 ],
+    "offset": [0, 0],
     "modifications": [
       {
         "array_name": "controls",
@@ -74,7 +74,7 @@
   },
 
   "command_toggle": {
-    "size": [ "100% - 2px", "100%" ],
+    "size": ["100% - 2px", "100%"],
     "$radio_toggle_group": true,
     "$button_text_color": "$title_text_color",
     "$unchecked_control": "npcplus_common.option_toggle_button_off",
@@ -88,7 +88,7 @@
   },
 
   "command_toggle_panel": {
-    "size": [ "fill", "100%" ],
+    "size": ["fill", "100%"],
     "controls": [
       {
         "command_toggle@command_toggle": {
@@ -100,10 +100,10 @@
   },
 
   "student_message_section@npcplus_vanilla_screen.student_message_section": {},
-  "action_edit": { "size": [ "100%", 34 ] },
-  "action_mode": { "size": [ "100%", 25 ] },
-  "action_edit/expand": { "size": [ 34, "100%" ] },
-  "action_text_edit": { "size": [ "fill", "100%" ] },
+  "action_edit": { "size": ["100%", 34] },
+  "action_mode": { "size": ["100%", 25] },
+  "action_edit/expand": { "size": [34, "100%"] },
+  "action_text_edit": { "size": ["fill", "100%"] },
   "action_template/mode_pad": {
     "bindings": [
       {

@@ -192,7 +192,7 @@
 
   "npcplus_screen_base": {
     "type": "panel",
-    "$show_safezone_border|default": true, // For testing purposes, show safe zone screen limits
+    "$show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
     "$safezone_screen_content": "common.base_screen_empty_panel",
     "$no_safezone_screen_content": "common.base_screen_empty_panel",
     "$additional_screen_content": "common.base_screen_empty_panel",

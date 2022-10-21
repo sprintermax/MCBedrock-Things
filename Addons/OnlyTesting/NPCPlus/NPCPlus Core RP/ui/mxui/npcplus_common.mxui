@@ -1,77 +1,6 @@
 {
   "namespace": "npcplus_common",
 
-  "npcp_anim_open_push_offset": {
-    "anim_type": "offset",
-    "easing": "out_cubic",
-    "duration": "$transition_time_push",
-    "from": ["25%", 0],
-    "to": [0, 0],
-    "end_event": "screen.entrance_end"
-  },
-
-  "npcp_anim_close_pop_offset": {
-    "anim_type": "offset",
-    "easing": "out_cubic",
-    "duration": "$transition_time_pop",
-    "from": [0, 0],
-    "to": ["25%", 0],
-    "play_event": "screen.exit_pop",
-    "end_event": "screen.exit_end"
-  },
-
-  "npcp_anim_open_push_fade": {
-    "anim_type": "alpha",
-    "easing": "out_cubic",
-    "duration": "$transition_time_push",
-    "from": 0.0,
-    "to": 1.0,
-    "end_event": "screen.entrance_end"
-  },
-
-  "npcp_anim_close_pop_fade": {
-    "anim_type": "alpha",
-    "easing": "out_cubic",
-    "duration": "$transition_time_pop",
-    "from": 1.0,
-    "to": 0.0,
-    "play_event": "screen.exit_pop",
-    "end_event": "screen.exit_end"
-  },
-
-  "npcp_anim_open_push_alpha": {
-    "anim_type": "alpha",
-    "scale_from_starting_alpha": true,
-    "easing": "linear",
-    "duration": "$transition_time_push",
-    "from": 0.0,
-    "to": 1.0,
-    "end_event": "screen.entrance_end"
-  },
-
-  "npcp_anim_close_pop_alpha": {
-    "anim_type": "alpha",
-    "scale_from_starting_alpha": true,
-    "easing": "linear",
-    "duration": "$transition_time_pop",
-    "from": 1.0,
-    "to": 0.0,
-    "play_event": "screen.exit_pop",
-    "end_event": "screen.exit_end"
-  },
-
-  "npcp_anim_close_push_offset@npcplus_common.npcp_anim_close_pop_offset": {
-    "play_event": "screen.exit_push"
-  },
-
-  "npcp_anim_close_push_fade@npcplus_common.npcp_anim_close_pop_fade": {
-    "play_event": "screen.exit_push"
-  },
-
-  "npcp_anim_close_push_alpha@npcplus_common.npcp_anim_close_pop_alpha": {
-    "play_event": "screen.exit_push"
-  },
-
   "option_toggle_button_template": {
     "$button_text_color|default": "$light_button_default_text_color",
     "$toggle_bg_texture|default": "textures/ui/button_borderless_light",
@@ -147,10 +76,15 @@
     "type": "label",
     "size": ["default", 10],
     "color": "$title_text_color",
-    "$title_text|default": "",
+    "$title_text|default": "#title_text",
     "text": "$title_text",
     "shadow": false,
-    "layer": 4
+    "layer": 4,
+    "bindings": [
+      {
+        "binding_name": "#title_text"
+      }
+    ]
   },
 
   "npcp_prefixed_title_label@npcplus_common.npcp_title_label": {
@@ -198,6 +132,15 @@
     ]
   },
 
+  "base_input_panel": {
+    "type": "input_panel"
+  },
+
+  "content_focus_panel@base_input_panel": {
+    "focus_identifier": "default_npcp_focus",
+    "focus_enabled": true
+  },
+
   "npcplus_screen_base": {
     "type": "panel",
     "$show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
@@ -205,17 +148,20 @@
     "$no_safezone_screen_content": "common.base_screen_empty_panel",
     "$additional_screen_content": "common.base_screen_empty_panel",
     "$safezone_screen_animations|default": [
-      "@npcplus_common.npcp_anim_open_push_offset",
-      "@npcplus_common.npcp_anim_close_pop_offset",
-      "@npcplus_common.npcp_anim_close_push_offset",
-      "@npcplus_common.npcp_anim_open_push_fade",
-      "@npcplus_common.npcp_anim_close_pop_fade",
-      "@npcplus_common.npcp_anim_close_push_fade"
+      "@common.screen_exit_animation_push_offset",
+      "@common.screen_exit_animation_pop_offset",
+      "@common.screen_entrance_animation_push_offset",
+      "@common.screen_entrance_animation_pop_offset",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
     ],
     "$no_safezone_screen_animations|default": [
-      "@npcplus_common.npcp_anim_open_push_alpha",
-      "@npcplus_common.npcp_anim_close_pop_alpha",
-      "@npcplus_common.npcp_anim_close_push_alpha"
+      "@common.screen_exit_animation_push_alpha",
+      "@common.screen_exit_animation_pop_alpha",
+      "@common.screen_entrance_animation_push_alpha",
+      "@common.screen_entrance_animation_pop_alpha"
     ],
     "controls": [
       {

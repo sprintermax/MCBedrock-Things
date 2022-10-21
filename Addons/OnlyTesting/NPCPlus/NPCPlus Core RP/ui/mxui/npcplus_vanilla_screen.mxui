@@ -5,21 +5,64 @@
     "type": "panel",
     "controls": [
       {
-        "student_dialog@common_dialogs.form_fitting_main_panel_no_buttons": {
-          "$custom_background": "common_dialogs.dialog_background_opaque_with_child",
-          "$child_control": "npc_interact.student_stack_panel",
-          "$title_panel": "common_dialogs.standard_title_label",
-          "$title_text_binding_type": "global",
-          "$show_close_button|default": true,
-          "$text_name": "#title_text",
-          "size": [320, "100%"]
+        "student_dialog_panel": {
+          "type": "panel",
+          "size": [320, "100%cm"],
+          "controls": [
+            {
+              "bg_image": {
+                "type": "image",
+                "layer": -1,
+                "size": ["100%", "100%sm + 30px"],
+                "texture": "textures/ui/dialog_background_opaque"
+              }
+            },
+            {
+              "close_button@npc_interact.close_button_holder": {
+                "bindings": [
+                  {
+                    "binding_name": "#close_button_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            { "title_text@npcplus_common.npcp_title_label": {} },
+            {
+              "student_dialog_stack_panel": {
+                "type": "stack_panel",
+                "size": ["100% - 16px", "100%c"],
+                "offset": [0, 8],
+                "controls": [
+                  {
+                    "top_pad@common.empty_panel": {
+                      "size": ["100%", 4]
+                    }
+                  },
+                  {
+                    "message@npcplus_vanilla_screen.student_message_section": {}
+                  },
+                  {
+                    "message_pad@common.empty_panel": {
+                      "size": ["100%", 4]
+                    }
+                  },
+                  {
+                    "buttons@npc_interact.student_buttons": {
+                      "$focus_override_up": "default_npcp_focus",
+                      "$focus_override_down": "FOCUS_OVERRIDE_STOP"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
         }
       },
       {
         "close_helper@npc_interact.close_text": {
           "anchor_to": "bottom_left",
-          "anchor_from": "bottom_left",
-          "offset": [20, 0]
+          "anchor_from": "bottom_left"
         }
       }
     ]
@@ -43,7 +86,7 @@
             {
               "text_scroll@common.scrolling_panel": {
                 "size": ["100% - 10px", "100% - 11px"],
-                "$scrolling_content": "npcplus_vanilla_screen.vanilla_dialog_text",
+                "$scrolling_content": "npcplus_vanilla_screen.vanilla_dialog_text_panel",
                 "$scroll_box_visible_touch": false,
                 "$show_background": false,
                 "$scroll_bar_left_padding_size": [0, 0],
@@ -59,14 +102,29 @@
     ]
   },
 
-  "vanilla_dialog_text": {
-    "type": "label",
-    "size": ["100%", "default"],
-    "color": "$npc_dialog_text_color",
-    "text": "#dialogtext",
-    "bindings": [
+  "vanilla_dialog_text_panel": {
+    "type": "panel",
+    "size": ["100%", "100%c"],
+    "controls": [
       {
-        "binding_name": "#dialogtext"
+        "content_focus@npcplus_common.content_focus_panel": {
+          "focus_change_left": "FOCUS_OVERRIDE_STOP",
+          "focus_change_right": "FOCUS_OVERRIDE_STOP",
+          "size": [0, 0]
+        }
+      },
+      {
+        "vanilla_dialog_text": {
+          "type": "label",
+          "size": ["100%", "default"],
+          "color": "$npc_dialog_text_color",
+          "text": "#dialogtext",
+          "bindings": [
+            {
+              "binding_name": "#dialogtext"
+            }
+          ]
+        }
       }
     ]
   },

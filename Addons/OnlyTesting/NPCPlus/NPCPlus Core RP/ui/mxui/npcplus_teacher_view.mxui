@@ -5,7 +5,16 @@
     "type": "panel",
     "size": ["100% - 10px", "100% - 10px"],
     "controls": [
-      { "close_button@npc_interact.close_button_holder": {} },
+      {
+        "close_button@npc_interact.close_button_holder": {
+          "bindings": [
+            {
+              "binding_name": "#close_button_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
       {
         "npc_options": {
           "type": "panel",
@@ -20,7 +29,7 @@
                   {
                     "bg_image": {
                       "type": "image",
-                      "layer": 2,
+                      "layer": 1,
                       "texture": "textures/ui/dialog_background_opaque"
                     }
                   },

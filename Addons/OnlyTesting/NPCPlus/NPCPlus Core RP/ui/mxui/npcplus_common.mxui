@@ -1,6 +1,26 @@
 {
   "namespace": "npcplus_common",
 
+  "student_button@common_buttons.light_text_button": {
+    "$button_type_panel": "npc_interact.student_button_label_panel",
+    "$pressed_button_name": "button.student_button",
+    "$student_button_size|default": ["100%", 20],
+    "size": "$student_button_size",
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "student_buttons_collection",
+        "binding_collection_prefix": "student_buttons"
+      },
+      {
+        "binding_name": "#student_button_visible",
+        "binding_type": "collection",
+        "binding_name_override": "#visible",
+        "binding_collection_name": "student_buttons_collection"
+      }
+    ]
+  },
+
   "option_toggle_button_template": {
     "$button_text_color|default": "$light_button_default_text_color",
     "$toggle_bg_texture|default": "textures/ui/button_borderless_light",
@@ -101,6 +121,32 @@
     ]
   },
 
+  "npcp_dialog_message": {
+    "type": "label",
+    "size": ["default", "default"],
+    "$dialog_text|default": "#dialogtext",
+    "text": "$dialog_text",
+    "bindings": [
+      {
+        "binding_name": "#dialogtext"
+      }
+    ]
+  },
+
+  "npcp_prefixed_dialog_message@npcplus_common.npcp_dialog_message": {
+    "$dialog_text": "#sfp_dialog_text",
+    "bindings": [
+      {
+        "binding_name": "#dialogtext"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#dialogtext - $npcplus_global_prefix - $npcplus_screen_prefix)",
+        "target_property_name": "#sfp_dialog_text"
+      }
+    ]
+  },
+
   "custom_screen_def": {
     "type": "panel",
     "$npcplus_screen_prefix|default": "",
@@ -118,8 +164,11 @@
     ]
   },
 
-  "vanilla_screen_def@npcplus_common.npcplus_screen_base": {
-    "$safezone_screen_content": "npcplus_vanilla_screen.vanilla_screen",
+  "vanilla_screen_def": {
+    "type": "panel",
+    "controls": [
+      { "vanilla_student_screen@npcplus_vanilla_screen.vanilla_screen": {} }
+    ],
     "bindings": [
       {
         "binding_name": "#dialogtext"
@@ -143,7 +192,7 @@
 
   "npcplus_screen_base": {
     "type": "panel",
-    "$show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
+    "$show_safezone_border|default": true, // For testing purposes, show safe zone screen limits
     "$safezone_screen_content": "common.base_screen_empty_panel",
     "$no_safezone_screen_content": "common.base_screen_empty_panel",
     "$additional_screen_content": "common.base_screen_empty_panel",
@@ -169,7 +218,7 @@
           "$screen_content": "common.focus_border_white",
           "ignored": "(not $show_safezone_border)",
           "size": ["100% + 2px", "100% + 2px"],
-          "layer": 1
+          "layer": 100
         }
       },
       {

@@ -7,7 +7,7 @@
         "npc_name": "FullScreen Test 1",
         "text": {
           "rawtext": [
-            { "text": "NPC_FullScreen" },
+            { "text": "_npc+:FullScreen" },
             { "text": "line1\nline2\nline3" }
           ]
         },

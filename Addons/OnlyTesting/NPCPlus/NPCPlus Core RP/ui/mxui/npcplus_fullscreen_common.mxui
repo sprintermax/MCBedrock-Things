@@ -1,5 +1,5 @@
 {
-  "namespace": "sfplus_fullscreen_common",
+  "namespace": "npcplus_fullscreen_common",
 
   "text_section_toggle_button_base@common_toggles.light_text_toggle": {
     "size": ["100%", "30px"],

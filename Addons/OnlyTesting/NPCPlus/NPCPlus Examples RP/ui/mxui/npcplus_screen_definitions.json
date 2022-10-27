@@ -1,0 +1,30 @@
+{
+  "custom_dialog_screens": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "scrollbox_dialog@npcplus_common.custom_screen_def": {
+              "$npcplus_screen_content": "spmax_scrollbox_npc.scrollbox_screen",
+              "$npcplus_screen_prefix": "ScrollBox"
+            }
+          },
+          {
+            "bottom_action_dialog@npcplus_common.custom_screen_def": {
+              "$npcplus_screen_content": "spmax_bottom_action_npc.bottom_action_screen",
+              "$npcplus_screen_prefix": "BottomAction"
+            }
+          },
+          {
+            "fullscreen_dialog@npcplus_common.custom_screen_def": {
+              "$npcplus_screen_content": "spmax_fullscreen_dialog_npc.fullscreen_page",
+              "$npcplus_screen_prefix": "FullScreen"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -7,7 +7,7 @@
         "npc_name": "Bottom Action Test 1",
         "text": {
           "rawtext": [
-            { "text": "NPC_BottomAction" },
+            { "text": "_npc+:BottomAction" },
             { "text": "Some Random Text" }
           ]
         },

@@ -7,7 +7,7 @@
         "npc_name": "Menu",
         "text": {
           "rawtext": [
-            { "text": "NPC_ScrollBox" },
+            { "text": "_npc+:ScrollBox" },
             { "text": "\nSelect Your Action\n" }
           ]
         },

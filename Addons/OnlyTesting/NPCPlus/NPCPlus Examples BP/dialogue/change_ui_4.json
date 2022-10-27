@@ -7,7 +7,7 @@
         "npc_name": "Answer the Question",
         "text": {
           "rawtext": [
-            { "text": "NPC_BottomAction" },
+            { "text": "_npc+:BottomAction" },
             { "text": "How many Buttons a NPC can officialy have?" }
           ]
         },

@@ -1,0 +1,86 @@
+{
+  "namespace": "spmax_bottom_action_npc",
+
+  "screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "menu_screen": {
+          "type": "panel",
+          "size": ["60%", "75px"],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [0, "-25px"],
+          "controls": [
+            { "close_button@npc_interact.close_button_holder": {} },
+            {
+              "screen_content@common_dialogs.main_panel_no_buttons": {
+                "$show_close_button": false,
+                "$title_panel": "common_dialogs.standard_title_label",
+                "$title_size": ["100% - 14px", 10],
+                "$text_name": "#title_text",
+                "$title_text_binding_type": "global",
+                "$child_control": "spmax_bottom_action_npc.dialog_content",
+                "layer": 2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "close_helper@npc_interact.close_text": {
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_left",
+          "offset": [20, 0]
+        }
+      }
+    ]
+  },
+
+  "student_button@npcplus_common.student_button": {
+    "propagate_alpha": true,
+    "size": ["fill", "100%"] // WIP - Fix invisible panel because of wrong collection usage
+  },
+
+  "dialog_content": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "clips_children": true,
+    "layer": 1,
+    "controls": [
+      {
+        "dialog_message@npcplus_common.npcp_prefixed_dialog_message": {
+          "text_alignment": "center",
+          "size": ["100%", "default"],
+          "offset": [0, -10]
+        }
+      },
+      {
+        "student_buttons": {
+          "type": "stack_panel",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "orientation": "horizontal",
+          "size": ["100%", "20px"],
+          "collection_name": "student_buttons_collection",
+          "factory": {
+            "name": "student_buttons_factory",
+            "control_name": "spmax_bottom_action_npc.student_button"
+          },
+          "bindings": [
+            {
+              "binding_name": "#action_count",
+              "binding_name_override": "#collection_length"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "bottom_action_screen@npcplus_common.npcplus_screen_base": {
+    "$no_safezone_screen_content": "common.screen_background",
+    "$safezone_screen_content": "spmax_bottom_action_npc.screen_content",
+    "$screen_background_alpha": 0.25
+  }
+}

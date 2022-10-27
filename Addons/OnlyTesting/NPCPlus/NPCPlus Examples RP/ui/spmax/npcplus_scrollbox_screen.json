@@ -1,0 +1,125 @@
+{
+  "namespace": "spmax_scrollbox_npc",
+
+  "screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "menu_screen": {
+          "type": "panel",
+          "size": [225, 200],
+          "controls": [
+            { "close_button@npc_interact.close_button_holder": {} },
+            {
+              "screen_content@common_dialogs.main_panel_no_buttons": {
+                "$show_close_button": false,
+                "$title_panel": "common_dialogs.standard_title_label",
+                "$title_size": ["100% - 14px", 10],
+                "$text_name": "#title_text",
+                "$title_text_binding_type": "global",
+                "$child_control": "spmax_scrollbox_npc.dialog_content",
+                "layer": 2
+              }
+            }
+          ]
+        }
+      },
+      {
+        "close_helper@npc_interact.close_text": {
+          "anchor_to": "bottom_left",
+          "anchor_from": "bottom_left",
+          "offset": [20, 0]
+        }
+      }
+    ]
+  },
+
+  "dialog_content": {
+    "type": "panel",
+    "size": ["100%", "100%"],
+    "layer": 1,
+    "controls": [
+      {
+        "scrolling_panel@common.scrolling_panel": {
+          "$scrolling_content": "spmax_scrollbox_npc.scrolling_content",
+          "$scroll_size": [5, "100% - 4px"],
+          "size": ["100% - 4px", "100%"],
+          "$show_background": false
+        }
+      }
+    ]
+  },
+
+  "student_button@npcplus_common.student_button": {
+    "size": ["100%", 30]
+  },
+
+  "scrolling_content": {
+    "type": "stack_panel",
+    "controls": [
+      {
+        "top_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      },
+      {
+        "dialog_message_panel": {
+          "type": "stack_panel",
+          "controls": [
+            {
+              "dialog_message@npcplus_common.npcp_prefixed_dialog_message": {
+                "size": ["100%", "default"]
+              }
+            },
+            {
+              "dialog_bottom_padding": {
+                "type": "panel",
+                "size": ["100%", 2]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#dialogtext"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "((#dialogtext - $npcplus_global_prefix - $npcplus_screen_prefix) > '')",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "student_buttons": {
+          "type": "stack_panel",
+          "size": ["100%", "100%c"],
+          "collection_name": "student_buttons_collection",
+          "factory": {
+            "name": "student_buttons_factory",
+            "control_name": "spmax_scrollbox_npc.student_button"
+          },
+          "bindings": [
+            {
+              "binding_name": "#action_count",
+              "binding_name_override": "#collection_length"
+            }
+          ]
+        }
+      },
+      {
+        "bottom_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      }
+    ]
+  },
+
+  "scrollbox_screen@npcplus_common.npcplus_screen_base": {
+    "$no_safezone_screen_content": "common.screen_background",
+    "$safezone_screen_content": "spmax_scrollbox_npc.screen_content",
+    "$screen_background_alpha": 0.5
+  }
+}

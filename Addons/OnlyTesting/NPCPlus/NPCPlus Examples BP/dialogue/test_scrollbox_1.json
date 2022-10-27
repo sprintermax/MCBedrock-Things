@@ -7,7 +7,7 @@
         "npc_name": "Scroll Box Test 1",
         "text": {
           "rawtext": [
-            { "text": "NPC_ScrollBox" },
+            { "text": "_npc+:ScrollBox" },
             {
               "text": "line1\nline2\nline3\nline4\nline5\nline6\nline7\nline8\nline9\nline10\n\n\n\n\nline15\n\n\n\n\nline20\n\n\n\n\n\n\n\n\n\nline30\nline31\nline21\nline33\nline34\nline35"
             }

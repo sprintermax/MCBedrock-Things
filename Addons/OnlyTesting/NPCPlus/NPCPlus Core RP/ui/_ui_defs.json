@@ -3,7 +3,7 @@
     "ui/mxui/npcplus_common.mxui",
     "ui/mxui/npcplus_fullscreen_common.mxui",
     "ui/mxui/npcplus_screen_definitions.json",
-    "ui/mxui/npcplus_teacher_view.mxui",
-    "ui/mxui/npcplus_vanilla_screen.mxui"
+    "ui/mxui/npcplus_teacher_view.mxui", // WIP
+    "ui/mxui/npcplus_vanilla_screen.mxui" // WIP
   ]
 }

@@ -1,0 +1,152 @@
+{
+  "namespace": "spmax_fullscreen_dialog_npc",
+
+  "selector_area_content": {
+    "type": "stack_panel",
+    "size": ["100%", "100%"],
+    "controls": [
+      {
+        "top_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      },
+      {
+        "message@settings_common.selector_group_label": {
+          "text": "spmax.npcplus.example",
+          "text_alignment": "center"
+        }
+      },
+      {
+        "middle_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      },
+      {
+        "section_toggle_0@npcplus_fullscreen_common.text_section_toggle_button_base": {
+          "$toggle_group_forced_index": 0,
+          "$toggle_view_binding_name": "npc_section_toggle0",
+          "$button_text": "Section 1"
+        }
+      },
+      {
+        "section_toggle_1@npcplus_fullscreen_common.text_section_toggle_button_base": {
+          "$toggle_group_forced_index": 1,
+          "$toggle_view_binding_name": "npc_section_toggle1",
+          "$button_text": "Section 2"
+        }
+      },
+      {
+        "section_toggle_2@npcplus_fullscreen_common.text_section_toggle_button_base": {
+          "$toggle_group_forced_index": 2,
+          "$toggle_view_binding_name": "npc_section_toggle2",
+          "$button_text": "Section 3"
+        }
+      },
+      {
+        "section_toggle_3@npcplus_fullscreen_common.text_section_toggle_button_base": {
+          "$toggle_group_forced_index": 3,
+          "$toggle_view_binding_name": "npc_section_toggle3",
+          "$button_text": "Section 4"
+        }
+      },
+      {
+        "bottom_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      }
+    ]
+  },
+
+  "section_area_content": {
+    "type": "stack_panel",
+    "size": ["100%", "100%"],
+    "controls": [
+      {
+        "top_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      },
+      {
+        "message_0@settings_common.selector_group_label": {
+          "text": "Section 1",
+          "text_alignment": "center",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "npc_section_toggle0",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "message_1@settings_common.selector_group_label": {
+          "text": "Section 2",
+          "text_alignment": "center",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "npc_section_toggle1",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "message_2@settings_common.selector_group_label": {
+          "text": "Section 3",
+          "text_alignment": "center",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "npc_section_toggle2",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "message_3@settings_common.selector_group_label": {
+          "text": "Section 4",
+          "text_alignment": "center",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "npc_section_toggle3",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "bottom_padding": {
+          "type": "panel",
+          "size": ["100%", 2]
+        }
+      }
+    ]
+  },
+
+  "fullscreen_page_screen_content@npcplus_fullscreen_common.dialog_with_divider": {
+    "$selector_area_content": "spmax_fullscreen_dialog_npc.selector_area_content",
+    "$section_area_content": "spmax_fullscreen_dialog_npc.section_area_content"
+  },
+
+  "fullscreen_page@npcplus_common.npcplus_screen_base": {
+    "$back_button_text": "gui.exit",
+    "$header_bar_control": "common_store.store_top_bar",
+    "$header_safezone_control": "common_store.store_top_bar_filler",
+    "$no_safezone_screen_content": "common.screen_background",
+    "$safezone_screen_content": "npcplus_fullscreen_common.fullscreen_dialog_base",
+    "$child_control": "spmax_fullscreen_dialog_npc.fullscreen_page_screen_content",
+    "$screen_background_alpha": 0.9
+  }
+}

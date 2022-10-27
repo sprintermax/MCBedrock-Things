@@ -7,7 +7,7 @@
         "npc_name": "Give Items",
         "text": {
           "rawtext": [
-            { "text": "NPC_ScrollBox" },
+            { "text": "_npc+:ScrollBox" },
             { "text": "\nAvaliable Items\n" }
           ]
         },

@@ -94,7 +94,7 @@
     "anchor_to": "top_middle",
     "offset": [0, 8],
     "type": "label",
-    "size": ["default", 10],
+    "size": ["100% - 2px", 10],
     "color": "$title_text_color",
     "$title_text|default": "#title_text",
     "text": "$title_text",
@@ -123,7 +123,7 @@
 
   "npcp_dialog_message": {
     "type": "label",
-    "size": ["default", "default"],
+    "size": ["100%", "default"],
     "$dialog_text|default": "#dialogtext",
     "text": "$dialog_text",
     "bindings": [

@@ -44,6 +44,7 @@
 
   "fullscreen_top_header": {
     "type": "panel",
+    "$back_button_text|default": "gui.back",
     "$fullscreen_content_area|default": "common.empty_panel",
     "$hide_content_background|default": true,
     "controls": [

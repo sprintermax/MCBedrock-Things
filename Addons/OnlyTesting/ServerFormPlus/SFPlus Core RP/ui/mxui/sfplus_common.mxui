@@ -3,11 +3,8 @@
 
   "sfp_title_label": {
     "type": "label",
-    "size": ["default", 10],
     "color": "$title_text_color",
     "text": "#sfp_title_text",
-    "shadow": false,
-    "layer": 4,
     "bindings": [
       {
         "binding_name": "#title_text"
@@ -35,7 +32,7 @@
 
   "sfplus_screen_base": {
     "type": "panel",
-    "$show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
+    "$debug_show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
     "$safezone_screen_content|default": "common.empty_panel",
     "$no_safezone_screen_content|default": "common.empty_panel",
 
@@ -58,10 +55,13 @@
     "controls": [
       {
         "debug_safezone_border@common.safezone_outer_matrix": {
+          "$header_safezone_control": "common.empty_panel",
+          "$header_bar_control": "common.empty_panel",
           "$screen_content": "common.focus_border_white",
-          "ignored": "(not $show_safezone_border)",
-          "size": ["100% + 2px", "100% + 2px"],
-          "layer": 1
+          "ignored": "(not $debug_show_safezone_border)",
+          "$debug_safezone_border_layer|default": 1,
+          "layer": "$debug_safezone_border_layer",
+          "size": ["100% + 2px", "100% + 2px"]
         }
       },
       {
@@ -73,33 +73,14 @@
         }
       },
       {
-        "no_safezone_content@$no_safezone_screen_content": {
+        "no_safezone_content_panel": {
+          "type": "panel",
+          "controls": [
+            { "no_safezone_content@$no_safezone_screen_content": {} }
+          ],
           "anims": "$no_safezone_screen_animations",
           "propagate_alpha": true,
           "layer": 2
-        }
-      },
-      {
-        "loading_bars_background": {
-          "type": "image",
-          "texture": "textures/ui/effect_background",
-          "size": ["33%", "100%c + 16px"],
-          "alpha": 0.0,
-          "propagate_alpha": true,
-          "animation_reset_name": "screen_animation_reset",
-          "disable_anim_fast_forward": true,
-          "anims": [
-            "@common.loading_bar_init_animation_push",
-            "@common.loading_bar_init_animation_pop"
-          ],
-          "controls": [
-            {
-              "loading_bars@common_store.progress_loading_bars": {
-                "size": ["100%", "8%x"],
-                "max_size": []
-              }
-            }
-          ]
         }
       }
     ],

@@ -1,7 +1,7 @@
 {
   "ui_defs": [
-    "ui/mxui/sfplus_common.mxui",
-    "ui/mxui/sfplus_fullscreen_common.mxui",
+    "ui/mxui/sfplus_common.json",
+    "ui/mxui/sfplus_fullscreen_common.json",
     "ui/mxui/sfplus_screen_definitions.json"
   ]
 }

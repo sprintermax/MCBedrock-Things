@@ -1,40 +1,24 @@
 {
-	"format_version": 2,
-	"header": {
-		"description": "Black Hole Test",
-		"name": "Black Hole Test",
-		"uuid": "1b6f5f57-cf01-4c56-9238-e8b7cda4d527",
-		"version": [
-			0,
-			0,
-			1
-		],
-		"min_engine_version": [
-			1,
-			13,
-			0
-		]
-	},
-	"modules": [
-		{
-			"description": "Example vanilla behavior pack",
-			"type": "data",
-			"uuid": "6079868e-0172-4bbe-9f4e-830a3816f356",
-			"version": [
-				0,
-				0,
-				1
-			]
-		}
-	],
-	"dependencies": [
-		{
-			"uuid": "d6679769-88a2-4306-beef-f98ed0db433a",
-			"version": [
-				0,
-				0,
-				1
-			]
-		}
-	]
+  "format_version": 2,
+  "header": {
+    "description": "Black Hole Test",
+    "name": "Black Hole Test",
+    "uuid": "1b6f5f57-cf01-4c56-9238-e8b7cda4d527",
+    "version": [0, 0, 1],
+    "min_engine_version": [1, 13, 0]
+  },
+  "modules": [
+    {
+      "description": "Example vanilla behavior pack",
+      "type": "data",
+      "uuid": "6079868e-0172-4bbe-9f4e-830a3816f356",
+      "version": [0, 0, 1]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "d6679769-88a2-4306-beef-f98ed0db433a",
+      "version": [0, 0, 1]
+    }
+  ]
 }

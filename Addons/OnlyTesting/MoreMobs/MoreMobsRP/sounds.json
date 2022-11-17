@@ -3,7 +3,7 @@
     "entities": {
       "minecon:scorpion": {
         "volume": 1.0,
-        "pitch": [ 0.8, 1.2 ],
+        "pitch": [0.8, 1.2],
         "events": {
           "hurt": {
             "sound": "mob.spider.say",
@@ -24,27 +24,27 @@
       },
       "animalia:alligator": {
         "volume": 1.0,
-        "pitch": [ 0.8, 1.2 ],
+        "pitch": [0.8, 1.2],
         "events": {
           "hurt": "mob.alligator.hurt",
           "death": "mob.alligator.death",
           "attack": {
             "sound": "mob.alligator.attack",
-            "pitch": [ 0.8, 1.2 ]
+            "pitch": [0.8, 1.2]
           },
           "attack.strong": "mob.alligator.attack"
         }
       },
       "gona:tyrannosaur": {
         "volume": 1.0,
-        "pitch": [ 0.8, 1.2 ],
+        "pitch": [0.8, 1.2],
         "events": {
           "hurt": "mob.tyrannosaur.hurt",
-		  "plop": "mob.enderdragon.death",
+          "plop": "mob.enderdragon.death",
           "death": "mob.tyrannosaur.death",
           "attack": {
             "sound": "mob.alligator.attack",
-            "pitch": [ 0.8, 1.2 ]
+            "pitch": [0.8, 1.2]
           },
           "cast.spell": "mob.alligator.death"
         }

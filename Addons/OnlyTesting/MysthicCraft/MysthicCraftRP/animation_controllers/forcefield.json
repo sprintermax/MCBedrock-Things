@@ -1,45 +1,45 @@
 {
-	"format_version": "1.8.0",
-	"animation_controllers": {
-		"controller.animation.forcefield.general": {
-			"states": {
-				"default": {
-					"animations": [
-						{
-							"item": []
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.forcefield.particles": {
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"powered": "query.is_shaking && query.variant == 1"
-						}
-					]
-				},
-				"powered": {
-					"particle_effects": [
-						{
-							"effect": "shield_beam"
-						},
-						{
-							"effect": "shield_top"
-						},
-						{
-							"effect": "shield_sphere"
-						}
-					],
-					"transitions": [
-						{
-							"default": "!query.is_shaking"
-						}
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.forcefield.general": {
+      "states": {
+        "default": {
+          "animations": [
+            {
+              "item": []
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.forcefield.particles": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "powered": "query.is_shaking && query.variant == 1"
+            }
+          ]
+        },
+        "powered": {
+          "particle_effects": [
+            {
+              "effect": "shield_beam"
+            },
+            {
+              "effect": "shield_top"
+            },
+            {
+              "effect": "shield_sphere"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_shaking"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

@@ -24,9 +24,9 @@
         },
         "minecraft:biome_filter": {
           "any_of": [
-            {"test": "is_snow_covered", "operator":"==", "value": false}
-		  ]
-		}
+            { "test": "is_snow_covered", "operator": "==", "value": false }
+          ]
+        }
       }
     ]
   }

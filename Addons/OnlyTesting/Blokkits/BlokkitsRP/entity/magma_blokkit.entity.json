@@ -1,50 +1,48 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "blokkit:magma_blokkit",
-			"materials": {
-				"default": "blokkit"
-			},
-			"textures": {
-				"magma_0": "textures/entity/blokkit/magma/magma_0",
-				"magma_1": "textures/entity/blokkit/magma/magma_1"
-			},
-			"geometry": {
-				"default": "geometry.blokkit"
-			},
-			"scripts": {
-				"pre_animation": [
-					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
-					"variable.tcos1 = -variable.tcos0;"
-				]
-			},
-			"animations": {
-				"arms": "animation.blokkit.arms",
-				"move": "animation.blokkit.move",
-				"sitting": "animation.blokkit.sitting"
-			},
-			"particle_effects": {
-				"lava_blokkit": "blokkit:magma_blokkit"
-			},
-			"animation_controllers": [
-				{
-					"arms": "controller.animation.blokkit.arms"
-				},
-				{
-					"move": "controller.animation.blokkit.move"
-				},
-				{
-					"particles": "controller.animation.magma_blokkit.particles"
-				}
-			],
-			"render_controllers": [
-				"controller.render.magma_blokkit"
-			],
-			"spawn_egg": {
-				"base_color": "#DD7D1F",
-				"overlay_color": "#C83906"
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "blokkit:magma_blokkit",
+      "materials": {
+        "default": "blokkit"
+      },
+      "textures": {
+        "magma_0": "textures/entity/blokkit/magma/magma_0",
+        "magma_1": "textures/entity/blokkit/magma/magma_1"
+      },
+      "geometry": {
+        "default": "geometry.blokkit"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos1 = -variable.tcos0;"
+        ]
+      },
+      "animations": {
+        "arms": "animation.blokkit.arms",
+        "move": "animation.blokkit.move",
+        "sitting": "animation.blokkit.sitting"
+      },
+      "particle_effects": {
+        "lava_blokkit": "blokkit:magma_blokkit"
+      },
+      "animation_controllers": [
+        {
+          "arms": "controller.animation.blokkit.arms"
+        },
+        {
+          "move": "controller.animation.blokkit.move"
+        },
+        {
+          "particles": "controller.animation.magma_blokkit.particles"
+        }
+      ],
+      "render_controllers": ["controller.render.magma_blokkit"],
+      "spawn_egg": {
+        "base_color": "#DD7D1F",
+        "overlay_color": "#C83906"
+      }
+    }
+  }
 }

@@ -1,32 +1,30 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "mystic:werewolf",
-			"materials": {
-				"default": "werewolf"
-			},
-			"textures": {
-				"default": "textures/entity/werewolf"
-			},
-			"animations": {
-				"setup": "animation.pig.setup",
-				"move": "animation.quadruped.walk"
-			},
-			"animation_controllers": [
-				{ "setup": "controller.animation.pig.setup" },
-				{ "move": "controller.animation.pig.move" }
-			],
-			"render_controllers": [
-				"controller.render.werewolf"
-			],
-			"geometry": {
-				"default": "geometry.mob_werewolf"
-			},
-			"spawn_egg": {
-				"base_color": "#6B6969",
-				"overlay_color": "#67584B"
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "mystic:werewolf",
+      "materials": {
+        "default": "werewolf"
+      },
+      "textures": {
+        "default": "textures/entity/werewolf"
+      },
+      "animations": {
+        "setup": "animation.pig.setup",
+        "move": "animation.quadruped.walk"
+      },
+      "animation_controllers": [
+        { "setup": "controller.animation.pig.setup" },
+        { "move": "controller.animation.pig.move" }
+      ],
+      "render_controllers": ["controller.render.werewolf"],
+      "geometry": {
+        "default": "geometry.mob_werewolf"
+      },
+      "spawn_egg": {
+        "base_color": "#6B6969",
+        "overlay_color": "#67584B"
+      }
+    }
+  }
 }

@@ -1,146 +1,134 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "sprintermax:blackhole",
-			"is_spawnable": true,
-			"is_summonable": true,
-			"is_experimental": false,
-			"animations": {
-				"blackhole": "controller.animation.blackhole"
-			},
-			"scripts": {
-				"animate": [
-					"blackhole"
-				]
-			}
-		},
-		"component_groups": {
-			"blackhole:destroy": {
-				"minecraft:explode": {
-					"fuseLength": 0,
-					"fuseLit": true,
-					"power": 0
-				}
-			},
-			"blackhole:break_shake": {
-				"minecraft:is_shaking": {},
-				"minecraft:timer": {
-					"looping": true,
-					"time": 3,
-					"time_down_event": {
-						"event": "blackhole:stop_break"
-					}
-				}
-			}
-		},
-		"components": {
-			"minecraft:type_family": {
-				"family": [
-					"blackhole"
-				]
-			},
-			"minecraft:scale": {
-				"value": 3
-			},
-			"minecraft:pushable": {
-				"is_pushable": false,
-				"is_pushable_by_piston": false
-			},
-			"minecraft:damage_sensor": [
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"operator": "not",
-									"value": "player"
-								}
-							]
-						}
-					},
-					"deals_damage": false
-				},
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_component",
-									"value": "minecraft:is_shaking"
-								}
-							]
-						},
-						"event": "blackhole:break"
-					},
-					"deals_damage": false
-				},
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_component",
-									"operator": "not",
-									"value": "minecraft:is_shaking"
-								}
-							]
-						},
-						"event": "blackhole:start_break"
-					},
-					"deals_damage": false
-				}
-			],
-			"minecraft:fire_immune": true,
-			"minecraft:physics": {
-				"has_gravity": false
-			},
-			"minecraft:health": {
-				"value": 100,
-				"max": 100
-			}
-		},
-		"events": {
-			"blackhole:start_break": {
-				"add": {
-					"component_groups": [
-						"blackhole:break_shake"
-					]
-				}
-			},
-			"blackhole:stop_break": {
-				"remove": {
-					"component_groups": [
-						"blackhole:break_shake"
-					]
-				}
-			},
-			"blackhole:destroy": {
-				"add": {
-					"component_groups": [
-						"blackhole:destroy"
-					]
-				}
-			},
-			"blackhole:break": {
-				"add": {
-					"component_groups": [
-						"blackhole:destroy"
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "sprintermax:blackhole",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "blackhole": "controller.animation.blackhole"
+      },
+      "scripts": {
+        "animate": ["blackhole"]
+      }
+    },
+    "component_groups": {
+      "blackhole:destroy": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "power": 0
+        }
+      },
+      "blackhole:break_shake": {
+        "minecraft:is_shaking": {},
+        "minecraft:timer": {
+          "looping": true,
+          "time": 3,
+          "time_down_event": {
+            "event": "blackhole:stop_break"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["blackhole"]
+      },
+      "minecraft:scale": {
+        "value": 3
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:damage_sensor": [
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "not",
+                  "value": "player"
+                }
+              ]
+            }
+          },
+          "deals_damage": false
+        },
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_component",
+                  "value": "minecraft:is_shaking"
+                }
+              ]
+            },
+            "event": "blackhole:break"
+          },
+          "deals_damage": false
+        },
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "not",
+                  "value": "minecraft:is_shaking"
+                }
+              ]
+            },
+            "event": "blackhole:start_break"
+          },
+          "deals_damage": false
+        }
+      ],
+      "minecraft:fire_immune": true,
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      }
+    },
+    "events": {
+      "blackhole:start_break": {
+        "add": {
+          "component_groups": ["blackhole:break_shake"]
+        }
+      },
+      "blackhole:stop_break": {
+        "remove": {
+          "component_groups": ["blackhole:break_shake"]
+        }
+      },
+      "blackhole:destroy": {
+        "add": {
+          "component_groups": ["blackhole:destroy"]
+        }
+      },
+      "blackhole:break": {
+        "add": {
+          "component_groups": ["blackhole:destroy"]
+        }
+      }
+    }
+  }
 }

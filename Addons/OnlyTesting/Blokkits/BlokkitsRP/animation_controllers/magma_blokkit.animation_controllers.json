@@ -1,28 +1,28 @@
 {
-	"format_version": "1.8.0",
-	"animation_controllers": {
-		"controller.animation.magma_blokkit.particles": {
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"tamed": "query.is_tamed"
-						}
-					]
-				},
-				"tamed": {
-					"particle_effects": [
-						{
-							"effect": "lava_blokkit"
-						}
-					],
-					"transitions": [
-						{
-							"default": "!query.is_tamed"
-						}
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.magma_blokkit.particles": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "tamed": "query.is_tamed"
+            }
+          ]
+        },
+        "tamed": {
+          "particle_effects": [
+            {
+              "effect": "lava_blokkit"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_tamed"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

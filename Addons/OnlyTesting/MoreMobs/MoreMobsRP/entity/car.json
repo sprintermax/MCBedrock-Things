@@ -11,17 +11,15 @@
       "geometry": {
         "default": "geometry.car"
       },
-	  "particle_effects": {
+      "particle_effects": {
         "trail_effect": "car:turboboost"
       },
       "animations": {
-	    "car_rotate": "animation.car.rotate",
-		"car_default": "animation.car.default"
+        "car_rotate": "animation.car.rotate",
+        "car_default": "animation.car.default"
       },
-      "animation_controllers": [
-	    { "move": "controller.animation.car.move" }
-      ],
-      "render_controllers": [ "controller.render.car" ],
+      "animation_controllers": [{ "move": "controller.animation.car.move" }],
+      "render_controllers": ["controller.render.car"],
       "spawn_egg": {
         "base_color": "#974FFF",
         "overlay_color": "#CFF486"

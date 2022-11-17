@@ -3,7 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "minecraft:creeper",
-	  "min_engine_version": "1.8.0",
+      "min_engine_version": "1.8.0",
       "materials": {
         "default": "creeper_alphatest",
         "charged": "charged_creeper",
@@ -41,7 +41,11 @@
         { "creeper_legs": "controller.animation.creeper.legs" },
         { "creeper_swelling": "controller.animation.creeper.swelling" }
       ],
-      "render_controllers": [ "controller.render.creeper", "controller.render.creeper_rainbow", "controller.render.creeper_armor" ]
+      "render_controllers": [
+        "controller.render.creeper",
+        "controller.render.creeper_rainbow",
+        "controller.render.creeper_armor"
+      ]
     }
   }
 }

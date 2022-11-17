@@ -3,25 +3,53 @@
   "render_controllers": {
     "controller.render.player": {
       "geometry": "Geometry.custom_default",
-      "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Texture.default" ],
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Texture.default"],
       "part_visibility": [
         { "*": "variable.is_third_person" },
-        { "rightArm": "variable.is_third_person || !query.is_selected_item || query.get_equipped_item_name == 'map'" },
-        { "rightSleeve": "variable.is_third_person || !query.is_selected_item" },
-        { "leftArm": "variable.is_third_person || (query.get_equipped_item_name == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))" },
+        {
+          "rightArm": "variable.is_third_person || !query.is_selected_item || query.get_equipped_item_name == 'map'"
+        },
+        {
+          "rightSleeve": "variable.is_third_person || !query.is_selected_item"
+        },
+        {
+          "leftArm": "variable.is_third_person || (query.get_equipped_item_name == 'map' && query.get_equipped_item_name('off_hand') != 'shield') || (query.get_equipped_item_name('off_hand') == 'map' && !query.item_is_charged) || (!query.item_is_charged && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0))"
+        },
         { "leftSleeve": "variable.is_third_person" },
-        { "helmet": "variable.is_third_person && variable.helmet_layer_visible" },
-        { "leftLegging": "variable.is_third_person && variable.leg_layer_visible" },
-        { "rightLegging": "variable.is_third_person && variable.leg_layer_visible" },
-        { "leftBoot": "variable.is_third_person && variable.boot_layer_visible" },
-        { "rightBoot": "variable.is_third_person && variable.boot_layer_visible" },
-        { "leftSock": "variable.is_third_person && (variable.boot_layer_visible && variable.leg_layer_visible)" },
-        { "rightSock": "variable.is_third_person && (variable.boot_layer_visible && variable.leg_layer_visible)" },
-        { "bodyArmor": "variable.is_third_person && variable.chest_layer_visible && !query.has_cape" },
-        { "leftArmArmor": "variable.is_third_person && variable.chest_layer_visible && !query.has_cape" },
-        { "rightArmArmor": "variable.is_third_person && variable.chest_layer_visible && !query.has_cape" },
-        { "belt": "variable.is_third_person && (variable.chest_layer_visible && variable.leg_layer_visible)" }
+        {
+          "helmet": "variable.is_third_person && variable.helmet_layer_visible"
+        },
+        {
+          "leftLegging": "variable.is_third_person && variable.leg_layer_visible"
+        },
+        {
+          "rightLegging": "variable.is_third_person && variable.leg_layer_visible"
+        },
+        {
+          "leftBoot": "variable.is_third_person && variable.boot_layer_visible"
+        },
+        {
+          "rightBoot": "variable.is_third_person && variable.boot_layer_visible"
+        },
+        {
+          "leftSock": "variable.is_third_person && (variable.boot_layer_visible && variable.leg_layer_visible)"
+        },
+        {
+          "rightSock": "variable.is_third_person && (variable.boot_layer_visible && variable.leg_layer_visible)"
+        },
+        {
+          "bodyArmor": "variable.is_third_person && variable.chest_layer_visible && !query.has_cape"
+        },
+        {
+          "leftArmArmor": "variable.is_third_person && variable.chest_layer_visible && !query.has_cape"
+        },
+        {
+          "rightArmArmor": "variable.is_third_person && variable.chest_layer_visible && !query.has_cape"
+        },
+        {
+          "belt": "variable.is_third_person && (variable.chest_layer_visible && variable.leg_layer_visible)"
+        }
       ]
     }
   }

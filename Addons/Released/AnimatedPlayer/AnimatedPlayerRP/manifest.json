@@ -1,40 +1,40 @@
 {
-    "format_version": 1,
-    "header": {
-        "description": "Tweaks on Player Animations, By Sprintermax",
-        "name": "Animated Player Resource Pack",
-        "uuid": "e3e89746-a420-11e9-a2a3-2a2ae2dbcce4",
-        "version": [1, 0, 0],
-        "min_engine_version": [1, 13, 0]
+  "format_version": 1,
+  "header": {
+    "description": "Tweaks on Player Animations, By Sprintermax",
+    "name": "Animated Player Resource Pack",
+    "uuid": "e3e89746-a420-11e9-a2a3-2a2ae2dbcce4",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 13, 0]
+  },
+  "modules": [
+    {
+      "description": "Tweaks on Player Animations, By Sprintermax",
+      "type": "resources",
+      "uuid": "e3e899d0-a420-11e9-a2a3-2a2ae2dbcce4",
+      "version": [1, 0, 0]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "alexold",
+      "memory_tier": 0,
+      "name": "Old Alex"
     },
-    "modules": [
-        {
-            "description": "Tweaks on Player Animations, By Sprintermax",
-            "type": "resources",
-            "uuid": "e3e899d0-a420-11e9-a2a3-2a2ae2dbcce4",
-            "version": [1, 0, 0]
-        }
-    ],
-	"subpacks":  [
-        {
-            "folder_name":  "alexold",
-			"memory_tier": 0,
-            "name":  "Old Alex"
-        },
-		{
-            "folder_name":  "steveold",
-			"memory_tier": 0,
-            "name":  "Old Steve"
-        },
-		{
-            "folder_name":  "alexnew",
-			"memory_tier": 0,
-            "name":  "New Alex"
-        },
-		{
-            "folder_name":  "stevenew",
-			"memory_tier": 0,
-            "name":  "New Steve"
-        }
-    ]
+    {
+      "folder_name": "steveold",
+      "memory_tier": 0,
+      "name": "Old Steve"
+    },
+    {
+      "folder_name": "alexnew",
+      "memory_tier": 0,
+      "name": "New Alex"
+    },
+    {
+      "folder_name": "stevenew",
+      "memory_tier": 0,
+      "name": "New Steve"
+    }
+  ]
 }

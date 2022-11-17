@@ -1,25 +1,25 @@
 {
-    "format_version": 1,
-    "header": {
-        "description": "More Mobs Addon",
-        "name": "MoreMobs",
-		"uuid": "ee533160-ce05-11e8-a8d5-f2801f1b9fd1",
-        "version": [1, 8, 0],
-        "min_engine_version": [1, 8, 0],
-		"pack_scope": "world"
-    },
-    "modules": [
-        {
-            "description": "MoreMobs",
-            "type": "resources",
-			"uuid": "ee53341c-ce05-11e8-a8d5-f2801f1b9fd1",
-            "version": [1, 8, 0]
-        }
-    ],
-	"dependencies": [
-        {
-			"uuid": "ee532be8-ce05-11e8-a8d5-f2801f1b9fd1",
-            "version": [1, 8, 0]
-        }
-    ]
+  "format_version": 1,
+  "header": {
+    "description": "More Mobs Addon",
+    "name": "MoreMobs",
+    "uuid": "ee533160-ce05-11e8-a8d5-f2801f1b9fd1",
+    "version": [1, 8, 0],
+    "min_engine_version": [1, 8, 0],
+    "pack_scope": "world"
+  },
+  "modules": [
+    {
+      "description": "MoreMobs",
+      "type": "resources",
+      "uuid": "ee53341c-ce05-11e8-a8d5-f2801f1b9fd1",
+      "version": [1, 8, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "ee532be8-ce05-11e8-a8d5-f2801f1b9fd1",
+      "version": [1, 8, 0]
+    }
+  ]
 }

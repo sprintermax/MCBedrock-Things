@@ -1,24 +1,22 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "mystic:siren",
-			"materials": {
-				"default": "siren"
-			},
-			"textures": {
-				"default": "textures/entity/siren"
-			},
-			"geometry": {
-				"default": "geometry.siren"
-			},
-			"render_controllers": [
-				"controller.render.siren"
-			],
-			"spawn_egg": {
-				"base_color": "#0ed69a",
-				"overlay_color": "#08b29e"
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "mystic:siren",
+      "materials": {
+        "default": "siren"
+      },
+      "textures": {
+        "default": "textures/entity/siren"
+      },
+      "geometry": {
+        "default": "geometry.siren"
+      },
+      "render_controllers": ["controller.render.siren"],
+      "spawn_egg": {
+        "base_color": "#0ed69a",
+        "overlay_color": "#08b29e"
+      }
+    }
+  }
 }

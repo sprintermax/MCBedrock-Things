@@ -9,7 +9,7 @@
     },
 
     "component_groups": {
-		"mystic:ranged_mode": {
+      "mystic:ranged_mode": {
         "minecraft:behavior.ranged_attack": {
           "attack_interval_min": 1,
           "attack_interval_max": 3,
@@ -30,7 +30,7 @@
           }
         }
       },
-	  "mystic:melee_mode": {
+      "mystic:melee_mode": {
         "minecraft:behavior.melee_attack": {
           "priority": 4,
           "target_dist": 1.2,
@@ -39,8 +39,8 @@
         },
         "minecraft:attack": {
           "damage": 4,
-		  "effect_name": "nausea",
-        "effect_duration": 10
+          "effect_name": "nausea",
+          "effect_duration": 10
         },
         "minecraft:environment_sensor": {
           "on_environment": {
@@ -56,25 +56,21 @@
       }
     },
     "components": {
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "syclop" ]
+        "family": ["syclop"]
       },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.8
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {},
-	  "minecraft:movement": {
+      "minecraft:movement": {
         "value": 0.25
       },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": 25,
         "max": 25
@@ -88,7 +84,7 @@
       "minecraft:attack": {
         "damage": 3
       },
-	  "minecraft:behavior.nearest_attackable_target": {
+      "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
         "reselect_targets": true,
         "entity_types": [
@@ -122,24 +118,21 @@
       "minecraft:behavior.random_look_around": {
         "priority": 6
       },
-      "minecraft:physics": {
-      }
+      "minecraft:physics": {}
     },
-	"events": {
+    "events": {
       "minecraft:entity_spawned": {
         "add": {
-          "component_groups": [
-            "mystic:melee_mode"
-          ]
+          "component_groups": ["mystic:melee_mode"]
         }
       },
       "mystic:turn_melee": {
-        "remove": { "component_groups": [ "mystic:ranged_mode" ] },
-        "add": { "component_groups": [ "mystic:melee_mode" ] }
+        "remove": { "component_groups": ["mystic:ranged_mode"] },
+        "add": { "component_groups": ["mystic:melee_mode"] }
       },
       "mystic:turn_ranged": {
-        "remove": { "component_groups": [ "mystic:melee_mode" ] },
-        "add": { "component_groups": [ "mystic:ranged_mode" ] }
+        "remove": { "component_groups": ["mystic:melee_mode"] },
+        "add": { "component_groups": ["mystic:ranged_mode"] }
       }
     }
   }

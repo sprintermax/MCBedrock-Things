@@ -1,18 +1,15 @@
 {
-  "format_version":"1.8.0-beta.1",
+  "format_version": "1.8.0-beta.1",
   "render_controllers": {
     "controller.render.ant": {
       "arrays": {
         "textures": {
-          "Array.variants": [
-            "Texture.brown",
-            "Texture.black"
-          ]
+          "Array.variants": ["Texture.brown", "Texture.black"]
         }
       },
-	  "geometry": "Geometry.default",
-      "materials": [ { "*": "Material.default" } ],
-      "textures": [ "Array.variants[Entity.Variant]" ]
+      "geometry": "Geometry.default",
+      "materials": [{ "*": "Material.default" }],
+      "textures": ["Array.variants[Entity.Variant]"]
     }
   }
 }

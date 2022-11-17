@@ -1,14 +1,14 @@
 {
-	"resource_pack_name": "vanilla",
-	"texture_name": "atlas.items",
-	"texture_data": {
-		"mysticcraft_egg": {
-			"textures": [
-				"textures/items/spawn_egg_table",
-				"textures/items/spawn_egg_carrage",
-				"textures/items/spawn_egg_invocation",
-				"textures/items/spawn_egg_forcefield"
-			]
-		}
-	}
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "mysticcraft_egg": {
+      "textures": [
+        "textures/items/spawn_egg_table",
+        "textures/items/spawn_egg_carrage",
+        "textures/items/spawn_egg_invocation",
+        "textures/items/spawn_egg_forcefield"
+      ]
+    }
+  }
 }

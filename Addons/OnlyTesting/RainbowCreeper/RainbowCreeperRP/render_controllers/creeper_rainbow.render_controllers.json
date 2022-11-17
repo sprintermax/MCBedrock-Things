@@ -3,21 +3,20 @@
   "render_controllers": {
     "controller.render.creeper_rainbow": {
       "geometry": "Geometry.default",
-      "materials": [ { "*": "Material.rainbow" } ],
-      "textures": [ "Texture.rainbow" ],
+      "materials": [{ "*": "Material.rainbow" }],
+      "textures": ["Texture.rainbow"],
       "uv_anim": {
-          "offset": [ 0, 
-                      "(Math.round(query.life_time * 10) * 1) * 0.015625" ],
-          "scale": [ 1, 0.5 ]
+        "offset": [0, "(Math.round(query.life_time * 10) * 1) * 0.015625"],
+        "scale": [1, 0.5]
       },
-	  "overlay_color": {
-          "r": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75",
-          "g": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75",
-          "b": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75",
-          "a": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75"
+      "overlay_color": {
+        "r": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75",
+        "g": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75",
+        "b": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75",
+        "a": "((variable.flash == 0.0) || (query.swelling_dir < 0.0)) ? this : 0.75"
       },
       "light_color_multiplier": 1,
-      "ignore_lighting" : true
+      "ignore_lighting": true
     }
   }
 }

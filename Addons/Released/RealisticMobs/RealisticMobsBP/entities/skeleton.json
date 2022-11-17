@@ -2,11 +2,10 @@
   "minecraft:entity": {
     "version": 1,
 
-
     "components": {
-    "minecraft:scale": {
-          "value": 0.90
-        },
+      "minecraft:scale": {
+        "value": 0.9
+      },
       "minecraft:identifier": {
         "id": "minecraft:skeleton"
       },
@@ -15,10 +14,10 @@
         "height": 1.95
       },
       "minecraft:type_family": {
-        "family": [ "skeleton", "undead", "monster" ]
+        "family": ["skeleton", "undead", "monster"]
       },
 
-      "minecraft:burns_in_daylight": { },
+      "minecraft:burns_in_daylight": {},
 
       "minecraft:health": {
         "value": 20,
@@ -35,8 +34,7 @@
         "type": "Arrow",
         "def": "minecraft:arrow.skeleton"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:equipment": {
         "table": "loot_tables/entities/skeleton_gear.json"
       },
@@ -53,7 +51,7 @@
         "priority": 2,
         "entity_types": [
           {
-            "entity_filter": [ "player" ],
+            "entity_filter": ["player"],
             "max_dist": 16,
             "must_see": true
           }
@@ -83,9 +81,7 @@
     },
 
     "events": {
-      "minecraft:entity_spawned": {
-
-      }
+      "minecraft:entity_spawned": {}
     }
   }
 }

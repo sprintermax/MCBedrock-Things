@@ -2,25 +2,24 @@
   "minecraft:entity": {
     "version": 0.1,
 
-    "component_groups": {
-    },
+    "component_groups": {},
 
     "components": {
-    "minecraft:scale": {
-          "value": 0.87
-        },
+      "minecraft:scale": {
+        "value": 0.87
+      },
       "minecraft:identifier": {
         "id": "minecraft:bat"
       },
       "minecraft:type_family": {
-        "family":["bat"]          
+        "family": ["bat"]
       },
-     "minecraft:collision_box": {
-      "width": 0.5,
-      "height": 0.9
-     },
-     "minecraft:fall_damage": {
-       "value": 0.0
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.9
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
       },
 
       "minecraft:movement": {
@@ -31,11 +30,9 @@
         "value": 6,
         "max": 6
       },
-       "minecraft:nameable": {
-	    }
+      "minecraft:nameable": {}
     },
 
-    "events": {
-    }
+    "events": {}
   }
 }

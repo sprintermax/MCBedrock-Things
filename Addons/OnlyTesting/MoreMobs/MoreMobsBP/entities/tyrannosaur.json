@@ -15,9 +15,8 @@
     },
 
     "component_groups": {
-	  "minecraft:trex_roar": {
-        "minecraft:on_target_acquired": {
-        },
+      "minecraft:trex_roar": {
+        "minecraft:on_target_acquired": {},
         "minecraft:behavior.summon_entity": {
           "priority": 0,
           "probability": 100000.0,
@@ -54,9 +53,9 @@
         }
       },
 
-	  "minecraft:trex_attack": {
+      "minecraft:trex_attack": {
         "minecraft:type_family": {
-          "family": [ "evil", "t_rex_adult" ]
+          "family": ["evil", "t_rex_adult"]
         },
         "minecraft:navigation.generic": {
           "can_path_over_water": false,
@@ -68,30 +67,42 @@
             "range_max": 9
           }
         },
-	    "minecraft:health": {
+        "minecraft:health": {
           "value": 120,
           "max": 140
         },
-		"minecraft:behavior.random_stroll": {
+        "minecraft:behavior.random_stroll": {
           "priority": 2,
           "speed_multiplier": 0.8
         },
         "minecraft:behavior.hurt_by_target": {
           "priority": 2
         },
-	    "minecraft:behavior.nearest_attackable_target": {
+        "minecraft:behavior.nearest_attackable_target": {
           "priority": 0,
           "within_radius": 28,
           "entity_types": [
             {
-              "filters": { "other_with_families": [ "pteranodon", "player", "herbivorous", "carnotaurus_adult", "baryonyx_adult", "baryonyx", "cow", "sheep", "carnotaurus" ] },
+              "filters": {
+                "other_with_families": [
+                  "pteranodon",
+                  "player",
+                  "herbivorous",
+                  "carnotaurus_adult",
+                  "baryonyx_adult",
+                  "baryonyx",
+                  "cow",
+                  "sheep",
+                  "carnotaurus"
+                ]
+              },
               "max_dist": 32
             }
           ],
           "must_see": true
         },
         "minecraft:timer": {
-          "time": [ 15, 20 ],
+          "time": [15, 20],
           "looping": false,
           "time_down_event": {
             "event": "minecraft:trex_adult_wild",
@@ -114,7 +125,7 @@
 
       "minecraft:trex_adult_wild": {
         "minecraft:type_family": {
-          "family": [ "evil", "t_rex_adult" ]
+          "family": ["evil", "t_rex_adult"]
         },
         "minecraft:navigation.generic": {
           "can_path_over_water": false,
@@ -126,16 +137,15 @@
             "range_max": 9
           }
         },
-	    "minecraft:health": {
+        "minecraft:health": {
           "value": 120,
           "max": 140
         },
         "minecraft:on_target_acquired": {
           "event": "hunter_mode"
         },
-        "minecraft:on_hurt_by_player": {
-        },
-		"minecraft:behavior.random_stroll": {
+        "minecraft:on_hurt_by_player": {},
+        "minecraft:behavior.random_stroll": {
           "priority": 2,
           "speed_multiplier": 0.8
         },
@@ -143,36 +153,34 @@
           "priority": 2
         }
       },
-      
+
       "minecraft:trex_adult_tame": {
-      	"minecraft:type_family": {
-          "family": [ "t_rex_tamed", "t_rex_adult" ]
+        "minecraft:type_family": {
+          "family": ["t_rex_tamed", "t_rex_adult"]
         },
-      	 "minecraft:is_tamed": {
-        },
+        "minecraft:is_tamed": {},
         "minecraft:movement": {
           "value": {
             "range_min": 0.27,
             "range_max": 0.38
           }
         },
-        "minecraft:input_ground_controlled": {
-        },
-        "minecraft:behavior.player_ride_tamed": {
-        },
+        "minecraft:input_ground_controlled": {},
+        "minecraft:behavior.player_ride_tamed": {},
         "minecraft:rideable": {
           "seat_count": 1,
-          "family_types": [ "player" ],
+          "family_types": ["player"],
           "interact_text": "action.interact.ride.horse",
           "seats": {
-            "position": [ 0.0, 1.7, -0.1 ]
-          }        
+            "position": [0.0, 1.7, -0.1]
+          }
         },
         "minecraft:behavior.beg": {
-        "priority": 6,
-        "look_distance": 8,
-        "look_time": [ 2, 4 ],
-        "items": [ "porkchop",
+          "priority": 6,
+          "look_distance": 8,
+          "look_time": [2, 4],
+          "items": [
+            "porkchop",
             "cooked_porkchop",
             "fish",
             "salmon",
@@ -300,7 +308,8 @@
               "target": "baby"
             }
           },
-          "breedItems": [ "porkchop",
+          "breedItems": [
+            "porkchop",
             "cooked_porkchop",
             "fish",
             "salmon",
@@ -320,8 +329,7 @@
             "rabbit_stew"
           ]
         },
-        "minecraft:sittable": {
-        },
+        "minecraft:sittable": {},
         "minecraft:behavior.breed": {
           "priority": 0,
           "speed_multiplier": 0.7
@@ -336,14 +344,12 @@
       },
 
       "minecraft:trex_baby_tame": {
-        "minecraft:is_tamed": {
-        },
+        "minecraft:is_tamed": {},
         "minecraft:health": {
           "value": 20,
           "max": 30
         },
-        "minecraft:sittable": {
-        },
+        "minecraft:sittable": {},
         "minecraft:behavior.panic": {
           "priority": 3,
           "speed_multiplier": 0.7
@@ -351,7 +357,8 @@
         "minecraft:behavior.tempt": {
           "priority": 3,
           "speed_multiplier": 0.6,
-          "items": [ "porkchop",
+          "items": [
+            "porkchop",
             "cooked_porkchop",
             "fish",
             "salmon",
@@ -368,7 +375,7 @@
             "rotten_flesh",
             "rabbit",
             "cooked_rabbit",
-            "rabbit_stew" 
+            "rabbit_stew"
           ]
         },
         "minecraft:behavior.follow_owner": {
@@ -377,7 +384,7 @@
           "start_distance": 10,
           "stop_distance": 4
         },
-        
+
         "minecraft:scale_by_age": {
           "start_scale": 0.4,
           "end_scale": 2.0
@@ -460,7 +467,7 @@
           }
         }
       },
-      
+
       "minecraft:trex_baby_wild": {
         "minecraft:health": {
           "value": 20,
@@ -480,7 +487,8 @@
         "minecraft:behavior.tempt": {
           "priority": 3,
           "speed_multiplier": 0.6,
-          "items": [ "porkchop",
+          "items": [
+            "porkchop",
             "cooked_porkchop",
             "fish",
             "salmon",
@@ -502,7 +510,8 @@
         },
         "minecraft:tameable": {
           "probability": 0.33,
-          "tameItems": [ "porkchop",
+          "tameItems": [
+            "porkchop",
             "cooked_porkchop",
             "fish",
             "salmon",
@@ -531,23 +540,19 @@
           "speed_multiplier": 0.7
         }
       }
-	},
+    },
 
     "components": {
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "tyrannosaur" ]
+        "family": ["tyrannosaur"]
       },
-	  "minecraft:movement": {
+      "minecraft:movement": {
         "value": 0.3
       },
-      "minecraft:movement.generic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.generic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:navigation.generic": {
         "can_path_over_water": false,
         "can_walk": true,
@@ -567,22 +572,22 @@
       "minecraft:fall_damage": {
         "value": 0.3
       },
-	  "minecraft:behavior.avoid_mob_type": {
+      "minecraft:behavior.avoid_mob_type": {
         "priority": 5,
         "entity_types": [
           {
-            "filters": {  
+            "filters": {
               "any_of": [
-                { "test" :  "is_family", "subject" : "other", "value" :  "atv"}
+                { "test": "is_family", "subject": "other", "value": "atv" }
               ]
- 			},
+            },
             "max_dist": 10,
             "walk_speed_multiplier": 0.7,
             "sprint_speed_multiplier": 1.1
           }
         ]
       },
-	  "minecraft:behavior.melee_attack": {
+      "minecraft:behavior.melee_attack": {
         "priority": 1,
         "target_dist": 1.1,
         "track_target": true
@@ -605,7 +610,7 @@
       "minecraft:behavior.random_look_around": {
         "priority": 4
       },
-	  "minecraft:leashable": {
+      "minecraft:leashable": {
         "soft_distance": 10.0,
         "hard_distance": 14.0,
         "max_distance": 18.0,
@@ -621,30 +626,25 @@
     },
 
     "events": {
-	  "minecraft:entity_spawned": {
+      "minecraft:entity_spawned": {
         "randomize": [
           {
             "weight": 8,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:trex_adult",
-				"minecraft:trex_attack",
+                "minecraft:trex_attack",
                 "minecraft:trex_adult_wild",
                 "minecraft:trex_roar"
               ]
-
             }
           },
-		  {
+          {
             "weight": 2,
-            "remove": {
-            },
+            "remove": {},
             "add": {
-              "component_groups": [
-                "minecraft:trex_baby_wild"
-              ]
+              "component_groups": ["minecraft:trex_baby_wild"]
             }
           }
         ]
@@ -652,17 +652,13 @@
 
       "minecraft:entity_born": {
         "add": {
-        "component_groups": [
-          "minecraft:trex_baby_wild"
-          ]
+          "component_groups": ["minecraft:trex_baby_wild"]
         }
       },
 
       "minecraft:ageable_grow_up_tame": {
         "remove": {
-          "component_groups": [ 
-            "minecraft:trex_baby_tame"
-          ]
+          "component_groups": ["minecraft:trex_baby_tame"]
         },
         "add": {
           "component_groups": [
@@ -673,80 +669,58 @@
       },
       "minecraft:hunter_mode": {
         "remove": {
-          "component_groups": [
-            "minecraft:trex_adult_wild"
-          ]
+          "component_groups": ["minecraft:trex_adult_wild"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:trex_roar"
-          ]
+          "component_groups": ["minecraft:trex_roar"]
         }
       },
       "minecraft:ageable_grow_up_wild": {
         "remove": {
-          "component_groups": [ 
-            "minecraft:trex_baby_wild"
-          ]
+          "component_groups": ["minecraft:trex_baby_wild"]
         },
         "add": {
           "component_groups": [
             "minecraft:trex_adult",
-			"minecraft:trex_attack",
+            "minecraft:trex_attack",
             "minecraft:trex_adult_wild"
           ]
         }
       },
       "minecraft:on_tame_baby": {
         "remove": {
-          "component_groups": [
-            "minecraft:trex_baby_wild"
-          ]
+          "component_groups": ["minecraft:trex_baby_wild"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:trex_baby_tame"
-          ]
+          "component_groups": ["minecraft:trex_baby_tame"]
         }
       },
-	  
-	  "minecraft:run": {
+
+      "minecraft:run": {
         "remove": {
-          "component_groups": [
-            "minecraft:trex_attack"
-          ]
+          "component_groups": ["minecraft:trex_attack"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:trex_run"
-          ]
+          "component_groups": ["minecraft:trex_run"]
         }
       },
       "minecraft:attack": {
         "remove": {
-          "component_groups": [
-            "minecraft:trex_run"
-          ]
+          "component_groups": ["minecraft:trex_run"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:trex_attack"
-          ]
+          "component_groups": ["minecraft:trex_attack"]
         }
       },
-	  
-	  "minecraft:on_leash": {
+
+      "minecraft:on_leash": {
         "add": {
-          "component_groups": [
-            "minecraft:trex_leashed"
-          ]
+          "component_groups": ["minecraft:trex_leashed"]
         }
       },
       "minecraft:on_unleash": {
         "remove": {
-          "component_groups": [
-            "minecraft:trex_leashed"
-          ]
+          "component_groups": ["minecraft:trex_leashed"]
         }
       }
     }

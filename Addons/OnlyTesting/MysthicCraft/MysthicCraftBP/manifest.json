@@ -1,48 +1,28 @@
 {
-	"format_version": 1,
-	"header": {
-		"description": "...",
-		"name": "MysticCraft",
-		"uuid": "a55e5985-2dbe-4af1-9e46-ab691f4f3d8a",
-		"version": [
-			1,
-			8,
-			0
-		],
-		"min_engine_version": [
-			1,
-			8,
-			0
-		]
-	},
-	"modules": [
-		{
-			"type": "data",
-			"uuid": "fd944fb5-00a3-416b-ac1c-a79284055f3c",
-			"version": [
-				1,
-				8,
-				0
-			]
-		},
-		{
-			"type": "client_data",
-			"uuid": "c8542444-f8ba-11e8-8eb2-f2801f1b9fd1",
-			"version": [
-				1,
-				8,
-				0
-			]
-		}
-	],
-	"dependencies": [
-		{
-			"uuid": "fe73d0c4-9f12-49e0-92c5-8467ecb11e51",
-			"version": [
-				1,
-				8,
-				0
-			]
-		}
-	]
+  "format_version": 1,
+  "header": {
+    "description": "...",
+    "name": "MysticCraft",
+    "uuid": "a55e5985-2dbe-4af1-9e46-ab691f4f3d8a",
+    "version": [1, 8, 0],
+    "min_engine_version": [1, 8, 0]
+  },
+  "modules": [
+    {
+      "type": "data",
+      "uuid": "fd944fb5-00a3-416b-ac1c-a79284055f3c",
+      "version": [1, 8, 0]
+    },
+    {
+      "type": "client_data",
+      "uuid": "c8542444-f8ba-11e8-8eb2-f2801f1b9fd1",
+      "version": [1, 8, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "fe73d0c4-9f12-49e0-92c5-8467ecb11e51",
+      "version": [1, 8, 0]
+    }
+  ]
 }

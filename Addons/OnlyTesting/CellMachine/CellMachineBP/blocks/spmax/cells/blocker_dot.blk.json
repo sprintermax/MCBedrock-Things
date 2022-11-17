@@ -1,29 +1,29 @@
 {
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"description": {
-			"identifier": "spmax:cells.blocker_dot"
-		},
-		"components": {
-			"tag:spmax:cell": {},
-			
-			"minecraft:unit_cube": {},
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "spmax:cell.blocker_dot",
-					"render_method": "opaque"
-				}
-			},
-			"minecraft:pick_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
-			},
-			"minecraft:entity_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
-			},
-			"minecraft:block_light_absorption": 0,
-			"minecraft:destroy_time": 3
-		}
-	}
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "spmax:cells.blocker_dot"
+    },
+    "components": {
+      "tag:spmax:cell": {},
+
+      "minecraft:unit_cube": {},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "spmax:cell.blocker_dot",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:pick_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:entity_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:block_light_absorption": 0,
+      "minecraft:destroy_time": 3
+    }
+  }
 }

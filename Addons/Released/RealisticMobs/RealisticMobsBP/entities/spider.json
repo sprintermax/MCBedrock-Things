@@ -8,9 +8,7 @@
         },
         "minecraft:rideable": {
           "seat_count": 1,
-          "family_types": [
-            "skeleton"
-          ]
+          "family_types": ["skeleton"]
         },
         "minecraft:environment_sensor": {
           "on_environment": {
@@ -24,7 +22,6 @@
       },
 
       "minecraft:spider_hostile": {
-
         "minecraft:environment_sensor": {
           "on_environment": {
             "filters": { "with_environment_any": "brightness_greater:0.49" },
@@ -41,7 +38,7 @@
               "must_see": true
             },
             {
-              "entity_filter": [ "snowgolem", "irongolem" ],
+              "entity_filter": ["snowgolem", "irongolem"],
               "max_dist": 16,
               "must_see": true
             }
@@ -93,7 +90,7 @@
               "must_see": true
             },
             {
-              "entity_filter": [ "snowgolem", "irongolem" ],
+              "entity_filter": ["snowgolem", "irongolem"],
               "max_dist": 16,
               "must_see": true
             }
@@ -116,16 +113,15 @@
     },
 
     "components": {
-    "minecraft:scale": {
-          "value": 0.30
-        },
+      "minecraft:scale": {
+        "value": 0.3
+      },
       "minecraft:identifier": {
         "id": "minecraft:spider"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "spider", "monster" ]
+        "family": ["spider", "monster"]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/spider.json"
@@ -170,9 +166,7 @@
       },
       "minecraft:rideable": {
         "seat_count": 1,
-        "family_types": [
-          "zombie"
-        ]
+        "family_types": ["zombie"]
       }
     },
 
@@ -182,22 +176,18 @@
           {
             "weight": 1,
             "filters": {
-              "with_environment_any": [ "night", "underground" ]
+              "with_environment_any": ["night", "underground"]
             },
-            "remove": { },
+            "remove": {},
             "add": {
-              "component_groups": [
-                "minecraft:spider_jockey"
-              ]
+              "component_groups": ["minecraft:spider_jockey"]
             }
           },
           {
             "weight": 99,
-            "remove": { },
+            "remove": {},
             "add": {
-              "component_groups": [
-                "minecraft:spider_neutral"
-              ]
+              "component_groups": ["minecraft:spider_neutral"]
             }
           }
         ]
@@ -205,53 +195,37 @@
 
       "minecraft:become_hostile": {
         "remove": {
-          "component_groups": [
-            "minecraft:spider_neutral"
-          ]
+          "component_groups": ["minecraft:spider_neutral"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:spider_hostile"
-          ]
+          "component_groups": ["minecraft:spider_hostile"]
         }
       },
 
       "minecraft:become_neutral": {
         "remove": {
-          "component_groups": [
-            "minecraft:spider_hostile"
-          ]
+          "component_groups": ["minecraft:spider_hostile"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:spider_neutral"
-          ]
+          "component_groups": ["minecraft:spider_neutral"]
         }
       },
 
       "minecraft:become_angry": {
         "remove": {
-          "component_groups": [
-            "minecraft:spider_neutral"
-          ]
+          "component_groups": ["minecraft:spider_neutral"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:spider_angry"
-          ]
+          "component_groups": ["minecraft:spider_angry"]
         }
       },
 
       "minecraft:on_calm": {
         "remove": {
-          "component_groups": [
-            "minecraft:spider_angry"
-          ]
+          "component_groups": ["minecraft:spider_angry"]
         },
         "add": {
-          "component_groups": [
-            "minecraft:spider_neutral"
-          ]
+          "component_groups": ["minecraft:spider_neutral"]
         }
       }
     }

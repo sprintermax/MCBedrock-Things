@@ -1,23 +1,23 @@
 {
-	"format_version": 2,
-	"header": {
-		"description": "Custom Statue Behavior Pack",
-		"name": "Custom Statue",
-		"uuid": "6b9235a6-4e30-11ec-81d3-0242ac130003",
-		"version": [ 1, 0, 0 ],
-		"min_engine_version": [ 1, 17, 40 ]
-	},
-	"modules": [
-		{
-			"uuid": "6b9234de-4e30-11ec-81d3-0242ac130003",
-			"type": "data",
-			"version": [ 1, 0, 0 ]
-		}
-	],
-	"dependencies": [
-		{
-			"uuid": "6b922f5c-4e30-11ec-81d3-0242ac130003",
-			"version": [ 1, 0, 0 ]
-		}
-	]
+  "format_version": 2,
+  "header": {
+    "description": "Custom Statue Behavior Pack",
+    "name": "Custom Statue",
+    "uuid": "6b9235a6-4e30-11ec-81d3-0242ac130003",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 17, 40]
+  },
+  "modules": [
+    {
+      "uuid": "6b9234de-4e30-11ec-81d3-0242ac130003",
+      "type": "data",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "6b922f5c-4e30-11ec-81d3-0242ac130003",
+      "version": [1, 0, 0]
+    }
+  ]
 }

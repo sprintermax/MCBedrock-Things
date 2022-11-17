@@ -28,12 +28,14 @@
       "animation_controllers": [
         { "move": "controller.animation.tyrannosaur.move" },
         { "roar": "controller.animation.tyrannosaur.roar" },
-        { "walking_animation": "controller.animation.tyrannosaur.walking_animation" },
+        {
+          "walking_animation": "controller.animation.tyrannosaur.walking_animation"
+        },
         { "tyrannosaur_attack": "controller.animation.tyrannosaur_attack" }
       ],
-      "render_controllers": [ "controller.render.tyrannosaur" ],
+      "render_controllers": ["controller.render.tyrannosaur"],
       "locators": {
-        "lead": { "head": [ 0.0, 20.0, -8.0 ] }
+        "lead": { "head": [0.0, 20.0, -8.0] }
       },
       "spawn_egg": {
         "base_color": "#8B4513",

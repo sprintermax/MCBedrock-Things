@@ -1,16 +1,16 @@
 {
-	"format_version": "1.8.0",
-	"animation_controllers": {
-		"controller.animation.gust.spin": {
-			"states": {
-				"default": {
-					"animations": [
-						{
-							"spin": []
-						}
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.gust.spin": {
+      "states": {
+        "default": {
+          "animations": [
+            {
+              "spin": []
+            }
+          ]
+        }
+      }
+    }
+  }
 }

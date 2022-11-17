@@ -1,329 +1,241 @@
 {
-	"format_version": "1.17.20",
-	"minecraft:block": {
-		"description": {
-			"identifier": "spmax:proptest_block",
-			"properties": {
-				"spmax:property_to_change": [
-					1,
-					2,
-					3,
-					4,
-					5,
-					6,
-					7,
-					8,
-					9
-				],
-				"spmax:property_two": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_three": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_four": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_five": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_six": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_seven": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_eight": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_nine": [
-					0,
-					1,
-					2,
-					3,
-					4
-				],
-				"spmax:property_ten": [
-					0,
-					1,
-					2,
-					3,
-					4
-				]
-			}
-		},
-		"components": {
-			"minecraft:creative_category": {
-				"category": "construction"
-			},
-			"minecraft:unit_cube": {},
-			"minecraft:on_interact": {
-				"event": "spmax:test_update"
-			},
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "missing"
-				}
-			}
-		},
-		"permutations": [
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 1",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "command_block"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 2",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "enchanting_table_top"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 3",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "end_stone"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 4",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "stone"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 5",
-				"components": {
-					"minecraft:entity_collision": {
-						"size": [
-							0,
-							0,
-							0
-						]
-					},
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "slime_block",
-							"render_method": "blend"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 6",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "redstone_ore"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 7",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "bedrock"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 8",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "cobblestone"
-						}
-					}
-				}
-			},
-			{
-				"condition": "query.block_property('spmax:property_to_change') == 9",
-				"components": {
-					"minecraft:material_instances": {
-						"*": {
-							"texture": "brick"
-						}
-					}
-				}
-			}
-		],
-		"events": {
-			"spmax:test_update": {
-				"sequence": [
-					{
-						"condition": "!query.is_sneaking",
-						"set_block_property": {
-							"spmax:property_to_change": "query.block_property('spmax:property_to_change') == 9 ? 1 : query.block_property('spmax:property_to_change')+1"
-						},
-						"run_command": {
-							"target": "other",
-							"command": [
-								"title @s actionbar property_to_change changed"
-							]
-						}
-					},
-					{
-						"condition": "query.is_sneaking",
-						"sequence": [
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 1",
-								"set_block_property": {
-									"spmax:property_two": "query.block_property('spmax:property_two') == 4 ? 0 : query.block_property('spmax:property_two')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_two changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 2",
-								"set_block_property": {
-									"spmax:property_three": "query.block_property('spmax:property_three') == 4 ? 0 : query.block_property('spmax:property_three')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_three changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 3",
-								"set_block_property": {
-									"spmax:property_four": "query.block_property('spmax:property_four') == 4 ? 0 : query.block_property('spmax:property_four')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_four changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 4",
-								"set_block_property": {
-									"spmax:property_five": "query.block_property('spmax:property_five') == 4 ? 0 : query.block_property('spmax:property_five')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_five changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 5",
-								"set_block_property": {
-									"spmax:property_six": "query.block_property('spmax:property_six') == 4 ? 0 : query.block_property('spmax:property_six')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_six changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 6",
-								"set_block_property": {
-									"spmax:property_seven": "query.block_property('spmax:property_seven') == 4 ? 0 : query.block_property('spmax:property_seven')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_seven changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 7",
-								"set_block_property": {
-									"spmax:property_eight": "query.block_property('spmax:property_eight') == 4 ? 0 : query.block_property('spmax:property_eight')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_eight changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 8",
-								"set_block_property": {
-									"spmax:property_nine": "query.block_property('spmax:property_nine') == 4 ? 0 : query.block_property('spmax:property_nine')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_nine changed"
-									]
-								}
-							},
-							{
-								"condition": "query.block_property('spmax:property_to_change') == 9",
-								"set_block_property": {
-									"spmax:property_ten": "query.block_property('spmax:property_ten') == 4 ? 0 : query.block_property('spmax:property_ten')+1"
-								},
-								"run_command": {
-									"target": "other",
-									"command": [
-										"title @s actionbar property_ten changed"
-									]
-								}
-							}
-						]
-					}
-				]
-			}
-		}
-	}
+  "format_version": "1.17.20",
+  "minecraft:block": {
+    "description": {
+      "identifier": "spmax:proptest_block",
+      "properties": {
+        "spmax:property_to_change": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        "spmax:property_two": [0, 1, 2, 3, 4],
+        "spmax:property_three": [0, 1, 2, 3, 4],
+        "spmax:property_four": [0, 1, 2, 3, 4],
+        "spmax:property_five": [0, 1, 2, 3, 4],
+        "spmax:property_six": [0, 1, 2, 3, 4],
+        "spmax:property_seven": [0, 1, 2, 3, 4],
+        "spmax:property_eight": [0, 1, 2, 3, 4],
+        "spmax:property_nine": [0, 1, 2, 3, 4],
+        "spmax:property_ten": [0, 1, 2, 3, 4]
+      }
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "category": "construction"
+      },
+      "minecraft:unit_cube": {},
+      "minecraft:on_interact": {
+        "event": "spmax:test_update"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "missing"
+        }
+      }
+    },
+    "permutations": [
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 1",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "command_block"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 2",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "enchanting_table_top"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 3",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "end_stone"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 4",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "stone"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 5",
+        "components": {
+          "minecraft:entity_collision": {
+            "size": [0, 0, 0]
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "slime_block",
+              "render_method": "blend"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 6",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "redstone_ore"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 7",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bedrock"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 8",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "cobblestone"
+            }
+          }
+        }
+      },
+      {
+        "condition": "query.block_property('spmax:property_to_change') == 9",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "brick"
+            }
+          }
+        }
+      }
+    ],
+    "events": {
+      "spmax:test_update": {
+        "sequence": [
+          {
+            "condition": "!query.is_sneaking",
+            "set_block_property": {
+              "spmax:property_to_change": "query.block_property('spmax:property_to_change') == 9 ? 1 : query.block_property('spmax:property_to_change')+1"
+            },
+            "run_command": {
+              "target": "other",
+              "command": ["title @s actionbar property_to_change changed"]
+            }
+          },
+          {
+            "condition": "query.is_sneaking",
+            "sequence": [
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 1",
+                "set_block_property": {
+                  "spmax:property_two": "query.block_property('spmax:property_two') == 4 ? 0 : query.block_property('spmax:property_two')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_two changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 2",
+                "set_block_property": {
+                  "spmax:property_three": "query.block_property('spmax:property_three') == 4 ? 0 : query.block_property('spmax:property_three')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_three changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 3",
+                "set_block_property": {
+                  "spmax:property_four": "query.block_property('spmax:property_four') == 4 ? 0 : query.block_property('spmax:property_four')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_four changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 4",
+                "set_block_property": {
+                  "spmax:property_five": "query.block_property('spmax:property_five') == 4 ? 0 : query.block_property('spmax:property_five')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_five changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 5",
+                "set_block_property": {
+                  "spmax:property_six": "query.block_property('spmax:property_six') == 4 ? 0 : query.block_property('spmax:property_six')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_six changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 6",
+                "set_block_property": {
+                  "spmax:property_seven": "query.block_property('spmax:property_seven') == 4 ? 0 : query.block_property('spmax:property_seven')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_seven changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 7",
+                "set_block_property": {
+                  "spmax:property_eight": "query.block_property('spmax:property_eight') == 4 ? 0 : query.block_property('spmax:property_eight')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_eight changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 8",
+                "set_block_property": {
+                  "spmax:property_nine": "query.block_property('spmax:property_nine') == 4 ? 0 : query.block_property('spmax:property_nine')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_nine changed"]
+                }
+              },
+              {
+                "condition": "query.block_property('spmax:property_to_change') == 9",
+                "set_block_property": {
+                  "spmax:property_ten": "query.block_property('spmax:property_ten') == 4 ? 0 : query.block_property('spmax:property_ten')+1"
+                },
+                "run_command": {
+                  "target": "other",
+                  "command": ["title @s actionbar property_ten changed"]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
 }

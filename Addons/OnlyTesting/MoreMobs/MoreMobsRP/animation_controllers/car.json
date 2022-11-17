@@ -6,7 +6,7 @@
         "default": {
           "animations": {
             "car_rotate": {},
-			"car_default": {}
+            "car_default": {}
           }
         }
       }

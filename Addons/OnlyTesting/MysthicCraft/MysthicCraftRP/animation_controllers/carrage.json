@@ -1,44 +1,44 @@
 {
-	"format_version": "1.8.0",
-	"animation_controllers": {
-		"controller.animation.carrage.attach": {
-			"states": {
-				"default": {
-					"animations": [
-						{
-							"attach_off": []
-						}
-					],
-					"transitions": [
-						{
-							"attach_on": "variable.has_target == 1"
-						}
-					]
-				},
-				"attach_on": {
-					"animations": [
-						{
-							"attach_on": []
-						}
-					],
-					"transitions": [
-						{
-							"default": "variable.has_target == 0"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.carrage.wheels": {
-			"states": {
-				"default": {
-					"animations": [
-						{
-							"wheels": []
-						}
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.carrage.attach": {
+      "states": {
+        "default": {
+          "animations": [
+            {
+              "attach_off": []
+            }
+          ],
+          "transitions": [
+            {
+              "attach_on": "variable.has_target == 1"
+            }
+          ]
+        },
+        "attach_on": {
+          "animations": [
+            {
+              "attach_on": []
+            }
+          ],
+          "transitions": [
+            {
+              "default": "variable.has_target == 0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.carrage.wheels": {
+      "states": {
+        "default": {
+          "animations": [
+            {
+              "wheels": []
+            }
+          ]
+        }
+      }
+    }
+  }
 }

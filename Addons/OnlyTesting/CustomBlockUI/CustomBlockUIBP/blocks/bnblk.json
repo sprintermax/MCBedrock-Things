@@ -1,156 +1,156 @@
 {
-	"format_version": "1.17.20",
-	"minecraft:block": {
-		"description": {
-			"identifier": "spmax:bntest_block",
-			"properties": {
-				"spmax:bn_a": [ 0, 1 ],
-				"spmax:bn_b": [ 0, 1 ],
-				"spmax:bn_c": [ 0, 1 ],
-				"spmax:bn_d": [ 0, 1 ]
-			}
-		},
-		"components": {
-			"minecraft:geometry": "geometry.binaryblock",
-			"minecraft:creative_category": {
-				"category": "construction"
-			},
-			"minecraft:pick_collision": {
-				"origin": [ -8, 0, -8 ],
-				"size": [ 16, 2, 16 ]
-			},
-			"minecraft:entity_collision": {
-                "origin": [ -8, 0, -8 ],
-				"size": [ 16, 2, 16 ]
-            },
-			"minecraft:on_interact": {
-				"event": "spmax:update_d"
-			},
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "binaryblock"
-				}
-			},
-			"minecraft:part_visibility": {
-                "rules": {
-                    "b0_1": "query.block_property('spmax:bn_d') == 1",
-                    "b0_2": "query.block_property('spmax:bn_c') == 1",
-                    "b0_3": "query.block_property('spmax:bn_b') == 1",
-                    "b0_4": "query.block_property('spmax:bn_a') == 1",
+  "format_version": "1.17.20",
+  "minecraft:block": {
+    "description": {
+      "identifier": "spmax:bntest_block",
+      "properties": {
+        "spmax:bn_a": [0, 1],
+        "spmax:bn_b": [0, 1],
+        "spmax:bn_c": [0, 1],
+        "spmax:bn_d": [0, 1]
+      }
+    },
+    "components": {
+      "minecraft:geometry": "geometry.binaryblock",
+      "minecraft:creative_category": {
+        "category": "construction"
+      },
+      "minecraft:pick_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 2, 16]
+      },
+      "minecraft:entity_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 2, 16]
+      },
+      "minecraft:on_interact": {
+        "event": "spmax:update_d"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "binaryblock"
+        }
+      },
+      "minecraft:part_visibility": {
+        "rules": {
+          "b0_1": "query.block_property('spmax:bn_d') == 1",
+          "b0_2": "query.block_property('spmax:bn_c') == 1",
+          "b0_3": "query.block_property('spmax:bn_b') == 1",
+          "b0_4": "query.block_property('spmax:bn_a') == 1",
 
-					"d0_1": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
-					"d0_2": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
-					"d0_3": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
-					"d0_4": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
-					"d0_5": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
-					"d0_6": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
-					"d0_7": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
-					"d0_8": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
-					"d0_9": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
-					"d0_10": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
-					"d0_11": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
-					"d0_12": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
-					"d0_13": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
-					"d0_14": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
-					"d0_15": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
-					"d0_16": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
-					
-					"d1_1": "1",
-					"d1_2": "query.block_property('spmax:bn_d') == 1 || query.block_property('spmax:bn_c') == 1 || query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1",
-					"d1_3": "query.block_property('spmax:bn_c') == 1 || query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1",
-					"d1_4": "query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1)",
-					"d1_5": "query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1",
-					"d1_6": "query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_d') == 1) || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1)",
-					"d1_7": "query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1)",
-					"d1_8": "query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1)",
-					"d1_9": "query.block_property('spmax:bn_a') == 1",
-					"d1_10": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_d') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_c') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1)",
-					"d1_11": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_c') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1)",
-					"d1_12": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1)",
-					"d1_13": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1",
-					"d1_14": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_d') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1)",
-					"d1_15": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1",
-					"d1_16": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1"
-                }
+          "d0_1": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
+          "d0_2": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
+          "d0_3": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
+          "d0_4": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
+          "d0_5": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
+          "d0_6": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
+          "d0_7": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
+          "d0_8": "query.block_property('spmax:bn_a') == 0 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
+          "d0_9": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
+          "d0_10": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
+          "d0_11": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
+          "d0_12": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 0 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
+          "d0_13": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 0",
+          "d0_14": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 0 && query.block_property('spmax:bn_d') == 1",
+          "d0_15": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 0",
+          "d0_16": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1",
+
+          "d1_1": "1",
+          "d1_2": "query.block_property('spmax:bn_d') == 1 || query.block_property('spmax:bn_c') == 1 || query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1",
+          "d1_3": "query.block_property('spmax:bn_c') == 1 || query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1",
+          "d1_4": "query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1)",
+          "d1_5": "query.block_property('spmax:bn_b') == 1 || query.block_property('spmax:bn_a') == 1",
+          "d1_6": "query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_d') == 1) || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1)",
+          "d1_7": "query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1)",
+          "d1_8": "query.block_property('spmax:bn_a') == 1 || (query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1)",
+          "d1_9": "query.block_property('spmax:bn_a') == 1",
+          "d1_10": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_d') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_c') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1)",
+          "d1_11": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_c') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1)",
+          "d1_12": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1)",
+          "d1_13": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1",
+          "d1_14": "(query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_d') == 1) || (query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1)",
+          "d1_15": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1",
+          "d1_16": "query.block_property('spmax:bn_a') == 1 && query.block_property('spmax:bn_b') == 1 && query.block_property('spmax:bn_c') == 1 && query.block_property('spmax:bn_d') == 1"
+        }
+      }
+    },
+    "events": {
+      "spmax:update_d": {
+        "sequence": [
+          {
+            "condition": "query.block_property('spmax:bn_d') == 0",
+            "set_block_property": {
+              "spmax:bn_d": 1
             }
-		},
-		"events": {
-			"spmax:update_d": {
-				"sequence": [
-					{
-						"condition": "query.block_property('spmax:bn_d') == 0",
-						"set_block_property": {
-							"spmax:bn_d": 1
-						}
-					},
-					{
-						"condition": "query.block_property('spmax:bn_d') == 1",
-						"set_block_property": {
-							"spmax:bn_d": 0
-						},
-						"trigger": {
-							"event": "spmax:update_c"
-						}
-					}
-				]
-			},
-			"spmax:update_c": {
-				"sequence": [
-					{
-						"condition": "query.block_property('spmax:bn_c') == 0",
-						"set_block_property": {
-							"spmax:bn_c": 1
-						}
-					},
-					{
-						"condition": "query.block_property('spmax:bn_c') == 1",
-						"set_block_property": {
-							"spmax:bn_c": 0
-						},
-						"trigger": {
-							"event": "spmax:update_b"
-						}
-					}
-				]
-			},
-			"spmax:update_b": {
-				"sequence": [
-					{
-						"condition": "query.block_property('spmax:bn_b') == 0",
-						"set_block_property": {
-							"spmax:bn_b": 1
-						}
-					},
-					{
-						"condition": "query.block_property('spmax:bn_b') == 1",
-						"set_block_property": {
-							"spmax:bn_b": 0
-						},
-						"trigger": {
-							"event": "spmax:update_a"
-						}
-					}
-				]
-			},
-			"spmax:update_a": {
-				"sequence": [
-					{
-						"condition": "query.block_property('spmax:bn_a') == 0",
-						"set_block_property": {
-							"spmax:bn_a": 1
-						}
-					},
-					{
-						"condition": "query.block_property('spmax:bn_a') == 1",
-						"set_block_property": {
-							"spmax:bn_a": 0,
-							"spmax:bn_b": 0,
-							"spmax:bn_c": 0,
-							"spmax:bn_d": 0
-						}
-					}
-				]
-			}
-		}
-	}
+          },
+          {
+            "condition": "query.block_property('spmax:bn_d') == 1",
+            "set_block_property": {
+              "spmax:bn_d": 0
+            },
+            "trigger": {
+              "event": "spmax:update_c"
+            }
+          }
+        ]
+      },
+      "spmax:update_c": {
+        "sequence": [
+          {
+            "condition": "query.block_property('spmax:bn_c') == 0",
+            "set_block_property": {
+              "spmax:bn_c": 1
+            }
+          },
+          {
+            "condition": "query.block_property('spmax:bn_c') == 1",
+            "set_block_property": {
+              "spmax:bn_c": 0
+            },
+            "trigger": {
+              "event": "spmax:update_b"
+            }
+          }
+        ]
+      },
+      "spmax:update_b": {
+        "sequence": [
+          {
+            "condition": "query.block_property('spmax:bn_b') == 0",
+            "set_block_property": {
+              "spmax:bn_b": 1
+            }
+          },
+          {
+            "condition": "query.block_property('spmax:bn_b') == 1",
+            "set_block_property": {
+              "spmax:bn_b": 0
+            },
+            "trigger": {
+              "event": "spmax:update_a"
+            }
+          }
+        ]
+      },
+      "spmax:update_a": {
+        "sequence": [
+          {
+            "condition": "query.block_property('spmax:bn_a') == 0",
+            "set_block_property": {
+              "spmax:bn_a": 1
+            }
+          },
+          {
+            "condition": "query.block_property('spmax:bn_a') == 1",
+            "set_block_property": {
+              "spmax:bn_a": 0,
+              "spmax:bn_b": 0,
+              "spmax:bn_c": 0,
+              "spmax:bn_d": 0
+            }
+          }
+        ]
+      }
+    }
+  }
 }

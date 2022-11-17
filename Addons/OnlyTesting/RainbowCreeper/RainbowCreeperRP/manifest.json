@@ -1,29 +1,17 @@
 {
-	"format_version": 1,
-	"header": {
-		"description": "Rainbow Creeper",
-		"name": "Rainbow Creeper",
-		"uuid": "a52e96c2-716b-11ea-bc55-0242ac130003",
-		"version": [
-			1,
-			8,
-			0
-		],
-		"min_engine_version": [
-			1,
-			8,
-			0
-		]
-	},
-	"modules": [
-		{
-			"type": "resources",
-			"uuid": "a52e9a0a-716b-11ea-bc55-0242ac130003",
-			"version": [
-				1,
-				8,
-				0
-			]
-		}
-	]
+  "format_version": 1,
+  "header": {
+    "description": "Rainbow Creeper",
+    "name": "Rainbow Creeper",
+    "uuid": "a52e96c2-716b-11ea-bc55-0242ac130003",
+    "version": [1, 8, 0],
+    "min_engine_version": [1, 8, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "a52e9a0a-716b-11ea-bc55-0242ac130003",
+      "version": [1, 8, 0]
+    }
+  ]
 }

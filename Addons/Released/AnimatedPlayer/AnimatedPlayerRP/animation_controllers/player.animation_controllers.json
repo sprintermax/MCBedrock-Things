@@ -1,316 +1,319 @@
 {
-	"format_version" : "1.10.0",
-	"animation_controllers" : {
-		"controller.animation.player.custom_attack" : {
-			"initial_state" : "hand_attack",
-			"states" : {
-				"hand_attack" : {
-					"animations" : [ "hand_attack" ],
-					"transitions" : [
-						{
-							"sword_attack" : "query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword'"
-						},
-						{
-							"tool_attack" : "query.get_equipped_item_name == 'diamond_axe' || query.get_equipped_item_name == 'iron_axe' || query.get_equipped_item_name == 'golden_axe' || query.get_equipped_item_name == 'stone_axe' || query.get_equipped_item_name == 'wooden_axe' || query.get_equipped_item_name == 'diamond_pickaxe' || query.get_equipped_item_name == 'iron_pickaxe' || query.get_equipped_item_name == 'golden_pickaxe' || query.get_equipped_item_name == 'stone_pickaxe' || query.get_equipped_item_name == 'wooden_pickaxe'"
-						},
-						{
-							"other_attack" : "query.is_selected_item && (query.get_equipped_item_name != 'diamond_sword' && query.get_equipped_item_name != 'iron_sword' && query.get_equipped_item_name != 'golden_sword' && query.get_equipped_item_name != 'stone_sword' && query.get_equipped_item_name != 'wooden_sword' && query.get_equipped_item_name != 'diamond_axe' && query.get_equipped_item_name != 'iron_axe' && query.get_equipped_item_name != 'golden_axe' && query.get_equipped_item_name != 'stone_axe' && query.get_equipped_item_name != 'wooden_axe' && query.get_equipped_item_name != 'diamond_pickaxe' && query.get_equipped_item_name != 'iron_pickaxe' && query.get_equipped_item_name != 'golden_pickaxe' && query.get_equipped_item_name != 'stone_pickaxe' && query.get_equipped_item_name != 'wooden_pickaxe')"
-						}
-					]
-				},
-				"other_attack" : {
-					"animations" : [ "other_attack" ],
-					"transitions" : [
-						{
-							"tool_attack" : "query.get_equipped_item_name == 'diamond_axe' || query.get_equipped_item_name == 'iron_axe' || query.get_equipped_item_name == 'golden_axe' || query.get_equipped_item_name == 'stone_axe' || query.get_equipped_item_name == 'wooden_axe' || query.get_equipped_item_name == 'diamond_pickaxe' || query.get_equipped_item_name == 'iron_pickaxe' || query.get_equipped_item_name == 'golden_pickaxe' || query.get_equipped_item_name == 'stone_pickaxe' || query.get_equipped_item_name == 'wooden_pickaxe'"
-						},
-						{
-							"hand_attack" : "!query.is_selected_item"
-						},
-						{
-							"sword_attack" : "query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword'"
-						}
-					]
-				},
-				"sword_attack" : {
-					"animations" : [ "sword_attack" ],
-					"transitions" : [
-						{
-							"tool_attack" : "query.get_equipped_item_name == 'diamond_axe' || query.get_equipped_item_name == 'iron_axe' || query.get_equipped_item_name == 'golden_axe' || query.get_equipped_item_name == 'stone_axe' || query.get_equipped_item_name == 'wooden_axe' || query.get_equipped_item_name == 'diamond_pickaxe' || query.get_equipped_item_name == 'iron_pickaxe' || query.get_equipped_item_name == 'golden_pickaxe' || query.get_equipped_item_name == 'stone_pickaxe' || query.get_equipped_item_name == 'wooden_pickaxe'"
-						},
-						{
-							"hand_attack" : "!query.is_selected_item"
-						},
-						{
-							"other_attack" : "query.is_selected_item && (query.get_equipped_item_name != 'diamond_sword' && query.get_equipped_item_name != 'iron_sword' && query.get_equipped_item_name != 'golden_sword' && query.get_equipped_item_name != 'stone_sword' && query.get_equipped_item_name != 'wooden_sword' && query.get_equipped_item_name != 'diamond_axe' && query.get_equipped_item_name != 'iron_axe' && query.get_equipped_item_name != 'golden_axe' && query.get_equipped_item_name != 'stone_axe' && query.get_equipped_item_name != 'wooden_axe' && query.get_equipped_item_name != 'diamond_pickaxe' && query.get_equipped_item_name != 'iron_pickaxe' && query.get_equipped_item_name != 'golden_pickaxe' && query.get_equipped_item_name != 'stone_pickaxe' && query.get_equipped_item_name != 'wooden_pickaxe')"
-						}
-					]
-				},
-				"tool_attack" : {
-					"animations" : [ "tool_attack" ],
-					"transitions" : [
-						{
-							"sword_attack" : "query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword'"
-						},
-						{
-							"hand_attack" : "!query.is_selected_item"
-						},
-						{
-							"other_attack" : "query.is_selected_item && (query.get_equipped_item_name != 'diamond_sword' && query.get_equipped_item_name != 'iron_sword' && query.get_equipped_item_name != 'golden_sword' && query.get_equipped_item_name != 'stone_sword' && query.get_equipped_item_name != 'wooden_sword' && query.get_equipped_item_name != 'diamond_axe' && query.get_equipped_item_name != 'iron_axe' && query.get_equipped_item_name != 'golden_axe' && query.get_equipped_item_name != 'stone_axe' && query.get_equipped_item_name != 'wooden_axe' && query.get_equipped_item_name != 'diamond_pickaxe' && query.get_equipped_item_name != 'iron_pickaxe' && query.get_equipped_item_name != 'golden_pickaxe' && query.get_equipped_item_name != 'stone_pickaxe' && query.get_equipped_item_name != 'wooden_pickaxe')"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.attack_swipe" : {
-			"initial_state" : "default",
-			"states" : {
-				"default" : {
-					"transitions" : [
-						{
-							"swipe" : "!query.is_swimming && !query.is_gliding &&variable.is_third_person && variable.attack_time >= 0.25 && (query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword')"
-						}
-					]
-				},
-				"swipe" : {
-					"particle_effects" : [
-						{
-							"effect" : "sword_swipe"
-						}
-					],
-					"transitions" : [
-						{
-							"default" : "variable.attack_time <= 0.25 || !variable.is_third_person || query.is_swimming || query.is_gliding"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.look_at_target" : {
-			"initial_state" : "default",
-			"states" : {
-				"default" : {
-					"animations" : [ "look_at_target_default" ],
-					"transitions" : [
-						{
-							"gliding" : "query.is_gliding"
-						},
-						{
-							"swimming" : "query.is_swimming"
-						}
-					]
-				},
-				"gliding" : {
-					"animations" : [ "look_at_target_gliding" ],
-					"transitions" : [
-						{
-							"swimming" : "query.is_swimming"
-						},
-						{
-							"default" : "!query.is_gliding"
-						}
-					]
-				},
-				"swimming" : {
-					"animations" : [ "look_at_target_swimming" ],
-					"transitions" : [
-						{
-							"gliding" : "query.is_gliding"
-						},
-						{
-							"default" : "!query.is_swimming"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.base" : {
-			"initial_state" : "default",
-			"states" : {
-				"default" : {
-					"animations" : [
-						{
-							"look_at_target" : "!query.is_sleeping"
-						},
-						"cape",
-						"first_person_hands",
-						{
-							"move.customwalk" : "!query.is_gliding && !query.is_riding"
-						},
-						{
-							"move.customfly" : "!query.is_gliding && !query.is_on_ground && !query.is_in_water && !query.is_riding"
-						},
-						{
-							"move.customglide" : "query.is_gliding"
-						},
-						{
-							"riding.arms" : "query.is_riding"
-						},
-						{
-							"riding.legs" : "query.is_riding"
-						},
-						"holding",
-						{
-							"brandish_spear" : "variable.is_brandishing_spear"
-						},
-						{
-							"charging" : "query.is_charging"
-						},
-						{
-							"sneaking" : "query.is_sneaking && !query.is_sleeping"
-						},
-						"bob",
-						{
-							"damage_nearby_mobs" : "variable.damage_nearby_mobs"
-						},
-						{
-							"bow_and_arrow" : "query.has_target"
-						},
-						{
-							"swimming" : "variable.swim_amount > 0.0 && query.is_in_water && !query.is_gliding"
-						},
-						{
-							"swimming.legs" : "variable.swim_amount > 0.0 && query.is_in_water && !query.is_gliding"
-						},
-						{
-							"smallblock_crouch" : "variable.swim_amount > 0.0 && !query.is_in_water"
-						},
-						{
-							"use_item_progress" : "( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 ) && !variable.is_brandishing_spear"
-						},
-						{
-							"sleeping" : "query.is_sleeping && query.is_alive"
-						},
-						{
-							"shield_block_main_hand" : "query.blocking && query.get_equipped_item_name('off_hand') != 'shield' && query.get_equipped_item_name == 'shield'"
-						},
-						{
-							"shield_block_off_hand" : "query.blocking && query.get_equipped_item_name('off_hand') == 'shield'"
-						},
-						{
-							"crossbow_controller" : "variable.is_third_person && query.get_equipped_item_name == 'crossbow'"
-						},
-						{
-							"third_person_bow_equipped" : "variable.is_third_person && query.get_equipped_item_name == 'bow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0)"
-						}
-					],
-					"transitions" : [
-						{
-							"paperdoll" : "variable.is_paperdoll"
-						}
-					]
-				},
-				"paperdoll" : {
-					"animations" : [ "look_at_target_ui", "cape", "paperdoll_walk" ],
-					"transitions" : [
-						{
-							"default" : "!variable.is_paperdoll && !variable.is_first_person"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.crossbow" : {
-			"initial_state" : "default",
-			"states" : {
-				"charge" : {
-					"animations" : [ "third_person_crossbow_equipped" ],
-					"transitions" : [
-						{
-							"default" : "query.get_equipped_item_name != 'crossbow' || (query.item_remaining_use_duration <= 0.0 && !query.item_is_charged)"
-						},
-						{
-							"hold" : "query.item_is_charged"
-						}
-					]
-				},
-				"default" : {
-					"transitions" : [
-						{
-							"hold" : "query.item_is_charged"
-						},
-						{
-							"charge" : "query.item_remaining_use_duration > 0.0"
-						}
-					]
-				},
-				"hold" : {
-					"animations" : [ "crossbow_hold" ],
-					"transitions" : [
-						{
-							"default" : "query.get_equipped_item_name != 'crossbow' || (query.item_remaining_use_duration <= 0.0 && !query.item_is_charged)"
-						},
-						{
-							"charge" : "query.item_remaining_use_duration > 0.0"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.first_person_map" : {
-			"initial_state" : "default",
-			"states" : {
-				"default" : {
-					"transitions" : [
-						{
-							"one_hand" : "query.get_equipped_item_name('off_hand') == 'map' || query.get_equipped_item_name('off_hand') == 'shield'"
-						},
-						{
-							"two_hand" : "query.get_equipped_item_name('off_hand') != 'map' && query.get_equipped_item_name('off_hand') != 'shield'"
-						}
-					]
-				},
-				"one_hand" : {
-					"animations" : [
-						{
-							"first_person_map_hold_main_hand" : "query.get_equipped_item_name == 'map'"
-						},
-						{
-							"first_person_map_hold_off_hand" : "query.get_equipped_item_name('off_hand') == 'map' && (query.get_equipped_item_name == 'bow' ? !(variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0) : 1.0)"
-						}
-					],
-					"transitions" : [
-						{
-							"default" : "query.get_equipped_item_name != 'map' && query.get_equipped_item_name('off_hand') != 'map'"
-						},
-						{
-							"two_hand" : "query.get_equipped_item_name('off_hand') != 'map' && query.get_equipped_item_name('off_hand') != 'shield'"
-						}
-					]
-				},
-				"two_hand" : {
-					"animations" : [ "first_person_map_hold", "first_person_map_hold_attack" ],
-					"transitions" : [
-						{
-							"default" : "query.get_equipped_item_name != 'map' && query.get_equipped_item_name('off_hand') != 'map'"
-						},
-						{
-							"one_hand" : "query.get_equipped_item_name('off_hand') == 'map' || query.get_equipped_item_name('off_hand') == 'shield'"
-						}
-					]
-				}
-			}
-		},
-		"controller.animation.player.first_person_attack" : {
-			"initial_state" : "default",
-			"states" : {
-				"default" : {
-					"animations": [ "first_person_attack_rotation" ],
-					"transitions" : [
-						{
-							"vr_attack" : "variable.is_using_vr"
-						}
-					]
-				},
-				"vr_attack" : {
-					"animations": [ "first_person_vr_attack_rotation" ],
-					"transitions" : [
-						{
-							"default" : "!variable.is_using_vr"
-						}
-					]
-				}	
-			}
-		}
-	}
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.player.custom_attack": {
+      "initial_state": "hand_attack",
+      "states": {
+        "hand_attack": {
+          "animations": ["hand_attack"],
+          "transitions": [
+            {
+              "sword_attack": "query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword'"
+            },
+            {
+              "tool_attack": "query.get_equipped_item_name == 'diamond_axe' || query.get_equipped_item_name == 'iron_axe' || query.get_equipped_item_name == 'golden_axe' || query.get_equipped_item_name == 'stone_axe' || query.get_equipped_item_name == 'wooden_axe' || query.get_equipped_item_name == 'diamond_pickaxe' || query.get_equipped_item_name == 'iron_pickaxe' || query.get_equipped_item_name == 'golden_pickaxe' || query.get_equipped_item_name == 'stone_pickaxe' || query.get_equipped_item_name == 'wooden_pickaxe'"
+            },
+            {
+              "other_attack": "query.is_selected_item && (query.get_equipped_item_name != 'diamond_sword' && query.get_equipped_item_name != 'iron_sword' && query.get_equipped_item_name != 'golden_sword' && query.get_equipped_item_name != 'stone_sword' && query.get_equipped_item_name != 'wooden_sword' && query.get_equipped_item_name != 'diamond_axe' && query.get_equipped_item_name != 'iron_axe' && query.get_equipped_item_name != 'golden_axe' && query.get_equipped_item_name != 'stone_axe' && query.get_equipped_item_name != 'wooden_axe' && query.get_equipped_item_name != 'diamond_pickaxe' && query.get_equipped_item_name != 'iron_pickaxe' && query.get_equipped_item_name != 'golden_pickaxe' && query.get_equipped_item_name != 'stone_pickaxe' && query.get_equipped_item_name != 'wooden_pickaxe')"
+            }
+          ]
+        },
+        "other_attack": {
+          "animations": ["other_attack"],
+          "transitions": [
+            {
+              "tool_attack": "query.get_equipped_item_name == 'diamond_axe' || query.get_equipped_item_name == 'iron_axe' || query.get_equipped_item_name == 'golden_axe' || query.get_equipped_item_name == 'stone_axe' || query.get_equipped_item_name == 'wooden_axe' || query.get_equipped_item_name == 'diamond_pickaxe' || query.get_equipped_item_name == 'iron_pickaxe' || query.get_equipped_item_name == 'golden_pickaxe' || query.get_equipped_item_name == 'stone_pickaxe' || query.get_equipped_item_name == 'wooden_pickaxe'"
+            },
+            {
+              "hand_attack": "!query.is_selected_item"
+            },
+            {
+              "sword_attack": "query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword'"
+            }
+          ]
+        },
+        "sword_attack": {
+          "animations": ["sword_attack"],
+          "transitions": [
+            {
+              "tool_attack": "query.get_equipped_item_name == 'diamond_axe' || query.get_equipped_item_name == 'iron_axe' || query.get_equipped_item_name == 'golden_axe' || query.get_equipped_item_name == 'stone_axe' || query.get_equipped_item_name == 'wooden_axe' || query.get_equipped_item_name == 'diamond_pickaxe' || query.get_equipped_item_name == 'iron_pickaxe' || query.get_equipped_item_name == 'golden_pickaxe' || query.get_equipped_item_name == 'stone_pickaxe' || query.get_equipped_item_name == 'wooden_pickaxe'"
+            },
+            {
+              "hand_attack": "!query.is_selected_item"
+            },
+            {
+              "other_attack": "query.is_selected_item && (query.get_equipped_item_name != 'diamond_sword' && query.get_equipped_item_name != 'iron_sword' && query.get_equipped_item_name != 'golden_sword' && query.get_equipped_item_name != 'stone_sword' && query.get_equipped_item_name != 'wooden_sword' && query.get_equipped_item_name != 'diamond_axe' && query.get_equipped_item_name != 'iron_axe' && query.get_equipped_item_name != 'golden_axe' && query.get_equipped_item_name != 'stone_axe' && query.get_equipped_item_name != 'wooden_axe' && query.get_equipped_item_name != 'diamond_pickaxe' && query.get_equipped_item_name != 'iron_pickaxe' && query.get_equipped_item_name != 'golden_pickaxe' && query.get_equipped_item_name != 'stone_pickaxe' && query.get_equipped_item_name != 'wooden_pickaxe')"
+            }
+          ]
+        },
+        "tool_attack": {
+          "animations": ["tool_attack"],
+          "transitions": [
+            {
+              "sword_attack": "query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword'"
+            },
+            {
+              "hand_attack": "!query.is_selected_item"
+            },
+            {
+              "other_attack": "query.is_selected_item && (query.get_equipped_item_name != 'diamond_sword' && query.get_equipped_item_name != 'iron_sword' && query.get_equipped_item_name != 'golden_sword' && query.get_equipped_item_name != 'stone_sword' && query.get_equipped_item_name != 'wooden_sword' && query.get_equipped_item_name != 'diamond_axe' && query.get_equipped_item_name != 'iron_axe' && query.get_equipped_item_name != 'golden_axe' && query.get_equipped_item_name != 'stone_axe' && query.get_equipped_item_name != 'wooden_axe' && query.get_equipped_item_name != 'diamond_pickaxe' && query.get_equipped_item_name != 'iron_pickaxe' && query.get_equipped_item_name != 'golden_pickaxe' && query.get_equipped_item_name != 'stone_pickaxe' && query.get_equipped_item_name != 'wooden_pickaxe')"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.attack_swipe": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "swipe": "!query.is_swimming && !query.is_gliding &&variable.is_third_person && variable.attack_time >= 0.25 && (query.get_equipped_item_name == 'diamond_sword' || query.get_equipped_item_name == 'iron_sword' || query.get_equipped_item_name == 'golden_sword' || query.get_equipped_item_name == 'stone_sword' || query.get_equipped_item_name == 'wooden_sword')"
+            }
+          ]
+        },
+        "swipe": {
+          "particle_effects": [
+            {
+              "effect": "sword_swipe"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "variable.attack_time <= 0.25 || !variable.is_third_person || query.is_swimming || query.is_gliding"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.look_at_target": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["look_at_target_default"],
+          "transitions": [
+            {
+              "gliding": "query.is_gliding"
+            },
+            {
+              "swimming": "query.is_swimming"
+            }
+          ]
+        },
+        "gliding": {
+          "animations": ["look_at_target_gliding"],
+          "transitions": [
+            {
+              "swimming": "query.is_swimming"
+            },
+            {
+              "default": "!query.is_gliding"
+            }
+          ]
+        },
+        "swimming": {
+          "animations": ["look_at_target_swimming"],
+          "transitions": [
+            {
+              "gliding": "query.is_gliding"
+            },
+            {
+              "default": "!query.is_swimming"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.base": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": [
+            {
+              "look_at_target": "!query.is_sleeping"
+            },
+            "cape",
+            "first_person_hands",
+            {
+              "move.customwalk": "!query.is_gliding && !query.is_riding"
+            },
+            {
+              "move.customfly": "!query.is_gliding && !query.is_on_ground && !query.is_in_water && !query.is_riding"
+            },
+            {
+              "move.customglide": "query.is_gliding"
+            },
+            {
+              "riding.arms": "query.is_riding"
+            },
+            {
+              "riding.legs": "query.is_riding"
+            },
+            "holding",
+            {
+              "brandish_spear": "variable.is_brandishing_spear"
+            },
+            {
+              "charging": "query.is_charging"
+            },
+            {
+              "sneaking": "query.is_sneaking && !query.is_sleeping"
+            },
+            "bob",
+            {
+              "damage_nearby_mobs": "variable.damage_nearby_mobs"
+            },
+            {
+              "bow_and_arrow": "query.has_target"
+            },
+            {
+              "swimming": "variable.swim_amount > 0.0 && query.is_in_water && !query.is_gliding"
+            },
+            {
+              "swimming.legs": "variable.swim_amount > 0.0 && query.is_in_water && !query.is_gliding"
+            },
+            {
+              "smallblock_crouch": "variable.swim_amount > 0.0 && !query.is_in_water"
+            },
+            {
+              "use_item_progress": "( variable.use_item_interval_progress > 0.0 ) || ( variable.use_item_startup_progress > 0.0 ) && !variable.is_brandishing_spear"
+            },
+            {
+              "sleeping": "query.is_sleeping && query.is_alive"
+            },
+            {
+              "shield_block_main_hand": "query.blocking && query.get_equipped_item_name('off_hand') != 'shield' && query.get_equipped_item_name == 'shield'"
+            },
+            {
+              "shield_block_off_hand": "query.blocking && query.get_equipped_item_name('off_hand') == 'shield'"
+            },
+            {
+              "crossbow_controller": "variable.is_third_person && query.get_equipped_item_name == 'crossbow'"
+            },
+            {
+              "third_person_bow_equipped": "variable.is_third_person && query.get_equipped_item_name == 'bow' && (variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0)"
+            }
+          ],
+          "transitions": [
+            {
+              "paperdoll": "variable.is_paperdoll"
+            }
+          ]
+        },
+        "paperdoll": {
+          "animations": ["look_at_target_ui", "cape", "paperdoll_walk"],
+          "transitions": [
+            {
+              "default": "!variable.is_paperdoll && !variable.is_first_person"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.crossbow": {
+      "initial_state": "default",
+      "states": {
+        "charge": {
+          "animations": ["third_person_crossbow_equipped"],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'crossbow' || (query.item_remaining_use_duration <= 0.0 && !query.item_is_charged)"
+            },
+            {
+              "hold": "query.item_is_charged"
+            }
+          ]
+        },
+        "default": {
+          "transitions": [
+            {
+              "hold": "query.item_is_charged"
+            },
+            {
+              "charge": "query.item_remaining_use_duration > 0.0"
+            }
+          ]
+        },
+        "hold": {
+          "animations": ["crossbow_hold"],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'crossbow' || (query.item_remaining_use_duration <= 0.0 && !query.item_is_charged)"
+            },
+            {
+              "charge": "query.item_remaining_use_duration > 0.0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.first_person_map": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "one_hand": "query.get_equipped_item_name('off_hand') == 'map' || query.get_equipped_item_name('off_hand') == 'shield'"
+            },
+            {
+              "two_hand": "query.get_equipped_item_name('off_hand') != 'map' && query.get_equipped_item_name('off_hand') != 'shield'"
+            }
+          ]
+        },
+        "one_hand": {
+          "animations": [
+            {
+              "first_person_map_hold_main_hand": "query.get_equipped_item_name == 'map'"
+            },
+            {
+              "first_person_map_hold_off_hand": "query.get_equipped_item_name('off_hand') == 'map' && (query.get_equipped_item_name == 'bow' ? !(variable.item_use_normalized > 0 && variable.item_use_normalized < 1.0) : 1.0)"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'map' && query.get_equipped_item_name('off_hand') != 'map'"
+            },
+            {
+              "two_hand": "query.get_equipped_item_name('off_hand') != 'map' && query.get_equipped_item_name('off_hand') != 'shield'"
+            }
+          ]
+        },
+        "two_hand": {
+          "animations": [
+            "first_person_map_hold",
+            "first_person_map_hold_attack"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'map' && query.get_equipped_item_name('off_hand') != 'map'"
+            },
+            {
+              "one_hand": "query.get_equipped_item_name('off_hand') == 'map' || query.get_equipped_item_name('off_hand') == 'shield'"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.first_person_attack": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["first_person_attack_rotation"],
+          "transitions": [
+            {
+              "vr_attack": "variable.is_using_vr"
+            }
+          ]
+        },
+        "vr_attack": {
+          "animations": ["first_person_vr_attack_rotation"],
+          "transitions": [
+            {
+              "default": "!variable.is_using_vr"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

@@ -4,21 +4,21 @@
     "controller.animation.syclop.look_at_target": {
       "states": {
         "default": {
-          "animations": [ { "look_at_target": [] } ]
+          "animations": [{ "look_at_target": [] }]
         }
       }
     },
     "controller.animation.syclop.move": {
       "states": {
         "default": {
-          "animations": [ { "move": [] } ]
+          "animations": [{ "move": [] }]
         }
       }
     },
     "controller.animation.syclop.bob": {
       "states": {
         "default": {
-          "animations": [ { "bob": [] } ]
+          "animations": [{ "bob": [] }]
         }
       }
     }

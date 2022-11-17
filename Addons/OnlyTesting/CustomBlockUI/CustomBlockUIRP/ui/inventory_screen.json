@@ -1,32 +1,32 @@
 {
-	"crafting_screen": {
-		"modifications": [
-			{
-				"array_name": "controls",
-				"operation": "insert_front",
-				"value": {
-					"vanilla_crafting@recipe_inventory_screen_content": {
-						"bindings": [
-							{
-								"binding_name": "#crafting_label_text",
-								"binding_type": "global"
-							},
-							{
-								"binding_type": "view",
-								"source_property_name": "(#crafting_label_text = 'container.crafting')",
-								"target_property_name": "#visible"
-							}
-						]
-					}
-				}
-			},
-			{
-				"array_name": "controls",
-				"operation": "insert_front",
-				"value": {
-					"custom_screens@spmax_customblocks.blocks_screens": {}
-				}
-			}
-		]
-	}
+  "crafting_screen": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": {
+          "vanilla_crafting@recipe_inventory_screen_content": {
+            "bindings": [
+              {
+                "binding_name": "#crafting_label_text",
+                "binding_type": "global"
+              },
+              {
+                "binding_type": "view",
+                "source_property_name": "(#crafting_label_text = 'container.crafting')",
+                "target_property_name": "#visible"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": {
+          "custom_screens@spmax_customblocks.blocks_screens": {}
+        }
+      }
+    ]
+  }
 }

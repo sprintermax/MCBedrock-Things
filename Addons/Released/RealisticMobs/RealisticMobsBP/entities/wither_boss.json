@@ -3,9 +3,9 @@
     "version": 1,
 
     "components": {
-    "minecraft:scale": {
-          "value": 0.49
-        },
+      "minecraft:scale": {
+        "value": 0.49
+      },
       "minecraft:identifier": {
         "id": "minecraft:wither.boss"
       },
@@ -41,7 +41,7 @@
         "priority": 3,
         "entity_types": [
           {
-            "entity_filter": [ "player" ],
+            "entity_filter": ["player"],
             "max_dist": 70,
             "must_see": true
           }
@@ -63,14 +63,12 @@
       },
 
       "minecraft:type_family": {
-        "family": [ "skeleton", "undead", "monster" ]
+        "family": ["skeleton", "undead", "monster"]
       }
     },
 
     "events": {
-      "minecraft:entity_spawned": {
-
-      }
+      "minecraft:entity_spawned": {}
     }
   }
 }

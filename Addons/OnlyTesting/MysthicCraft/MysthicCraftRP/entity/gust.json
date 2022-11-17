@@ -16,10 +16,8 @@
       "particle_effects": {
         "dust_smoke": "mystic:dust_smoke"
       },
-      "animation_controllers": [
-        { "spin": "controller.animation.gust.spin" }
-      ],
-      "render_controllers": [ "controller.render.gust" ]
+      "animation_controllers": [{ "spin": "controller.animation.gust.spin" }],
+      "render_controllers": ["controller.render.gust"]
     }
   }
 }

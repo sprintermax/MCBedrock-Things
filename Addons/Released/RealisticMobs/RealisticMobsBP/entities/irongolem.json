@@ -4,7 +4,7 @@
 
     "component_groups": {
       "minecraft:golem_leashed": {
-          "minecraft:behavior.move_towards_restriction": {
+        "minecraft:behavior.move_towards_restriction": {
           "priority": 2,
           "speed_multiplier": 1.0
         }
@@ -12,17 +12,16 @@
     },
 
     "components": {
-    "minecraft:scale": {
-          "value": 0.78
-        },
+      "minecraft:scale": {
+        "value": 0.78
+      },
       "minecraft:identifier": {
         "id": "minecraft:irongolem"
       },
       "minecraft:type_family": {
-        "family": [ "irongolem" ]
+        "family": ["irongolem"]
       },
-	  "minecraft:nameable": {
-	  },
+      "minecraft:nameable": {},
       "minecraft:collision_box": {
         "width": 1.4,
         "height": 2.9
@@ -37,11 +36,11 @@
       "minecraft:movement": {
         "value": 0.25
       },
-     "minecraft:attack": {
-      "damage": 2
-     },
-     "minecraft:fall_damage": {
-       "value": 0.0
+      "minecraft:attack": {
+        "damage": 2
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
       },
       "minecraft:leashable": {
         "soft_distance": 4.0,
@@ -111,16 +110,12 @@
     "events": {
       "minecraft:on_leash": {
         "add": {
-          "component_groups": [
-            "minecraft:golem_leashed"
-          ]
+          "component_groups": ["minecraft:golem_leashed"]
         }
       },
       "minecraft:on_unleash": {
         "remove": {
-          "component_groups": [
-            "minecraft:golem_leashed"
-          ]
+          "component_groups": ["minecraft:golem_leashed"]
         }
       }
     }

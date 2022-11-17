@@ -3,9 +3,9 @@
     "version": 0.1,
 
     "components": {
-    "minecraft:scale": {
-          "value": 0.69
-        },
+      "minecraft:scale": {
+        "value": 0.69
+      },
       "minecraft:identifier": {
         "id": "minecraft:blaze"
       },
@@ -36,14 +36,12 @@
       "minecraft:hurt_when_wet": {
         "value": true
       },
-      "minecraft:nameable": {
-
-      },
+      "minecraft:nameable": {},
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 1,
         "entity_types": [
           {
-            "entity_filter": [ "player" ],
+            "entity_filter": ["player"],
             "max_dist": 48,
             "must_see": false
           }
@@ -74,12 +72,10 @@
         "speed_multiplier": 1.0
       },
       "minecraft:type_family": {
-        "family": [ "blaze", "monster" ]
+        "family": ["blaze", "monster"]
       }
     },
 
-    "events": {
-
-    }
+    "events": {}
   }
 }

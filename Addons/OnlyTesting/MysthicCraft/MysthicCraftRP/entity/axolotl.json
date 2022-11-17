@@ -1,36 +1,34 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "mystic:axolotl",
-			"materials": {
-				"default": "axolotl",
-				"water": "axolotl_water"
-			},
-			"textures": {
-				"default": "textures/entity/axolotl/axolotl",
-				"water": "textures/entity/axolotl/axolotl_water"
-			},
-			"animations": {
-				"move": "animation.axolotl.move",
-				"ground_move": "animation.axolotl.ground_move",
-				"look_at_target": "animation.common.look_at_target"
-			},
-			"animation_controllers": [
-				{
-					"move": "controller.animation.axolotl.move"
-				}
-			],
-			"geometry": {
-				"default": "geometry.axolotl"
-			},
-			"render_controllers": [
-				"controller.render.axolotl"
-			],
-			"spawn_egg": {
-				"base_color": "#42e5f4",
-				"overlay_color": "#278ddb"
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "mystic:axolotl",
+      "materials": {
+        "default": "axolotl",
+        "water": "axolotl_water"
+      },
+      "textures": {
+        "default": "textures/entity/axolotl/axolotl",
+        "water": "textures/entity/axolotl/axolotl_water"
+      },
+      "animations": {
+        "move": "animation.axolotl.move",
+        "ground_move": "animation.axolotl.ground_move",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "animation_controllers": [
+        {
+          "move": "controller.animation.axolotl.move"
+        }
+      ],
+      "geometry": {
+        "default": "geometry.axolotl"
+      },
+      "render_controllers": ["controller.render.axolotl"],
+      "spawn_egg": {
+        "base_color": "#42e5f4",
+        "overlay_color": "#278ddb"
+      }
+    }
+  }
 }

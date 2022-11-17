@@ -1,297 +1,267 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "mystic:forcefield",
-			"is_spawnable": true,
-			"is_summonable": true,
-			"is_experimental": false,
-			"runtime_identifier": "minecraft:shulker"
-		},
-		"component_groups": {
-			"mystic:die": {
-				"minecraft:explode": {
-					"fuseLength": 0,
-					"fuseLit": true,
-					"power": 0
-				}
-			},
-			"mystic:deactivated": {
-				"minecraft:variant": {
-					"value": 0
-				}
-			},
-			"mystic:activated": {
-				"minecraft:variant": {
-					"value": 1
-				}
-			},
-			"mystic:unpowered": {
-				"minecraft:health": {
-					"max": 25
-				}
-			},
-			"mystic:powered": {
-				"minecraft:is_shaking": {},
-				"minecraft:health": {
-					"max": 50
-				}
-			},
-			"mystic:pre_die": {
-				"minecraft:is_shaking": {},
-				"minecraft:timer": {
-					"looping": false,
-					"randomInterval": false,
-					"time": 3,
-					"time_down_event": {
-						"event": "mystic:stop_die"
-					}
-				}
-			}
-		},
-		"components": {
-			"minecraft:type_family": {
-				"family": [
-					"forcefield"
-				]
-			},
-			"minecraft:collision_box": {
-				"height": 0.5,
-				"width": 1
-			},
-			"minecraft:interact": [
-				{
-					"on_interact": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "is_variant",
-									"value": 1
-								}
-							]
-						},
-						"event": "mystic:deactivate",
-						"target": "self"
-					},
-					"spawn_items": {
-						"table": "loot_tables/mystic/loot/forcefield_deactivate.json"
-					},
-					"swing": true,
-					"play_sounds": "ignite",
-					"interact_text": "mystic.interact.deactivate"
-				},
-				{
-					"on_interact": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_equipment",
-									"domain": "hand",
-									"subject": "other",
-									"value": "ender_eye"
-								},
-								{
-									"test": "is_variant",
-									"value": 0
-								}
-							]
-						},
-						"event": "mystic:activate",
-						"target": "self"
-					},
-					"use_item": true,
-					"swing": true,
-					"play_sounds": "ignite",
-					"interact_text": "mystic.interact.activate"
-				}
-			],
-			"minecraft:damage_sensor": [
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_component",
-									"value": "minecraft:is_shaking"
-								},
-								{
-									"test": "is_variant",
-									"value": 0
-								}
-							]
-						},
-						"event": "mystic:die"
-					},
-					"deals_damage": false
-				},
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_component",
-									"operator": "not",
-									"value": "minecraft:is_shaking"
-								},
-								{
-									"test": "is_variant",
-									"value": 1
-								}
-							]
-						},
-						"event": "mystic:power_on"
-					},
-					"deals_damage": false
-				},
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_component",
-									"value": "minecraft:is_shaking"
-								},
-								{
-									"test": "is_variant",
-									"value": 1
-								}
-							]
-						},
-						"event": "mystic:power_off"
-					},
-					"deals_damage": false
-				},
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "is_variant",
-									"value": 0
-								}
-							]
-						},
-						"event": "mystic:pre_die"
-					},
-					"deals_damage": false
-				}
-			],
-			"minecraft:physics": {},
-			"minecraft:push_through": {
-				"value": 1
-			}
-		},
-		"events": {
-			"minecraft:entity_spawned": {
-				"add": {
-					"component_groups": [
-						"mystic:deactivated",
-						"mystic:unpowered"
-					]
-				}
-			},
-			"mystic:die": {
-				"add": {
-					"component_groups": [
-						"mystic:die"
-					]
-				}
-			},
-			"mystic:pre_die": {
-				"add": {
-					"component_groups": [
-						"mystic:pre_die"
-					]
-				}
-			},
-			"mystic:stop_die": {
-				"remove": {
-					"component_groups": [
-						"mystic:pre_die"
-					]
-				}
-			},
-			"mystic:activate": {
-				"add": {
-					"component_groups": [
-						"mystic:activated"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"mystic:deactivated",
-						"mystic:pre_die"
-					]
-				}
-			},
-			"mystic:deactivate": {
-				"remove": {
-					"component_groups": [
-						"mystic:activated",
-						"mystic:powered"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"mystic:deactivated",
-						"mystic:unpowered"
-					]
-				}
-			},
-			"mystic:power_on": {
-				"remove": {
-					"component_groups": [
-						"mystic:unpowered"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"mystic:powered"
-					]
-				}
-			},
-			"mystic:power_off": {
-				"remove": {
-					"component_groups": [
-						"mystic:powered"
-					]
-				},
-				"add": {
-					"component_groups": [
-						"mystic:unpowered"
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "mystic:forcefield",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:shulker"
+    },
+    "component_groups": {
+      "mystic:die": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "power": 0
+        }
+      },
+      "mystic:deactivated": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "mystic:activated": {
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "mystic:unpowered": {
+        "minecraft:health": {
+          "max": 25
+        }
+      },
+      "mystic:powered": {
+        "minecraft:is_shaking": {},
+        "minecraft:health": {
+          "max": 50
+        }
+      },
+      "mystic:pre_die": {
+        "minecraft:is_shaking": {},
+        "minecraft:timer": {
+          "looping": false,
+          "randomInterval": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "mystic:stop_die"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["forcefield"]
+      },
+      "minecraft:collision_box": {
+        "height": 0.5,
+        "width": 1
+      },
+      "minecraft:interact": [
+        {
+          "on_interact": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_variant",
+                  "value": 1
+                }
+              ]
+            },
+            "event": "mystic:deactivate",
+            "target": "self"
+          },
+          "spawn_items": {
+            "table": "loot_tables/mystic/loot/forcefield_deactivate.json"
+          },
+          "swing": true,
+          "play_sounds": "ignite",
+          "interact_text": "mystic.interact.deactivate"
+        },
+        {
+          "on_interact": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_equipment",
+                  "domain": "hand",
+                  "subject": "other",
+                  "value": "ender_eye"
+                },
+                {
+                  "test": "is_variant",
+                  "value": 0
+                }
+              ]
+            },
+            "event": "mystic:activate",
+            "target": "self"
+          },
+          "use_item": true,
+          "swing": true,
+          "play_sounds": "ignite",
+          "interact_text": "mystic.interact.activate"
+        }
+      ],
+      "minecraft:damage_sensor": [
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_component",
+                  "value": "minecraft:is_shaking"
+                },
+                {
+                  "test": "is_variant",
+                  "value": 0
+                }
+              ]
+            },
+            "event": "mystic:die"
+          },
+          "deals_damage": false
+        },
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "not",
+                  "value": "minecraft:is_shaking"
+                },
+                {
+                  "test": "is_variant",
+                  "value": 1
+                }
+              ]
+            },
+            "event": "mystic:power_on"
+          },
+          "deals_damage": false
+        },
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_component",
+                  "value": "minecraft:is_shaking"
+                },
+                {
+                  "test": "is_variant",
+                  "value": 1
+                }
+              ]
+            },
+            "event": "mystic:power_off"
+          },
+          "deals_damage": false
+        },
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_variant",
+                  "value": 0
+                }
+              ]
+            },
+            "event": "mystic:pre_die"
+          },
+          "deals_damage": false
+        }
+      ],
+      "minecraft:physics": {},
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["mystic:deactivated", "mystic:unpowered"]
+        }
+      },
+      "mystic:die": {
+        "add": {
+          "component_groups": ["mystic:die"]
+        }
+      },
+      "mystic:pre_die": {
+        "add": {
+          "component_groups": ["mystic:pre_die"]
+        }
+      },
+      "mystic:stop_die": {
+        "remove": {
+          "component_groups": ["mystic:pre_die"]
+        }
+      },
+      "mystic:activate": {
+        "add": {
+          "component_groups": ["mystic:activated"]
+        },
+        "remove": {
+          "component_groups": ["mystic:deactivated", "mystic:pre_die"]
+        }
+      },
+      "mystic:deactivate": {
+        "remove": {
+          "component_groups": ["mystic:activated", "mystic:powered"]
+        },
+        "add": {
+          "component_groups": ["mystic:deactivated", "mystic:unpowered"]
+        }
+      },
+      "mystic:power_on": {
+        "remove": {
+          "component_groups": ["mystic:unpowered"]
+        },
+        "add": {
+          "component_groups": ["mystic:powered"]
+        }
+      },
+      "mystic:power_off": {
+        "remove": {
+          "component_groups": ["mystic:powered"]
+        },
+        "add": {
+          "component_groups": ["mystic:unpowered"]
+        }
+      }
+    }
+  }
 }

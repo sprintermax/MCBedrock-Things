@@ -4,6 +4,6 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
-    "binaryblock": {"textures": "textures/blocks/binaryblock.png"}
+    "binaryblock": { "textures": "textures/blocks/binaryblock.png" }
   }
 }

@@ -1,21 +1,13 @@
 {
   "header": {
-    "version": [
-      1,
-      0,
-      0
-    ],
+    "version": [1, 0, 0],
     "description": "Blokkit Skins!",
     "name": "Blokkit Skin Pack",
     "uuid": "5fd48c5e-b777-11e7-abc4-cec278b6b50a"
   },
   "modules": [
     {
-      "version": [
-        1,
-        0,
-        0
-      ],
+      "version": [1, 0, 0],
       "type": "skin_pack",
       "uuid": "5fd49122-b777-11e7-abc4-cec278b6b50a"
     }

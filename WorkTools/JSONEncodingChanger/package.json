@@ -1,21 +1,21 @@
 {
-	"name": "jsonecdc",
-	"version": "1.0.0",
-	"main": "index.js",
-	"scripts": {
-		"pkg": "pkg --output JSONChanger ."
-	},
-	"bin": "index.js",
-	"pkg": {
-		"targets": [
-			"node10-win-x64"
-		]
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
-	"dependencies": {
-		"node-resourcehacker": "^1.2.1"
-	}
+  "name": "jsonecdc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "pkg": "pkg --output JSONChanger ."
+  },
+  "bin": "index.js",
+  "pkg": {
+    "targets": [
+      "node10-win-x64"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "node-resourcehacker": "^1.2.1"
+  }
 }

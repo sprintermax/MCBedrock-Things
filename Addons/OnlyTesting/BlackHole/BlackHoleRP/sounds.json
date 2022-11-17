@@ -1,9 +1,9 @@
 {
-	"entity_sounds": {
+  "entity_sounds": {
     "entities": {
       "sprintermax:blackhole": {
         "volume": 0,
-        "pitch": [ 0, 0 ],
+        "pitch": [0, 0],
         "events": {
           "ambient": "",
           "hurt": "",

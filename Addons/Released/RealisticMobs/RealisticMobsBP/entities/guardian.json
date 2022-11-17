@@ -2,16 +2,14 @@
   "minecraft:entity": {
     "version": 1,
     "components": {
-    "minecraft:scale": {
-          "value": 0.60
-        },
-      "minecraft:monster": {
+      "minecraft:scale": {
+        "value": 0.6
       },
+      "minecraft:monster": {},
       "minecraft:identifier": {
         "id": "minecraft:guardian"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:collision_box": {
         "width": 0.85,
         "height": 0.85
@@ -40,7 +38,7 @@
         "priority": 1,
         "entity_types": [
           {
-            "entity_filter": [ "player", "squid" ],
+            "entity_filter": ["player", "squid"],
             "max_dist": 16,
             "must_see": true
           }
@@ -53,7 +51,7 @@
       "minecraft:behavior.move_towards_restriction": {
         "priority": 5,
         "speed_multiplier": 1.0,
-        "control_flags": [ "move", "look" ]
+        "control_flags": ["move", "look"]
       },
       "minecraft:behavior.random_stroll": {
         "priority": 7,
@@ -68,7 +66,7 @@
         "priority": 9
       },
       "minecraft:type_family": {
-        "family": [ "guardian", "monster" ]
+        "family": ["guardian", "monster"]
       }
     }
   }

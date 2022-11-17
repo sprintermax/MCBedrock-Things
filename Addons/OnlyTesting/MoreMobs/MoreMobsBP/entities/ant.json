@@ -18,7 +18,7 @@
         "minecraft:scale": {
           "value": 0.15
         },
-		"minecraft:variant": {
+        "minecraft:variant": {
           "value": 0
         },
         "minecraft:movement": {
@@ -26,13 +26,13 @@
         }
       },
       "black": {
-		"minecraft:variant": {
+        "minecraft:variant": {
           "value": 1
         },
-		"minecraft:scale": {
-          "value": 0.20
+        "minecraft:scale": {
+          "value": 0.2
         },
-		"minecraft:behavior.melee_attack": {
+        "minecraft:behavior.melee_attack": {
           "priority": 3,
           "speed_multiplier": 1,
           "track_target": false
@@ -44,7 +44,7 @@
           "priority": 2,
           "entity_types": [
             {
-              "filters": { "other_with_families": [ "player" ] },
+              "filters": { "other_with_families": ["player"] },
               "max_dist": 4
             }
           ],
@@ -56,14 +56,13 @@
         }
       }
     },
-    
+
     "components": {
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "ant" ]
+        "family": ["ant"]
       },
-	  "minecraft:health": {
+      "minecraft:health": {
         "value": 1
       },
       "minecraft:navigation.walk": {
@@ -71,9 +70,7 @@
         "avoid_water": true,
         "avoid_damage_blocks": true
       },
-      "minecraft:movement.basic": {
-
-      },
+      "minecraft:movement.basic": {},
       "minecraft:breathable": {
         "totalSupply": 5,
         "suffocateTime": 0
@@ -82,8 +79,7 @@
         "width": 1.0,
         "height": 1.0
       },
-	  "minecraft:jump.static": {
-      },
+      "minecraft:jump.static": {},
       "minecraft:behavior.random_stroll": {
         "priority": 6,
         "speed_multiplier": 0.8
@@ -104,23 +100,16 @@
         "randomize": [
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
-              "component_groups": [
-                "black"
-              ]
+              "component_groups": ["black"]
             }
           },
           {
             "weight": 75,
-            "remove": {
-            },
+            "remove": {},
             "add": {
-              "component_groups": [
-                "brown"
-              ]
-
+              "component_groups": ["brown"]
             }
           }
         ]

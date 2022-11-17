@@ -1,23 +1,23 @@
 {
-	"format_version": "1.8.0",
-	"animation_controllers": {
-		"controller.animation.blackhole" : {
-			"initial_state" : "default",
-			"states" : {
-				"default" : {
-					"particle_effects" : [
-						{
-							"effect" : "blackhole_sphere_inside"
-						},
-						{
-							"effect" : "blackhole_sphere_outside"
-						},
-						{
-							"effect" : "blackhole_vortex"
-						}
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.blackhole": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "particle_effects": [
+            {
+              "effect": "blackhole_sphere_inside"
+            },
+            {
+              "effect": "blackhole_sphere_outside"
+            },
+            {
+              "effect": "blackhole_vortex"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

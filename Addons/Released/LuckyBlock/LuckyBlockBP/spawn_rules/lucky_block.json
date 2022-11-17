@@ -15,7 +15,7 @@
         "minecraft:herd": {
           "min_size": 1,
           "max_size": 1,
-          "event":"entity_born",
+          "event": "entity_born",
           "event_skip_count": 2
         }
       }

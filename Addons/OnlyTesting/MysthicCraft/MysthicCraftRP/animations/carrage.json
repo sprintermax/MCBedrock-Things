@@ -1,41 +1,29 @@
 {
-	"format_version": "1.8.0",
-	"animations": {
-		"animation.carrage.attach_off": {
-			"loop": true,
-			"bones": {
-				"attach": {
-					"rotation": [
-						10,
-						0,
-						0
-					]
-				}
-			}
-		},
-		"animation.carrage.attach_on": {
-			"loop": true,
-			"bones": {
-				"attach": {
-					"rotation": [
-						-5,
-						0,
-						0
-					]
-				}
-			}
-		},
-		"animation.carrage.wheels": {
-			"loop": true,
-			"bones": {
-				"wheels": {
-					"rotation": [
-						"query.walk_position * 24",
-						0,
-						0
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.carrage.attach_off": {
+      "loop": true,
+      "bones": {
+        "attach": {
+          "rotation": [10, 0, 0]
+        }
+      }
+    },
+    "animation.carrage.attach_on": {
+      "loop": true,
+      "bones": {
+        "attach": {
+          "rotation": [-5, 0, 0]
+        }
+      }
+    },
+    "animation.carrage.wheels": {
+      "loop": true,
+      "bones": {
+        "wheels": {
+          "rotation": ["query.walk_position * 24", 0, 0]
+        }
+      }
+    }
+  }
 }

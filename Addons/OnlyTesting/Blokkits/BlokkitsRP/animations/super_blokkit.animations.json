@@ -1,70 +1,46 @@
 {
-	"format_version": "1.8.0",
-	"animations": {
-		"animation.super_blokkit.move": {
-			"loop": true,
-			"bones": {
-				"body": {
-					"rotation": [
-						"query.modified_move_speed * 80",
-						0.0,
-						0.0
-					],
-					"position": [
-						0.0,
-						0.0,
-						"query.modified_move_speed * -2.5"
-					]
-				},
-				"rightArm": {
-					"rotation": [
-						"query.modified_move_speed * -100",
-						0.0,
-						0.0
-					],
-					"position": [
-						0.0,
-						"query.modified_move_speed * -2.5",
-						"query.modified_move_speed * -3"
-					]
-				},
-				"leftArm": {
-					"rotation": [
-						"query.modified_move_speed * -100",
-						0.0,
-						0.0
-					],
-					"position": [
-						0.0,
-						"query.modified_move_speed * -2.5",
-						"query.modified_move_speed * -3"
-					]
-				},
-				"rightLeg": {
-					"rotation": [
-						"query.modified_move_speed * 80",
-						0.0,
-						0.0
-					],
-					"position": [
-						0.0,
-						"query.modified_move_speed * 5",
-						"query.modified_move_speed * 5"
-					]
-				},
-				"leftLeg": {
-					"rotation": [
-						"query.modified_move_speed * 80",
-						0.0,
-						0.0
-					],
-					"position": [
-						0.0,
-						"query.modified_move_speed * 5",
-						"query.modified_move_speed * 5"
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.super_blokkit.move": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": ["query.modified_move_speed * 80", 0.0, 0.0],
+          "position": [0.0, 0.0, "query.modified_move_speed * -2.5"]
+        },
+        "rightArm": {
+          "rotation": ["query.modified_move_speed * -100", 0.0, 0.0],
+          "position": [
+            0.0,
+            "query.modified_move_speed * -2.5",
+            "query.modified_move_speed * -3"
+          ]
+        },
+        "leftArm": {
+          "rotation": ["query.modified_move_speed * -100", 0.0, 0.0],
+          "position": [
+            0.0,
+            "query.modified_move_speed * -2.5",
+            "query.modified_move_speed * -3"
+          ]
+        },
+        "rightLeg": {
+          "rotation": ["query.modified_move_speed * 80", 0.0, 0.0],
+          "position": [
+            0.0,
+            "query.modified_move_speed * 5",
+            "query.modified_move_speed * 5"
+          ]
+        },
+        "leftLeg": {
+          "rotation": ["query.modified_move_speed * 80", 0.0, 0.0],
+          "position": [
+            0.0,
+            "query.modified_move_speed * 5",
+            "query.modified_move_speed * 5"
+          ]
+        }
+      }
+    }
+  }
 }

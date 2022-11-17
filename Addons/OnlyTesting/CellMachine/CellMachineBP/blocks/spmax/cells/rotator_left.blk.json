@@ -1,66 +1,66 @@
 {
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"description": {
-			"identifier": "spmax:cells.rotator_left",
-			"properties": {
-				"spmax:simulation_floor": [ false, true ]
-			}
-		},
-		"components": {
-			"tag:spmax:cell": {},
-			"tag:spmax:cell.rotator_left": {},
-			"tag:spmax:cell.can_clone": {},
-			
-			"minecraft:unit_cube": {},
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "spmax:cell.rotator_left_back",
-					"render_method": "opaque"
-				},
-				"up": {
-					"texture": "spmax:cell.rotator_left_side",
-					"render_method": "opaque"
-				}
-			},
-			"minecraft:pick_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
-			},
-			"minecraft:entity_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
-			},
-			"minecraft:block_light_absorption": 0,
-			"minecraft:destroy_time": 3,
-			"minecraft:ticking": {
-				"looping": true,
-				"range": [0, 0],
-				"on_tick": {
-					"event": "spmax:on_tick",
-					"target": "self"
-				}
-			}
-		},
-		"permutations": [
-			{
-				"condition": "q.block_property('spmax:simulation_floor')",
-				"components": {
-					"tag:spmax:cell.simulation_floor": {}
-				}
-			}
-		],
-		"events": {
-			"spmax:on_tick": {
-				"sequence": [
-					//Enables and Disables the simulation floor state based on the block below
-					{
-						"set_block_property": {
-							"spmax:simulation_floor": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor')"
-						}
-					}
-				]
-			}
-		}
-	}
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "spmax:cells.rotator_left",
+      "properties": {
+        "spmax:simulation_floor": [false, true]
+      }
+    },
+    "components": {
+      "tag:spmax:cell": {},
+      "tag:spmax:cell.rotator_left": {},
+      "tag:spmax:cell.can_clone": {},
+
+      "minecraft:unit_cube": {},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "spmax:cell.rotator_left_back",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "spmax:cell.rotator_left_side",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:pick_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:entity_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:block_light_absorption": 0,
+      "minecraft:destroy_time": 3,
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [0, 0],
+        "on_tick": {
+          "event": "spmax:on_tick",
+          "target": "self"
+        }
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_property('spmax:simulation_floor')",
+        "components": {
+          "tag:spmax:cell.simulation_floor": {}
+        }
+      }
+    ],
+    "events": {
+      "spmax:on_tick": {
+        "sequence": [
+          //Enables and Disables the simulation floor state based on the block below
+          {
+            "set_block_property": {
+              "spmax:simulation_floor": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor')"
+            }
+          }
+        ]
+      }
+    }
+  }
 }

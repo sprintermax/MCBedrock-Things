@@ -1,14 +1,14 @@
 {
-	"pools": [
-		{
-			"rolls": 1,
-			"entries": [
-				{
-					"type": "item",
-					"name": "minecraft:magma",
-					"weight": 1
-				}
-			]
-		}
-	]
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:magma",
+          "weight": 1
+        }
+      ]
+    }
+  ]
 }

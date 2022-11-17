@@ -1,24 +1,19 @@
 {
-	"format_version": "1.11.0",
-	"render_controllers": {
-		"controller.render.grass_blokkit": {
-			"arrays": {
-				"geometries": {
-					"Array.models": [
-						"Geometry.default",
-						"Geometry.tamed"
-					]
-				}
-			},
-			"geometry": "Array.models[query.is_tamed]",
-			"materials": [
-				{
-					"*": "Material.default"
-				}
-			],
-			"textures": [
-				"Texture.default"
-			]
-		}
-	}
+  "format_version": "1.11.0",
+  "render_controllers": {
+    "controller.render.grass_blokkit": {
+      "arrays": {
+        "geometries": {
+          "Array.models": ["Geometry.default", "Geometry.tamed"]
+        }
+      },
+      "geometry": "Array.models[query.is_tamed]",
+      "materials": [
+        {
+          "*": "Material.default"
+        }
+      ],
+      "textures": ["Texture.default"]
+    }
+  }
 }

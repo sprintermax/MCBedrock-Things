@@ -1,12 +1,10 @@
 {
-  "format_version":"1.8.0-beta.1",
+  "format_version": "1.8.0-beta.1",
   "render_controllers": {
     "controller.render.lucky_block": {
-      "textures": [ "Texture.default" ],
+      "textures": ["Texture.default"],
       "geometry": "Geometry.default",
-      "materials": [
-        { "*": "Material.default" }
-      ]
+      "materials": [{ "*": "Material.default" }]
     }
   }
 }

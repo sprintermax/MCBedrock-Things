@@ -1,331 +1,331 @@
 {
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"description": {
-			"identifier": "spmax:cells.cloner_test",
-			"properties": {
-				"spmax:cells.block_rotation": [ "east", "west", "north", "south" ],
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "spmax:cells.cloner_test",
+      "properties": {
+        "spmax:cells.block_rotation": ["east", "west", "north", "south"],
 
-				"spmax:cells.pull_direction_x": [ "none", "east", "west" ],
-				"spmax:cells.pull_direction_z": [ "none", "north", "south" ]
-			}
-		},
-		"components": {
-			"tag:spmax:cell": {},
-			"tag:spmax:cell.cloner": {},
-			"tag:spmax:cell.can_clone": {},
-			
-			"minecraft:unit_cube": {},
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "spmax:cell.cloner_back",
-					"render_method": "opaque"
-				},
-				"up": {
-					"texture": "spmax:cell.cloner_side",
-					"render_method": "opaque"
-				}
-			},
-			"minecraft:pick_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
-			},
-			"minecraft:entity_collision": {
-				"origin": [-8, 0, -8],
-				"size": [16, 16, 16]
-			},
-			"minecraft:block_light_absorption": 0,
-			"minecraft:destroy_time": 3,
-			"minecraft:on_player_placing": {
-				"event": "spmax:initial_rotation"
-			},
-			"minecraft:ticking": {
-				"looping": true,
-				"range": [0.25, 0.25],
-				"on_tick": {
-					"event": "spmax:on_tick",
-					"target": "self",
-					"condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor')"
-				}
-			}
-		},
-		"permutations": [
-			{
-				"condition": "q.block_property('spmax:cells.pull_direction_x') != 'none' || q.block_property('spmax:cells.pull_direction_z') != 'none'",
-				"components": {
-					"tag:spmax:cell.mover": {}
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.block_rotation') == 'east'",
-				"components": {
-					"tag:spmax:cell.facing_east": {},
-					"minecraft:rotation": [0, 0, 0]
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.block_rotation') == 'west'",
-				"components": {
-					"tag:spmax:cell.facing_west": {},
-					"minecraft:rotation": [0, 180, 0]
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.block_rotation') == 'north'",
-				"components": {
-					"tag:spmax:cell.facing_north": {},
-					"minecraft:rotation": [0, 90, 0]
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.block_rotation') == 'south'",
-				"components": {
-					"tag:spmax:cell.facing_south": {},
-					"minecraft:rotation": [0, 270, 0]
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.pull_direction_x') == 'east'",
-				"components": {
-					"tag:spmax:cell.move_to_east": {}
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.pull_direction_x') == 'west'",
-				"components": {
-					"tag:spmax:cell.move_to_west": {}
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.pull_direction_z') == 'north'",
-				"components": {
-					"tag:spmax:cell.move_to_north": {}
-				}
-			},
-			{
-				"condition": "q.block_property('spmax:cells.pull_direction_z') == 'south'",
-				"components": {
-					"tag:spmax:cell.move_to_south": {}
-				}
-			}
-		],
-		"events": {
-			"spmax:initial_rotation": {
-				"set_block_property": {
-					"spmax:cells.block_rotation": "q.cardinal_facing_2d == 5 ? 'south' : (q.cardinal_facing_2d == 4 ? 'north' : (q.cardinal_facing_2d == 3 ? 'west' : 'east'))"
-				}
-			},
-			"spmax:on_tick": {
-				"sequence": [
-					//Process the Rotator Blocks
-					//Rotator Anti-Clockwise
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.rotator_left')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,-1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.rotator_left')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.rotator_left')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(-1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.rotator_left')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.rotator_left')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
-						}
-					},
-					//Rotator Clockwise
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.rotator_right')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,-1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.rotator_right')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.rotator_right')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(-1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.rotator_right')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.rotator_right')",
-						"set_block_property": {
-							"spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
-						}
-					},
-					//  Trigger to Process the Pull
-					{
-						"trigger": {
-							"event": "spmax:process_pulls",
-							"target": "self"
-						}
-					}
-				]
-			},
-			"spmax:process_pulls": {
-				"sequence": [
-					//Process the Pulls
-					//As this block isn't a mover, they will aways set the current direction to none
-					{
-						"set_block_property": {
-							"spmax:cells.pull_direction_x": "'none'",
-							"spmax:cells.pull_direction_z": "'none'"
-						}
-					},
-					//Check the block behind to overwrite the Pull Direction
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.mover') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.move_to_north')",
-						"set_block_property": {
-							"spmax:cells.pull_direction_z": "'north'"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,-1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.mover') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.move_to_south')",
-						"set_block_property": {
-							"spmax:cells.pull_direction_z": "'south'"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.mover') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.move_to_west')",
-						"set_block_property": {
-							"spmax:cells.pull_direction_x": "'west'"
-						}
-					},
-					{
-						"condition": "q.block_neighbor_has_any_tag(-1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.mover') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.move_to_east')",
-						"set_block_property": {
-							"spmax:cells.pull_direction_x": "'east'"
-						}
-					},
-					//Trigger to Process the Moves if the block bellow allow the simulation
-					{
-						"condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor')",
-						"trigger": {
-							"event": "spmax:process_moves",
-							"target": "self"
-						}
-					}
-				]
-			},
-			"spmax:process_moves": {
-				"sequence": [
-					// Delete when next is Trasher or Enemy
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_z') == 'north' && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.trasher','spmax:cell.enemy')",
-						"set_block": {
-							"block_type": "minecraft:air"
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_z') == 'south' && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.trasher','spmax:cell.enemy')",
-						"set_block": {
-							"block_type": "minecraft:air"
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_x') == 'west' && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.trasher','spmax:cell.enemy')",
-						"set_block": {
-							"block_type": "minecraft:air"
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_x') == 'east' && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.trasher','spmax:cell.enemy')",
-						"set_block": {
-							"block_type": "minecraft:air"
-						}
-					},
+        "spmax:cells.pull_direction_x": ["none", "east", "west"],
+        "spmax:cells.pull_direction_z": ["none", "north", "south"]
+      }
+    },
+    "components": {
+      "tag:spmax:cell": {},
+      "tag:spmax:cell.cloner": {},
+      "tag:spmax:cell.can_clone": {},
 
-					// Move to the correct direction
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_z') == 'north' && !q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell')",
-						"run_command": {
-							"command": ["clone ~ ~ ~ ~ ~ ~ ~ ~ ~-1 replace move"]
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_z') == 'south' && !q.block_neighbor_has_any_tag(0,0,1,'spmax:cell')",
-						"run_command": {
-							"command": ["clone ~ ~ ~ ~ ~ ~ ~ ~ ~1 replace move"]
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_x') == 'west' && !q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell')",
-						"run_command": {
-							"command": ["clone ~ ~ ~ ~ ~ ~ ~-1 ~ ~ replace move"]
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.pull_direction_x') == 'east' && !q.block_neighbor_has_any_tag(1,0,0,'spmax:cell')",
-						"run_command": {
-							"command": ["clone ~ ~ ~ ~ ~ ~ ~1 ~ ~ replace move"]
-						}
-					},
+      "minecraft:unit_cube": {},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "spmax:cell.cloner_back",
+          "render_method": "opaque"
+        },
+        "up": {
+          "texture": "spmax:cell.cloner_side",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:pick_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:entity_collision": {
+        "origin": [-8, 0, -8],
+        "size": [16, 16, 16]
+      },
+      "minecraft:block_light_absorption": 0,
+      "minecraft:destroy_time": 3,
+      "minecraft:on_player_placing": {
+        "event": "spmax:initial_rotation"
+      },
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [0.25, 0.25],
+        "on_tick": {
+          "event": "spmax:on_tick",
+          "target": "self",
+          "condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor')"
+        }
+      }
+    },
+    "permutations": [
+      {
+        "condition": "q.block_property('spmax:cells.pull_direction_x') != 'none' || q.block_property('spmax:cells.pull_direction_z') != 'none'",
+        "components": {
+          "tag:spmax:cell.mover": {}
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.block_rotation') == 'east'",
+        "components": {
+          "tag:spmax:cell.facing_east": {},
+          "minecraft:rotation": [0, 0, 0]
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.block_rotation') == 'west'",
+        "components": {
+          "tag:spmax:cell.facing_west": {},
+          "minecraft:rotation": [0, 180, 0]
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.block_rotation') == 'north'",
+        "components": {
+          "tag:spmax:cell.facing_north": {},
+          "minecraft:rotation": [0, 90, 0]
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.block_rotation') == 'south'",
+        "components": {
+          "tag:spmax:cell.facing_south": {},
+          "minecraft:rotation": [0, 270, 0]
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.pull_direction_x') == 'east'",
+        "components": {
+          "tag:spmax:cell.move_to_east": {}
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.pull_direction_x') == 'west'",
+        "components": {
+          "tag:spmax:cell.move_to_west": {}
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.pull_direction_z') == 'north'",
+        "components": {
+          "tag:spmax:cell.move_to_north": {}
+        }
+      },
+      {
+        "condition": "q.block_property('spmax:cells.pull_direction_z') == 'south'",
+        "components": {
+          "tag:spmax:cell.move_to_south": {}
+        }
+      }
+    ],
+    "events": {
+      "spmax:initial_rotation": {
+        "set_block_property": {
+          "spmax:cells.block_rotation": "q.cardinal_facing_2d == 5 ? 'south' : (q.cardinal_facing_2d == 4 ? 'north' : (q.cardinal_facing_2d == 3 ? 'west' : 'east'))"
+        }
+      },
+      "spmax:on_tick": {
+        "sequence": [
+          //Process the Rotator Blocks
+          //Rotator Anti-Clockwise
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.rotator_left')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,-1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.rotator_left')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.rotator_left')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(-1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.rotator_left')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.rotator_left')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'west' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'south' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'east' : 'north'))"
+            }
+          },
+          //Rotator Clockwise
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.rotator_right')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,-1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.rotator_right')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.rotator_right')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(-1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.rotator_right')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.rotator_right')",
+            "set_block_property": {
+              "spmax:cells.block_rotation": "q.block_property('spmax:cells.block_rotation') == 'north' ? 'east' : (q.block_property('spmax:cells.block_rotation') == 'west' ? 'north' : (q.block_property('spmax:cells.block_rotation') == 'south' ? 'west' : 'south'))"
+            }
+          },
+          //  Trigger to Process the Pull
+          {
+            "trigger": {
+              "event": "spmax:process_pulls",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "spmax:process_pulls": {
+        "sequence": [
+          //Process the Pulls
+          //As this block isn't a mover, they will aways set the current direction to none
+          {
+            "set_block_property": {
+              "spmax:cells.pull_direction_x": "'none'",
+              "spmax:cells.pull_direction_z": "'none'"
+            }
+          },
+          //Check the block behind to overwrite the Pull Direction
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.mover') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.move_to_north')",
+            "set_block_property": {
+              "spmax:cells.pull_direction_z": "'north'"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,-1,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.mover') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.move_to_south')",
+            "set_block_property": {
+              "spmax:cells.pull_direction_z": "'south'"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.mover') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.move_to_west')",
+            "set_block_property": {
+              "spmax:cells.pull_direction_x": "'west'"
+            }
+          },
+          {
+            "condition": "q.block_neighbor_has_any_tag(-1,-1,0,'spmax:cell.simulation_floor') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.mover') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.move_to_east')",
+            "set_block_property": {
+              "spmax:cells.pull_direction_x": "'east'"
+            }
+          },
+          //Trigger to Process the Moves if the block bellow allow the simulation
+          {
+            "condition": "q.block_neighbor_has_any_tag(0,-1,0,'spmax:cell.simulation_floor')",
+            "trigger": {
+              "event": "spmax:process_moves",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "spmax:process_moves": {
+        "sequence": [
+          // Delete when next is Trasher or Enemy
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_z') == 'north' && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.trasher','spmax:cell.enemy')",
+            "set_block": {
+              "block_type": "minecraft:air"
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_z') == 'south' && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.trasher','spmax:cell.enemy')",
+            "set_block": {
+              "block_type": "minecraft:air"
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_x') == 'west' && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.trasher','spmax:cell.enemy')",
+            "set_block": {
+              "block_type": "minecraft:air"
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_x') == 'east' && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.trasher','spmax:cell.enemy')",
+            "set_block": {
+              "block_type": "minecraft:air"
+            }
+          },
 
-					// Trigger to Process the Clonning
-					{
-						"trigger": {
-							"event": "spmax:process_clone",
-							"target": "self"
-						}
-					}
-				]
-			},
-			"spmax:process_clone": {
-				"sequence": [
-					//clone the block behind
-					{
-						"condition": "q.block_property('spmax:cells.block_rotation') == 'north' && !q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.can_clone')",
-						"run_command": {
-							"command": ["clone ~ ~ ~1 ~ ~ ~1 ~ ~ ~-1"]
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.block_rotation') == 'south' && !q.block_neighbor_has_any_tag(0,0,1,'spmax:cell') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.can_clone')",
-						"run_command": {
-							"command": ["clone ~ ~ ~-1 ~ ~ ~-1 ~ ~ ~1"]
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.block_rotation') == 'west' && !q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.can_clone')",
-						"run_command": {
-							"command": ["clone ~1 ~ ~ ~1 ~ ~ ~-1 ~ ~"]
-						}
-					},
-					{
-						"condition": "q.block_property('spmax:cells.block_rotation') == 'east' && !q.block_neighbor_has_any_tag(1,0,0,'spmax:cell') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.can_clone')",
-						"run_command": {
-							"command": ["clone ~-1 ~ ~ ~-1 ~ ~ ~1 ~ ~"]
-						}
-					}
-				]
-			}
-		}
-	}
+          // Move to the correct direction
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_z') == 'north' && !q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell')",
+            "run_command": {
+              "command": ["clone ~ ~ ~ ~ ~ ~ ~ ~ ~-1 replace move"]
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_z') == 'south' && !q.block_neighbor_has_any_tag(0,0,1,'spmax:cell')",
+            "run_command": {
+              "command": ["clone ~ ~ ~ ~ ~ ~ ~ ~ ~1 replace move"]
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_x') == 'west' && !q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell')",
+            "run_command": {
+              "command": ["clone ~ ~ ~ ~ ~ ~ ~-1 ~ ~ replace move"]
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.pull_direction_x') == 'east' && !q.block_neighbor_has_any_tag(1,0,0,'spmax:cell')",
+            "run_command": {
+              "command": ["clone ~ ~ ~ ~ ~ ~ ~1 ~ ~ replace move"]
+            }
+          },
+
+          // Trigger to Process the Clonning
+          {
+            "trigger": {
+              "event": "spmax:process_clone",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "spmax:process_clone": {
+        "sequence": [
+          //clone the block behind
+          {
+            "condition": "q.block_property('spmax:cells.block_rotation') == 'north' && !q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell') && q.block_neighbor_has_any_tag(0,0,1,'spmax:cell.can_clone')",
+            "run_command": {
+              "command": ["clone ~ ~ ~1 ~ ~ ~1 ~ ~ ~-1"]
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.block_rotation') == 'south' && !q.block_neighbor_has_any_tag(0,0,1,'spmax:cell') && q.block_neighbor_has_any_tag(0,0,-1,'spmax:cell.can_clone')",
+            "run_command": {
+              "command": ["clone ~ ~ ~-1 ~ ~ ~-1 ~ ~ ~1"]
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.block_rotation') == 'west' && !q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell') && q.block_neighbor_has_any_tag(1,0,0,'spmax:cell.can_clone')",
+            "run_command": {
+              "command": ["clone ~1 ~ ~ ~1 ~ ~ ~-1 ~ ~"]
+            }
+          },
+          {
+            "condition": "q.block_property('spmax:cells.block_rotation') == 'east' && !q.block_neighbor_has_any_tag(1,0,0,'spmax:cell') && q.block_neighbor_has_any_tag(-1,0,0,'spmax:cell.can_clone')",
+            "run_command": {
+              "command": ["clone ~-1 ~ ~ ~-1 ~ ~ ~1 ~ ~"]
+            }
+          }
+        ]
+      }
+    }
+  }
 }

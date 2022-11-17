@@ -1,41 +1,25 @@
 {
-	"format_version": 2,
-	"header": {
-		"name": "TestPipe",
-		"description": "TestPipe",
-		"pack_scope": "world",
-		"min_engine_version": [
-			1,
-			17,
-			0
-		],
-		"uuid": "3518fa1c-fd60-11eb-9a03-0242ac130003",
-		"version": [
-			1,
-			0,
-			0
-		]
-	},
-	"modules": [
-		{
-			"description": "TestPipe",
-			"type": "resources",
-			"uuid": "3518fc4c-fd60-11eb-9a03-0242ac130003",
-			"version": [
-				1,
-				0,
-				0
-			]
-		}
-	],
-	"dependencies": [
-		{
-			"uuid": "3518fd3c-fd60-11eb-9a03-0242ac130003",
-			"version": [
-				1,
-				0,
-				0
-			]
-		}
-	]
+  "format_version": 2,
+  "header": {
+    "name": "TestPipe",
+    "description": "TestPipe",
+    "pack_scope": "world",
+    "min_engine_version": [1, 17, 0],
+    "uuid": "3518fa1c-fd60-11eb-9a03-0242ac130003",
+    "version": [1, 0, 0]
+  },
+  "modules": [
+    {
+      "description": "TestPipe",
+      "type": "resources",
+      "uuid": "3518fc4c-fd60-11eb-9a03-0242ac130003",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "3518fd3c-fd60-11eb-9a03-0242ac130003",
+      "version": [1, 0, 0]
+    }
+  ]
 }

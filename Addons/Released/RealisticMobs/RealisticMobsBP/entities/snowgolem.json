@@ -4,29 +4,27 @@
 
     "component_groups": {
       "minecraft:snowman_leashed": {
-          "minecraft:behavior.move_towards_restriction": {
+        "minecraft:behavior.move_towards_restriction": {
           "priority": 2,
           "speed_multiplier": 1.0
         }
       },
       "minecraft:snowman_sheared": {
-        "minecraft:is_sheared": {
-        }
-      }      
+        "minecraft:is_sheared": {}
+      }
     },
 
     "components": {
-    "minecraft:scale": {
-          "value": 0.67
-        },
+      "minecraft:scale": {
+        "value": 0.67
+      },
       "minecraft:identifier": {
         "id": "minecraft:snowgolem"
       },
       "minecraft:type_family": {
-        "family": [ "snowgolem" ]
+        "family": ["snowgolem"]
       },
-	  "minecraft:nameable": {
-	  },
+      "minecraft:nameable": {},
       "minecraft:collision_box": {
         "width": 0.4,
         "height": 1.8
@@ -41,11 +39,11 @@
       "minecraft:movement": {
         "value": 0.2
       },
-     "minecraft:attack": {
-      "damage": 2
-     },
-     "minecraft:fall_damage": {
-       "value": 0.0
+      "minecraft:attack": {
+        "damage": 2
+      },
+      "minecraft:fall_damage": {
+        "value": 0.0
       },
       "minecraft:interact": [
         {
@@ -64,7 +62,7 @@
           }
         }
       ],
-      
+
       "minecraft:leashable": {
         "soft_distance": 4.0,
         "hard_distance": 6.0,
@@ -107,26 +105,19 @@
 
     "events": {
       "minecraft:on_sheared": {
-        "remove": {
-        },
+        "remove": {},
         "add": {
-          "component_groups": [
-            "minecraft:snowman_sheared"
-          ]
+          "component_groups": ["minecraft:snowman_sheared"]
         }
       },
       "minecraft:on_leash": {
         "add": {
-          "component_groups": [
-            "minecraft:snowman_leashed"
-          ]
+          "component_groups": ["minecraft:snowman_leashed"]
         }
       },
       "minecraft:on_unleash": {
         "remove": {
-          "component_groups": [
-            "minecraft:snowman_leashed"
-          ]
+          "component_groups": ["minecraft:snowman_leashed"]
         }
       }
     }

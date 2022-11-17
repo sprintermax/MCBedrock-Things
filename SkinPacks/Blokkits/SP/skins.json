@@ -6,31 +6,31 @@
       "texture": "Diamond.png",
       "type": "free"
     },
-	{
+    {
       "localization_name": "Stone",
       "geometry": "geometry.Blokkit.Big",
       "texture": "Stone.png",
       "type": "free"
     },
-	{
+    {
       "localization_name": "Iron",
       "geometry": "geometry.Blokkit.Big",
       "texture": "Iron.png",
       "type": "free"
     },
-	{
+    {
       "localization_name": "Wood",
       "geometry": "geometry.Blokkit.Big",
       "texture": "Wood.png",
       "type": "free"
     },
-	{
+    {
       "localization_name": "Gold",
       "geometry": "geometry.Blokkit.Big",
       "texture": "Gold.png",
       "type": "free"
     },
-	{
+    {
       "localization_name": "Grass",
       "geometry": "geometry.Blokkit.Big",
       "texture": "Grass.png",

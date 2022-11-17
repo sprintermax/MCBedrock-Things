@@ -1,155 +1,139 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "mystic:crafting_table",
-			"runtime_identifier": "minecraft:shulker",
-			"is_spawnable": true,
-			"is_summonable": true,
-			"is_experimental": true
-		},
-		"component_groups": {
-			"mystic:disabled": {
-				"minecraft:is_shaking": {},
-				"minecraft:timer": {
-					"looping": false,
-					"randomInterval": false,
-					"time": 2,
-					"time_down_event": {
-						"event": "mystic:on_remove_disabled"
-					}
-				}
-			},
-			"mystic:die": {
-				"minecraft:equipment": {
-					"table": "spawn_egg_drops/crafting_table.json"
-				},
-				"minecraft:explode": {
-					"fuseLength": 0,
-					"fuseLit": true,
-					"power": 0
-				}
-			},
-			"mystic:prepare_die": {
-				"minecraft:equipment": {
-					"table": "spawn_egg_drops/crafting_table.json"
-				},
-				"minecraft:transformation": {
-					"delay": {
-						"value": 0
-					},
-					"drop_equipment": true,
-					"into": "mystic:crafting_table"
-				}
-			}
-		},
-		"components": {
-			"minecraft:type_family": {
-				"family": [
-					"crafting_table"
-				]
-			},
-			"minecraft:collision_box": {
-				"height": 1.0,
-				"width": 1.0
-			},
-			"minecraft:push_through": {
-				"value": 1.0
-			},
-			"minecraft:behavior.trade_with_player": {
-				"priority": 1
-			},
-			"minecraft:navigation.generic": {},
-			"minecraft:movement": { "value": 0 },
-			"minecraft:trade_table": {
-				"display_name": "entity.villager.crafting_table",
-				"table": "trading/crafting_table.json"
-			},
-			"minecraft:damage_sensor": [
-				{
-					"on_damage": {
-						"filters": {
-							"all_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "has_component",
-									"operator": "not",
-									"value": "minecraft:timer"
-								}
-							]
-						},
-						"event": "mystic:on_disable"
-					},
-					"deals_damage": false
-				},
-				{
-					"on_damage": {
-						"filters": {
-							"test": "is_family",
-							"subject": "other",
-							"value": "player"
-						},
-						"event": "mystic:on_prepare_die"
-					},
-					"deals_damage": false
-				},
-				{
-					"cause": "any",
-					"deals_damage": false
-				}
-			],
-			"minecraft:physics": {}
-		},
-		"events": {
-			"minecraft:entity_transformed": {
-				"add": {
-					"component_groups": [
-						"mystic:die"
-					]
-				}
-			},
-			"mystic:on_die": {
-				"add": {
-					"component_groups": [
-						"mystic:die"
-					]
-				}
-			},
-			"mystic:on_prepare_die": {
-				"add": {
-					"component_groups": [
-						"mystic:prepare_die"
-					]
-				}
-			},
-			"mystic:on_disable": {
-				"add": {
-					"component_groups": [
-						"mystic:disabled"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"mystic:enabled"
-					]
-				}
-			},
-			"mystic:on_remove_disabled": {
-				"add": {
-					"component_groups": [
-						"mystic:enabled"
-					]
-				},
-				"remove": {
-					"component_groups": [
-						"mystic:disabled"
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "mystic:crafting_table",
+      "runtime_identifier": "minecraft:shulker",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": true
+    },
+    "component_groups": {
+      "mystic:disabled": {
+        "minecraft:is_shaking": {},
+        "minecraft:timer": {
+          "looping": false,
+          "randomInterval": false,
+          "time": 2,
+          "time_down_event": {
+            "event": "mystic:on_remove_disabled"
+          }
+        }
+      },
+      "mystic:die": {
+        "minecraft:equipment": {
+          "table": "spawn_egg_drops/crafting_table.json"
+        },
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "power": 0
+        }
+      },
+      "mystic:prepare_die": {
+        "minecraft:equipment": {
+          "table": "spawn_egg_drops/crafting_table.json"
+        },
+        "minecraft:transformation": {
+          "delay": {
+            "value": 0
+          },
+          "drop_equipment": true,
+          "into": "mystic:crafting_table"
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["crafting_table"]
+      },
+      "minecraft:collision_box": {
+        "height": 1.0,
+        "width": 1.0
+      },
+      "minecraft:push_through": {
+        "value": 1.0
+      },
+      "minecraft:behavior.trade_with_player": {
+        "priority": 1
+      },
+      "minecraft:navigation.generic": {},
+      "minecraft:movement": { "value": 0 },
+      "minecraft:trade_table": {
+        "display_name": "entity.villager.crafting_table",
+        "table": "trading/crafting_table.json"
+      },
+      "minecraft:damage_sensor": [
+        {
+          "on_damage": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "has_component",
+                  "operator": "not",
+                  "value": "minecraft:timer"
+                }
+              ]
+            },
+            "event": "mystic:on_disable"
+          },
+          "deals_damage": false
+        },
+        {
+          "on_damage": {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "event": "mystic:on_prepare_die"
+          },
+          "deals_damage": false
+        },
+        {
+          "cause": "any",
+          "deals_damage": false
+        }
+      ],
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:entity_transformed": {
+        "add": {
+          "component_groups": ["mystic:die"]
+        }
+      },
+      "mystic:on_die": {
+        "add": {
+          "component_groups": ["mystic:die"]
+        }
+      },
+      "mystic:on_prepare_die": {
+        "add": {
+          "component_groups": ["mystic:prepare_die"]
+        }
+      },
+      "mystic:on_disable": {
+        "add": {
+          "component_groups": ["mystic:disabled"]
+        },
+        "remove": {
+          "component_groups": ["mystic:enabled"]
+        }
+      },
+      "mystic:on_remove_disabled": {
+        "add": {
+          "component_groups": ["mystic:enabled"]
+        },
+        "remove": {
+          "component_groups": ["mystic:disabled"]
+        }
+      }
+    }
+  }
 }

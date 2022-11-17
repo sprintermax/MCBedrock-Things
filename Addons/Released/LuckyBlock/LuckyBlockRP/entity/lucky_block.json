@@ -10,7 +10,7 @@
       "geometry": {
         "default": "geometry.lucky_block"
       },
-      "render_controllers": [ "controller.render.lucky_block" ],
+      "render_controllers": ["controller.render.lucky_block"],
       "spawn_egg": {
         "base_color": "#F6DB43",
         "overlay_color": "#E0970B"

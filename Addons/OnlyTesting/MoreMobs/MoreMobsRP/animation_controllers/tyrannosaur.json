@@ -1,35 +1,29 @@
 {
-  "format_version":"1.8.0-beta.1",
+  "format_version": "1.8.0-beta.1",
   "animation_controllers": {
     "controller.animation.tyrannosaur.move": {
       "states": {
         "default": {
-          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "parameters": ["Entity.Member.WalkSpeed"],
           "animations": {
             "default_pose": [],
-            "look_at_target": [
-			]
+            "look_at_target": []
           },
-          "transitions": [
-            { "sitting" : "Entity.Flags.SITTING" }
-		  ]
+          "transitions": [{ "sitting": "Entity.Flags.SITTING" }]
         },
         "sitting": {
           "animations": {
             "sitting_pose": [],
-            "look_at_target": [
-			]
+            "look_at_target": []
           },
-          "transitions": [
-            { "default" : "!Entity.Flags.SITTING" }
-		  ]
+          "transitions": [{ "default": "!Entity.Flags.SITTING" }]
         }
       }
     },
     "controller.animation.tyrannosaur.walking_animation": {
       "states": {
         "adult_walking": {
-          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "parameters": ["Entity.Member.WalkSpeed"],
           "animations": {
             "legs_animation": [
               {
@@ -44,12 +38,10 @@
               }
             ]
           },
-          "transitions": [              
-            { "baby_walking" : "Entity.Flags.TREX_BABY_TAME" }
-		  ]
+          "transitions": [{ "baby_walking": "Entity.Flags.TREX_BABY_TAME" }]
         },
         "baby_walking": {
-          "parameters": [ "Entity.Member.WalkSpeed" ],
+          "parameters": ["Entity.Member.WalkSpeed"],
           "animations": {
             "legs_animation": [
               {
@@ -64,37 +56,29 @@
               }
             ]
           },
-          "transitions": [              
-            { "adult_walking" : "!Entity.Flags.TREX_BABY_TAME" }
-		  ]
+          "transitions": [{ "adult_walking": "!Entity.Flags.TREX_BABY_TAME" }]
         }
       }
     },
     "controller.animation.tyrannosaur.roar": {
       "states": {
         "default": {
-          "parameters": [ "Entity.Member.WalkSpeed" ],
-          "animations": {
-          },
-          "transitions": [
-            { "roar" : "Entity.Flags.CASTING" }
-		  ]
+          "parameters": ["Entity.Member.WalkSpeed"],
+          "animations": {},
+          "transitions": [{ "roar": "Entity.Flags.CASTING" }]
         },
         "roar": {
           "animations": {
-            "roar": [
-			]
+            "roar": []
           },
-          "transitions": [
-            { "default" : "!Entity.Flags.CASTING" }
-		  ]
+          "transitions": [{ "default": "!Entity.Flags.CASTING" }]
         }
       }
     },
     "controller.animation.tyrannosaur_attack": {
       "states": {
         "attack": {
-          "animations": { "tyrannosaur_attack": { } }
+          "animations": { "tyrannosaur_attack": {} }
         }
       }
     }

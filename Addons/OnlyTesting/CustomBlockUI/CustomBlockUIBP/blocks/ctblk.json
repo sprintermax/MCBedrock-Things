@@ -1,27 +1,25 @@
 {
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"description": {
-			"identifier": "spmax:customcraft_block"
-		},
-		"components": {
-			"minecraft:creative_category": {
-				"category": "construction"
-			},
-			"minecraft:unit_cube": {},
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "command_block_back",
-					"render_method": "opaque"
-				}
-			},
-			"minecraft:crafting_table": {
-				"custom_description": "spmax.custom_craftingblock",
-				"grid_size": 3,
-				"crafting_tags": [
-					"custom_craft"
-				]
-			}
-		}
-	}
+  "format_version": "1.16.100",
+  "minecraft:block": {
+    "description": {
+      "identifier": "spmax:customcraft_block"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "category": "construction"
+      },
+      "minecraft:unit_cube": {},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "command_block_back",
+          "render_method": "opaque"
+        }
+      },
+      "minecraft:crafting_table": {
+        "custom_description": "spmax.custom_craftingblock",
+        "grid_size": 3,
+        "crafting_tags": ["custom_craft"]
+      }
+    }
+  }
 }

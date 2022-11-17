@@ -4,15 +4,35 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
-    "sprintermax:pipes.pipe_glass": {"textures": "textures/blocks/sprintermax/pipes/pipe_glass.png"},
-	"sprintermax:pipes.pipe_fluid_water": {"textures": "textures/blocks/sprintermax/pipes/pipe_fluid_water.png"},
-	"sprintermax:pipes.pipe_fluid_lava": {"textures": "textures/blocks/sprintermax/pipes/pipe_fluid_lava.png"},
-	"sprintermax:pipes.pipe_fluid_exp": {"textures": "textures/blocks/sprintermax/pipes/pipe_fluid_exp.png"},
-	"sprintermax:pipes.pipe_base_black": {"textures": "textures/blocks/sprintermax/pipes/pipe_base_black.png"},
-	"sprintermax:pipes.pipe_base_white": {"textures": "textures/blocks/sprintermax/pipes/pipe_base_white.png"},
-	"sprintermax:pipes.pipe_base_red": {"textures": "textures/blocks/sprintermax/pipes/pipe_base_red.png"},
-	"sprintermax:pipes.pipe_base_green": {"textures": "textures/blocks/sprintermax/pipes/pipe_base_green.png"},
-	"sprintermax:pipes.pipe_base_blue": {"textures": "textures/blocks/sprintermax/pipes/pipe_base_blue.png"},
-	"sprintermax:pipes.pipe_base_yellow": {"textures": "textures/blocks/sprintermax/pipes/pipe_base_yellow.png"}
+    "sprintermax:pipes.pipe_glass": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_glass.png"
+    },
+    "sprintermax:pipes.pipe_fluid_water": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_fluid_water.png"
+    },
+    "sprintermax:pipes.pipe_fluid_lava": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_fluid_lava.png"
+    },
+    "sprintermax:pipes.pipe_fluid_exp": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_fluid_exp.png"
+    },
+    "sprintermax:pipes.pipe_base_black": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_base_black.png"
+    },
+    "sprintermax:pipes.pipe_base_white": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_base_white.png"
+    },
+    "sprintermax:pipes.pipe_base_red": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_base_red.png"
+    },
+    "sprintermax:pipes.pipe_base_green": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_base_green.png"
+    },
+    "sprintermax:pipes.pipe_base_blue": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_base_blue.png"
+    },
+    "sprintermax:pipes.pipe_base_yellow": {
+      "textures": "textures/blocks/sprintermax/pipes/pipe_base_yellow.png"
+    }
   }
 }

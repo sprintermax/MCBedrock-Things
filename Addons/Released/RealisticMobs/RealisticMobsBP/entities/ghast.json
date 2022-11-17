@@ -3,14 +3,13 @@
     "version": 1,
 
     "components": {
-    "minecraft:scale": {
-          "value": 0.27
-        },
+      "minecraft:scale": {
+        "value": 0.27
+      },
       "minecraft:identifier": {
         "id": "minecraft:ghast"
       },
-	  "minecraft:nameable": {
-	  },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 10,
         "max": 10
@@ -27,10 +26,10 @@
         "def": "minecraft:fireball.large"
       },
       "minecraft:type_family": {
-        "family":["ghast", "monster"]          
+        "family": ["ghast", "monster"]
       },
-     "minecraft:fall_damage": {
-       "value": 0.0
+      "minecraft:fall_damage": {
+        "value": 0.0
       },
       "minecraft:behavior.ranged_attack": {
         "attack_radius": 64,
@@ -41,14 +40,14 @@
         "priority": 1
       },
       "minecraft:behavior.nearest_attackable_target": {
-          "priority": 2,
-          "entity_types": [
-            {
-              "entity_filter": [ "player"],
-              "max_dist": 64,
-              "must_see": true
-            }
-          ]
+        "priority": 2,
+        "entity_types": [
+          {
+            "entity_filter": ["player"],
+            "max_dist": 64,
+            "must_see": true
+          }
+        ]
       }
     }
   }

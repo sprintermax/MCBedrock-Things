@@ -1,68 +1,66 @@
 {
- "minecraft:entity": {
-  "version": 1,
+  "minecraft:entity": {
+    "version": 1,
 
-  "component_groups": {
-    "minecraft:exploding": {
-      "minecraft:explode": {
-        "fuseLength": 0,
-        "fuseLit": true,
-        "power": 1,
-        "causesFire": false,
-        "maxResistance": 4.0
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "power": 1,
+          "causesFire": false,
+          "maxResistance": 4.0
+        }
       }
-    }
-  },
+    },
 
-  "components": {
-  "minecraft:scale": {
-          "value": 0.67
-        },
-    "minecraft:identifier": {
-      "id": "minecraft:wither.skull.dangerous"
-    },
-    "minecraft:collision_box": {
-      "width": 0.15,
-      "height": 0.15
-    },
-    "minecraft:projectile": {
-      "onHit": {
-        "definition_event": {
-          "affectProjectile": true,
-          "eventTrigger": {
-            "event": "minecraft:explode",
-            "target": "self"
+    "components": {
+      "minecraft:scale": {
+        "value": 0.67
+      },
+      "minecraft:identifier": {
+        "id": "minecraft:wither.skull.dangerous"
+      },
+      "minecraft:collision_box": {
+        "width": 0.15,
+        "height": 0.15
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "potion_effect": {
+            "effect": 36,
+            "durationeasy": 0,
+            "durationnormal": 80,
+            "durationhard": 800
           }
         },
-         "potion_effect": {
-          "effect": 36,
-          "durationeasy": 0,
-          "durationnormal": 80,
-          "durationhard": 800
+        "power": 0.6,
+        "gravity": 0.0,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "shootSound": "bow",
+        "hitSound": "bow.hit",
+        "anchor": 1,
+        "offset": [0, -0.1, 0],
+        "isdangerous": true,
+        "inertia": 1.0,
+        "liquid_inertia": 1.0,
+        "shoottarget": false
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": ["minecraft:exploding"]
         }
-      },
-      "power": 0.6,
-      "gravity": 0.00,
-      "uncertaintyBase": 0,
-      "uncertaintyMultiplier": 0,
-      "shootSound": "bow",
-      "hitSound": "bow.hit",
-      "anchor": 1,
-      "offset": [ 0, -0.1, 0 ],
-      "isdangerous": true,
-      "inertia": 1.0,
-      "liquid_inertia": 1.0,
-      "shoottarget": false
+      }
     }
-  },
-  "events": {
-   "minecraft:explode": {
-    "add": {
-     "component_groups": [
-      "minecraft:exploding"
-     ]
-    }
-   }
   }
- }
 }

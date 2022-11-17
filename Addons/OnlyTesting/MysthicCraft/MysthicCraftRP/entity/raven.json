@@ -1,37 +1,35 @@
 {
-	"format_version": "1.8.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "mystic:raven",
-			"materials": {
-				"default": "raven"
-			},
-			"textures": {
-				"default": "textures/entity/raven"
-			},
-			"geometry": {
-				"default": "geometry.raven"
-			},
-			"animations": {
-				"move": "animation.raven.move",
-				"look_at_target": "animation.common.look_at_target",
-				"wings": "animation.raven.wings"
-			},
-			"animation_controllers": [
-				{
-					"general": "controller.animation.raven.general"
-				},
-				{
-					"move": "controller.animation.raven.move"
-				}
-			],
-			"render_controllers": [
-				"controller.render.raven"
-			],
-			"spawn_egg": {
-				"base_color": "#5c5959",
-				"overlay_color": "#3a3a3a"
-			}
-		}
-	}
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "mystic:raven",
+      "materials": {
+        "default": "raven"
+      },
+      "textures": {
+        "default": "textures/entity/raven"
+      },
+      "geometry": {
+        "default": "geometry.raven"
+      },
+      "animations": {
+        "move": "animation.raven.move",
+        "look_at_target": "animation.common.look_at_target",
+        "wings": "animation.raven.wings"
+      },
+      "animation_controllers": [
+        {
+          "general": "controller.animation.raven.general"
+        },
+        {
+          "move": "controller.animation.raven.move"
+        }
+      ],
+      "render_controllers": ["controller.render.raven"],
+      "spawn_egg": {
+        "base_color": "#5c5959",
+        "overlay_color": "#3a3a3a"
+      }
+    }
+  }
 }

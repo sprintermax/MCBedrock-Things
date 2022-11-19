@@ -1,0 +1,37 @@
+{
+  // "scoreboard_sidebar_score": {
+  //   "modifications": [
+  //     {
+  //       "array_name": "bindings",
+  //       "operation": "insert_front",
+  //       "value": [
+  //         {
+  //           "binding_name": "#player_name_sidebar", // different collection fix
+  //           "binding_type": "collection",
+  //           "binding_collection_name": "scoreboard_players"
+  //         },
+  //         {
+  //           "binding_type": "view",
+  //           "source_property_name": "(not (#player_name_sidebar = #player_name_sidebar - '_sb+:'))",
+  //           "target_property_name": "#visible"
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // },
+  // "scoreboard_sidebar_player": {
+  //   "modifications": [
+  //     {
+  //       "array_name": "bindings",
+  //       "operation": "insert_front",
+  //       "value": [
+  //         {
+  //           "binding_type": "view",
+  //           "source_property_name": "(not (#player_name_sidebar = #player_name_sidebar - '_sb+:'))",
+  //           "target_property_name": "#visible"
+  //         }
+  //       ]
+  //     }
+  //   ]
+  // }
+}

@@ -1,0 +1,5 @@
+{
+  //////// HUD Plus ////////
+  "$hudplus_global_prefix": "_hud+:",
+  "$hudplus_global_noui_prefix": "_hud+:noui:"
+}

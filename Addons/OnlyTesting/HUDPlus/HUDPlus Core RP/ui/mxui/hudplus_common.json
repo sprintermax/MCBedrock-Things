@@ -1,0 +1,73 @@
+{
+  "namespace": "hudplus_common",
+
+  "hudp_custom_panels@hudplus_screen_defs.custom_screens": {},
+
+  "hudplus_screen_base": {
+    "type": "panel",
+    "$debug_show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
+    "$hudplus_text_controller|default": "#hud_title_text_string", // #hud_subtitle_text_string /
+    "$safezone_screen_content|default": "common.empty_panel",
+    "$no_safezone_screen_content|default": "common.empty_panel",
+
+    "$safezone_screen_animations|default": [
+      "@common.screen_exit_animation_push_offset",
+      "@common.screen_exit_animation_pop_offset",
+      "@common.screen_entrance_animation_push_offset",
+      "@common.screen_entrance_animation_pop_offset",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ],
+    "$no_safezone_screen_animations|default": [
+      "@common.screen_exit_animation_push_alpha",
+      "@common.screen_exit_animation_pop_alpha",
+      "@common.screen_entrance_animation_push_alpha",
+      "@common.screen_entrance_animation_pop_alpha"
+    ],
+    "controls": [
+      {
+        "debug_safezone_border@common.safezone_outer_matrix": {
+          "$header_safezone_control": "common.empty_panel",
+          "$header_bar_control": "common.empty_panel",
+          "$screen_content": "common.focus_border_white",
+          "ignored": "(not $debug_show_safezone_border)",
+          "$debug_safezone_border_layer|default": 1,
+          "layer": "$debug_safezone_border_layer",
+          "size": ["100% + 2px", "100% + 2px"]
+        }
+      },
+      {
+        "safezone_content@common.safezone_outer_matrix": {
+          "$screen_content": "$safezone_screen_content",
+          "anims": "$safezone_screen_animations",
+          "propagate_alpha": true,
+          "layer": 3
+        }
+      },
+      {
+        "no_safezone_content_panel": {
+          "type": "panel",
+          "controls": [
+            { "no_safezone_content@$no_safezone_screen_content": {} }
+          ],
+          "anims": "$no_safezone_screen_animations",
+          "propagate_alpha": true,
+          "layer": 2
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "$hudplus_text_controller",
+        "binding_name_override": "#hudp_text_controller"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "((#hudp_text_controller - (#hudp_text_controller - $hudplus_global_prefix - $hudplus_screen_prefix)) = $hudplus_global_prefix + $hudplus_screen_prefix)",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

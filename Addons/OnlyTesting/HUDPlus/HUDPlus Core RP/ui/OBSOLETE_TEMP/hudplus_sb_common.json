@@ -1,0 +1,212 @@
+{
+  "namespace": "hudplus_sb_common",
+
+  "scoreboard_sidebar_data": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": ["100%c", 10],
+    "controls": [
+      {
+        "scoreboard_sidebar_player": {
+          "type": "label",
+          "layer": 2,
+          "text": "#player_name_sidebar",
+          "size": ["default", 10],
+          "locked_alpha": 1.0,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": "$player_name_color",
+          "bindings": [
+            {
+              "binding_name": "#player_name_sidebar",
+              "binding_type": "collection",
+              "binding_collection_name": "scoreboard_players"
+            }
+          ]
+        }
+      },
+      {
+        "scoreboard_sidebar_score": {
+          "type": "label",
+          "layer": 2,
+          "text": "#player_score_sidebar",
+          "text_alignment": "right",
+          "size": ["default", 10],
+          "locked_alpha": 1.0,
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "color": "$player_score_color",
+          "bindings": [
+            {
+              "binding_name": "#player_score_sidebar",
+              "binding_type": "collection",
+              "binding_collection_name": "scoreboard_scores"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "custom_scoreboard_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "vanilla_sidebar": {
+          "type": "image",
+          "texture": "textures/ui/Black",
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "size": ["100%c", "100%c"],
+          "alpha": 0.5,
+          "controls": [
+            {
+              "displayed_objective": {
+                "type": "label",
+                "size": ["default", 10],
+                "text": "#objective_sidebar_name",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "text_alignment": "center",
+                "inherit_max_sibling_width": true,
+                "locked_alpha": 1.0,
+                "layer": 1,
+                "color": "$objective_title_color",
+                "bindings": [
+                  {
+                    "binding_name": "#objective_sidebar_name",
+                    "binding_type": "global"
+                  }
+                ]
+              }
+            },
+            {
+              "players_and_scores": {
+                "type": "stack_panel",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "offset": [0, 10],
+                "size": ["100%cm", "100%c"],
+                "collection_name": "scoreboard_players",
+                "factory": {
+                  "name": "player_list_factory",
+                  "control_name": "hudplus_sb_common.scoreboard_sidebar_data"
+                },
+                "bindings": [
+                  {
+                    "binding_name": "#scoreboard_sidebar_size",
+                    "binding_type": "global",
+                    "binding_name_override": "#collection_length"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#objective_sidebar_name"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not (#objective_sidebar_name = '_hud+:Hidden'))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      } //,
+      // {
+      //   "main": {
+      //     "type": "image",
+      //     "texture": "textures/ui/Black",
+      //     "anchor_from": "right_middle",
+      //     "anchor_to": "right_middle",
+      //     "alpha": 0.5,
+      //     "size": ["100%cm", "100%c"],
+      //     "controls": [
+      //       {
+      //         "displayed_objective": {
+      //           "type": "label",
+      //           "size": ["default", 10],
+      //           "text": "#objective_sidebar_name",
+      //           "anchor_from": "top_middle",
+      //           "anchor_to": "top_middle",
+      //           "text_alignment": "center",
+      //           "inherit_max_sibling_width": true,
+      //           "locked_alpha": 1.0,
+      //           "layer": 1,
+      //           "color": "$objective_title_color",
+      //           "bindings": [
+      //             {
+      //               "binding_name": "#objective_sidebar_name",
+      //               "binding_type": "global"
+      //             }
+      //           ]
+      //         }
+      //       },
+      //       {
+      //         "lists": {
+      //           "type": "panel",
+      //           "anchor_from": "top_left",
+      //           "anchor_to": "top_left",
+      //           "offset": [0, 10],
+      //           "size": ["100%c", "100%cm"],
+      //           "controls": [
+      //             {
+      //               "players": {
+      //                 "type": "stack_panel",
+      //                 "anchor_from": "top_left",
+      //                 "anchor_to": "top_left",
+      //                 "size": ["100%cm", "100%c"],
+      //                 "orientation": "vertical",
+      //                 "collection_name": "scoreboard_players",
+      //                 "factory": {
+      //                   "name": "player_list_factory",
+      //                   "control_name": "scoreboard.scoreboard_sidebar_player"
+      //                 },
+      //                 "bindings": [
+      //                   {
+      //                     "binding_name": "#scoreboard_sidebar_size",
+      //                     "binding_type": "global",
+      //                     "binding_name_override": "#collection_length"
+      //                   }
+      //                 ]
+      //               }
+      //             },
+      //             {
+      //               "scores": {
+      //                 "type": "stack_panel",
+      //                 "anchor_from": "top_right",
+      //                 "anchor_to": "top_right",
+      //                 "size": ["100%cm", "100%c"],
+      //                 "orientation": "vertical",
+      //                 "use_child_anchors": true,
+      //                 "collection_name": "scoreboard_scores",
+      //                 "factory": {
+      //                   "name": "player_score_factory",
+      //                   "control_name": "scoreboard.scoreboard_sidebar_score"
+      //                 },
+      //                 "bindings": [
+      //                   {
+      //                     "binding_name": "#scoreboard_sidebar_size",
+      //                     "binding_type": "global",
+      //                     "binding_name_override": "#collection_length"
+      //                   }
+      //                 ]
+      //               }
+      //             }
+      //           ]
+      //         }
+      //       }
+      //     ]
+      //   }
+      // }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#scoreboard_sidebar_visible",
+        "binding_type": "global",
+        "binding_name_override": "#visible"
+      }
+    ]
+  }
+}

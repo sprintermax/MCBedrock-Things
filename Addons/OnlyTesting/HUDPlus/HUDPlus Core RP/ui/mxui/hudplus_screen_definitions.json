@@ -1,0 +1,23 @@
+{
+  "namespace": "hudplus_screen_defs",
+
+  "bg@common.screen_background": {}, // temp test
+
+  "custom_screens": {
+    "type": "panel",
+    "controls": [
+      {
+        "my_test_screen@hudplus_common.hudplus_screen_base": {
+          "$hudplus_screen_prefix": "BlackTest",
+          "$safezone_screen_content": "hudplus_screen_defs.bg" // temp test
+        }
+      },
+      {
+        "my_test_screen@hudplus_common.hudplus_screen_base": {
+          "$hudplus_screen_prefix": "BlackFSTest",
+          "$no_safezone_screen_content": "hudplus_screen_defs.bg" // temp test
+        }
+      }
+    ]
+  }
+}

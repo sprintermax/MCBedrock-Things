@@ -1,0 +1,6 @@
+{
+  "ui_defs": [
+    "ui/mxui/hudplus_common.json",
+    "ui/mxui/hudplus_screen_definitions.json"
+  ]
+}

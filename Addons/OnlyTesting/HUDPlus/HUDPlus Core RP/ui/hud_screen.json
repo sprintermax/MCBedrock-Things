@@ -1,0 +1,33 @@
+{
+  "hud_screen": {
+    "$screen_bg_content": "hudplus_common.hudp_custom_panels",
+    "$background_animations": []
+  },
+
+  "hud_content": {
+    "bindings": [
+      {
+        "binding_name": "#hud_title_text_string"
+      },
+      {
+        "binding_name": "#hud_subtitle_text_string"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(((#hud_title_text_string - $hudplus_global_noui_prefix) = #hud_title_text_string) and ((#hud_subtitle_text_string - $hudplus_global_noui_prefix) = #hud_subtitle_text_string))",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+
+  // "root_panel": {
+  //   "modifications": [
+  //     {
+  //       "array_name": "controls",
+  //       "operation": "replace",
+  //       "where": { "sidebar@scoreboard.scoreboard_sidebar": {} },
+  //       "value": { "scoreboard@hudplus_sb_common.custom_scoreboard_panel": {} }
+  //     }
+  //   ]
+  // }
+}

@@ -6,15 +6,37 @@
 
   "hud_content": {
     "bindings": [
-      {
-        "binding_name": "#hud_title_text_string"
-      },
-      {
-        "binding_name": "#hud_subtitle_text_string"
-      },
+      { "binding_name": "#hud_title_text_string" },
       {
         "binding_type": "view",
-        "source_property_name": "(((#hud_title_text_string - $hudplus_global_noui_prefix) = #hud_title_text_string) and ((#hud_subtitle_text_string - $hudplus_global_noui_prefix) = #hud_subtitle_text_string))",
+        "source_property_name": "(not ('%.11s' * #hud_title_text_string = '_hud+:noui:'))",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "chat_label": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "insert_back",
+        "value": [
+          {
+            "binding_type": "view",
+            "source_property_name": "(not ('%.6s' * #text = '_hud+:'))",
+            "target_property_name": "#visible"
+          }
+        ]
+      }
+    ]
+  },
+
+  "hud_title_text": {
+    "bindings": [
+      { "binding_name": "#hud_title_text_string" },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not ('%.6s' * #hud_title_text_string = '_hud+:'))",
         "target_property_name": "#visible"
       }
     ]

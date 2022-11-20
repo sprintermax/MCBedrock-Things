@@ -1,0 +1,11 @@
+{
+  "messages_text/text": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_property_name": "(not ('%.6s' * #text = '_hud+:'))",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

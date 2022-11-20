@@ -3,29 +3,19 @@
 
   "hudp_custom_panels@hudplus_screen_defs.custom_screens": {},
 
-  "hudplus_screen_base": {
+  "hudplus_base_panel": {
     "type": "panel",
     "$debug_show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
-    "$hudplus_text_controller|default": "#hud_title_text_string", // #hud_subtitle_text_string /
+    "$hudplus_screen_prefix|default": "",
+    "$ignore_screen_prefix|default": "(not $hudplus_screen_prefix > '')",
+    "$ignore_hudplus_prefix|default": false,
+    "$should_use_hud_opacity|default": false,
+    "$hudplus_text_controller|default": "#hud_title_text_string",
     "$safezone_screen_content|default": "common.empty_panel",
     "$no_safezone_screen_content|default": "common.empty_panel",
 
-    "$safezone_screen_animations|default": [
-      "@common.screen_exit_animation_push_offset",
-      "@common.screen_exit_animation_pop_offset",
-      "@common.screen_entrance_animation_push_offset",
-      "@common.screen_entrance_animation_pop_offset",
-      "@common.screen_exit_animation_push_fade",
-      "@common.screen_exit_animation_pop_fade",
-      "@common.screen_entrance_animation_push_fade",
-      "@common.screen_entrance_animation_pop_fade"
-    ],
-    "$no_safezone_screen_animations|default": [
-      "@common.screen_exit_animation_push_alpha",
-      "@common.screen_exit_animation_pop_alpha",
-      "@common.screen_entrance_animation_push_alpha",
-      "@common.screen_entrance_animation_pop_alpha"
-    ],
+    "$safezone_screen_animations|default": [],
+    "$no_safezone_screen_animations|default": [],
     "controls": [
       {
         "debug_safezone_border@common.safezone_outer_matrix": {
@@ -58,6 +48,18 @@
         }
       }
     ],
+    "variables": [
+      {
+        "requires": "not $should_use_hud_opacity",
+        "$hudp_alpha_binding": "",
+        "$hudp_propagate_alpha_binding": ""
+      },
+      {
+        "requires": "$should_use_hud_opacity",
+        "$hudp_alpha_binding": "#alpha",
+        "$hudp_propagate_alpha_binding": "#propagateAlpha"
+      }
+    ],
     "bindings": [
       {
         "binding_name": "$hudplus_text_controller",
@@ -65,8 +67,16 @@
       },
       {
         "binding_type": "view",
-        "source_property_name": "((#hudp_text_controller - (#hudp_text_controller - $hudplus_global_prefix - $hudplus_screen_prefix)) = $hudplus_global_prefix + $hudplus_screen_prefix)",
+        "source_property_name": "($ignore_hudplus_prefix or ($ignore_screen_prefix and ('%.6s' * #hudp_text_controller = '_hud+:')) or ('%.14s' * #hudp_text_controller = '_hud+:' + $hudplus_screen_prefix) or ('%.19s' * #hudp_text_controller = '_hud+:noui:' + $hudplus_screen_prefix))",
         "target_property_name": "#visible"
+      },
+      {
+        "binding_name": "#hud_alpha",
+        "binding_name_override": "$hudp_alpha_binding"
+      },
+      {
+        "binding_name": "#hud_propagate_alpha",
+        "binding_name_override": "$hudp_propagate_alpha_binding"
       }
     ]
   }

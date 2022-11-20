@@ -1,21 +1,27 @@
 {
   "namespace": "hudplus_screen_defs",
 
-  "bg@common.screen_background": {}, // temp test
-
+  // should not define screens here, it's here just for testing
   "custom_screens": {
     "type": "panel",
     "controls": [
       {
-        "my_test_screen@hudplus_common.hudplus_screen_base": {
-          "$hudplus_screen_prefix": "BlackTest",
-          "$safezone_screen_content": "hudplus_screen_defs.bg" // temp test
+        "test_title0@hudplus_common.hudplus_base_panel": {
+          "$hudplus_screen_prefix": "AAAAAAAA",
+          "$safezone_screen_content": "common.screen_background"
         }
       },
       {
-        "my_test_screen@hudplus_common.hudplus_screen_base": {
-          "$hudplus_screen_prefix": "BlackFSTest",
-          "$no_safezone_screen_content": "hudplus_screen_defs.bg" // temp test
+        "test_title1@hudplus_common.hudplus_base_panel": {
+          "$hudplus_screen_prefix": "AAAAAAAB",
+          "$no_safezone_screen_content": "common.screen_background"
+        }
+      },
+
+      {
+        "test_chat0@hudplus_chat_common.hudplus_chat_base_control": {
+          "$hudplus_screen_prefix": "AAAAAAAD",
+          "$safezone_screen_content": "common.screen_background"
         }
       }
     ]

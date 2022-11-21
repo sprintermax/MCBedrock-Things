@@ -4,13 +4,79 @@
     "$background_animations": []
   },
 
-  "hud_content": {
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "bindings",
+        "operation": "insert_front",
+        "value": [
+          {
+            "binding_type": "view",
+            "source_control_name": "hudplus_vanilla_dummy_data_control",
+            "source_property_name": "#hudp_stored_control_text",
+            "target_property_name": "#hudp_text_control"
+          },
+          {
+            "binding_name": "#hud_visible"
+          },
+          {
+            "binding_type": "view",
+            "source_property_name": "(#hud_visible and not ('%.12s' * #hudp_text_control = '_hud+:HideUI'))",
+            "target_property_name": "#visible"
+          }
+        ]
+      },
+      {
+        "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#hud_visible"
+        }
+      }
+    ]
+  },
+
+  "camera_renderer": {
     "bindings": [
-      { "binding_name": "#hud_title_text_string" },
       {
         "binding_type": "view",
-        "source_property_name": "(not ('%.11s' * #hud_title_text_string = '_hud+:noui:'))",
+        "source_control_name": "hudplus_vanilla_dummy_data_control",
+        "source_property_name": "#hudp_stored_control_text",
+        "target_property_name": "#hudp_text_control"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not ('%.12s' * #hudp_text_control = '_hud+:HideUI'))",
         "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "hud_content": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "hudplus_vanilla_dummy_data_control": {
+              "type": "panel",
+              "bindings": [
+                { "binding_name": "#hud_title_text_string" },
+                {
+                  "binding_name": "#hud_title_text_string",
+                  "binding_name_override": "#hudp_stored_control_text",
+                  "binding_condition": "visibility_changed"
+                },
+                {
+                  "binding_type": "view",
+                  "source_property_name": "(not (#hud_title_text_string = #hudp_stored_control_text) and (('%.12s' * #hud_title_text_string = '_hud+:HideUI') or ('%.12s' * #hud_title_text_string = '_hud+:ShowUI')))",
+                  "target_property_name": "#visible"
+                }
+              ]
+            }
+          }
+        ]
       }
     ]
   },
@@ -31,7 +97,7 @@
     ]
   },
 
-  "hud_title_text": {
+  "hud_title_text/title_frame": {
     "bindings": [
       { "binding_name": "#hud_title_text_string" },
       {
@@ -40,16 +106,16 @@
         "target_property_name": "#visible"
       }
     ]
-  }
+  },
 
-  // "root_panel": {
-  //   "modifications": [
-  //     {
-  //       "array_name": "controls",
-  //       "operation": "replace",
-  //       "where": { "sidebar@scoreboard.scoreboard_sidebar": {} },
-  //       "value": { "scoreboard@hudplus_sb_common.custom_scoreboard_panel": {} }
-  //     }
-  //   ]
-  // }
+  "hud_title_text/subtitle_frame": {
+    "bindings": [
+      { "binding_name": "#hud_subtitle_text_string" },
+      {
+        "binding_type": "view",
+        "source_property_name": "(not ('%.6s' * #hud_subtitle_text_string = '_hud+:'))",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
 }

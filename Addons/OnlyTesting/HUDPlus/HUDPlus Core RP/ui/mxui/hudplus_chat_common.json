@@ -23,6 +23,7 @@
       {
         "hudp_chat_content_holder@hudplus_common.hudplus_base_panel": {
           "anims": ["@hudplus_chat_common.anim_selfdestruct_wait"],
+          "$visibility_bindings": [],
           "bindings": [
             {
               "binding_name": "#chat_text",
@@ -33,7 +34,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(($ignore_screen_prefix and ('%.6s' * #text = '_hud+:')) or ('%.14s' * #text = '_hud+:' + $hudplus_screen_prefix) or ('%.19s' * #text = '_hud+:noui:' + $hudplus_screen_prefix))",
+              "source_property_name": "('%.14s' * #text = '_hud+:' + $hudplus_screen_prefix)",
               "target_property_name": "#visible"
             },
             {

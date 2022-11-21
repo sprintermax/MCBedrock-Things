@@ -19,8 +19,23 @@
       },
 
       {
-        "test_chat0@hudplus_chat_common.hudplus_chat_base_control": {
+        "test_title_static0@hudplus_common.hudplus_base_panel": {
+          //"$should_auto_update": false, // WIP - uncomment this line to enable static updates
+          "$hudplus_screen_prefix": "AAAAAAAC",
+          "$safezone_screen_content": "common.screen_background"
+        }
+      },
+      {
+        "test_title_static1@hudplus_common.hudplus_base_panel": {
+          //"$should_auto_update": false, // WIP - uncomment this line to enable static updates
           "$hudplus_screen_prefix": "AAAAAAAD",
+          "$no_safezone_screen_content": "common.screen_background"
+        }
+      },
+
+      {
+        "test_chat0@hudplus_chat_common.hudplus_chat_base_control": {
+          "$hudplus_screen_prefix": "AAAAAAAE",
           "$safezone_screen_content": "common.screen_background"
         }
       }

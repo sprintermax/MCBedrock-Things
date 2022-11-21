@@ -6,6 +6,7 @@
   "hudplus_base_panel": {
     "type": "panel",
     "$debug_show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
+    "$should_auto_update|default": true, // auto update does not save the last state when the text is updated
     "$hudplus_screen_prefix|default": "",
     "$ignore_screen_prefix|default": "(not $hudplus_screen_prefix > '')",
     "$ignore_hudplus_prefix|default": false,
@@ -18,6 +19,24 @@
     "$no_safezone_screen_animations|default": [],
     "controls": [
       {
+        "hudplus_dummy_data_control": {
+          "type": "panel",
+          "bindings": [
+            { "binding_name": "$hudplus_text_controller" },
+            {
+              "binding_name": "$hudplus_text_controller",
+              "binding_name_override": "#hudp_stored_control_text",
+              "binding_condition": "visibility_changed"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not ($hudplus_text_controller = #hudp_stored_control_text) and (('%.18s' * $hudplus_text_controller = '_hud+:' + $hudplus_screen_prefix + ':on:') or ('%.18s' * $hudplus_text_controller = '_hud+:' + $hudplus_screen_prefix + ':of:')))",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
         "debug_safezone_border@common.safezone_outer_matrix": {
           "$header_safezone_control": "common.empty_panel",
           "$header_bar_control": "common.empty_panel",
@@ -25,13 +44,15 @@
           "ignored": "(not $debug_show_safezone_border)",
           "$debug_safezone_border_layer|default": 1,
           "layer": "$debug_safezone_border_layer",
-          "size": ["100% + 2px", "100% + 2px"]
+          "size": ["100% + 2px", "100% + 2px"],
+          "bindings": "$visibility_bindings"
         }
       },
       {
         "safezone_content@common.safezone_outer_matrix": {
           "$screen_content": "$safezone_screen_content",
           "anims": "$safezone_screen_animations",
+          "bindings": "$visibility_bindings",
           "propagate_alpha": true,
           "layer": 3
         }
@@ -43,6 +64,7 @@
             { "no_safezone_content@$no_safezone_screen_content": {} }
           ],
           "anims": "$no_safezone_screen_animations",
+          "bindings": "$visibility_bindings",
           "propagate_alpha": true,
           "layer": 2
         }
@@ -58,25 +80,53 @@
         "requires": "$should_use_hud_opacity",
         "$hudp_alpha_binding": "#alpha",
         "$hudp_propagate_alpha_binding": "#propagateAlpha"
-      }
-    ],
-    "bindings": [
-      {
-        "binding_name": "$hudplus_text_controller",
-        "binding_name_override": "#hudp_text_controller"
       },
       {
-        "binding_type": "view",
-        "source_property_name": "($ignore_hudplus_prefix or ($ignore_screen_prefix and ('%.6s' * #hudp_text_controller = '_hud+:')) or ('%.14s' * #hudp_text_controller = '_hud+:' + $hudplus_screen_prefix) or ('%.19s' * #hudp_text_controller = '_hud+:noui:' + $hudplus_screen_prefix))",
-        "target_property_name": "#visible"
+        "requires": "not $should_auto_update",
+        "$visibility_bindings": [
+          {
+            "binding_type": "view",
+            "source_control_name": "hudplus_dummy_data_control",
+            "source_property_name": "#hudp_stored_control_text",
+            "target_property_name": "#hudp_text_control"
+          },
+          {
+            "binding_type": "view",
+            "source_property_name": "('%.4s' * (#hudp_text_control - ('%.14s' * #hudp_text_control)) = ':on:')", // WIP - fix that | '_hud+:XXXXXXXX:on:' to show and '_hud+:XXXXXXXX:of:' to hide
+            "target_property_name": "#visible"
+          },
+          {
+            "binding_name": "#hud_alpha",
+            "binding_name_override": "$hudp_alpha_binding"
+          },
+          {
+            "binding_name": "#hud_propagate_alpha",
+            "binding_name_override": "$hudp_propagate_alpha_binding"
+          }
+        ]
       },
       {
-        "binding_name": "#hud_alpha",
-        "binding_name_override": "$hudp_alpha_binding"
-      },
-      {
-        "binding_name": "#hud_propagate_alpha",
-        "binding_name_override": "$hudp_propagate_alpha_binding"
+        "requires": "$should_auto_update",
+        "$visibility_bindings": [
+          { "binding_name": "$hudplus_text_controller" },
+          {
+            "binding_name": "$hudplus_text_controller",
+            "binding_name_override": "#hudp_text_control"
+          },
+          {
+            "binding_type": "view",
+            "source_property_name": "($ignore_hudplus_prefix or ($ignore_screen_prefix and ('%.6s' * #hudp_text_control = '_hud+:')) or ('%.14s' * #hudp_text_control = '_hud+:' + $hudplus_screen_prefix))",
+            "target_property_name": "#visible"
+          },
+          {
+            "binding_name": "#hud_alpha",
+            "binding_name_override": "$hudp_alpha_binding"
+          },
+          {
+            "binding_name": "#hud_propagate_alpha",
+            "binding_name_override": "$hudp_propagate_alpha_binding"
+          }
+        ]
       }
     ]
   }

@@ -1,0 +1,76 @@
+{
+  "namespace": "spmax_notification",
+
+  "anim_alphain": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0.25,
+    "from": 0,
+    "to": 1,
+    "next": "@spmax_notification.anim_alphaout_wait"
+  },
+
+  "anim_alphaout_wait": {
+    "anim_type": "wait",
+    "duration": 3,
+    "next": "@spmax_notification.anim_alphaout"
+  },
+
+  "anim_alphaout": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0.5,
+    "from": 1,
+    "to": 0
+  },
+
+  "anim_slidein": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": [0, "-30%"],
+    "to": [0, 0],
+    "next": "@spmax_notification.anim_slideout_wait"
+  },
+
+  "anim_slideout_wait": {
+    "anim_type": "wait",
+    "duration": 3,
+    "next": "@spmax_notification.anim_slideout"
+  },
+
+  "anim_slideout": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": [0, 0],
+    "to": ["30%", 0]
+  },
+
+  "noti_base_panel": {
+    "type": "panel",
+    "propagate_alpha": true,
+    "size": ["100%cm", "100%cm"],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [-15, 15],
+    "controls": [
+      {
+        "bg_image": {
+          "type": "image",
+          "size": ["100%sm + 40px", "100%sm + 30px"],
+          "texture": "textures/ui/dialog_background_opaque"
+        }
+      },
+      {
+        "text_message@hudplus_chat_common.no_prefix_chat_label": {
+          "color": [0.2, 0.2, 0.2]
+        }
+      }
+    ],
+    "anims": [
+      "@spmax_notification.anim_alphain",
+      "@spmax_notification.anim_slidein"
+    ]
+  }
+}

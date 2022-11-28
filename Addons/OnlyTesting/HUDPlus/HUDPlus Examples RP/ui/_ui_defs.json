@@ -1,0 +1,7 @@
+{
+  "ui_defs": [
+    "ui/spmax/hudplus_cinemabars.json",
+    "ui/spmax/hudplus_messagetext.json",
+    "ui/spmax/hudplus_notification.json"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "pack.description",
+    "name": "pack.name",
+    "uuid": "70a3a61a-8ad9-4dc4-a207-98dadf2b58ad",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 19, 50]
+  },
+  "modules": [
+    {
+      "description": "N/A",
+      "type": "resources",
+      "uuid": "ed662ea7-184b-4593-929f-dd5700912667",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      // HUD+ Core Resource Pack
+      "uuid": "6ae9d603-6a0e-4806-abea-187ba5803d98",
+      "version": [1, 0, 0]
+    }
+  ]
+}

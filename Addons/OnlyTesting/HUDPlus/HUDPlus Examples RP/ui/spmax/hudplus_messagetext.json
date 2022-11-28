@@ -1,0 +1,71 @@
+{
+  "namespace": "spmax_messagetext", // WIP
+
+  "anim_alphain": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0.5,
+    "from": 0,
+    "to": 1
+  },
+
+  "anim_alphaout": {
+    "anim_type": "alpha",
+    "easing": "in_expo",
+    "duration": 0.5,
+    "from": 1,
+    "to": 0,
+    "destroy_at_end": "hudplus_base_panel"
+  },
+
+  "anim_slidein": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": [0, "25%"],
+    "to": [0, 0]
+  },
+
+  "anim_slideout": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 0.5,
+    "from": [0, 0],
+    "to": [0, "50%"]
+  },
+
+  "message_stay": {
+    "type": "panel",
+    "size": [280, 150],
+    "propagate_alpha": true,
+    "$panel_anims|default": [],
+    "anims": "$panel_anims",
+    "controls": [
+      {
+        "bg_image": {
+          "type": "image",
+          "texture": "textures/ui/dialog_background_opaque"
+        }
+      },
+      {
+        "text_message@hudplus_common.no_prefix_title_label": {
+          "color": [0.2, 0.2, 0.2]
+        }
+      }
+    ]
+  },
+
+  "message_in@spmax_messagetext.message_stay": {
+    "$panel_anims": [
+      "@spmax_messagetext.anim_alphain",
+      "@spmax_messagetext.anim_slidein"
+    ]
+  },
+
+  "message_out@spmax_messagetext.message_stay": {
+    "$panel_anims": [
+      "@spmax_messagetext.anim_alphaout",
+      "@spmax_messagetext.anim_slideout"
+    ]
+  }
+}

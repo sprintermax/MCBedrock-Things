@@ -1,0 +1,53 @@
+{
+  "namespace": "hudplus_chat_common",
+
+  "anim_selfdestruct_wait": {
+    "anim_type": "wait",
+    "duration": "$selfdestruct_wait_time",
+    "destroy_at_end": "hudp_chat_content_holder"
+  },
+
+  "hudplus_chat_base_control": {
+    "type": "panel",
+    "factory": {
+      "name": "chat_item_factory",
+      "control_name": "@hudplus_chat_common.chat_element_holder"
+    }
+  },
+
+  "chat_element_holder": {
+    "type": "panel",
+    "$selfdestruct_wait_time|default": 3,
+    "$chat_control_screen_content|default": "common.empty_panel",
+    "controls": [
+      {
+        "hudp_chat_content_holder@hudplus_common.hudplus_base_panel": {
+          "anims": ["@hudplus_chat_common.anim_selfdestruct_wait"],
+          "$visibility_bindings": [],
+          "bindings": [
+            {
+              "binding_name": "#chat_text",
+              "binding_name_override": "#text",
+              "binding_type": "collection",
+              "binding_collection_name": "chat_text_grid",
+              "binding_condition": "once"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "('%.14s' * #text = '_hud+:' + $hudplus_screen_prefix)",
+              "target_property_name": "#visible"
+            },
+            {
+              "binding_name": "#hud_alpha",
+              "binding_name_override": "$hudp_alpha_binding"
+            },
+            {
+              "binding_name": "#hud_propagate_alpha",
+              "binding_name_override": "$hudp_propagate_alpha_binding"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

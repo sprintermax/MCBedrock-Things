@@ -1,0 +1,54 @@
+{
+  "custom_screens": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "cinema_bar1@hudplus_common.hudplus_base_panel": {
+              "$hudplus_screen_prefix": "CinemBar",
+              "$no_safezone_screen_content": "spmax_cinemabars.vertical_bars_panel"
+            }
+          },
+          {
+            "cinema_bar2@hudplus_common.hudplus_base_panel": {
+              "$hudplus_screen_prefix": "C1nemBar",
+              "$no_safezone_screen_content": "spmax_cinemabars.horizontal_bars_panel"
+            }
+          },
+
+          {
+            "message_in@hudplus_common.hudplus_base_panel": {
+              "$should_auto_update": true,
+              "$hudplus_screen_prefix": "Message0",
+              "$safezone_screen_content": "spmax_messagetext.message_in"
+            }
+          },
+          {
+            "message_stay@hudplus_common.hudplus_base_panel": {
+              "$should_auto_update": true,
+              "$hudplus_screen_prefix": "Message1",
+              "$safezone_screen_content": "spmax_messagetext.message_stay"
+            }
+          },
+          {
+            "message_out@hudplus_common.hudplus_base_panel": {
+              "$should_auto_update": true,
+              "$hudplus_screen_prefix": "Message2",
+              "$safezone_screen_content": "spmax_messagetext.message_out"
+            }
+          },
+
+          {
+            "chat_notification@hudplus_chat_common.hudplus_chat_base_control": {
+              "$hudplus_screen_prefix": "NotiMsg0",
+              "$selfdestruct_wait_time": 5,
+              "$safezone_screen_content": "spmax_notification.noti_base_panel"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

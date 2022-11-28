@@ -1,0 +1,42 @@
+{
+  "namespace": "spmax_cinemabars",
+
+  "vertical_bars_panel": {
+    "type": "stack_panel",
+    "size": ["100%", "100%"],
+    "$top_bar_size|default": ["100%", "20%"],
+    "$middle_padding_size|default": ["100%", "fill"],
+    "$bottom_bar_size|default": ["100%", "20%"],
+    "controls": [
+      {
+        "top_bar": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "color": [0, 0, 0],
+          "size": "$top_bar_size"
+        }
+      },
+      {
+        "middle_padding": {
+          "type": "panel",
+          "size": "$middle_padding_size"
+        }
+      },
+      {
+        "bottom_bar": {
+          "type": "image",
+          "texture": "textures/ui/White",
+          "color": [0, 0, 0],
+          "size": "$bottom_bar_size"
+        }
+      }
+    ]
+  },
+
+  "horizontal_bars_panel@spmax_cinemabars.vertical_bars_panel": {
+    "orientation": "horizontal",
+    "$top_bar_size": ["10%", "100%"],
+    "$middle_padding_size": ["fill", "100%"],
+    "$bottom_bar_size": ["10%", "100%"]
+  }
+}

@@ -1,44 +1,69 @@
+/* --> INFO AND EXAMPLES
+  - The global prefix for the pack is '_hud+:', this must be the first thing on the message sent to the client.
+  - Curreently HUD elements can be controlled with titles, subtitles and chat messages. Plans to add scoreboards, item tooltip texts and more in the future.
+  - A global prefix to show or hide the vanilla HUD is available by using '_hud+:HideUI' and '_hud+:ShowUI' (Case sensitive).
+  - Messages that start with the prefix `_hud+:` will be hidden from vanilla texts and chat views.
+  
+  - Title controled panels can not have single-run animations due to if the animation is finished and doesn't loop, it will not run again, even if the screen is not visible. (Note that title animations is a WIP and will be changed in the future)
+  - Chat animations can have single run animations, and the chat element based is set to self destruct after some time (default 3).
+
+  - Recomended to use title controls for static elements, and chat messages for notifications and/or fast screen elements.
+
+  - Examples:
+  --- /titleraw @a title {"rawtext":[{"text":"_hud+:HideUI"}]}
+  --- /titleraw @a title {"rawtext":[{"text":"_hud+:ShowUI"}]}
+
+  - (remember that custom screen identifiers MUST be exactly 8 digits)
+  --- /titleraw @a title {"rawtext":[{"text":"_hud+:+:CinemBar"}]}
+  --- /titleraw @a title {"rawtext":[{"text":"_hud+:-:CinemBar"}]}
+
+  --- /titleraw @a title {"rawtext":[{"text":"_hud+:Message0"}]}
+  --- /titleraw @a title {"rawtext":[{"text":"_hud+:Message1"}]}
+
+  - (aditional text can be included after the hud+ values to pass more data if you want)
+  --- /titleraw @a title {"rawtext":[{"text":"_hud+:MyNPCBob"},{"translate":"npc.bob.message0"}]}
+
+  - (chat based control)
+  --- /tellraw @a {"rawtext":[{"text":"_hud+:NotiMsg0"},{"translate":"notification.achievement.complete"}]}
+
+*/
+
+/* --> TITTLE CONTROLED (my_panel@hudplus_common.hudplus_base_panel)
+  $debug_show_safezone_border - [true/false(default)] - shows a white line on the safe zone border limits (for debugging)
+  $hudplus_text_controller - [#hud_title_text_string(default)/#hud_subtitle_text_string] - the text controller to be used for the panel
+
+  $hudplus_screen_prefix - [XXXXXXXX] - a unique value of 8 characters to use as identifier for that screen.
+  $should_auto_update - [true/false(default)] - if true, will update the panel, showing, hidding or updating it every time that a new title text is sent. If not, aditional '+:' or '-:' should be added to control the visibility state
+  $ignore_screen_prefix - [true/false(default)] - if true, will ignore the screen prefix and show for any text sent (can be combined with $ignore_hudplus_prefix)
+  $ignore_hudplus_prefix - [true/false(default)] - if true, will ignore the '_hud+:' prefix and will show the panel for any text
+  $should_use_hud_opacity - [true/false(default)] - if true, will use the global alpha of the HUD, making the screen fade after some time (if enabled on the player settings)
+  
+  $safezone_screen_content - [common.empty_panel(default)] - the panel with the screen contents that will appear inside the safe-zone area of the HUD
+  $no_safezone_screen_content - [common.empty_panel(default)] - the panel with the screen contents that will appear on the HUD, ignoring the safe-zone limits
+  
+  $safezone_screen_animations - [*none*] - looping animations that will play on the root panel of the safe-zone screen
+  $no_safezone_screen_animations - [*none*] - looping animations that will play on the root panel of the non safe-zone screen
+*/
+
+/* --> CHAT CONTROLED (my_panel@hudplus_chat_common.hudplus_chat_base_control)
+  $debug_show_safezone_border - [true/false(default)] - shows a white line on the safe zone border limits (for debugging)
+
+  $hudplus_screen_prefix - [XXXXXXXX] - a unique value of 8 characters to use as identifier for that screen.
+  $should_use_hud_opacity - [true/false(default)] - if true, will use the global alpha of the HUD, making the screen fade after some time (if enabled on the player settings)
+  
+  $selfdestruct_wait_time - [<number>/3(default)] - the time in seconds to destruct the element after being created.
+
+  $safezone_screen_content - [common.empty_panel(default)] - the panel with the screen contents that will appear inside the safe-zone area of the HUD
+  $no_safezone_screen_content - [common.empty_panel(default)] - the panel with the screen contents that will appear on the HUD, ignoring the safe-zone limits
+  
+  $safezone_screen_animations - [*none*] - animations that will play on the root panel of the safe-zone screen after the element creation
+  $no_safezone_screen_animations - [*none*] - animations that will play on the root panel of the non safe-zone screen after the element creation
+*/
+
 {
   "namespace": "hudplus_screen_defs",
 
-  // should not define screens here, it's here just for testing
   "custom_screens": {
-    "type": "panel",
-    "controls": [
-      {
-        "test_title0@hudplus_common.hudplus_base_panel": {
-          "$should_auto_update": true,
-          "$hudplus_screen_prefix": "AAAAAAAA",
-          "$safezone_screen_content": "common.screen_background"
-        }
-      },
-      {
-        "test_title1@hudplus_common.hudplus_base_panel": {
-          "$should_auto_update": true,
-          "$hudplus_screen_prefix": "AAAAAAAB",
-          "$no_safezone_screen_content": "common.screen_background"
-        }
-      },
-
-      {
-        "test_title_static0@hudplus_common.hudplus_base_panel": {
-          "$hudplus_screen_prefix": "AAAAAAAC",
-          "$safezone_screen_content": "common.screen_background"
-        }
-      },
-      {
-        "test_title_static1@hudplus_common.hudplus_base_panel": {
-          "$hudplus_screen_prefix": "AAAAAAAD",
-          "$no_safezone_screen_content": "common.screen_background"
-        }
-      },
-
-      {
-        "test_chat0@hudplus_chat_common.hudplus_chat_base_control": {
-          "$hudplus_screen_prefix": "AAAAAAAE",
-          "$safezone_screen_content": "common.screen_background"
-        }
-      }
-    ]
+    "type": "panel"
   }
 }

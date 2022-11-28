@@ -3,10 +3,23 @@
 
   "hudp_custom_panels@hudplus_screen_defs.custom_screens": {},
 
+  "no_prefix_title_label": {
+    "type": "label",
+    "text": "#hudp_text_no_prefix",
+    "bindings": [
+      { "binding_name": "$hudplus_text_controller" },
+      {
+        "binding_type": "view",
+        "source_property_name": "($hudplus_text_controller - '_hud+:+:' - '_hud+:-:' - '_hud+:' - $hudplus_screen_prefix)",
+        "target_property_name": "#hudp_text_no_prefix"
+      }
+    ]
+  },
+
   "hudplus_base_panel": {
     "type": "panel",
     "$debug_show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
-    "$should_auto_update|default": false, // auto update does not save the last state when the text is updated
+    "$should_auto_update|default": false,
     "$hudplus_screen_prefix|default": "",
     "$ignore_screen_prefix|default": "(not $hudplus_screen_prefix > '')",
     "$ignore_hudplus_prefix|default": false,
@@ -14,6 +27,7 @@
     "$hudplus_text_controller|default": "#hud_title_text_string",
     "$safezone_screen_content|default": "common.empty_panel",
     "$no_safezone_screen_content|default": "common.empty_panel",
+    "$is_chat_control|default": false,
 
     "$safezone_screen_animations|default": [],
     "$no_safezone_screen_animations|default": [],
@@ -82,7 +96,7 @@
         "$hudp_propagate_alpha_binding": "#propagateAlpha"
       },
       {
-        "requires": "not $should_auto_update",
+        "requires": "(not $should_auto_update and not $is_chat_control)",
         "$visibility_bindings": [
           {
             "binding_type": "view",
@@ -107,7 +121,7 @@
         ]
       },
       {
-        "requires": "$should_auto_update",
+        "requires": "($should_auto_update and not $is_chat_control)",
         "$visibility_bindings": [
           { "binding_name": "$hudplus_text_controller" },
           {

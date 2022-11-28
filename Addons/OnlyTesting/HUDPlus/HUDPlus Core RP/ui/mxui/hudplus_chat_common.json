@@ -9,16 +9,54 @@
 
   "hudplus_chat_base_control": {
     "type": "panel",
+    "$debug_show_safezone_border|default": false,
+    "$hudplus_screen_prefix|default": "",
+    "$should_use_hud_opacity|default": false,
+    "$safezone_screen_content|default": "common.empty_panel",
+    "$no_safezone_screen_content|default": "common.empty_panel",
+
+    "$safezone_screen_animations|default": [],
+    "$no_safezone_screen_animations|default": [],
+
     "factory": {
       "name": "chat_item_factory",
-      "control_name": "@hudplus_chat_common.chat_element_holder"
+      "control_name": "@hudplus_chat_common.chat_element_holder",
+      "factory_variables": [
+        "$hudplus_screen_prefix",
+        "$debug_show_safezone_border",
+        "$selfdestruct_wait_time",
+        "$safezone_screen_content",
+        "$no_safezone_screen_content",
+        "$safezone_screen_animations",
+        "$no_safezone_screen_animations",
+        "$should_use_hud_opacity"
+      ]
     }
+  },
+
+  "no_prefix_chat_label": {
+    "type": "label",
+    "text": "#hudp_text_no_prefix",
+    "bindings": [
+      {
+        "binding_name": "#chat_text",
+        "binding_name_override": "#text",
+        "binding_type": "collection",
+        "binding_collection_name": "chat_text_grid",
+        "binding_condition": "once"
+      },
+      {
+        "binding_type": "view",
+        "source_property_name": "(#text - '_hud+:' - $hudplus_screen_prefix)",
+        "target_property_name": "#hudp_text_no_prefix"
+      }
+    ]
   },
 
   "chat_element_holder": {
     "type": "panel",
+    "$is_chat_control": true,
     "$selfdestruct_wait_time|default": 3,
-    "$chat_control_screen_content|default": "common.empty_panel",
     "controls": [
       {
         "hudp_chat_content_holder@hudplus_common.hudplus_base_panel": {

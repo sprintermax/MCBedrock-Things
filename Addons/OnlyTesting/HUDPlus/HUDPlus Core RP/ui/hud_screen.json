@@ -8,6 +8,13 @@
     "modifications": [
       {
         "array_name": "bindings",
+        "operation": "remove",
+        "where": {
+          "binding_name": "#hud_visible"
+        }
+      },
+      {
+        "array_name": "bindings",
         "operation": "insert_front",
         "value": [
           {
@@ -25,13 +32,6 @@
             "target_property_name": "#visible"
           }
         ]
-      },
-      {
-        "array_name": "bindings",
-        "operation": "remove",
-        "where": {
-          "binding_name": "#hud_visible"
-        }
       }
     ]
   },

@@ -86,8 +86,8 @@ world.events.itemUse.subscribe(async ({ item, source }) => {
       customFormRes.formValues[0] === 0
         ? customLongFormTest
         : customFormRes.formValues[0] === 1
-        ? customModalFormTest
-        : vanillaMessageForm;
+          ? customModalFormTest
+          : vanillaMessageForm;
     customForm.title(
       customFormRes.formValues[1] || "_sf+:MyPrefix Title Message"
     );

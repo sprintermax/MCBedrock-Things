@@ -30,7 +30,12 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(not ($hudplus_text_controller = #hudp_stored_control_text) and (('%.18s' * $hudplus_text_controller = '_hud+:' + $hudplus_screen_prefix + ':on:') or ('%.18s' * $hudplus_text_controller = '_hud+:' + $hudplus_screen_prefix + ':of:')))",
+              "source_property_name": "(not ($hudplus_text_controller = #hudp_stored_control_text) and  ('%.8s' * ($hudplus_text_controller - ('%.8s' * $hudplus_text_controller)) = 'AAAAAAAC'))",
+              "target_property_name": "#hudp_should_update"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(#hudp_should_update and ('%.8s' * $hudplus_text_controller = '_hud+:-:' or '%.8s' * $hudplus_text_controller = '_hud+:+:'))",
               "target_property_name": "#visible"
             }
           ]
@@ -92,7 +97,7 @@
           },
           {
             "binding_type": "view",
-            "source_property_name": "('%.4s' * (#hudp_text_control - ('%.14s' * #hudp_text_control)) = ':on:')", // WIP - fix that | '_hud+:XXXXXXXX:on:' to show and '_hud+:XXXXXXXX:of:' to hide
+            "source_property_name": "(#hudp_text_control > '' and '%.16s' * #hudp_text_control = '_hud+:+:' + $hudplus_screen_prefix)",
             "target_property_name": "#visible"
           },
           {

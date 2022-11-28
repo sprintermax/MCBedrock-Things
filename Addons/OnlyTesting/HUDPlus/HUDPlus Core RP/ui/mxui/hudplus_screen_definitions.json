@@ -20,14 +20,14 @@
 
       {
         "test_title_static0@hudplus_common.hudplus_base_panel": {
-          //"$should_auto_update": false, // WIP - uncomment this line to enable static updates
+          "$should_auto_update": false, // WIP - uncomment this line to enable static updates
           "$hudplus_screen_prefix": "AAAAAAAC",
           "$safezone_screen_content": "common.screen_background"
         }
       },
       {
         "test_title_static1@hudplus_common.hudplus_base_panel": {
-          //"$should_auto_update": false, // WIP - uncomment this line to enable static updates
+          "$should_auto_update": false, // WIP - uncomment this line to enable static updates
           "$hudplus_screen_prefix": "AAAAAAAD",
           "$no_safezone_screen_content": "common.screen_background"
         }

@@ -1,7 +1,7 @@
 {
   "ui_defs": [
     "ui/mxui/hudplus_common.json",
-    "ui/mxui/hudplus_chat_common.json",
+    "ui/mxui/hudplus_chat_common.json", // WIP
     "ui/mxui/hudplus_screen_definitions.json"
   ]
 }

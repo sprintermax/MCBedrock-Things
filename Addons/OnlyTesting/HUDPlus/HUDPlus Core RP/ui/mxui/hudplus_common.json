@@ -6,7 +6,7 @@
   "hudplus_base_panel": {
     "type": "panel",
     "$debug_show_safezone_border|default": false, // For testing purposes, show safe zone screen limits
-    "$should_auto_update|default": true, // auto update does not save the last state when the text is updated
+    "$should_auto_update|default": false, // auto update does not save the last state when the text is updated
     "$hudplus_screen_prefix|default": "",
     "$ignore_screen_prefix|default": "(not $hudplus_screen_prefix > '')",
     "$ignore_hudplus_prefix|default": false,
@@ -30,12 +30,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(not ($hudplus_text_controller = #hudp_stored_control_text) and  ('%.8s' * ($hudplus_text_controller - ('%.8s' * $hudplus_text_controller)) = 'AAAAAAAC'))",
-              "target_property_name": "#hudp_should_update"
-            },
-            {
-              "binding_type": "view",
-              "source_property_name": "(#hudp_should_update and ('%.8s' * $hudplus_text_controller = '_hud+:-:' or '%.8s' * $hudplus_text_controller = '_hud+:+:'))",
+              "source_property_name": "(not ($hudplus_text_controller = #hudp_stored_control_text) and ('%.8s' * $hudplus_text_controller = '_hud+:-:' or '%.8s' * $hudplus_text_controller = '_hud+:+:') and '%.8s' * ($hudplus_text_controller - ('%.8s' * $hudplus_text_controller)) = $hudplus_screen_prefix)",
               "target_property_name": "#visible"
             }
           ]
@@ -93,7 +88,8 @@
             "binding_type": "view",
             "source_control_name": "hudplus_dummy_data_control",
             "source_property_name": "#hudp_stored_control_text",
-            "target_property_name": "#hudp_text_control"
+            "target_property_name": "#hudp_text_control",
+            "resolve_sibling_scope": true
           },
           {
             "binding_type": "view",

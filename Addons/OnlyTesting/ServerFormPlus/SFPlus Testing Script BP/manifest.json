@@ -4,7 +4,7 @@
     "name": "pack.name",
     "description": "pack.description",
     "uuid": "4a5ed5a1-cc76-4906-9c77-fb5ef68e85e0",
-    "min_engine_version": [1, 19, 40],
+    "min_engine_version": [1, 20, 51],
     "version": [1, 0, 0]
   },
 
@@ -26,11 +26,11 @@
     },
     {
       "module_name": "@minecraft/server",
-      "version": "1.0.0-beta"
+      "version": "1.7.0"
     },
     {
       "module_name": "@minecraft/server-ui",
-      "version": "1.0.0-beta"
+      "version": "1.1.0"
     }
   ]
 }
